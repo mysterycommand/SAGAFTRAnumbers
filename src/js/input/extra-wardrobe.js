@@ -1,1 +1,27 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery"],function(a){var b;b=function(){function b(b){this.index=b;this.html='<li>\n  <input type="checkbox" name="extra-'+this.index+'-wardrobe-fitting" value="1" checked>\n  wardrobe fitting for general extra '+(this.index+1)+".\n</li>";this.$el=a(this.html);this.el=this.$el[0]}return b}();return b})})).call(this);
+(function() {
+  var define, log, root;
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery'], function($) {
+    var ExtraWardrobe;
+    ExtraWardrobe = (function() {
+
+      function ExtraWardrobe(index) {
+        this.index = index;
+        this.html = "<li>\n  <input type=\"checkbox\" name=\"extra-" + this.index + "-wardrobe-fitting\" value=\"1\" checked>\n  wardrobe fitting for general extra " + (this.index + 1) + ".\n</li>";
+        this.$el = $(this.html);
+        this.el = this.$el[0];
+      }
+
+      return ExtraWardrobe;
+
+    })();
+    return ExtraWardrobe;
+  });
+
+}).call(this);

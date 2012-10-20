@@ -11,7 +11,7 @@ define [
       @html = """
         <fieldset>
           It's a
-          <input type="number" name="num-days" id="num-days" value="0" min="1" max="2">
+          <input type="number" name="num-days" id="num-days" value="1" min="1" max="2">
           day <a href="#shoot">shoot</a>.
           <span style="display: none;" id="more-days">
             Looking for longer shoots?
@@ -24,6 +24,10 @@ define [
       
       @performers = []
       @$el.on 'input', '#num-days', @onInputDays
+      # For some reason if we fire this before it's on the DOM it causes
+      # the polyfill to display incorrectly, so we defer until/if it's added.
+      # See 'input/job-type' for the actual call.
+      # @$el.find('#num-days').trigger 'input'
     
     onInputDays: (event) =>
       numPerformers = parseInt(event.target.value, 10)
@@ -33,7 +37,7 @@ define [
         while @performers.length < numPerformers
           performer = new PrincipalActorGeneralExtra(@performers.length)
           @performers.push performer
-          @$el.append performer.$el
+          @$el.appendPolyfill performer.$el
       else
         while @performers.length > numPerformers
           @performers.pop().$el.remove()

@@ -17,5 +17,9 @@ define [
       
     start: ->
       # @input.test()
+      
+    restart: ->
+      @input.clear()
+      @output.clear()
   
   App

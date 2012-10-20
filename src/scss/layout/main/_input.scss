@@ -17,12 +17,14 @@
       border-bottom: none;
     }
     
-    p, div {
-      margin: 1em 0 0 2em;
-    }
+    p, div { margin: 1em 0 0 2em; }
+    .chzn-container,
+    .chzn-container div { margin: 0; }
     
     ul {
       list-style-type: none;
     }
   }
 }
+
+#job-type { width: 70%; }

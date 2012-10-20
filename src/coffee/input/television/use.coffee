@@ -42,19 +42,22 @@ define [
       @selectedIndex = parseInt(event.target.value, 10)
       @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
       
-      @$el.find('p').remove()
-      @$el.nextAll().remove()
+      @$el.find('p').detach()
+      @$el.nextAll().detach()
       
       if @selectedItem?
-        @$el.append @selectedItem.$el
+        @$el.appendPolyfill @selectedItem.$el
         if @selectedIndex is 0 or @selectedIndex is 2
-          @$el.off('change', '#broadcast-type').on('change', '#broadcast-type', @onBroadcastChange)
+          @$el
+            .off('change', '#broadcast-type')
+            .on('change', '#broadcast-type', @onBroadcastChange)
+          @selectedItem.$el.find('#broadcast-type').trigger 'change'
         
     onBroadcastChange: (event) =>
-      @$el.nextAll().remove()
+      @$el.nextAll().detach()
       
       broadcastType = @selectedItem.getSelectedItem()
-      @$el.after broadcastType.$el
+      if broadcastType? then @$el.afterPolyfill broadcastType.$el
   
   Use
   

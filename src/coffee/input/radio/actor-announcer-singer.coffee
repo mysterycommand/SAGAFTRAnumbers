@@ -36,7 +36,7 @@ define [
         while @actors.length < numActors
           actor = new ActorAnnouncerCharacter(@actors.length)
           @actors.push actor
-          @$el.append actor.$el
+          @$el.appendPolyfill actor.$el
       else
         while @actors.length > numActors
           @actors.pop().$el.remove()

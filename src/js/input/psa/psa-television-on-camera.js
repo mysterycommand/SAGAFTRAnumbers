@@ -1,1 +1,35 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","underscore","input/television/principal-actor-demo","input/version"],function(a,b,c,d){var e;e=function(){function e(){var e=this;this.label="Public Service Announcement - Television (On Camera)";this.steps=[new c,new d];this.el=[];b.each(this.steps,function(a,b){return e.el.push(a.el)});this.$el=a(this.el)}e.prototype.destroy=function(){return this.$el.off("**")};return e}();return e})})).call(this);
+(function() {
+  var define, log, root;
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery', 'underscore', 'input/television/day', 'input/version'], function($, _, Day, Version) {
+    var PublicServiceAnnouncementTelevisionOnCamera;
+    PublicServiceAnnouncementTelevisionOnCamera = (function() {
+
+      function PublicServiceAnnouncementTelevisionOnCamera() {
+        var _this = this;
+        this.label = "Public Service Announcement - Television (On Camera)";
+        this.steps = [new Day(), new Version()];
+        this.el = [];
+        _.each(this.steps, function(el, i) {
+          return _this.el.push(el.el);
+        });
+        this.$el = $(this.el);
+      }
+
+      PublicServiceAnnouncementTelevisionOnCamera.prototype.destroy = function() {
+        return this.$el.off("**");
+      };
+
+      return PublicServiceAnnouncementTelevisionOnCamera;
+
+    })();
+    return PublicServiceAnnouncementTelevisionOnCamera;
+  });
+
+}).call(this);

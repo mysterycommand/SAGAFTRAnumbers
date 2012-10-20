@@ -1,1 +1,35 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","underscore","input/television/principal-actor-demo","input/version"],function(a,b,c,d){var e;e=function(){function e(){var e=this;this.label="Public Service Announcement - Television (Off Camera)";this.steps=[new c,new d];this.el=[];b.each(this.steps,function(a,b){return e.el.push(a.el)});this.$el=a(this.el)}e.prototype.destroy=function(){return this.$el.off("**")};return e}();return e})})).call(this);
+(function() {
+  var define, log, root;
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery', 'underscore', 'input/television/principal-actor', 'input/version', 'input/tag'], function($, _, PrincipalActor, Version, Tag) {
+    var PublicServiceAnnouncementTelevisionOffCamera;
+    PublicServiceAnnouncementTelevisionOffCamera = (function() {
+
+      function PublicServiceAnnouncementTelevisionOffCamera() {
+        var _this = this;
+        this.label = "Public Service Announcement - Television (Off Camera)";
+        this.steps = [new PrincipalActor(), new Version(), new Tag()];
+        this.el = [];
+        _.each(this.steps, function(el, i) {
+          return _this.el.push(el.el);
+        });
+        this.$el = $(this.el);
+      }
+
+      PublicServiceAnnouncementTelevisionOffCamera.prototype.destroy = function() {
+        return this.$el.off("**");
+      };
+
+      return PublicServiceAnnouncementTelevisionOffCamera;
+
+    })();
+    return PublicServiceAnnouncementTelevisionOffCamera;
+  });
+
+}).call(this);

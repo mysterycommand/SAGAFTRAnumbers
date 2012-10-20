@@ -5,15 +5,17 @@ define = root.define
 define [
   'jquery'
   'underscore'
-  'input/television/principal-actor-demo'
+  'input/television/principal-actor'
   'input/version'
-], ($, _, PrincipalActorDemo, Version) ->
+  'input/tag'
+], ($, _, PrincipalActor, Version, Tag) ->
 	class PublicServiceAnnouncementTelevisionOffCamera
     constructor: ->
       @label = "Public Service Announcement - Television (Off Camera)"
       @steps = [
-        new PrincipalActorDemo()
+        new PrincipalActor()
         new Version()
+        new Tag()
       ]
       @el = []
       _.each @steps, (el, i) => @el.push el.el

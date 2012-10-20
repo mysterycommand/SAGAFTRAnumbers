@@ -1,1 +1,35 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","underscore","input/radio/actor-announcer-singer","input/version","input/tag","input/radio/use"],function(a,b,c,d,e,f){var g;g=function(){function g(){var g=this;this.label="Radio Commercial";this.steps=[new c,new d,new e,new f];this.el=[];b.each(this.steps,function(a,b){return g.el.push(a.el)});this.$el=a(this.el)}g.prototype.destroy=function(){return this.$el.off("**")};return g}();return g})})).call(this);
+(function() {
+  var define, log, root;
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery', 'underscore', 'input/radio/actor-announcer-singer', 'input/version', 'input/tag', 'input/radio/use'], function($, _, ActorAnnouncerSinger, Version, Tag, Use) {
+    var RadioCommercial;
+    RadioCommercial = (function() {
+
+      function RadioCommercial() {
+        var _this = this;
+        this.label = "Radio Commercial";
+        this.steps = [new ActorAnnouncerSinger(), new Version(), new Tag(), new Use()];
+        this.el = [];
+        _.each(this.steps, function(el, i) {
+          return _this.el.push(el.el);
+        });
+        this.$el = $(this.el);
+      }
+
+      RadioCommercial.prototype.destroy = function() {
+        return this.$el.off("**");
+      };
+
+      return RadioCommercial;
+
+    })();
+    return RadioCommercial;
+  });
+
+}).call(this);

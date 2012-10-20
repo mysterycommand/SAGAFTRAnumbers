@@ -8,7 +8,8 @@ define [
   'input/television/principal-actor'
   'input/version'
   'input/tag'
-], ($, _, PrincipalActor, Version, Tag) ->
+  'input/television/use'
+], ($, _, PrincipalActor, Version, Tag, Use) ->
 	class TelevisionCommercialOffCamera
     constructor: ->
       @label = "Television Commercial - (Voiceover/Off Camera)"
@@ -16,6 +17,7 @@ define [
         new PrincipalActor()
         new Version()
         new Tag()
+        new Use()
       ]
       @el = []
       _.each @steps, (el, i) => @el.push el.el

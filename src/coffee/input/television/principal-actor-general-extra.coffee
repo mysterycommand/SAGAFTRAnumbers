@@ -12,9 +12,9 @@ define [
       @html = """
         <div>
           On day #{@index + 1}, I'll need
-          <input type="number" name="day-#{@index}-num-actors" id="num-actors" value="0" min="0" max="10">
+          <input type="number" name="day-#{@index}-num-actors" id="day-#{@index}-num-actors" value="0" min="0" max="10">
           <a href="#principal-actor">principal actor</a>(s) and
-          <input type="number" name="day-#{@index}-num-extras" id="num-extras" value="0" min="0" max="10">
+          <input type="number" name="day-#{@index}-num-extras" id="day-#{@index}-num-extras" value="0" min="0" max="10">
           <a href="#general-extra">general extra</a>(s).
           <ul class="actors"></ul>
           <ul class="extras"></ul>
@@ -25,8 +25,8 @@ define [
       
       @actors = []
       @extras = []
-      @$el.on 'input', '#num-actors', @onInputActors
-      @$el.on 'input', '#num-extras', @onInputExtras
+      @$el.on 'input', "#day-#{@index}-num-actors", @onInputActors
+      @$el.on 'input', "#day-#{@index}-num-extras", @onInputExtras
     
     onInputActors: (event) =>
       numActors = parseInt(event.target.value, 10)

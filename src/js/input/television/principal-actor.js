@@ -1,1 +1,32 @@
-((function(){var a,b,c,d=function(a,b){return function(){return a.apply(b,arguments)}};c=this;b=c.log;a=c.define;a(["jquery"],function(a){var b;b=function(){function b(b){this.index=b;this.onInputActors=d(this.onInputActors,this);this.html='<fieldset>\n  I\'ll need\n  <input type="number" name="num-actors" id="num-actors" value="0" min="0" max="2">\n  <a href="#principal-actor">principal actor</a>(s).\n</fieldset>';this.$el=a(this.html);this.el=this.$el[0];this.$el.on("input","#num-actors",this.onInputActors)}b.prototype.onInputActors=function(a){};return b}();return b})})).call(this);
+(function() {
+  var define, log, root,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery'], function($) {
+    var PrincipalActor;
+    PrincipalActor = (function() {
+
+      function PrincipalActor(index) {
+        this.index = index;
+        this.onInputActors = __bind(this.onInputActors, this);
+        this.html = "<fieldset>\n  I'll need\n  <input type=\"number\" name=\"num-actors\" id=\"num-actors\" value=\"0\" min=\"0\" max=\"2\">\n  <a href=\"#principal-actor\">principal actor</a>(s).\n</fieldset>";
+        this.$el = $(this.html);
+        this.el = this.$el[0];
+        this.$el.on('input', '#num-actors', this.onInputActors);
+      }
+
+      PrincipalActor.prototype.onInputActors = function(event) {};
+
+      return PrincipalActor;
+
+    })();
+    return PrincipalActor;
+  });
+
+}).call(this);

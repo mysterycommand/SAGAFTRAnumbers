@@ -1,1 +1,41 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","input/job-type"],function(a,b){var c;c=function(){function c(c){this.el=c;this.$el=a(this.el);this.jobTypeSelect=new b;this.jobTypeSelect.$el.prependTo(this.$el)}return c}();return c})})).call(this);
+(function() {
+  var define, log, root,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery', 'input/job-type', 'chosen'], function($, JobType) {
+    var Input;
+    Input = (function() {
+
+      function Input(el) {
+        this.el = el;
+        this.onChange = __bind(this.onChange, this);
+        this.$el = $(this.el);
+        this.jobType = new JobType();
+        this.jobType.$el.prependTo(this.$el);
+        this.$el.on('change', '.chzn-select', this.onChange);
+      }
+
+      Input.prototype.onChange = function(event) {
+        return this.$el.find('.chzn-select').not('.chzn-done').chosen({
+          allow_single_deselect: true,
+          disable_search_threshold: 20
+        });
+      };
+
+      Input.prototype.clear = function() {
+        return this.jobType.$el.find('#job-type').val(-1).trigger('liszt:updated').trigger('change');
+      };
+
+      return Input;
+
+    })();
+    return Input;
+  });
+
+}).call(this);

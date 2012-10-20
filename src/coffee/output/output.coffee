@@ -9,5 +9,7 @@ define [
 		constructor: (@el) ->
       @$el = $ @el
     
+    clear: ->
+      # log "Hi!"
 	
 	Output

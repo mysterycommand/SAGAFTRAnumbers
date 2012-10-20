@@ -1,7 +1,6 @@
 @import "../../css3/background-clip";
 
 .calculator {
-  overflow: hidden;
   position: relative;
 }
 
@@ -12,6 +11,7 @@
   @include linear-gradient((top, $medgray 0px, $white 260px));
     
   &.left {
+    position: relative;
     padding-left: 1.5em;
     width: 62.5%;
   }

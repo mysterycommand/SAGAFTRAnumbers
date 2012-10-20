@@ -1,1 +1,35 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","underscore","input/television/principal-actor-demo","input/version"],function(a,b,c,d){var e;e=function(){function e(){var e=this;this.label="Television Commercial Demo - (Voiceover/Off Camera, Non-air)";this.steps=[new c,new d];this.el=[];b.each(this.steps,function(a,b){return e.el.push(a.el)});this.$el=a(this.el)}e.prototype.destroy=function(){return this.$el.off("**")};return e}();return e})})).call(this);
+(function() {
+  var define, log, root;
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery', 'underscore', 'input/television/principal-actor-demo', 'input/version'], function($, _, PrincipalActorDemo, Version) {
+    var TelevisionCommercialDemo;
+    TelevisionCommercialDemo = (function() {
+
+      function TelevisionCommercialDemo() {
+        var _this = this;
+        this.label = "Television Commercial Demo - (Voiceover/Off Camera, Non-air)";
+        this.steps = [new PrincipalActorDemo(), new Version()];
+        this.el = [];
+        _.each(this.steps, function(el, i) {
+          return _this.el.push(el.el);
+        });
+        this.$el = $(this.el);
+      }
+
+      TelevisionCommercialDemo.prototype.destroy = function() {
+        return this.$el.off("**");
+      };
+
+      return TelevisionCommercialDemo;
+
+    })();
+    return TelevisionCommercialDemo;
+  });
+
+}).call(this);

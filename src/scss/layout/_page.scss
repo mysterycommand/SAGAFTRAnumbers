@@ -40,3 +40,15 @@ $margin: 100% / 18;
 .page {
   margin: 0 $margin;
 }
+
+#definitions {
+  padding: 0 1.5em;
+  @include box-sizing(border-box);
+  
+  header, ul {
+    background: $white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}

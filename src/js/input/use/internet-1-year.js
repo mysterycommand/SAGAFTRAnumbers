@@ -1,1 +1,27 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","underscore"],function(a,b){var c;c=function(){function b(){this.label="1 Year Option";this.html="<!-- NO OP -->";this.$el=a(this.html);this.el=this.$el[0]}return b}();return c})})).call(this);
+(function() {
+  var define, log, root;
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery', 'underscore'], function($, _) {
+    var Internet1Year;
+    Internet1Year = (function() {
+
+      function Internet1Year() {
+        this.label = "1 Year Option";
+        this.html = "<!-- NO OP -->";
+        this.$el = $(this.html);
+        this.el = this.$el[0];
+      }
+
+      return Internet1Year;
+
+    })();
+    return Internet1Year;
+  });
+
+}).call(this);

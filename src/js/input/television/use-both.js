@@ -1,1 +1,35 @@
-((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","underscore","input/television/use-broadcast","input/television/use-internet"],function(a,b,c,d){var e;e=function(){function e(){var e=this;this.label="both as a television broadcast, and on the Internet or in new media";this.steps=[new c,new d];this.el=[];b.each(this.steps,function(a,b){return e.el.push(a.el)});this.$el=a(this.el)}e.prototype.getSelectedItem=function(a){return this.steps[0].getSelectedItem()};return e}();return e})})).call(this);
+(function() {
+  var define, log, root;
+
+  root = this;
+
+  log = root.log;
+
+  define = root.define;
+
+  define(['jquery', 'underscore', 'input/television/use-broadcast', 'input/television/use-internet'], function($, _, UseBroadcast, UseInternet) {
+    var UseBoth;
+    UseBoth = (function() {
+
+      function UseBoth() {
+        var _this = this;
+        this.label = "both as a television broadcast, and on the Internet or in new media";
+        this.steps = [new UseBroadcast(), new UseInternet()];
+        this.el = [];
+        _.each(this.steps, function(el, i) {
+          return _this.el.push(el.el);
+        });
+        this.$el = $(this.el);
+      }
+
+      UseBoth.prototype.getSelectedItem = function(index) {
+        return this.steps[0].getSelectedItem();
+      };
+
+      return UseBoth;
+
+    })();
+    return UseBoth;
+  });
+
+}).call(this);
