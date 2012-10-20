@@ -1,0 +1,35 @@
+$all-vendors: (webkit, moz, ms, o);
+
+@mixin prefix($property, $values, $vendors: $all-vendors) {
+	@each $vendor in $vendors {
+		-#{$vendor}-#{$property}: $values;
+	}
+	#{$property}: $values;
+}
+
+@mixin background-clip($values, $vendors: $all-vendors) {
+	@include prefix(background-clip, $values, $vendors);
+}
+
+@mixin border-radius($values, $vendors: $all-vendors) {
+	@include prefix(border-radius, $values, $vendors);
+}
+
+@mixin box-shadow($values, $vendors: $all-vendors) {
+	@include prefix(box-shadow, $values, $vendors);
+}
+
+@mixin box-sizing($method: border-box, $vendors: $all-vendors) {
+	@include prefix(box-sizing, $method, $vendors);
+}
+
+@mixin linear-gradient($values, $vendors: $all-vendors) {
+	@each $vendor in $vendors {
+		background-image: -#{$vendor}-linear-gradient($values);
+	}
+	background-image: linear-gradient($values);
+}
+
+@mixin text-shadow($values, $vendors: $all-vendors) {
+	@include prefix(text-shadow, $values, $vendors);
+}

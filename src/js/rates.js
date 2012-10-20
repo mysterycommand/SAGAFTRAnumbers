@@ -78,6 +78,38 @@
       tag_2_25: 132.45,
       tag_26_50: 73.50,
       tag_51: 40.05
+    },
+    corp_edu_on_camera: {
+      cat_1_session_narrator_day_1: 873.50,
+      cat_1_session_narrator_day_2: 480.50,
+      cat_2_session_narrator_day_1: 1035.00,
+      cat_2_session_narrator_day_2: 597.50,
+      cat_1_session_player_half_day: 312.50,
+      cat_1_session_player_day_1: 480.50,
+      cat_1_session_player_day_3: 1209.00,
+      cat_1_session_player_week: 1687.50,
+      cat_2_session_player_half_day: 388.50,
+      cat_2_session_player_day_1: 597.50,
+      cat_2_session_player_day_3: 1409.50,
+      cat_2_session_player_week: 2089.50,
+      cat_1_session_extra_general: 125.00,
+      cat_1_session_extra_special: 137.50,
+      cat_1_session_extra_silent: 233.50,
+      cat_2_session_extra_general: 125.00,
+      cat_2_session_extra_special: 137.50,
+      cat_2_session_extra_silent: 233.50
+    },
+    corp_edu_off_camera: {
+      cat_1_session_actor_first_hour: 393.00,
+      cat_1_session_actor_addl_half: 115.00,
+      cat_2_session_actor_first_hour: 437.50,
+      cat_2_session_actor_addl_half: 115.00
+    },
+    corp_edu_audio_only: {
+      cat_1_session_actor_first_hour: 393.00,
+      cat_1_session_actor_addl_half: 115.00,
+      cat_2_session_actor_first_hour: 437.50,
+      cat_2_session_actor_addl_half: 115.00
     }
   };
 

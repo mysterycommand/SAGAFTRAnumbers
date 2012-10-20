@@ -46,7 +46,9 @@ define [
       @$el.nextAll().detach()
       
       if @selectedItem?
+        # FIND ME LATER
         @$el.appendPolyfill @selectedItem.$el
+        # @$el.append @selectedItem.$el
         if @selectedIndex is 0 or @selectedIndex is 2
           @$el
             .off('change', '#broadcast-type')
@@ -57,7 +59,9 @@ define [
       @$el.nextAll().detach()
       
       broadcastType = @selectedItem.getSelectedItem()
-      if broadcastType? then @$el.afterPolyfill broadcastType.$el
+
+      # FIND ME LATER
+      if broadcastType? then @$el.afterPolyfill broadcastType.$el # @$el.after broadcastType.$el
   
   Use
   

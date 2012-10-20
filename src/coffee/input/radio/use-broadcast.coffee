@@ -41,7 +41,7 @@ define [
       
       html = ''
       _.each @options, (el, i) -> html += """<option value="#{i}">#{el.label}</option>"""
-      @$el.find('select').append(html);
+      @$el.find('select').append html
     
     getSelectedItem: -> @selectedItem
     

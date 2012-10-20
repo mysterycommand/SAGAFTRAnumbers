@@ -8,6 +8,10 @@
 input[type=number] {
 	text-align: right;
 	width: 2.5em;
+
+	&[step="0.5"] {
+		width: 3em;
+	}
 }
 
 .number-hover {

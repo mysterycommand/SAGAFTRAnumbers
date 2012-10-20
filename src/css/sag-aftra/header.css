@@ -1,0 +1,77 @@
+.small {
+  font-size: 0.8125em;
+  line-height: 1.38462em; }
+
+.normal {
+  font-size: 1em;
+  line-height: 1.5em; }
+
+.large {
+  font-size: 1.625em;
+  line-height: 1.38462em; }
+
+.huge {
+  font-size: 2.625em;
+  line-height: 1.14286em; }
+
+.massive {
+  font-size: 4.25em;
+  line-height: 1.05882em; }
+
+.gigantic {
+  font-size: 6.875em;
+  line-height: 1.09091em; }
+
+header {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
+hgroup {
+  overflow: hidden;
+  padding: 0 0.75em;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+  hgroup.left {
+    float: left;
+    padding-left: 0.1em;
+    /*width: 62.5%;*/ }
+  hgroup.right {
+    float: right;
+    padding-right: 0.1em;
+    /*width: 37.5%;*/ }
+
+h1 {
+  /*  
+    .kir { 
+      background: transparent url(../img/logo-type.jpg) no-repeat scroll center center;
+      display: inline-block;
+      display: none;
+      
+      width: 399px;
+      height: 47px;
+    }
+  */ }
+  h1 a {
+    display: inline-block;
+    line-height: 0;
+    width: 100%;
+    margin-top: 0.76923em; }
+  h1 img {
+    width: 100%;
+    max-width: 460px; }
+  h1 em {
+    border-left: 1px solid black;
+    margin-left: 0.5em;
+    padding-left: 0.75em;
+    padding-top: 0.34615em; }
+  h1 b {
+    margin-left: 0.1875em; }
+
+h6 {
+  margin-top: 2.16667em; }

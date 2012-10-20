@@ -5,6 +5,7 @@ define = root.define
 define [
   'jquery'
   'underscore'
+  
   'input/television/day'
   'input/television/use'
 ], ($, _, Day, Use) ->
