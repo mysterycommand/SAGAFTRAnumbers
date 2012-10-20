@@ -2,6 +2,8 @@ nav {
   background: $medgray;
   overflow: hidden;
   
+  height: 33px;
+  
   @include calc(padding-bottom, 8, 16);
   @include calc(padding-top, 8, 16);
   
@@ -12,124 +14,85 @@ nav {
   li {
     display: inline-block;
     padding: 0 0.75em;
-    width: 12.5%;
+    
+    width: 11%;
+    height: 33px;
     
     @include box-sizing(border-box);
     
-    a span {
-      display: inline-block;
-      
-      @include calc(padding-top, 8, 16);
-      @include calc(padding-right, 16, 16);
-      @include calc(padding-bottom, 6, 16);
-      @include calc(padding-left, 48, 16);
-      
-      @include box-sizing(border-box);
+    a {
+      white-space: nowrap;
+      overflow: hidden;
     }
+    
+    &.start-over  a { text-indent: 18px; width: 18px; }
+    &.ask-tim     a { text-indent: 39px; width: 39px; }
+    &.definitions a { text-indent: 25px; width: 25px; }
+    &.print       a { text-indent: 20px; width: 20px; }
+    &.share       a { text-indent: 22px; width: 22px; }
+    
+    &.start-over  a .icon { width: 18px; background-position: bottom center; }
+    &.ask-tim     a .icon { width: 39px; background-position: top center; }
+    &.definitions a .icon { width: 25px; background-position: top left; }
+    &.print       a .icon { width: 20px; background-position: top right; }
+    &.share       a .icon { width: 22px; background-position: bottom left; }
+    
+    &.start-over  a:hover .icon { background-position: bottom center; }
+    &.ask-tim     a:hover .icon { background-position: center center; }
+    &.definitions a:hover .icon { background-position: center left; }
+    &.print       a:hover .icon { background-position: center right; }
+    &.share       a:hover .icon { background-position: bottom right; }
     
     &.start-over {
       padding-left: 2.25em;
       padding-right: 0;
+      width: 16%;
       
-      a {
+      .inset-button {
         background: $orange;
-        color: $white;
-        display: inline-block;
         
         width: 100%;
         
         @include border-radius(8px);
         @include box-shadow(inset 0 0 5px $alphagray);
+        @include box-sizing(border-box);
         
-        &:hover {
-          background: lighten($orange, 8%);
-          color: $white;
-        }
-      }
-      
-      span {
-        background: transparent url(../img/icon-start-over.png) no-repeat scroll 1em center;
+        &:hover,
+        &.hover { background: lighten($orange, 8%); }
       }
     }
     
-    &.ask-tim {
-      width: 25%;
-      
-      a {
-        &:hover {
-          span {
-            background: transparent url(../img/icon-ask-tim-hover.png) no-repeat scroll 1em center;
-          }
-        }
-      }
-      
-      span {
-        @include calc(padding-left, 72, 16);
-        background: transparent url(../img/icon-ask-tim.png) no-repeat scroll 1em center;
-      }
-    }
-    
-    &.ask-tim {
-      a {
-        &:hover {
-          span {
-            background: transparent url(../img/icon-ask-tim-hover.png) no-repeat scroll 1em center;
-          }
-        }
-      }
-      
-      span {
-        @include calc(padding-left, 72, 16);
-        background: transparent url(../img/icon-ask-tim.png) no-repeat scroll 1em center;
-      }
-    }
-    
-    &.definitions {
-      a {
-        &:hover {
-          span {
-            background: transparent url(../img/icon-definitions-hover.png) no-repeat scroll 1em center;
-          }
-        }
-      }
-      
-      span {
-        @include calc(padding-left, 60, 16);
-        background: transparent url(../img/icon-definitions.png) no-repeat scroll 1em center;
-      }
-    }
-    
-    &.print {
-      a {
-        &:hover {
-          span {
-            background: transparent url(../img/icon-print-hover.png) no-repeat scroll 1em center;
-          }
-        }
-      }
-      
-      span {
-        @include calc(padding-left, 54, 16);
-        background: transparent url(../img/icon-print.png) no-repeat scroll 1em center;
-      }
-    }
+    &.ask-tim     { width: 21.5%; }
+    &.definitions { padding-right: 0; width: 13%; }
+    &.print       {  }
     
     &.share {
-      padding-left: center;
+      padding-left: 0;
       padding-right: 2.25em;
+    }
+    
+  }
+  
+  a {
+    display: inline-block;
+    position: relative;
+    
+    padding-top: 5px;
+    padding-bottom: 3px;
+    
+    .icon {
+      background: transparent url(../img/nav-icons.png) no-repeat scroll center center;
+      display: block;
       
-      a {
-        &:hover {
-          span {
-            background: transparent url(../img/icon-share-hover.png) no-repeat scroll 1em center;
-          }
-        }
-      }
+      left: 0;
+      position: absolute;
+      top: 50%;
       
-      span {
-        @include calc(padding-left, 54, 16);
-        background: transparent url(../img/icon-share.png) no-repeat scroll 1em center;
-      }
+      margin-top: -16.5px;
+      
+      height: 33px;
     }
   }
 }
+
+.home nav li { display: none }

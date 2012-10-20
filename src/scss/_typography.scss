@@ -13,20 +13,19 @@
 ::selection { background: $orange; color: $textwhite; text-shadow: none; }
 
 body {
-  @include normal;
+  /*@include normal;*/
   @include body-font;
 }
 
 h1 {
-  @include large;
+  @include line(26, 42);
   @include calc(letter-spacing, 2, 16);
-  @include calc(margin-top, 18, 26);
   
   em {
     font-size: 75%;
   }
   
-  em, span {
+  em, b {
     font-style: normal;
     font-weight: 100;
     
@@ -34,12 +33,25 @@ h1 {
   }
 }
 
+h3 { font-style: italic; }
+h4 {
+  color: $textgray;
+  font-weight: normal;
+}
+
+footer h3,
+footer h4,
+footer address,
+footer span {
+  @include calc(line-height, 24, 14);
+}
+
 h6 {
   font-style: italic;
   font-weight: normal;
   text-align: right;
   
-  @include normal;
+  @include line(11, 18);
 }
 
 .hud {
@@ -48,9 +60,15 @@ h6 {
   h2 {
     @include large;
     
-    output {
+    output, a {
       font-weight: normal;
       text-align: center;
+    }
+    
+    a {
+      color: $white;
+      letter-spacing: 4px;
+      text-transform: uppercase;
     }
   }
   
@@ -64,6 +82,10 @@ h6 {
     @include line(12, 24);
   }
 }
+
+a         { color: $textdarkorange; text-decoration: none; }
+a:hover   { color: darken($textdarkorange,  8%); }
+a:visited { color: darken($textdarkorange, 16%); }
 
 nav {
   ul {
@@ -79,16 +101,14 @@ nav {
       color: $textmedgray;
       text-decoration: none;
       text-transform: uppercase;
-      
-      &:hover {
-        color: $textblack;
-      }
+
+      &:visited { color: $textmedgray; }
+      &:hover { color: $textblack; }
     }
     
     &.start-over {
-      a {
-        font-weight: bold;
-      }
+      a       { color: $white; font-weight: bold; }
+      a:hover { color: $white; }
     }
   }
 }
@@ -99,6 +119,25 @@ thead {
     text-transform: uppercase;
   }
 }
+
+footer {
+  @include line(14, 32);
+}
+
+.twitter-feed {
+  a { line-height: 1; }
+  p { @include calc(line-height, 32, 14); }
+}
+
+.latest-tweet a         { color: $textblue; }
+.latest-tweet a:hover   { color: darken($textblue, 15%); }
+.latest-tweet a:visited { color: darken($textblue, 30%); }
+
+address                 { color: $textgray; }
+address,
+address em,
+.footer span { font-style: normal; }
+address em   { font-weight: bold; }
 
 
 

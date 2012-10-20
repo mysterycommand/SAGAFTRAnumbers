@@ -1,9 +1,13 @@
+@import "../../css3/text-shadow";
+
 .hud {
   background: $medgray;
   margin: 0 auto;
   padding: 0.75em 0.75em 0;
   position: relative;
+  
   width: 25%;
+  height: 84px;
   
   @include border-radius(12px 12px 0 0);
   @include box-sizing(border-box);
@@ -13,21 +17,58 @@
     background: $orange;
     padding: 0.25em 1em;
     
+    /*width: 100%;*/
+    position: absolute;
+    right: 0.5em;
+    left: 0.5em;
+    
     @include border-radius(8px);
+    
     @include box-shadow((0 0 25px $alphawhite, inset 0 0 5px $alphagray));
-    @include linear-gradient((left, $orange, #ffa145, $orange));
+    @include box-sizing(border-box);
     
-    b {
-      position: absolute;
-    }
-    
-    output {
+    @include linear-gradient((left, $orange, #f2b16c, $orange));
+  
+    b { position: absolute; }
+  }
+  
+  .estimate {
+    output, a {
       display: inline-block;
       width: 100%;
+      
+      @include text-shadow(0 0 16px $alphagray);
+    }
+  }
+  
+  .start {
+    display: none;
+    
+    b {
+      line-height: 0;
+      margin-top: -12px;
+      
+      position: absolute;
+      top: 50%;
+    }
+    
+    a {
+      display: inline-block;
+      width: 100%;
+      
+      @include text-shadow(0 0 16px $alphagray);
     }
   }
   
   h5 {
-    width: 100%;
+    display: block;
+    position: absolute;
+    right: 1em;
+    bottom: 0;
+    left: 1em;
   }
 }
+
+.home .hud .estimate { display: none; }
+.home .hud .start { display: block; }
+.home .hud h5 { display: none; }

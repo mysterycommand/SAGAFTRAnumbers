@@ -1,0 +1,5 @@
+@import "prefix";
+
+@mixin text-shadow($values, $vendors: $all-vendors) {
+  @include prefix(text-shadow, $values, $vendors);
+}

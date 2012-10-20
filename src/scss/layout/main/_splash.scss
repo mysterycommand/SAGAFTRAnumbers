@@ -1,0 +1,16 @@
+.splash {
+  background: $white;
+  display: block;
+  
+  @include border-radius(12px 12px 0 0);
+  
+  img { position: absolute; }
+  
+  .radial   { bottom: 0; left: 50%; margin-left: -525px; }
+  .preview  { bottom: 0; right: -10%; }
+  .subtitle { top: 32px; right: 6.5%; }
+  .title    { top: 84px; left: 7.5%; }
+  
+  .tl { top: 0; left: 0; opacity: 0.5; }
+  .br { bottom: 0; right: 0; opacity: 0.5; }
+}

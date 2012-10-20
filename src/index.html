@@ -12,7 +12,7 @@
        More info: h5bp.com/i/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>AFTRAnumbers | Version 0.1</title>
+	<title>AFTRAnumbers | Version 0.2</title>
 	
 	<meta name="description" content="The American Federation of Television and Radio Artists (AFTRA) is a national labor union representing over 70,000 performers, journalists and other artists working in the entertainment and news media.">
 	<meta name="author" content="The American Federation of Television and Radio Artists (AFTRA) - Twin Cities">
@@ -40,42 +40,50 @@
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
   <div class="orange banner-top"></div>
-  <div class="page">
+  <div class="page home">
     <header>
-      <hgroup class="left"><h1>AFTRA<span>numbers</span><em class="fpo">Version 0.1</em></h1></hgroup>
+      <hgroup class="left"><h1><a href="" class="kir">AFTRA<b>numbers</b><em class="fpo">Version 0.2</em></a></h1></hgroup>
       <hgroup class="right"><h6>A handy calculator to estimate the cost of<br/> hiring <b>union talent</b> for your next project</h6></hgroup>
     </header>
     <div role="main" class="main">
       <header class="hud">
-        <h2>
+        <h2 class="estimate">
           <b>$</b>
           <output name="estimate-total">123.45</output>
+        </h2>
+        <h2 class="start">
+          <b><img src="img/rarr.png" alt=""></b>
+          <a href="#app">Start</a>
         </h2>
         <h5>Estimate Total</h5>
       </header>
       <nav>
         <ul>
           <li class="start-over left">
-            <a href="#"><span>Start Over</span></a>
+            <div class="inset-button">
+              <a href=""><span class="icon"></span>Start Over</a>
+            </div>
           </li>
           <li class="ask-tim left">
-            <a href="#"><span>Ask <b>Tim</b> at AFTRA</span></a>
+            <a href="mailto:togren@aftra.com?subject=AFTRAnumbers%20Question"><span class="icon"></span>Ask <b>Tim</b> at AFTRA</a>
           </li>
-
           <li class="share right">
-            <a href="#"><span>Share</span></a>
+            <a href="mailto:?subject=AFTRAnumbers%20Estimate&body=ESTIMATE%20SUMMARY%0ALine%20Item%09%09%09$123.45%0AEstimate%20Total%09%09$123.45"><span class="icon"></span>Share</a>
           </li>
           <li class="print right">
-            <a href="#"><span>Print</span></a>
+            <a href="javascript:window.print()"><span class="icon"></span>Print</a>
           </li>
           <li class="definitions right">
-            <a href="#"><span>Definitions</span></a>
+            <a href="#definitions"><span class="icon"></span>Definitions</a>
           </li>
         </ul>
       </nav>
       <div class="calculator">
         <section class="inner left">
           <div class="input">
+            <form id="app" action="" method="get" accept-charset="utf-8">
+              
+            </form>
             <p>Test</p>
             <p>Test</p>
             <p>Test</p>
@@ -108,22 +116,34 @@
             </table>
           </div>
         </section>
+        <section class="inner both">
+          <div class="splash">
+            <img src="img/home-radial.png" alt="" class="radial">
+            <img src="img/home-preview.png" alt="" class="preview">
+            <img src="img/home-subtitle.png" alt="" class="subtitle">
+            <img src="img/home-title.png" alt="" class="title">
+            
+            <img src="img/home-shadow-top-left.png" alt="" class="tl">
+            <img src="img/home-shadow-bottom-right.png" alt="" class="br">
+          </div><!-- end .home -->
+        </section>
+        
         <div class="inset"></div>
       </div><!-- end .calculator -->
     </div><!-- end .main -->
     <footer>
-      <section class="tweet">
-        <a href="#" class="twitter"><img src="img/twitter.png" alt="Twitter" width="40" height="40"></a>
-        This is a tweet. This is a <a href="#">link</a>.
-        <a href="#" class="follow">Follow<img src="img/follow.png" alt="Follow us on Twitter" width="40" height="40"></a>
+      <section class="twitter-feed">
+        <a href="http://twitter.com" class="twitter"><img src="img/twitter.jpg" alt="Twitter" width="32" height="32"></a>
+        <p class="latest-tweet">Just launched <a href="http://aftranumbers.com">http://aftranumbers.com</a> !!! A handy calculator to estimate the cost of hiring union talent for your next project. So pumped!!!</p>
+        <a href="http://twitter.com/AFTRA" class="follow"><p>Follow</p><img src="img/follow.jpg" alt="Follow us on Twitter" width="38" height="35"></a>
       </section>
       <hr>
-      <img id="aftra-logo" src="img/aftra-logo.png" alt="AFTRA" width="90" height="100">
+      <a href="http://aftra.com/" class="aftra-logo"><img src="img/aftra-logo.jpg" alt="AFTRA" width="90" height="100"></a>
       <h3>Not seeing what you're looking for?</h3>
       <h4>
         Contact Tim at AFTRA:
         <a href="mailto:tolgren@aftra.com">Email Tim</a> |
-        <b>Call Tim</b>651.789.8990 ext 14
+        <b>Call Tim</b> 651.789.8990 ext 14
       </h4>
       <address>
         <em>AFTRA Twin Cities</em>
@@ -133,9 +153,13 @@
         <span>MN</span>
         <span>55114</span>
       </address>
-      <span>&copy; <a href="http://aftra.com">AFTRA</a> Twin Cities</span>
+      <span style="display: block;">&copy; <a href="http://aftra.com">AFTRA</a> Twin Cities</span>
     </footer>
   </div><!-- end .page -->
+  
+  <div id="definitions" style="display: none;">
+  </div><!-- end #definitions -->
+  
   <div class="orange banner-bottom"></div>
 
   <!-- scripts concatenated and minified via build script -->
