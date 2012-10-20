@@ -1,0 +1,39 @@
+@import "../gold/zoomable-baseline-func";
+@import "../css3/border-radius";
+@import "../css3/box-sizing";
+@import "../colors";
+
+footer {
+  margin: 0 1.5em 6em;
+}
+
+.tweet {
+  background: $lightgray;
+  border: 2px solid $medgray;
+  
+  margin: 1.5em 0 3em;
+  padding: 0.75em;
+  
+  @include border-radius(12px);
+  @include box-sizing(border-box);
+}
+
+.follow {
+  float: right;
+}
+
+#aftra-logo {
+  background: $white;
+  float: right;
+  padding: 0 1em;
+  margin-right: 3em;
+  margin-top: -2em;
+}
+
+h4, h5 {
+  float: left;
+}
+
+address {
+  clear: left;
+}

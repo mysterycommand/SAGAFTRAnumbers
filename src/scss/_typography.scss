@@ -1,0 +1,130 @@
+@import "gold/zoomable-baseline-func";
+@import "colors";
+@import "fonts";
+
+.small    { @include small;    }
+.normal   { @include normal;   }
+.large    { @include large;    }
+.huge     { @include huge;     }
+.massive  { @include massive;  }
+.gigantic { @include gigantic; }
+
+::-moz-selection { background: $orange; color: $textwhite; text-shadow: none; }
+::selection { background: $orange; color: $textwhite; text-shadow: none; }
+
+body {
+  @include normal;
+  @include body-font;
+}
+
+h1 {
+  @include large;
+  @include calc(letter-spacing, 2, 16);
+  @include calc(margin-top, 18, 26);
+  
+  em {
+    font-size: 75%;
+  }
+  
+  em, span {
+    font-style: normal;
+    font-weight: 100;
+    
+    @include calc(letter-spacing, 3, 16);
+  }
+}
+
+h6 {
+  font-style: italic;
+  font-weight: normal;
+  text-align: right;
+  
+  @include normal;
+}
+
+.hud {
+  color: $white;
+  
+  h2 {
+    @include large;
+    
+    output {
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+  
+  h5 {
+    color: $textmedgray;
+    font-weight: normal;
+    
+    text-align: center;
+    text-transform: uppercase;
+    
+    @include line(12, 24);
+  }
+}
+
+nav {
+  ul {
+    overflow: hidden;
+  }
+  
+  li {
+    text-align: center;
+    
+    @include line(12, 24);
+    
+    a {
+      color: $textmedgray;
+      text-decoration: none;
+      text-transform: uppercase;
+      
+      &:hover {
+        color: $textblack;
+      }
+    }
+    
+    &.start-over {
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+thead {
+  th {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+@import "../../css3/box-sizing";
+
+/*
+ * 1. Addresses appearance set to searchfield in S5, Chrome
+ * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  @include box-sizing(content-box); /* 2 */
+}

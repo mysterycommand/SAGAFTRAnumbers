@@ -1,0 +1,135 @@
+nav {
+  background: $medgray;
+  overflow: hidden;
+  
+  @include calc(padding-bottom, 8, 16);
+  @include calc(padding-top, 8, 16);
+  
+  @include calc(margin-top, -54, 18);
+  @include border-radius(12px 12px 0 0);
+  @include linear-gradient((-30deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 56.25%, lighten($medgray, 12%) 56.375%, $medgray 61.5%));
+  
+  li {
+    display: inline-block;
+    padding: 0 0.75em;
+    width: 12.5%;
+    
+    @include box-sizing(border-box);
+    
+    a span {
+      display: inline-block;
+      
+      @include calc(padding-top, 8, 16);
+      @include calc(padding-right, 16, 16);
+      @include calc(padding-bottom, 6, 16);
+      @include calc(padding-left, 48, 16);
+      
+      @include box-sizing(border-box);
+    }
+    
+    &.start-over {
+      padding-left: 2.25em;
+      padding-right: 0;
+      
+      a {
+        background: $orange;
+        color: $white;
+        display: inline-block;
+        
+        width: 100%;
+        
+        @include border-radius(8px);
+        @include box-shadow(inset 0 0 5px $alphagray);
+        
+        &:hover {
+          background: lighten($orange, 8%);
+          color: $white;
+        }
+      }
+      
+      span {
+        background: transparent url(../img/icon-start-over.png) no-repeat scroll 1em center;
+      }
+    }
+    
+    &.ask-tim {
+      width: 25%;
+      
+      a {
+        &:hover {
+          span {
+            background: transparent url(../img/icon-ask-tim-hover.png) no-repeat scroll 1em center;
+          }
+        }
+      }
+      
+      span {
+        @include calc(padding-left, 72, 16);
+        background: transparent url(../img/icon-ask-tim.png) no-repeat scroll 1em center;
+      }
+    }
+    
+    &.ask-tim {
+      a {
+        &:hover {
+          span {
+            background: transparent url(../img/icon-ask-tim-hover.png) no-repeat scroll 1em center;
+          }
+        }
+      }
+      
+      span {
+        @include calc(padding-left, 72, 16);
+        background: transparent url(../img/icon-ask-tim.png) no-repeat scroll 1em center;
+      }
+    }
+    
+    &.definitions {
+      a {
+        &:hover {
+          span {
+            background: transparent url(../img/icon-definitions-hover.png) no-repeat scroll 1em center;
+          }
+        }
+      }
+      
+      span {
+        @include calc(padding-left, 60, 16);
+        background: transparent url(../img/icon-definitions.png) no-repeat scroll 1em center;
+      }
+    }
+    
+    &.print {
+      a {
+        &:hover {
+          span {
+            background: transparent url(../img/icon-print-hover.png) no-repeat scroll 1em center;
+          }
+        }
+      }
+      
+      span {
+        @include calc(padding-left, 54, 16);
+        background: transparent url(../img/icon-print.png) no-repeat scroll 1em center;
+      }
+    }
+    
+    &.share {
+      padding-left: center;
+      padding-right: 2.25em;
+      
+      a {
+        &:hover {
+          span {
+            background: transparent url(../img/icon-share-hover.png) no-repeat scroll 1em center;
+          }
+        }
+      }
+      
+      span {
+        @include calc(padding-left, 54, 16);
+        background: transparent url(../img/icon-share.png) no-repeat scroll 1em center;
+      }
+    }
+  }
+}

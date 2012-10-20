@@ -1,0 +1,33 @@
+@import "../gold/zoomable-baseline-func";
+@import "../css3/box-sizing";
+@import "../colors";
+
+body {
+  background: $white;
+}
+
+.orange {
+  background: $orange;
+}
+
+.banner-top {
+  border: 0 solid $medgray;
+  @include calc(border-bottom-width, 2, 16);
+  
+  @include calc(height, 13);
+  width: 100%;
+}
+
+.banner-bottom {
+  border: 0 solid $medgray;
+  @include calc(border-top-width, 2, 16);
+  
+  @include calc(height, 26);
+  width: 100%;
+}
+
+$margin: 100% / 18;
+
+.page {
+  margin: 0 $margin;
+}

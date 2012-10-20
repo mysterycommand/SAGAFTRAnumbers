@@ -1,0 +1,38 @@
+.calculator {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+}
+
+.inner {
+  background: $medgray;
+  
+  @include box-sizing(border-box);
+  @include linear-gradient((top, $medgray 0px, $white 260px));
+    
+  &.left {
+    padding-left: 1.5em;
+    width: 62.5%;
+  }
+    
+  &.right {
+    padding-right: 1.5em;
+    width: 37.5%;
+  }
+}
+
+@import "input";
+@import "output";
+
+.inset {
+  margin: 0 1.5em;
+  position: absolute;
+  
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  @include border-radius(12px 12px 0 0);
+  @include box-shadow(inset 0 0 8px $alphagray);
+}

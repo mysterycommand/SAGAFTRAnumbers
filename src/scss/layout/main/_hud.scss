@@ -1,0 +1,33 @@
+.hud {
+  background: $medgray;
+  margin: 0 auto;
+  padding: 0.75em 0.75em 0;
+  position: relative;
+  width: 25%;
+  
+  @include border-radius(12px 12px 0 0);
+  @include box-sizing(border-box);
+  @include linear-gradient((-30deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 75%, lighten($medgray, 12%) 76%, $medgray 92%));
+  
+  h2 {
+    background: $orange;
+    padding: 0.25em 1em;
+    
+    @include border-radius(8px);
+    @include box-shadow((0 0 25px $alphawhite, inset 0 0 5px $alphagray));
+    @include linear-gradient((left, $orange, #ffa145, $orange));
+    
+    b {
+      position: absolute;
+    }
+    
+    output {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  
+  h5 {
+    width: 100%;
+  }
+}

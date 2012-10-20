@@ -1,0 +1,44 @@
+@import "../gold/zoomable-baseline-func";
+@import "../css3/box-sizing";
+@import "../colors";
+
+header {
+  overflow: hidden;
+  width: 100%;
+  
+  @include calc(margin-top, 16, 26);
+  @include calc(margin-bottom, 12, 26);
+}
+
+hgroup {
+  overflow: hidden;
+  padding: 0 0.75em;
+  @include box-sizing(border-box);
+}
+
+hgroup.left {
+  float: left;
+  width: 75%;
+}
+
+hgroup.right {
+  float: right;
+  width: 25%;
+}
+
+h1 {
+  em {
+    border-left: 1px solid black;
+    @include calc(margin-left, 8, 16);
+    @include calc(padding-left, 12, 16);
+    @include calc(padding-top, 9, 26);
+  }
+  
+  span {
+    @include calc(margin-left, 3, 16);
+  }
+}
+
+h6 {
+  @include calc(margin-top, 30, 26);
+}

@@ -1,0 +1,14 @@
+.output {
+  background: $lightgray;
+  padding: 0.75em;
+  
+  min-height: 540px;
+  
+  @include box-sizing(border-box);
+  @include border-radius(0 12px 0 0);
+  @include box-shadow(inset 12px 0 8px -6px $lightalphagray);
+  
+  table {
+    width: 100%;
+  }
+}

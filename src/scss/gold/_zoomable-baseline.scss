@@ -1,0 +1,22 @@
+@import "zoomable-baseline-func";
+
+/*
+*
+*	Zoomable baseline grid
+*	type size presets
+*
+*/
+
+.small { @include small; }
+
+.normal,
+body, h3 { @include normal; }
+
+.large,
+h2, h1 { @include large; }
+
+.huge { @include huge; }
+
+.massive { @include massive; }
+
+.gigantic { @include gigantic; }
