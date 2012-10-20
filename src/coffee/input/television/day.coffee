@@ -12,7 +12,7 @@ define [
         <fieldset>
           It's a
           <input type="number" name="num-days" id="num-days" value="1" min="1" max="2">
-          day <a href="#shoot">shoot</a>.
+          day <a href="#shoot" class="term open">shoot</a>.
           <span style="display: none;" id="more-days">
             Looking for longer shoots?
             <a href="mailto:togren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question">Contact Tim at SAG-AFTRA</a>!
@@ -23,7 +23,7 @@ define [
       @el = @$el[0]
       
       @performers = []
-      @$el.on 'input', '#num-days', @onInputDays
+      @$el.on 'input change', '#num-days', @onInputDays
       # For some reason if we fire this before it's on the DOM it causes
       # the polyfill to display incorrectly, so we defer until/if it's added.
       # See 'input/job-type' for the actual call.

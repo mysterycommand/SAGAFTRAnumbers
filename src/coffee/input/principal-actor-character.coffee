@@ -11,7 +11,7 @@ define [
         <p>
           Principal actor #{@index + 1} will do
           <input type="number" name="actor-#{@index}-num-characters" value="1" min="1" max="10">
-          <a href="#character-voice">character/voice</a>(s).
+          <a href="#character-voice" class="term open">character/voice</a>(s).
         </p>
 
       """

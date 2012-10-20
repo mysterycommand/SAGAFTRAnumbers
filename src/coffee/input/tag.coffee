@@ -11,7 +11,7 @@ define [
         <fieldset>
           I'll need
           <input type="number" name="num-tags" value="0" min="0">
-          <a href="#tag">tag</a>(s) for this commercial.
+          <a href="#tag" class="term open">tag</a>(s) for this commercial.
         </fieldset>
       """
       @$el = $ @html

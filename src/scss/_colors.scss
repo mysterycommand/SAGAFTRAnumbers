@@ -11,7 +11,9 @@ $medgray: #bcbcbc;
 $gray: #666;
 $darkgray: #474747;
 
-$alphawhite: rgba(255,255,255,0.75);
+$softalphawhite: rgba(255,255,255,0.25);
+$alphawhite: rgba(255,255,255,0.5);
+$hardalphawhite: rgba(255,255,255,0.75);
 
 $lightalphagray: rgba(0,0,0,0.25);
 $alphagray: rgba(0,0,0,0.5);

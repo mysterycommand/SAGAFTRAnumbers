@@ -15,5 +15,6 @@ define [
       """
       @$el = $ @html
       @el = @$el[0]
+      throw "This class was deprecated as of version 0.5!"
   
   ActorWardrobe

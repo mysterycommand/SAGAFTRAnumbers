@@ -4,55 +4,56 @@ define = root.define
 
 define [
   'jquery'
-  'input/actor-wardrobe'
-  'input/extra-wardrobe'
-], ($, ActorWardrobe, ExtraWardrobe) ->
+  # 'input/actor-wardrobe'
+  # 'input/extra-wardrobe'
+], ($) -> #, ActorWardrobe, ExtraWardrobe
 	class PrincipalActorGeneralExtra
     constructor: (@index) ->
       @html = """
         <div>
           On day #{@index + 1}, I'll need
           <input type="number" name="day-#{@index}-num-actors" id="day-#{@index}-num-actors" value="0" min="0" max="10">
-          <a href="#principal-actor">principal actor</a>(s) and
+          <a href="#principal-actor" class="term open">principal actor</a>(s) and
           <input type="number" name="day-#{@index}-num-extras" id="day-#{@index}-num-extras" value="0" min="0" max="10">
-          <a href="#general-extra">general extra</a>(s).
-          <ul class="actors"></ul>
-          <ul class="extras"></ul>
+          <a href="#general-extra" class="term open">general extra</a>(s).
+          <div class="actors" style="display: none">
+            <input type="number" name="actor-wardrobe-fittings" id="actor-wardrobe-fittings" value="0" min="0" max="0">
+            principal actors will need wardrobe fittings.
+          </div>
+          <div class="extras" style="display: none">
+            <input type="number" name="extra-wardrobe-fittings" id="extra-wardrobe-fittings" value="0" min="0" max="0">
+            general extras will need wardrobe fittings.
+          </div>
         </div>
       """
       @$el = $ @html
       @el = @$el[0]
       
-      @actors = []
-      @extras = []
-      @$el.on 'input', "#day-#{@index}-num-actors", @onInputActors
-      @$el.on 'input', "#day-#{@index}-num-extras", @onInputExtras
+      @$el.on 'input change', "#day-#{@index}-num-actors", @onInputActors
+      @$el.on 'input change', "#day-#{@index}-num-extras", @onInputExtras
     
     onInputActors: (event) =>
-      numActors = parseInt(event.target.value, 10)
-      if numActors is @actors.length then return
+      numActors = parseInt event.target.value, 10
+      if numActors > 0 then @$el.find('.actors').show() else @$el.find('.actors').hide()
       
-      if numActors > @actors.length
-        while @actors.length < numActors
-          actor = new ActorWardrobe(@actors.length)
-          @actors.push actor
-          @$el.find('.actors').append actor.$el
-      else
-        while @actors.length > numActors
-          @actors.pop().$el.remove()
+      $fittings = @$el.find '#actor-wardrobe-fittings'
+      prevMax = parseInt $fittings.prop('max'), 10
+      prevVal = parseInt $fittings.val(), 10
+      $fittings.prop 'max', numActors
+      
+      $fittings.val Math.max(0, prevVal + (numActors - prevMax))
+      return
     
     onInputExtras: (event) =>
-      numExtras = parseInt(event.target.value, 10)
-      if numExtras is @extras.length then return
+      numExtras = parseInt event.target.value, 10
+      if numExtras > 0 then @$el.find('.extras').show() else @$el.find('.extras').hide()
       
-      if numExtras > @extras.length
-        while @extras.length < numExtras
-          extra = new ExtraWardrobe(@extras.length)
-          @extras.push extra
-          @$el.find('.extras').append extra.$el
-      else
-        while @extras.length > numExtras
-          @extras.pop().$el.remove()
+      $fittings = @$el.find '#extra-wardrobe-fittings'
+      prevMax = parseInt $fittings.prop('max'), 10
+      prevVal = parseInt $fittings.val(), 10
+      $fittings.prop 'max', numExtras
       
+      $fittings.val Math.max(0, prevVal + (numExtras - prevMax))
+      return
   
   PrincipalActorGeneralExtra

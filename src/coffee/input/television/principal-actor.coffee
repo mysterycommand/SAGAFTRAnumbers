@@ -11,13 +11,13 @@ define [
         <fieldset>
           I'll need
           <input type="number" name="num-actors" id="num-actors" value="0" min="0" max="2">
-          <a href="#principal-actor">principal actor</a>(s).
+          <a href="#principal-actor" class="term open">principal actor</a>(s).
         </fieldset>
       """
       @$el = $ @html
       @el = @$el[0]
       
-      @$el.on 'input', '#num-actors', @onInputActors
+      @$el.on 'input change', '#num-actors', @onInputActors
     
     onInputActors: (event) =>
       # Does nothing for now.
