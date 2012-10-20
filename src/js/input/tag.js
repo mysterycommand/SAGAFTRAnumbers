@@ -1,0 +1,1 @@
+((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery"],function(a){var b;b=function(){function b(){this.html='<fieldset>\n  I\'ll need\n  <input type="number" name="num-tags" value="0" min="0">\n  <a href="#tag">tag</a>(s) for this commercial.\n</fieldset>';this.$el=a(this.html);this.el=this.$el[0]}return b}();return b})})).call(this);

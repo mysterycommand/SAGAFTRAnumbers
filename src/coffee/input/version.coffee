@@ -1,0 +1,20 @@
+root = this
+log = root.log
+define = root.define
+
+define [
+  'jquery'
+], ($) ->
+	class Version
+    constructor: ->
+      @html = """
+        <fieldset>
+          There is
+          <input type="number" name="num-versions" value="1" min="1" max="10">
+          <a href="#version">version</a>(s) of my script.
+        </fieldset>
+      """
+      @$el = $ @html
+      @el = @$el[0]
+  
+  Version

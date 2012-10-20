@@ -1,0 +1,1 @@
+((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery"],function(a){var b;b=function(){function b(b){this.el=b;this.$el=a(this.el)}return b}();return b})})).call(this);

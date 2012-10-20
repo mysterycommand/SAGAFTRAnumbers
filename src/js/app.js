@@ -1,0 +1,1 @@
+((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","input/input","output/output"],function(a,b,c){var d;d=function(){function d(d){this.el=d;this.$el=a(this.el);this.input=new b(this.$el.find("#input")[0]);this.output=new c(this.$el.find("#output")[0]);this.input.$el.on("change",this.output.onChange)}d.prototype.start=function(){};return d}();return d})})).call(this);

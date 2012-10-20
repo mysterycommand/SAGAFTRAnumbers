@@ -113,6 +113,8 @@ nav {
   }
 }
 
+fieldset { @include line(17, 24); }
+
 thead {
   th {
     font-weight: normal;
@@ -126,7 +128,7 @@ footer {
 
 .twitter-feed {
   a { line-height: 1; }
-  p { @include calc(line-height, 32, 14); }
+  p { @include calc(line-height, 36, 14); }
 }
 
 .latest-tweet a         { color: $textblue; }

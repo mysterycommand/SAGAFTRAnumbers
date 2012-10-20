@@ -1,0 +1,1 @@
+((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","input/job-type"],function(a,b){var c;c=function(){function c(c){this.el=c;this.$el=a(this.el);this.jobTypeSelect=new b;this.jobTypeSelect.$el.prependTo(this.$el)}return c}();return c})})).call(this);

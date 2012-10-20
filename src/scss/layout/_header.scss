@@ -6,38 +6,53 @@ header {
   overflow: hidden;
   width: 100%;
   
-  @include calc(margin-top, 16, 26);
-  @include calc(margin-bottom, 12, 26);
+  @include calc(margin-top, 12, 24);
+  @include calc(margin-bottom, 12, 24);
 }
 
 hgroup {
   overflow: hidden;
   padding: 0 0.75em;
+  width: 50%;
+  
   @include box-sizing(border-box);
-}
+  
+  &.left {
+    float: left;
+    padding-left: 0.1em;
+    /*width: 62.5%;*/
+  }
 
-hgroup.left {
-  float: left;
-  width: 62.5%;
-}
-
-hgroup.right {
-  float: right;
-  width: 37.5%;
+  &.right {
+    float: right;
+    padding-right: 0.1em;
+    /*width: 37.5%;*/
+  }
 }
 
 h1 {
-  float: left;
-  @include calc(margin-top, 13, 26);
-  
+/*  
   .kir { 
     background: transparent url(../img/logo-type.jpg) no-repeat scroll center center;
     display: inline-block;
-    
-    @include calc(margin-top, 20, 26);
+    display: none;
     
     width: 399px;
     height: 47px;
+  }
+*/  
+  a {
+    display: inline-block;
+    line-height: 0;
+
+    width: 100%;
+    
+    @include calc(margin-top, 20, 26);
+  }
+  
+  img {
+    width: 100%;
+    max-width: 399px;
   }
   
   em {
@@ -53,5 +68,5 @@ h1 {
 }
 
 h6 {
-  @include calc(margin-top, 66, 24);
+  @include calc(margin-top, 52, 24);
 }

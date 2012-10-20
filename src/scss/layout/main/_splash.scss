@@ -6,10 +6,10 @@
   
   img { position: absolute; }
   
-  .radial   { bottom: 0; left: 50%; margin-left: -525px; }
-  .preview  { bottom: 0; right: -10%; }
-  .subtitle { top: 32px; right: 6.5%; }
-  .title    { top: 84px; left: 7.5%; }
+  .radial   { bottom: 0;    left: -14%; max-width: 1050px; width: 114%; }
+  .preview  { bottom: -2px; left:  18%; max-width: 897px;  width: 97.5%; }
+  .subtitle { top: 35px;    right: 7%;  max-width: 349px;  width: 40%; }
+  .title    { top: 87px;    left: 7.5%; max-width: 274px;  width: 32%; }
   
   .tl { top: 0; left: 0; opacity: 0.5; }
   .br { bottom: 0; right: 0; opacity: 0.5; }

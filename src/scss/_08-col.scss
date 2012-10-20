@@ -13,6 +13,24 @@
 $margin: 100% / 18;
 
 /* @media screen and (min-width: 768px) */
+/*
+@media screen and (min-width: 50em) {
+  $hud-width: 0.375;
+  $left-width: (1 - $hud-width) / 2;
+  
+  $m: percentage($left-width + ($hud-width * 0.50));
+  $n: percentage($left-width + ($hud-width * 0.75));
+  $o: percentage($left-width + ($hud-width * 0.76));
+  $p: percentage($left-width + ($hud-width * 0.92));
+  
+  .hud { width: percentage($hud-width); }
+  nav {
+    @include linear-gradient((-30deg, $medgray 0%, $medgray $m, lighten($medgray, 8%) $n, lighten($medgray, 12%) $o, $medgray $p));
+  }
+}
+*/
+
+/* @media screen and (min-width: 768px) */
 @media screen and (min-width: 50em) {
   body {
     /* Reset baseline grid to 16/16 = 1 */
@@ -21,7 +39,7 @@ $margin: 100% / 18;
   
   h6 {
     @include line(12, 18);
-    @include calc(margin-top, 60, 24);
+    @include calc(margin-top, 48, 24);
   }
 }
 
@@ -41,16 +59,50 @@ $margin: 100% / 18;
   }
   
   h6 {
-    @include line(14, 18);
-    @include calc(margin-top, 52, 24);
+    @include line(15, 22);
+    @include calc(margin-top, 24, 18);
+  }
+/*  
+  .hud { width: 25%; }
+  nav {
+    @include linear-gradient((-30deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 56.25%, lighten($medgray, 12%) 56.375%, $medgray 61.5%));
+  }
+*/
+  $hud-width: 0.25;
+  $left-width: (1 - $hud-width) / 2;
+  
+  $m: percentage($left-width + ($hud-width * 0.50));
+  $n: percentage($left-width + ($hud-width * 0.75));
+  $o: percentage($left-width + ($hud-width * 0.76));
+  $p: percentage($left-width + ($hud-width * 0.92));
+  
+  .hud { width: percentage($hud-width); }
+  nav {
+    @include linear-gradient((-30deg, $medgray 0%, $medgray $m, lighten($medgray, 8%) $n, lighten($medgray, 12%) $o, $medgray $p));
   }
 
   nav li {
-    &.start-over  a { padding-left: 18px + 6px; text-indent: 0; width: auto; }
+    width: 11%;
+    
+    &.start-over  { width: 16%; }
+    &.ask-tim     { width: 21.5%; }
+    &.definitions { width: 13%; }
+    &.print       {}
+    &.share       {}
+    
+    &.start-over  q { padding-left: 18px + 6px; text-indent: 0; width: auto; }
     &.ask-tim     a { padding-left: 39px + 6px; text-indent: 0; width: auto; }
     &.definitions a { padding-left: 25px + 6px; text-indent: 0; width: auto; }
     &.print       a { padding-left: 20px + 6px; text-indent: 0; width: auto; }
     &.share       a { padding-left: 22px + 6px; text-indent: 0; width: auto; }
+  }
+}
+
+/* @media screen and (min-width: 1080px) */
+@media screen and (min-width: 67.5em) {
+  .splash {
+    .radial   { bottom: 0;    left: 50%; margin-left: -590px; max-width: 1050px; width: 114%; }
+    .preview  { bottom: -2px; left: 50%; margin-left: -295px; max-width: 897px;  width: 97.5%; }
   }
 }
 
@@ -67,6 +119,12 @@ $margin: 100% / 18;
   body {
     /* Reset baseline grid to 16/16 = 1.0 */
     /*@include calc(font-size, 16);*/
+  }
+  
+  $margin: 100% / 18;
+
+  .page {
+    margin: 0 $margin * 3;
   }
 }
 

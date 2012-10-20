@@ -4,6 +4,10 @@
 
 body {
   background: $white;
+/*  
+  min-height: 100%;
+  position: relative;
+*/
 }
 
 .orange {
@@ -24,6 +28,11 @@ body {
   
   @include calc(height, 26);
   width: 100%;
+/*  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+*/
 }
 
 $margin: 100% / 18;

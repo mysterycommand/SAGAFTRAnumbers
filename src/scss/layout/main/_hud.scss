@@ -6,7 +6,7 @@
   padding: 0.75em 0.75em 0;
   position: relative;
   
-  width: 25%;
+  width: 37.5%;
   height: 84px;
   
   @include border-radius(12px 12px 0 0);
@@ -15,7 +15,7 @@
   
   h2 {
     background: $orange;
-    padding: 0.25em 1em;
+    padding: 0.25em;
     
     /*width: 100%;*/
     position: absolute;
@@ -29,7 +29,7 @@
     
     @include linear-gradient((left, $orange, #f2b16c, $orange));
   
-    b { position: absolute; }
+/*    b { position: absolute; }*/
   }
   
   .estimate {
@@ -46,10 +46,9 @@
     
     b {
       line-height: 0;
-      margin-top: -12px;
       
-      position: absolute;
-      top: 50%;
+      position: relative;
+      top: 2px;
     }
     
     a {
@@ -64,7 +63,7 @@
     display: block;
     position: absolute;
     right: 1em;
-    bottom: 0;
+    bottom: -0.375em;
     left: 1em;
   }
 }

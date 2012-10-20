@@ -1,0 +1,1 @@
+((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery","underscore"],function(a,b){var c;c=function(){function b(){this.label="Dealer Commercial";this.html="<fieldset>\n  Six month use.\n</fieldset>";this.$el=a(this.html);this.el=this.$el[0]}return b}();return c})})).call(this);

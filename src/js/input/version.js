@@ -1,0 +1,1 @@
+((function(){var a,b,c;c=this;b=c.log;a=c.define;a(["jquery"],function(a){var b;b=function(){function b(){this.html='<fieldset>\n  There is\n  <input type="number" name="num-versions" value="1" min="1" max="10">\n  <a href="#version">version</a>(s) of my script.\n</fieldset>';this.$el=a(this.html);this.el=this.$el[0]}return b}();return b})})).call(this);
