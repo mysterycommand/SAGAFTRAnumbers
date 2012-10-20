@@ -1,0 +1,658 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"extra",
+				"extraSuffix"
+			],
+			[
+				"extr",
+				"extraLabel"
+			],
+			[
+				"numF",
+				"numFiveDays"
+			],
+			[
+				"category",
+				"categoryLabel"
+			],
+			[
+				"sele",
+				"selectedItem"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "v0.7/index.html",
+			"settings":
+			{
+				"buffer_size": 29681,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "v0.7/coffee/main.coffee",
+			"settings":
+			{
+				"buffer_size": 6933,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "v0.7/scss/_orig/layout/main/_hud.scss",
+			"settings":
+			{
+				"buffer_size": 1410,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "nav {\n  background: $medgray;\n  overflow: hidden;\n  \n  height: 33px;\n  \n  @include calc(padding-bottom, 10, 16);\n  @include calc(padding-top, 11, 16);\n  \n  @include calc(margin-top, -54, 18);\n  @include border-radius(12px 12px 0 0);\n  \n  $hud-width: 0.375;\n  $left-width: (1 - $hud-width) / 2;\n  \n  $m: percentage($left-width + ($hud-width * 0.50));\n  $n: percentage($left-width + ($hud-width * 0.75));\n  $o: percentage($left-width + ($hud-width * 0.76));\n  $p: percentage($left-width + ($hud-width * 0.92));\n  \n  @include linear-gradient((-30deg, $medgray 0%, $medgray $m, lighten($medgray, 8%) $n, lighten($medgray, 12%) $o, $medgray $p));\n  \n  li {\n    display: inline-block;\n    padding: 0 0.75em;\n    \n    width: 10%;\n    height: 33px;\n    \n    @include box-sizing(border-box);\n    \n    &.start-over {\n      padding-left: 2.25em;\n      padding-right: 0;\n      width: 15.625%      \n      .inset-button {\n        background: $orange;\n        cursor: pointer;\n        padding: 0;\n        \n        width: 100%;\n        \n        @include border-radius(8px);\n        @include box-shadow(inset 0 0 5px $alphagray);\n        @include box-sizing(border-box);\n        \n        &:hover,\n        &.hover { background: lighten($orange, 8%); }\n      }\n    }\n    \n    &.ask-tim     { width: 15.625%; }\n    &.definitions { padding-right: 0; width: 11%; }\n    &.print       {  }\n    \n    &.share {\n      padding-left: 0;\n      padding-right: 2.25em;\n    }\n    \n    &.start-over  q { text-indent: 18px; width: 18px; }\n    &.ask-tim     a { text-indent: 39px; width: 39px; }\n    &.definitions a { text-indent: 25px; width: 25px; }\n    &.print       a { text-indent: 20px; width: 20px; }\n    &.share       a { text-indent: 22px; width: 22px; }\n    \n    &.start-over  a .icon { width: 18px; background-position: bottom center; }\n    &.ask-tim     a .icon { width: 39px; background-position: top center; }\n    &.definitions a .icon { width: 25px; background-position: top left; }\n    &.print       a .icon { width: 20px; background-position: top right; }\n    &.share       a .icon { width: 22px; background-position: bottom left; }\n    \n    &.start-over  a:hover .icon { background-position: bottom center; }\n    &.ask-tim     a:hover .icon { background-position: center center; }\n    &.definitions a:hover .icon { background-position: center left; }\n    &.print       a:hover .icon { background-position: center right; }\n    &.share       a:hover .icon { background-position: bottom right; }\n  }\n  \n  a, q {\n    display: inline-block;\n    position: relative;\n    \n    padding-top: 5px;\n    padding-bottom: 3px;\n    \n    white-space: nowrap;\n    overflow: hidden;\n    \n    .icon {\n      background: transparent url(../img/nav-icons.png) no-repeat scroll center center;\n      display: block;\n      \n      left: 0;\n      position: absolute;\n      top: 50%;\n      \n      margin-top: -16.5px;\n      \n      height: 33px;\n    }\n  }\n}\n\n.home nav li { display: none }",
+			"file": "v0.7/scss/_orig/layout/main/_nav.scss",
+			"file_size": 2943,
+			"file_write_time": 1333049786000000,
+			"settings":
+			{
+				"buffer_size": 2941,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "v0.7/scss/sag-aftra/baseline.scss",
+			"settings":
+			{
+				"buffer_size": 862,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "v0.7/scss/sag-aftra/colors.scss",
+			"settings":
+			{
+				"buffer_size": 974,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "v0.7/scss/sag-aftra/css3.scss",
+			"settings":
+			{
+				"buffer_size": 942,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "v0.7/scss/style.scss",
+			"settings":
+			{
+				"buffer_size": 4463,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 187.0,
+		"selected_items":
+		[
+			[
+				"new",
+				"File: New File Relative to Current View"
+			],
+			[
+				"sett",
+				"Preferences: Settings - Default"
+			],
+			[
+				"settin",
+				"Preferences: Settings - User"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Discover Packages"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/fubar/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/fubar/Library/Application Support/Sublime Text 2/Packages/Default/test.js",
+		"/Users/fubar/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/fubar/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Applications/eclipse-3.5-carbon/Eclipse.app/Contents/MacOS/eclipse.ini",
+		"/Users/fubar/Sites/st/aftra/v0.7/type/test.tx",
+		"/Users/fubar/Downloads/TypeScript support for Sublime Text/typescript.tmlanguage",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/_04-col.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/style.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/layout/all.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/layout/_page.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/layout/main/_splash.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/layout/main/_calculator.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/normalize.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/colors.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/hud.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/nav.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/header.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/mobile.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/type.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/layout/_header.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/baseline.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/style.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/main.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/css/style.css",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/output.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/input.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/splash.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/tablet.scss",
+		"/Users/fubar/Downloads/phantomjs-1.6.1-macosx-static/README.md",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/screen.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/sag-aftra/css3.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/_typography.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_orig/gold/_zoomable-baseline-func.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/css/sag-aftra/type.css",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/h5bp/print.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/h5bp/helpers.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/h5bp/base.scss",
+		"/Users/fubar/Sites/st/aftra/vendor/html5-boilerplate/css/main.css",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/orig/style.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/player-day.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/output/television.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/output/corp-edu.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/output/output.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/narrator-player-extra.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/rates.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/category.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/extra-day.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/output/line-item-group.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/output/estimator.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/narrator-day.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/corp-edu-on-camera.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/input.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/layout/main/_draggable-number.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/index.html",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/plugins/chosen/chosen.jquery.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_typography.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/scss/_helpers.scss",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/extra-wardrobe.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/corp-edu-audio-only.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/radio/use.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/radio/actor-announcer-singer.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/job-type.coffee",
+		"/Users/fubar/Desktop/ProductDefinition.xml",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/television/broadcast-local-cable-13.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/television/day.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/narrator-spokesperson.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/narrator.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/actor-announcer-character.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/corp-edu-off-camera.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/js/input/corp-edu/category.js",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/corp-edu/*.coffee",
+		"/Users/fubar/Sites/st/aftra/v0.7/coffee/input/television/use-broadcast.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/corp-edu/corp-edu-audio-only.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/corp-edu/corp-edu-off-camera.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/corp-edu/corp-edu-on-camera.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/output/output.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/main.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/index.html",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/television/television-commercial-on-camera.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/job-type.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/television/*.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/television/television-commercial-demo.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/television/television-commercial-off-camera.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/corp-edu/*.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/psa/*.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/radio/*.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/psa/psa-television-on-camera.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/psa/psa-television-off-camera.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/psa/psa-radio.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/radio.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/input.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/radio/use.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/radio/actor-announcer-singer.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/radio/use-broadcast.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/radio/broadcast-wild-spot-13.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/input/actor-announcer-character.coffee",
+		"/Users/fubar/Sites/tm/aftra/v0.7/js/main.js",
+		"/Users/fubar/Sites/tm/aftra/v0.7/scss/layout/main/all.scss",
+		"/Users/fubar/Sites/tm/aftra/v0.7/scss/layout/main/_definitions.scss",
+		"/Users/fubar/Sites/tm/aftra/v0.7/coffee/app.coffee"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"*.scss",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"side",
+			"alphagray",
+			"\n@",
+			"medgray",
+			"alphagray",
+			"calc(",
+			"medgray",
+			"medgrey",
+			"height",
+			"textmedgrey",
+			"gray",
+			"calc(",
+			"123",
+			"closest('p",
+			"p>",
+			"[type=number]",
+			"[type=\"number\"]",
+			"input[type=\"number\"]",
+			"select",
+			"can%E2%80%99t",
+			"can",
+			"FIND ME LATER",
+			"Player",
+			"Narrator",
+			"narrator",
+			"numplayers",
+			"narrators",
+			"characters",
+			"actor",
+			"numActors",
+			"@actors",
+			"television_commercial",
+			"appendPolyfill",
+			"webshim"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": false,
+		"replace_history":
+		[
+			"alphablack",
+			"softgrey",
+			"alphablack",
+			"calc-ems(",
+			"softgrey",
+			"texthardgrey",
+			"grey",
+			"calc-ems(",
+			"closest('div",
+			"div>",
+			"can%26%23x2019%3Bt",
+			"Extra",
+			"Player",
+			"Extra",
+			"Player",
+			"Extra",
+			"player",
+			"numPlayers",
+			"players",
+			"extras",
+			"players",
+			"days",
+			"narrator",
+			"numNarrators",
+			"@narrators",
+			"corp_edu"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "v0.7/index.html",
+					"settings":
+					{
+						"buffer_size": 29681,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4266,
+								4266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 296.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "v0.7/coffee/main.coffee",
+					"settings":
+					{
+						"buffer_size": 6933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5616,
+								5336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Iced Coffee/Syntaxes/IcedCoffeeScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 735.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "v0.7/scss/_orig/layout/main/_hud.scss",
+					"settings":
+					{
+						"buffer_size": 1410,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								133,
+								133
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/Syntaxes/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "v0.7/scss/_orig/layout/main/_nav.scss",
+					"settings":
+					{
+						"buffer_size": 2941,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								879,
+								879
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/Syntaxes/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "v0.7/scss/sag-aftra/baseline.scss",
+					"settings":
+					{
+						"buffer_size": 862,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								302
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/Syntaxes/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "v0.7/scss/sag-aftra/colors.scss",
+					"settings":
+					{
+						"buffer_size": 974,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								183
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/Syntaxes/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "v0.7/scss/sag-aftra/css3.scss",
+					"settings":
+					{
+						"buffer_size": 942,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								658,
+								658
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/Syntaxes/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "v0.7/scss/style.scss",
+					"settings":
+					{
+						"buffer_size": 4463,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3192,
+								3192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/Syntaxes/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1984.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.358346382185,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 319.0,
+	"status_bar_visible": true
+}
