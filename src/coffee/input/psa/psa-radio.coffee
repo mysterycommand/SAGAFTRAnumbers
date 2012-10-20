@@ -11,6 +11,7 @@ define [
 	class PublicServiceAnnouncementRadio
     constructor: ->
       @label = "Public Service Announcement - Radio"
+      @value = "psa_radio"
       @steps = [
         new ActorAnnouncerSinger()
         new Version()

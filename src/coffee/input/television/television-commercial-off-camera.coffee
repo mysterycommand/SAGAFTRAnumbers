@@ -13,6 +13,7 @@ define [
 	class TelevisionCommercialOffCamera
     constructor: ->
       @label = "Television Commercial - (Voiceover/Off Camera)"
+      @value = "television_commercial_off_camera"
       @steps = [
         new PrincipalActor()
         new Version()

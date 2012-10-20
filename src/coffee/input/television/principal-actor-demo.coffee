@@ -27,7 +27,7 @@ define [
       
       if numActors > @actors.length
         while @actors.length < numActors
-          actor = new PrincipalActorCharacter(@actors.length)
+          actor = new PrincipalActorCharacter(@actors.length + 1)
           @actors.push actor
           @$el.appendPolyfill actor.$el
       else

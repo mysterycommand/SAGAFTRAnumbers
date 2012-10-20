@@ -11,18 +11,18 @@ define [
     constructor: (@index) ->
       @html = """
         <div>
-          On day #{@index + 1}, I'll need
-          <input type="number" name="day-#{@index}-num-actors" id="day-#{@index}-num-actors" value="0" min="0" max="10">
+          On day #{@index}, I'll need
+          <input type="number" name="day-#{@index}-num-actors" id="day-#{@index}-num-actors" class="actor" value="0" min="0" max="10">
           <a href="#principal-actor" class="term open">principal actor</a>(s) and
-          <input type="number" name="day-#{@index}-num-extras" id="day-#{@index}-num-extras" value="0" min="0" max="10">
+          <input type="number" name="day-#{@index}-num-extras" id="day-#{@index}-num-extras" class="extra" value="0" min="0" max="10">
           <a href="#general-extra" class="term open">general extra</a>(s).
           <div class="actors" style="display: none">
-            <input type="number" name="actor-wardrobe-fittings" id="actor-wardrobe-fittings" value="0" min="0" max="0">
-            principal actors will need wardrobe fittings.
+            <input type="number" name="day-#{@index}-actors-wardrobe" id="day-#{@index}-actors-wardrobe" class="actors-wardrobe" value="0" min="0" max="0">
+            principal actor(s) will need wardrobe fittings.
           </div>
           <div class="extras" style="display: none">
-            <input type="number" name="extra-wardrobe-fittings" id="extra-wardrobe-fittings" value="0" min="0" max="0">
-            general extras will need wardrobe fittings.
+            <input type="number" name="day-#{@index}-extras-wardrobe" id="day-#{@index}-extras-wardrobe" class="extras-wardrobe" value="0" min="0" max="0">
+            general extra(s) will need wardrobe fittings.
           </div>
         </div>
       """
@@ -36,7 +36,7 @@ define [
       numActors = parseInt event.target.value, 10
       if numActors > 0 then @$el.find('.actors').show() else @$el.find('.actors').hide()
       
-      $fittings = @$el.find '#actor-wardrobe-fittings'
+      $fittings = @$el.find '.actors-wardrobe'
       prevMax = parseInt $fittings.prop('max'), 10
       prevVal = parseInt $fittings.val(), 10
       $fittings.prop 'max', numActors
@@ -48,7 +48,7 @@ define [
       numExtras = parseInt event.target.value, 10
       if numExtras > 0 then @$el.find('.extras').show() else @$el.find('.extras').hide()
       
-      $fittings = @$el.find '#extra-wardrobe-fittings'
+      $fittings = @$el.find '.extras-wardrobe'
       prevMax = parseInt $fittings.prop('max'), 10
       prevVal = parseInt $fittings.val(), 10
       $fittings.prop 'max', numExtras

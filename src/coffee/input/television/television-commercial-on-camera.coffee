@@ -11,6 +11,7 @@ define [
 	class TelevisionCommercialOnCamera
     constructor: ->
       @label = "Television Commercial - (On Camera)"
+      @value = "television_commercial_on_camera"
       @steps = [
         new Day()
         new Use()

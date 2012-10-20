@@ -13,6 +13,7 @@ define [
 	class RadioCommercial
     constructor: ->
       @label = "Radio Commercial"
+      @value = "radio_commercial"
       @steps = [
         new ActorAnnouncerSinger()
         new Version()

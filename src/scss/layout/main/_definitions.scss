@@ -13,9 +13,13 @@
   header {
     margin: 0;
     padding-bottom: 0.75em;
+    &#advisory {
+      padding-bottom: 0;
+      h6 { text-align: center; }
+    }
     
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     
     height: 20%;
     max-height: 100px;
@@ -98,7 +102,7 @@
     ul {
       background-color: $lightgray;
       list-style: none;
-      margin: 0;
+      margin: 0.75em 0 0 0;
       padding: 0;
       
       li:first-child dl {
@@ -119,6 +123,23 @@
         }
       }
     }
+  }
+}
+
+#advisory {
+  h5 {
+    float: none;
+    font-size: 1em;
+    text-align: center;
+  }
+  
+  h6 {
+//    float: none;
+    font-size: 0.8em;
+    font-style: normal;
+    margin: 0 1.5em;
+//    padding: 0 0 1.5em 0;
+    text-align: left;
   }
 }
 

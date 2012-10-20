@@ -9,7 +9,7 @@ define [
   root.isNumberDragging = false
   
   class DraggableNumber
-    constructor: (@element, options) ->
+    constructor: (@element, @options) ->
       @$ele = $(@element).addClass 'draggable-number'
       
       @initializeHover()
@@ -63,9 +63,9 @@ define [
       return
     
     onTouchableDown: (event, touches) =>
-      @min = @$ele.attr('min') ? options?.min ? 0
-      @max = @$ele.attr('max') ? options?.max ? 1e100
-      @step = @$ele.attr('step') ? options?.step ? 1
+      @min = @$ele.attr('min') ? @options?.min ? 0
+      @max = @$ele.attr('max') ? @options?.max ? 1e100
+      @step = @$ele.attr('step') ? @options?.step ? 1
       
       @valStart = parseInt @$ele.val(), 10 or 0
       @isDragging = root.isNumberDragging = true

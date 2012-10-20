@@ -12,7 +12,7 @@
        More info: h5bp.com/i/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>SAG-AFTRAnumbers | Version 0.5</title>
+	<title>SAG-AFTRAnumbers | Version 0.6</title>
 	
 	<meta name="description" content="SAG-AFTRA (Screen Actors Guild - American Federation of Television and Radio Artists) represents more than 150,000 actors, announcers, broadcasters journalists, dancers, DJs, news writers, news editors, program hosts, puppeteers, recording artists, singers, stunt performers, voiceover artists and other media professionals. SAG-AFTRA members are the faces and voices that entertain and inform America and the world. With national offices in Los Angeles and New York, and local offices nationwide, SAG-AFTRA members work together to secure the strongest protections for media artists into the 21st century and beyond.">
 	<meta name="author" content="Screen Actors Guild - American Federation of Television and Radio Artists (SAG-AFTRA) - Twin Cities">
@@ -28,6 +28,8 @@
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="js/rates.js"></script>
+  
   <script src="js/debug/ggs.js"></script>
   <script>
     window.log = function f(){ log.history = log.history || []; log.history.push(arguments); if(this.console) { var args = arguments, newarr; args.callee = args.callee.caller; newarr = [].slice.call(args); if (typeof console.log === 'object') log.apply.call(console.log, console, newarr); else console.log.apply(console, newarr);}};
@@ -44,7 +46,7 @@
     <header>
       <hgroup class="left">
         <h1>
-          <!-- <a href="" class="kir">SAG-AFTRA<b>numbers</b><em class="fpo">Version 0.5</em></a> -->
+          <!-- <a href="" class="kir">SAG-AFTRA<b>numbers</b><em class="fpo">Version 0.6</em></a> -->
           <a href=""><img src="img/SAG-AFTRA-numbers-Twin-Cities-logo-type.jpg" alt="SAG-AFTRAnumbers | Twin Cities"></a>
         </h1>
       </hgroup>
@@ -53,8 +55,8 @@
     <div role="main" class="main">
       <header class="hud">
         <h2 class="estimate">
-          <output name="estimate-total">
-            <b>$</b>1,234,567.89
+          <output id="hud-total" name="hud-total">
+            <b>$</b> <span class="amount">1,234,567.89</span>
           </output>
         </h2>
         <h2 class="start">
@@ -74,7 +76,7 @@
             <a href="mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question"><span class="icon"></span>Ask <b>Tim</b> at SAG-AFTRA</a>
           </li>
           <li class="share right">
-            <a href="mailto:?subject=SAG-AFTRAnumbers%20Estimate&body=ESTIMATE%20SUMMARY%0ALine%20Item%09%09%09$123.45%0AEstimate%20Total%09%09$123.45"><span class="icon"></span>Share</a>
+            <a href="mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Estimate&body="><span class="icon"></span>Share</a>
           </li>
           <li class="print right">
             <a href="javascript:window.print()"><span class="icon"></span>Print</a>
@@ -96,29 +98,44 @@
         </section><!-- end .inner.left -->
         <section class="inner right">
           <div class="output">
-            <table id="output">
-              <colgroup>
-                <col span="1" style="width: 75%;">
-                <col span="1" style="width: 25%;">
-              </colgroup>
-              <thead>
-                <tr>
-                  <th colspan="2">Estimate Summary</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td headers="">Line Item</td>
-                  <td headers="">$123.45</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr>
-                  <td headers="">Estimate Total</td>
-                  <td headers="">$123.45</td>
-                </tr>
-              </tfoot>
-            </table>
+            <div id="output">
+              <table border="0" cellspacing="0" cellpadding="0">
+                <colgroup>
+                  <col id="line-item-label" span="1" style="width: 75%;">
+                  <col id="line-item-amount" span="1" style="width: 25%;">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th colspan="2">Estimate Summary</th>
+                  </tr>
+                </thead>
+              
+                <!-- THIS IS WHERE ALL THE OUTPUT GOES -->
+              
+                <tfoot>
+                  <tr id="estimate-agents-10">
+                    <th headers="#line-item-label" class="label"><a href="#agents-10" class="term open">Talent Agent 10%</a></th>
+                    <td headers="#line-item-amount">$ <span class="amount">0.00</span></td>
+                  </tr>
+                  <tr id="subtotal">
+                    <th headers="#line-item-label" class="label">Subtotal</th>
+                    <th headers="#line-item-amount">$ <span class="amount">0.00</span></th>
+                  </tr>
+                  <tr id="estimate-hr-ph">
+                    <th headers="#line-item-label" class="label"><a href="#hr-ph" class="term open">AFTRA Health &amp; Retirement</a></th>
+                    <td headers="#line-item-amount">$ <span class="amount">0.00</span></td>
+                  </tr>
+                  <tr id="estimate-payroll-taxes">
+                    <th headers="#line-item-label" class="label"><a href="#payroll-taxes" class="term open">Payroll Taxes</a></th>
+                    <td headers="#line-item-amount">$ <span class="amount">0.00</span></td>
+                  </tr>
+                  <tr id="total">
+                    <th headers="#line-item-label" class="label"><a href="#estimate-total" class="term open">Estimate Total</a></th>
+                    <th headers="#line-item-amount">$ <span class="amount">0.00</span></th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </section><!-- end .inner.right -->
         <section id="splash" class="inner both">
@@ -140,13 +157,11 @@
             <span class="pointer"></span>
           </header>
           <div class="terms">
+            <header id="advisory">
+              <h5>Advisory</h5>
+              <h6>These definitions of terms from the SAG-AFTRA Commercials and Corporate/Educational and Non-Broadcast contracts are intended to be helpful descriptions, not exact contract language or comprehensive interpretations of contract.</h6>
+            </header>
             <ul>
-              <li>
-								<dl id="advisory" class="term">
-									<dt>Advisory</dt>
-									<dd>These definitions of terms from the SAG-AFTRA Commercials and Corporate/Educational and Non-Broadcast contracts are intended to be helpful descriptions, not exact contract language nor comprehensive interpretations of contract.</dd>
-								</dl>
-							</li>
               <li>
 								<dl id="actor-announcer" class="term">
 									<dt>Actor/Announcer</dt>
@@ -465,8 +480,6 @@
         <div class="inset"></div>
         <div class="clearfix"></div>
         
-        
-        
         <div id="tooltip-left" class="tooltip left" style="display: none;">
           <div class="inner left">
 
@@ -482,9 +495,18 @@
             
           </div>
         </div><!-- end #tooltip-left -->
-        
-        
-        
+        <div id="tooltip-right" class="tooltip right" style="display: none;">
+          <div class="inner right">
+
+            <span class="pointer"></span>
+            <div class="content">
+              <!-- THIS IS WHERE THE TERM GOES -->
+            </div>
+            <a href="#tooltip-right" class="tooltip right term close">Close<span>&times;</span></a>
+            
+          </div>
+        </div><!-- end #tooltip-left -->
+      
       </div><!-- end .calculator -->
     </div><!-- end .main -->
     <footer>

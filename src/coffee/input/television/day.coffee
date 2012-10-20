@@ -12,7 +12,7 @@ define [
         <fieldset>
           It's a
           <input type="number" name="num-days" id="num-days" value="1" min="1" max="2">
-          day <a href="#shoot" class="term open">shoot</a>.
+          day shoot.
           <span style="display: none;" id="more-days">
             Looking for longer shoots?
             <a href="mailto:togren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question">Contact Tim at SAG-AFTRA</a>!
@@ -35,7 +35,7 @@ define [
       
       if numPerformers > @performers.length
         while @performers.length < numPerformers
-          performer = new PrincipalActorGeneralExtra(@performers.length)
+          performer = new PrincipalActorGeneralExtra(@performers.length + 1)
           @performers.push performer
           @$el.appendPolyfill performer.$el
       else

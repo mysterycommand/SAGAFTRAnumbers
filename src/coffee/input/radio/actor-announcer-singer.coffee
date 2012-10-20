@@ -30,17 +30,19 @@ define [
       @$el.on 'input change', '#num-singers', @onInputSingers
     
     onInputActors: (event) =>
+      # log 'onInputActors', event.type, event.target.id
       numActors = parseInt(event.target.value, 10)
       if numActors is @actors.length then return
       
       if numActors > @actors.length
         while @actors.length < numActors
-          actor = new ActorAnnouncerCharacter(@actors.length)
+          actor = new ActorAnnouncerCharacter(@actors.length + 1)
           @actors.push actor
           @$el.appendPolyfill actor.$el
       else
         while @actors.length > numActors
           @actors.pop().$el.remove()
+      if event.type is 'input' then @$el.trigger 'change'
     
     onInputSingers: (event) =>
       # numSingers = parseInt(event.target.value, 10)
@@ -48,6 +50,6 @@ define [
         @$el.find('#more-singers').filter(":hidden").show()
       else
         @$el.find('#more-singers').filter(":visible").hide()
-      
+      if event.type is 'input' then @$el.trigger 'change'
   
   ActorAnnouncerSinger

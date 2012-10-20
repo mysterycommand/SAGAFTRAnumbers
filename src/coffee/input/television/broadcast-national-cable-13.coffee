@@ -28,12 +28,12 @@ define [
       @selectedIndex = -1
       @selectedItem = null
       @options = [
-        # 'Minimum'
-        # 'Maximum (2,000 units)'
+        'Minimum'
+        'Maximum (2,000 units)'
       ]
       html = ''
       _.each @options, (el, i) -> html += """<option value="#{i}">#{el}</option>"""
-      @$el.find('select').append(@options);
+      @$el.find('select').append(html);
     
     getSelectedItem: -> @selectedItem
     

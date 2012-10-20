@@ -11,6 +11,7 @@ define [
 	class RadioCommercialUse
     constructor: ->
       @label = "Radio Commercial Demo"
+      @value = "radio_commercial_demo"
       @steps = [
         new ActorAnnouncerSinger()
         new Version()

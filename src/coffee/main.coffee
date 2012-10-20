@@ -13,7 +13,8 @@ require.config(
   
     # jQuery plugins.
     'webshim': 'plugins/webshim-1.8.9/polyfiller'
-    'chosen': 'plugins/chosen.jquery-0.9.8'
+    'chosen': 'plugins/chosen/chosen.jquery'
+    # 'chosen': 'plugins/chosen.jquery-0.9.8'
     
     # Require JS plugins.
     'order': 'plugins/order-1.0.5'
@@ -63,6 +64,45 @@ require [
         $('.page').removeClass('home')
         app.start()
     
+      return
+    
+    onClickShare = (event) ->
+      event.preventDefault()
+      url = $(event.target).attr 'href'
+      
+      $('#output tr')
+        .each (i, el) ->
+          $el = $ el
+          
+          line = '%0A'
+          tab = '%09'
+          
+          isHeader = $el.find('th').size() > 0
+          isFirst = $el.parent().is 'thead'
+          isSubtotal = $el.parent().is('.session-fees-subtotal') or $el.parent().is('.usage-fees-subtotal')
+          
+          label = 
+            if isHeader 
+              if isFirst
+                encodeURIComponent($el.find('th').text().toUpperCase())
+              else if isSubtotal
+                line + encodeURIComponent($el.find('.label').text())
+              else
+                line + encodeURIComponent('*' + $el.find('th').text() + '*')
+            else
+              tab + encodeURIComponent($el.find('.label').text())
+          amount = encodeURIComponent $el.find('.amount').text()
+          log amount, isHeader
+          
+          url += line + '------------------------------' if isSubtotal
+          url += label
+          url += tab + amount unless isHeader and ! isSubtotal
+          url += line
+          url += '------------------------------' + line if isSubtotal
+      
+      mailto = window.open url, 'mailto'
+      if mailto and mailto.open and ! mailto.closed then mailto.close()
+      
       return
   
     onClickLogo = (event) ->
@@ -135,8 +175,14 @@ require [
       
       return
     
-    onChangeApp = (event) ->
-      $('.tooltip').fadeOut 400
+    onUpdate = (event) ->
+      # log 'main.onUpdate', event.type, event.target.id
+      $('div.tooltip').filter(":visible").fadeOut 400
+      # if $('#output').height() > $('#input').height() then $('#input').height($('#output').height())
+      height = Math.max $('#input').css('height', 'auto').height(), $('#output').css('height', 'auto').height()
+      
+      $('#input').height height
+      $('#output').height height
       return
     
     $document
@@ -144,9 +190,10 @@ require [
       .on('click', '.term.open, .term.close', onClickTerm)
       .on('click', '.start-over a', onClickStartOver)
       .on('click', '.start a', onClickStart)
+      .on('click', '.share a', onClickShare)
       .on('click', 'h1 a', onClickLogo)
     
-    app.$el.on 'change', onChangeApp
+    app.$el.on 'update', onUpdate
     
     # TODO: Remove for production.
     # $compare = $ '#compare'
@@ -158,8 +205,23 @@ require [
     # $document
     #   .find('.start a').click().end()
     #   # .find('.definitions a').click().end()
-    #   .find('#job-type').val(2).trigger('liszt:updated').trigger('change').end()
+    #   .find('#job-type').val(0).trigger('liszt:updated').trigger('change').end()
+    #   # .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+    #   # .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
     #   # .find('a[href=#actor-announcer]').click().end()
+    #   
+    #   # Radio Commercial
+    #   .find('#num-actors').val(3).trigger('change').end()
+    #   .find('#actor-1-num-characters').val(2).trigger('change').end()
+    #   .find('#actor-2-num-characters').val(3).trigger('change').end()
+    #   .find('#num-singers').val(1).trigger('change').end()
+    #   .find('#num-versions').val(2).trigger('change').end()
+    #   .find('#num-tags').val(12).trigger('change').end()
+    #   .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+    #   .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
+    #   
+    #   # .find('#markets').val([0, 4, 6, 13, 21, 22, 30]).trigger('liszt:updated').trigger('change').end()
+    #   # .find('#markets_chzn').trigger('mousedown').end()
     
     return
   

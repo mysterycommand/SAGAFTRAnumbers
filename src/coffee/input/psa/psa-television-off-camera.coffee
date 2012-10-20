@@ -12,6 +12,7 @@ define [
 	class PublicServiceAnnouncementTelevisionOffCamera
     constructor: ->
       @label = "Public Service Announcement - Television (Off Camera)"
+      @value = "psa_television_off_camera"
       @steps = [
         new PrincipalActor()
         new Version()

@@ -2,16 +2,66 @@
 
 #tooltip-left {
   padding-left: 1.5em;
+  left: 0;
+  width: 62.5%;
+  
+  .pointer {
+    background: transparent url(../img/definitions-tooltip-left-pointer.png) no-repeat scroll top left;
+  }
+}
+
+#tooltip-right {
+  padding-right: 1.5em;
+  right: 0;
+  width: 37.5%;
+  
+  .pointer {
+    background: transparent url(../img/definitions-tooltip-right-pointer.png) no-repeat scroll top left;
+  }
+  
+  .inner {
+    width: 88%;
+    &.right { position: relative; }
+  }
+  
+  .content {
+    background: $gray;
+    padding: 0.5em 0.75em;
+    
+    @include box-shadow(inset 0 0 10px $hardalphawhite);
+    
+    dt {
+      font-size: 1em;
+      font-weight: bold;
+      text-align: left;
+      padding: 0.25em 0;
+    }
+    
+    dd {
+      background: transparent;
+      font-size: 0.875em;
+      font-style: italic;
+      line-height: 1.5;
+      padding: 0.5em 0 0.75em;
+    }
+  }
+  
+  .close {
+    span {
+      color: $gray;
+    }
+  }
+}
+
+
+.tooltip {
   position: absolute;
   top: 0;
-  width: 62.5%;
   z-index: 10;
   
   @include box-sizing(border-box);
   
   .pointer {
-    background: transparent url(../img/definitions-tooltip-pointer.png) no-repeat scroll top left;
-    
     display: block;
     position: absolute;
     margin-left: -14px;
@@ -143,3 +193,4 @@
     .contact-tim { float: right; }
   }
 }
+
