@@ -12,9 +12,9 @@
 @import "sag-aftra/css3";
 
 @mixin reset-box-model {
+	border: 0;
 	margin: 0;
 	padding: 0;
-	border: 0;
 }
 
 @mixin wrapper {
@@ -31,9 +31,9 @@
  * Kellum Image Replacement: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
  **/
 //.kir {
-//	text-indent: 100%;
-//	white-space: nowrap;
-//	overflow: hidden;
+//  text-indent: 100%;
+//  white-space: nowrap;
+//  overflow: hidden;
 //}
 
 /**
@@ -75,8 +75,7 @@ a { text-decoration: none; }
 header,
 nav,
 .inner,
-footer,
-nav li {
+footer {
 	@include wrapper;
 }
 
@@ -86,19 +85,19 @@ nav li {
  * 
  **/
 //h1 {
-//	@include line(26, 42);
-//	@include calc-ems(letter-spacing, 2, 16);
+//  @include line(26, 42);
+//  @include calc-ems(letter-spacing, 2, 16);
 	
-//	em {
-//		font-size: 75%;
-//	}
+//  em {
+//    font-size: 75%;
+//  }
 	
-//	em, b {
-//		font-style: normal;
-//		font-weight: 100;
+//  em, b {
+//    font-style: normal;
+//    font-weight: 100;
 		
-//		@include calc-ems(letter-spacing, 3, 16);
-//	}
+//    @include calc-ems(letter-spacing, 3, 16);
+//  }
 //}
 
 h2 {
@@ -120,16 +119,16 @@ h6 {
 }
 
 //.home {
-//	.estimate, h5,
-////	nav ul,
-//	.inner.left,
-//	.inner.right {
-//		display: none;
-//	}
+//  .estimate, h5,
+////  nav ul,
+//  .inner.left,
+//  .inner.right {
+//    display: none;
+//  }
 //}
 
 .main {
-	margin-top: 1.5em;
+	margin-top: 1em;
 	position: relative;
 }
 
@@ -140,7 +139,7 @@ h6 {
 .estimate { display: block; }
 .start { display: none; }
 
-$hud-width: 37.5%;
+$hud-width: 100%;
 
 .hud {
 	background: $softgrey;
@@ -153,7 +152,12 @@ $hud-width: 37.5%;
 	@include border-radius(12px 12px 0 0);
 	@include box-sizing(border-box);
 
-	@include chrome(50%, 75%, 76%, 92%);
+	@include chrome(30%, 55%, 56%, 72%);
+
+	&.sticky {
+		position: fixed;
+		top: 0;
+	}
 
 	output, a {
 		color: $textwhite;
@@ -174,39 +178,68 @@ $hud-width: 37.5%;
 h5 {
 	color: $texthardgrey;
 	font-weight: normal;
+//  padding-bottom: 38px;
 	
 	text-align: center;
 	text-transform: uppercase;
 	visibility: visible;
 	
-	@include line(12, 24);
+	@include line(10, 18);
 }
 
 nav {
-	position: relative;
-	top: -59px;
+	padding: 0.5em 0.75em;
+	width: 100%;
 
-	@include calc-ems(padding-bottom, 10, 16);
-	@include calc-ems(padding-top, 11, 16);
+	position: fixed;
+	bottom: 0;
 
-	ul { overflow: hidden; }
+	@include chrome(30%, 55%, 56%, 72%);
+
+	ul { 
+		overflow: hidden;
+	}
 
 	li {
+		background: $softalphablack;
 		display: inline-block;
-		background: $softgrey;
+		overflow: hidden;
+		text-align: center;
+		width: 20%;
 
-		&.left { float: left; }
-		&.right { float: right; }
+		@include box-sizing(border-box);
+//    height: 33px;
 
-		a, b {
+		&.left {
+			float: left;
+//      padding: 0 0.625em 0 0;
+		}
+		&.right {
+			float: right;
+//      padding: 0 0 0 0.625em;
+		}
+
+////    &.start-over  { width: 18px; }
+////    &.ask-tim     { width: 39px; }
+////    &.definitions { width: 25px; }
+////    &.print       { width: 20px; }
+////    &.share       { width: 22px; }
+
+		a {
+			background: $softalphablack;
 			display: inline-block;
+			overflow: hidden;
 			position: relative;
+//			text-indent: 100%;
+//			width: 100%;
 
 			padding-top: 5px;
 			padding-bottom: 3px;
 
+//      height: 30px;
+
 			white-space: nowrap;
-			overflow: hidden;
+//      overflow: hidden;
 
 			.icon {
 				background: transparent url(../img/nav-icons.png) no-repeat scroll center center;
@@ -222,17 +255,21 @@ nav {
 			}
 		}
 
-		&.start-over  b { text-indent: 18px; width: 18px; }
+		&.start-over  q {
+			overflow: hidden;
+		}
+
+		&.start-over  q { text-indent: 18px; width: 18px; }
 		&.ask-tim     a { text-indent: 39px; width: 39px; }
 		&.definitions a { text-indent: 25px; width: 25px; }
 		&.print       a { text-indent: 20px; width: 20px; }
 		&.share       a { text-indent: 22px; width: 22px; }
 
-		&.start-over  a .icon { width: 18px; background-position: bottom center; }
-		&.ask-tim     a .icon { width: 39px; background-position: top center; }
-		&.definitions a .icon { width: 25px; background-position: top left; }
-		&.print       a .icon { width: 20px; background-position: top right; }
-		&.share       a .icon { width: 22px; background-position: bottom left; }
+		&.start-over  a       .icon { width: 18px; background-position: bottom center; }
+		&.ask-tim     a       .icon { width: 39px; background-position: top center; }
+		&.definitions a       .icon { width: 25px; background-position: top left; }
+		&.print       a       .icon { width: 20px; background-position: top right; }
+		&.share       a       .icon { width: 22px; background-position: bottom left; }
 
 		&.start-over  a:hover .icon { background-position: bottom center; }
 		&.ask-tim     a:hover .icon { background-position: center center; }
@@ -242,113 +279,121 @@ nav {
 	}
 }
 
+.splash {
+	display: none;
+}
+
+select {
+	max-width: 296px;
+}
+
 //$hud-width: 0.625;
 //$left-width: (1 - $hud-width) / 2;
 
 //.hud {
 
-//	width: $hud-width * 100%;
+//  width: $hud-width * 100%;
 
-//	a {
-//		color: $white;
-//		font-weight: normal;
-//		letter-spacing: 4px;
-//		text-transform: uppercase;
-//		@include text-shadow(0 0 16px $alphablack);
-//	}
+//  a {
+//    color: $white;
+//    font-weight: normal;
+//    letter-spacing: 4px;
+//    text-transform: uppercase;
+//    @include text-shadow(0 0 16px $alphablack);
+//  }
 
-//	b {
-//		display: inline-block;
-//		line-height: 0;
-//	}
+//  b {
+//    display: inline-block;
+//    line-height: 0;
+//  }
 //}
 
 //nav {
-//	background: $softgrey;
+//  background: $softgrey;
 
-//	@include calc-ems(margin-top, -54, 18);
+//  @include calc-ems(margin-top, -54, 18);
 
-//	@include calc-ems(padding-bottom, 10, 16);
-//	@include calc-ems(padding-top, 11, 16);
+//  @include calc-ems(padding-bottom, 10, 16);
+//  @include calc-ems(padding-top, 11, 16);
 
-//	overflow: hidden;
+//  overflow: hidden;
 
-////	$m: percentage($left-width + ($hud-width * 0.50));
-////	$n: percentage($left-width + ($hud-width * 0.75));
-////	$o: percentage($left-width + ($hud-width * 0.76));
-////	$p: percentage($left-width + ($hud-width * 0.92));
+////  $m: percentage($left-width + ($hud-width * 0.50));
+////  $n: percentage($left-width + ($hud-width * 0.75));
+////  $o: percentage($left-width + ($hud-width * 0.76));
+////  $p: percentage($left-width + ($hud-width * 0.92));
 
-//	$m: percentage(0.50 - $left-width);
-//	$n: percentage(0.75 - $left-width);
-//	$o: percentage(0.76 - $left-width);
-//	$p: percentage(0.92 - $left-width);
+//  $m: percentage(0.50 - $left-width);
+//  $n: percentage(0.75 - $left-width);
+//  $o: percentage(0.76 - $left-width);
+//  $p: percentage(0.92 - $left-width);
 
-//	@include chrome($m, $n, $o, $p);
+//  @include chrome($m, $n, $o, $p);
 	
-////	@include chrome(50%, 75%, 76%, 92%);
+////  @include chrome(50%, 75%, 76%, 92%);
 
-//	ul {
-//		margin: 0;
-//		padding: 0;
-//	}
+//  ul {
+//    margin: 0;
+//    padding: 0;
+//  }
 
-//	li {
-//		display: inline-block;
-//		width: 10%;
-//	}
+//  li {
+//    display: inline-block;
+//    width: 10%;
+//  }
 //}
 
 //.calculator {
-//	position: relative;
+//  position: relative;
 //}
 
 //.inner {
-//	background: $softgrey;
-//	min-height: 260px;
-//	@include linear-gradient((top, $softgrey 0px, $white 260px));
+//  background: $softgrey;
+//  min-height: 260px;
+//  @include linear-gradient((top, $softgrey 0px, $white 260px));
 //}
 
 //.splash {
-//	background: $white;
-//	display: block;
-//	overflow: hidden;
+//  background: $white;
+//  display: block;
+//  overflow: hidden;
 
-//	@include border-radius(12px 12px 0 0);
+//  @include border-radius(12px 12px 0 0);
 
-//	img { position: absolute; }
+//  img { position: absolute; }
 
-//	.radial   { bottom: 0;    left: -14%; max-width: 1050px; width: 114%; }
-//	.preview  { bottom: -2px; left:  18%; max-width: 897px;  width: 97.5%; }
-//	.subtitle { top: 35px;    right: 7%;  max-width: 349px;  width: 40%; }
-//	.title    { top: 87px;    left: 7.5%; max-width: 274px;  width: 32%; }
+//  .radial   { bottom: 0;    left: -14%; max-width: 1050px; width: 114%; }
+//  .preview  { bottom: -2px; left:  18%; max-width: 897px;  width: 97.5%; }
+//  .subtitle { top: 35px;    right: 7%;  max-width: 349px;  width: 40%; }
+//  .title    { top: 87px;    left: 7.5%; max-width: 274px;  width: 32%; }
 
-//	.tl { top: -10%; left: -10%; opacity: 0.5; }
-//	.br { bottom: 0; right: 0; opacity: 0.5; }
+//  .tl { top: -10%; left: -10%; opacity: 0.5; }
+//  .br { bottom: 0; right: 0; opacity: 0.5; }
 //}
 
 //.both,
 //.splash,
 //.inset {
-//	position: absolute;
+//  position: absolute;
 
-//	top: 0;
-//	right: 0;
-//	bottom: 0;
-//	left: 0;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
 //}
 
 //.both,
 //.inset {
-//	margin: 0 1.5em;
-//	overflow: hidden;
+//  margin: 0 1.5em;
+//  overflow: hidden;
 //}
 
 //.inset {
-//	/* http://stackoverflow.com/questions/3680429/click-through-a-div-to-underlying-elements */
-//	pointer-events:none;
+//  /* http://stackoverflow.com/questions/3680429/click-through-a-div-to-underlying-elements */
+//  pointer-events:none;
 
-//	@include border-radius(12px 12px 0 0);
-//	@include box-shadow(inset 0 0 8px $hardalphablack);
+//  @include border-radius(12px 12px 0 0);
+//  @include box-shadow(inset 0 0 8px $hardalphablack);
 //}
 
 // print
