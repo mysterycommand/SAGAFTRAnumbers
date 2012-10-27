@@ -29,7 +29,7 @@
     $ = jQuery;
     $.webshims.polyfill();
     $(function() {
-      var $app, $document, $window, app, onClickDefinitions, onClickLogo, onClickShare, onClickStart, onClickStartOver, onClickTerm, onUpdate;
+      var $app, $document, $window, app, hudOffsetTop, onClickDefinitions, onClickLogo, onClickShare, onClickStart, onClickStartOver, onClickTerm, onResize, onScroll, onUpdate;
       $window = $(window);
       $document = $(document);
       $app = $('#app');
@@ -148,6 +148,14 @@
         $('#input').height(height);
         $('#output').height(height);
       };
+      hudOffsetTop = $('#hud').offset().top;
+      onScroll = function(event) {
+        $('#hud').toggleClass('sticky', $window.scrollTop() > hudOffsetTop);
+      };
+      onResize = function(event) {
+        $('#hud-total').find('.amount').text($document.width().toFixed(2));
+      };
+      $window.on('scroll', onScroll);
       $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', '.share a', onClickShare).on('click', 'h1 a', onClickLogo);
       app.$el.on('update', onUpdate);
     });
