@@ -1048,12 +1048,6 @@ textarea {
   line-height: 1.09091em;
 }
 
-/**
- * Kellum Image Replacement: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
- **/
-/**
- * Mobile first.
- **/
 h1, h2, h3, h4, h5, h6,
 ul {
   border: 0;
@@ -1061,6 +1055,24 @@ ul {
   padding: 0;
 }
 
+header,
+nav,
+.inner,
+footer {
+  padding: 0 0.75em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
+ * Kellum Image Replacement: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+ **/
+/**
+ * Mobile first.
+ **/
 img {
   border: 0;
   max-width: 100%;
@@ -1087,18 +1099,6 @@ a {
 
 .page {
   margin: 0;
-}
-
-header,
-nav,
-.inner,
-footer {
-  padding: 0 0.75em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /**
