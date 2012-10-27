@@ -197,7 +197,7 @@
         val = this.$markets.val();
         this.selectedIndex = (val != null ? val.pop() : void 0) || -1;
         this.selectedItem = this.selectedIndex !== -1 ? this.options[this.selectedIndex] : null;
-        if (this.selectedItem === null) {
+        if (!this.selectedItem || this.selectedItem === null) {
           return;
         }
         if (!isNaN(parseInt(this.selectedItem.value, 10))) {

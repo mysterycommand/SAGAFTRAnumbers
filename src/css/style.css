@@ -1726,6 +1726,10 @@ fieldset {
   line-height: 1.41176em;
 }
 
+select {
+  background: transparent;
+}
+
 thead th {
   font-weight: normal;
   text-transform: uppercase;

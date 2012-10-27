@@ -114,6 +114,7 @@ nav {
 }
 
 fieldset { @include line(17, 24); }
+select { background: transparent; }
 
 thead {
   th {

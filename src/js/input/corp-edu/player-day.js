@@ -14,7 +14,7 @@
 
       function PlayerDay(index) {
         this.index = index;
-        this.html = "<p>\n	I'll need day player " + this.index + " for\n	<input type=\"number\" name=\"player-" + this.index + "-num-days\" id=\"player-" + this.index + "-num-days\" class=\"num-days\" value=\"1\" min=\"0.5\" max=\"10\" step=\"0.5\">\n	day(s).\n</p>\n";
+        this.html = "<p>\n	I'll need day player " + this.index + " for\n	<input type=\"number\" name=\"player-" + this.index + "-num-days\" id=\"player-" + this.index + "-num-days\" class=\"num-days\" value=\"1\" min=\"1\" max=\"10\">\n	day(s).\n</p>\n";
         this.$el = $(this.html);
         this.el = this.$el[0];
       }

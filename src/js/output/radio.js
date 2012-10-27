@@ -25,7 +25,7 @@
         numVersions = parseInt($('#num-versions').val(), 10);
         numTags = parseInt($('#num-tags').val(), 10);
         tagRate = 0;
-        if (numTags > 2) {
+        if (numTags > 1) {
           tagRate = rates.tag_2_25;
         }
         if (numTags > 25) {

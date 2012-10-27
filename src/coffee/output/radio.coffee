@@ -16,7 +16,7 @@ define [
       numTags = parseInt $('#num-tags').val(), 10
 
       tagRate = 0
-      if numTags > 2  then tagRate = rates.tag_2_25
+      if numTags > 1  then tagRate = rates.tag_2_25
       if numTags > 25 then tagRate = rates.tag_26_50
       if numTags > 50 then tagRate = rates.tag_51
 

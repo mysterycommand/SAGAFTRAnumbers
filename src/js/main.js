@@ -150,6 +150,7 @@
       };
       $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', '.share a', onClickShare).on('click', 'h1 a', onClickLogo);
       app.$el.on('update', onUpdate);
+      $document.find('.start a').click().end().find('#job-type').val(8).trigger('liszt:updated').trigger('change').end().find('#num-actors').val(3).trigger('change').end().find('#actor-1-num-characters').val(2).trigger('change').end().find('#actor-2-num-characters').val(3).trigger('change').end().find('#num-singers').val(1).trigger('change').end().find('#num-versions').val(2).trigger('change').end().find('#num-tags').val(12).trigger('change').end().find('#use-type').val(0).trigger('liszt:updated').trigger('change').end().find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end();
     });
   });
 

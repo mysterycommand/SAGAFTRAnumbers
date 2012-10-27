@@ -91,7 +91,7 @@ define [
       @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
       
       # log '1', val, @selectedIndex, @selectedItem
-      return if @selectedItem is null
+      return if ! @selectedItem or @selectedItem is null
       
       # log '2', @selectedItem.value, isNaN(parseInt(@selectedItem.value, 10))
       return unless isNaN(parseInt(@selectedItem.value, 10))
