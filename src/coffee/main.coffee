@@ -195,20 +195,6 @@ require [
 			$('#input').height height
 			$('#output').height height
 			return
-
-		hudOffsetTop = $('#hud').offset().top
-		onScroll = (event) ->
-			$('#hud').toggleClass 'sticky', ($window.scrollTop() > hudOffsetTop)
-			return
-		
-		onResize = (event) ->
-			$('#hud-total').find('.amount').text $document.width().toFixed(2)
-			return
-
-		$window
-			.on('scroll', onScroll)
-		# 	.on('resize', onResize)
-		# onResize()
 		
 		$document
 			.on('click', '.definitions.open, .definitions.close', onClickDefinitions)
