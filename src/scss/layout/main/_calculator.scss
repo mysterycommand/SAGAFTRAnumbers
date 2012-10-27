@@ -1,0 +1,84 @@
+@import "../../css3/background-clip";
+
+.calculator {
+  position: relative;
+}
+
+.inner {
+  background: $medgray;
+  
+  @include box-sizing(border-box);
+  @include linear-gradient((top, $medgray 0px, $white 260px));
+    
+  &.left {
+    position: relative;
+    padding-left: 1.5em;
+    width: 62.5%;
+  }
+    
+  &.right {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    
+    padding-right: 1.5em;
+    width: 37.5%;
+  }
+}
+
+@import "splash";
+@import "input";
+@import "output";
+
+.both,
+.splash,
+.inset {
+  position: absolute;
+  
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.both,
+.inset {
+  margin: 0 1.5em;
+  overflow: hidden;
+}
+
+.inset {
+  /* http://stackoverflow.com/questions/3680429/click-through-a-div-to-underlying-elements */
+  pointer-events:none;
+  
+  @include border-radius(12px 12px 0 0);
+  @include box-shadow(inset 0 0 8px $darkalphagray);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+@mixin calc($prop, $px, $em: 16) {
+  #{$prop}: $px / $em * 1em;
+}
+
+@mixin line($font-size-px, $line-height-px) {
+  @include calc(font-size, $font-size-px);
+  @include calc(line-height, $line-height-px, $font-size-px);
+}
+
+@mixin small {
+  @include line(13, 18);
+}
+
+@mixin normal {
+  @include line(16, 24);
+}
+
+@mixin large {
+  @include line(26, 36);
+}
+
+@mixin huge {
+  @include line(42, 48);
+}
+
+@mixin massive {
+  @include line(68, 72);
+}
+
+@mixin gigantic {
+  @include line(110, 120);
+}

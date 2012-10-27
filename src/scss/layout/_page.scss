@@ -1,0 +1,46 @@
+@import "../fonts";
+@import "../gold/zoomable-baseline-func";
+@import "../css3/border-radius";
+@import "../css3/box-shadow";
+@import "../css3/box-sizing";
+@import "../css3/linear-gradient";
+@import "../colors";
+
+body {
+  background: $white;
+  position: relative;
+/*  
+  min-height: 100%;
+*/
+}
+
+.orange {
+  background: $orange;
+}
+
+.banner-top {
+  border: 0 solid $medgray;
+  @include calc(border-bottom-width, 2, 16);
+  
+  @include calc(height, 13);
+  width: 100%;
+}
+
+.banner-bottom {
+  border: 0 solid $medgray;
+  @include calc(border-top-width, 2, 16);
+  
+  @include calc(height, 26);
+  width: 100%;
+/*  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+*/
+}
+
+$margin: 100% / 18;
+
+.page {
+  margin: 0 $margin;
+}

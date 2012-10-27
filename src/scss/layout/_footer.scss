@@ -1,0 +1,69 @@
+@import "../gold/zoomable-baseline-func";
+@import "../css3/border-radius";
+@import "../css3/box-sizing";
+@import "../colors";
+
+footer {
+  margin: 0 1.5em 6em;
+}
+
+.twitter-feed {
+  background: $lightgray;
+  border: 2px solid $medgray;
+  
+  margin: 0.75em 0 3.5em;
+  padding: 1em 1em 1em 0.75em;
+  position: relative;
+  
+  width: 100%;
+  overflow: hidden;
+  
+  @include border-radius(12px);
+  @include box-sizing(border-box);
+}
+
+.twitter,
+.latest-tweet,
+.follow p {
+  float: left;
+}
+
+.latest-tweet {
+  position: absolute;
+  left: 54px;
+  right: 110px;
+  
+	overflow: hidden;
+  text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.follow p { margin-right: 0.75em; }
+
+.follow {
+  float: right;
+}
+
+hr { margin-bottom: 0.5em; }
+
+.aftra-logo {
+  background: $white;
+  float: right;
+  padding: 0 0.4em;
+  margin-right: 2.5em;
+  margin-top: -2.75em;
+}
+
+h4, h5 {
+  float: left;
+}
+
+address {
+  clear: left;
+}
+
+.home footer h3,
+.home footer h4,
+.home footer address {
+  display: none;
+}

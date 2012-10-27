@@ -1,0 +1,30 @@
+.input {
+  background: $white;
+  padding: 1.5em;
+  
+  min-height: 460px;
+  height: 100%;
+  
+  @include box-sizing(border-box);
+  @include border-radius(12px 0 0 0);
+  
+  fieldset {
+    background: #fff url(../img/input-rarr.jpg) no-repeat scroll left 1.25em;
+    border-bottom: 1px solid $medgray;
+    padding: 1em 0 1em 2em;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    p, div { margin: 1em 0 0 2em; }
+    .chzn-container,
+    .chzn-container div { margin: 0; }
+    
+    ul {
+      list-style-type: none;
+    }
+  }
+}
+
+#job-type { width: 70%; }

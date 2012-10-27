@@ -1,354 +1,49 @@
-@import "normalize";
-@import "chosen";
+/*
+  Author: Matt Hayes
+*/
+
+#compare {
+  background: transparent url(../img/_compare.png) no-repeat scroll center center;
+  
+  width: 1200px;
+  height: 1200px;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -600px;
+  
+  opacity: 0.5;
+  text-align: center;
+}
+
+@import "gold/resets";
+
+@import "norm/html5";
 
 @import "h5bp/base";
-
-/* ==========================================================================
-	 Author's custom styles
-	 ========================================================================== */
-
-@import "sag-aftra/baseline";
-@import "sag-aftra/colors";
-@import "sag-aftra/css3";
-
-@mixin reset-box-model {
-	margin: 0;
-	padding: 0;
-	border: 0;
-}
-
-@mixin wrapper {
-	padding: 0 0.75em;
-	@include box-sizing(border-box);
-}
-
-@mixin chrome($a, $b, $c, $d) {
-	$col: $softgrey;
-	@include linear-gradient((-30deg, $col 0%, $col $a, lighten($col, 8%) $b, lighten($col, 12%) $c, $col $d));
-}
-
-/**
- * Kellum Image Replacement: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
- **/
-//.kir {
-//	text-indent: 100%;
-//	white-space: nowrap;
-//	overflow: hidden;
-//}
-
-/**
- * Mobile first.
- **/
-h1, h2, h3, h4, h5, h6,
-ul {
-	@include reset-box-model();
-}
-
-img {
-	border: 0;
-	max-width: 100%;
-	-ms-interpolation-mode: bicubic;
-}
-
-a { text-decoration: none; }
-
-.orange {
-	background: $orange;
-	border: 0 solid $softgrey;
-	width: 100%;
-
-	&.banner-top {
-		@include calc-ems(border-bottom-width, 2, 16);
-		@include calc-ems(height, 13);
-	}
-
-	&.banner-bottom {
-		@include calc-ems(border-top-width, 2, 16);
-		@include calc-ems(height, 26);
-	}
-}
-
-.page {
-	margin: 0;
-}
-
-header,
-nav,
-.inner,
-footer,
-nav li {
-	@include wrapper;
-}
-
-/**
- * 
- * MAKES THE H1 TEXT LOOK LIKE THE LOGOTYPE - NOT IN USE - LOGOTYPE IS JUST AN IMAGE
- * 
- **/
-//h1 {
-//	@include line(26, 42);
-//	@include calc-ems(letter-spacing, 2, 16);
-	
-//	em {
-//		font-size: 75%;
-//	}
-	
-//	em, b {
-//		font-style: normal;
-//		font-weight: 100;
-		
-//		@include calc-ems(letter-spacing, 3, 16);
-//	}
-//}
-
-h2 {
-	background: $orange;
-	padding: 0.25em;
-	text-align: center;
-	
-	@include border-radius(8px);
-	@include box-shadow((0 0 25px $alphawhite, inset 0 0 5px $alphablack));
-	@include linear-gradient((left, $orange, #f2b16c, $orange));
-}
-
-h6 {
-	font-style: italic;
-	font-weight: normal;
-	text-align: right;
-	
-	@include line(11, 18);
-}
-
-//.home {
-//	.estimate, h5,
-////	nav ul,
-//	.inner.left,
-//	.inner.right {
-//		display: none;
-//	}
-//}
-
-.main {
-	margin-top: 1.5em;
-	position: relative;
-}
-
-.home .estimate { display: none; }
-.home .start { display: block; }
-.home h5 { visibility: hidden; }
-
-.estimate { display: block; }
-.start { display: none; }
-
-$hud-width: 37.5%;
-
-.hud {
-	background: $softgrey;
-	margin: 0 auto;
-	padding: 0.75em 0.75em 0;
-	position: relative;
-
-	width: $hud-width;
-
-	@include border-radius(12px 12px 0 0);
-	@include box-sizing(border-box);
-
-	@include chrome(50%, 75%, 76%, 92%);
-
-	output, a {
-		color: $textwhite;
-		display: inline-block;
-		font-weight: normal;
-		position: relative;
-		text-transform: uppercase;
-
-		@include text-shadow(0 0 16px $alphablack);
-	}
-
-	a b {
-		position: relative;
-		top: -2px;
-	}
-}
-
-h5 {
-	color: $texthardgrey;
-	font-weight: normal;
-	
-	text-align: center;
-	text-transform: uppercase;
-	visibility: visible;
-	
-	@include line(12, 24);
-}
-
-nav {
-	position: relative;
-	top: -59px;
-
-	@include calc-ems(padding-bottom, 10, 16);
-	@include calc-ems(padding-top, 11, 16);
-
-	ul { overflow: hidden; }
-
-	li {
-		display: inline-block;
-		background: $softgrey;
-
-		&.left { float: left; }
-		&.right { float: right; }
-
-		a, b {
-			display: inline-block;
-			position: relative;
-
-			padding-top: 5px;
-			padding-bottom: 3px;
-
-			white-space: nowrap;
-			overflow: hidden;
-
-			.icon {
-				background: transparent url(../img/nav-icons.png) no-repeat scroll center center;
-				display: block;
-
-				left: 0;
-				position: absolute;
-				top: 50%;
-
-				margin-top: -16.5px;
-
-				height: 33px;
-			}
-		}
-
-		&.start-over  b { text-indent: 18px; width: 18px; }
-		&.ask-tim     a { text-indent: 39px; width: 39px; }
-		&.definitions a { text-indent: 25px; width: 25px; }
-		&.print       a { text-indent: 20px; width: 20px; }
-		&.share       a { text-indent: 22px; width: 22px; }
-
-		&.start-over  a .icon { width: 18px; background-position: bottom center; }
-		&.ask-tim     a .icon { width: 39px; background-position: top center; }
-		&.definitions a .icon { width: 25px; background-position: top left; }
-		&.print       a .icon { width: 20px; background-position: top right; }
-		&.share       a .icon { width: 22px; background-position: bottom left; }
-
-		&.start-over  a:hover .icon { background-position: bottom center; }
-		&.ask-tim     a:hover .icon { background-position: center center; }
-		&.definitions a:hover .icon { background-position: center left; }
-		&.print       a:hover .icon { background-position: center right; }
-		&.share       a:hover .icon { background-position: bottom right; }
-	}
-}
-
-//$hud-width: 0.625;
-//$left-width: (1 - $hud-width) / 2;
-
-//.hud {
-
-//	width: $hud-width * 100%;
-
-//	a {
-//		color: $white;
-//		font-weight: normal;
-//		letter-spacing: 4px;
-//		text-transform: uppercase;
-//		@include text-shadow(0 0 16px $alphablack);
-//	}
-
-//	b {
-//		display: inline-block;
-//		line-height: 0;
-//	}
-//}
-
-//nav {
-//	background: $softgrey;
-
-//	@include calc-ems(margin-top, -54, 18);
-
-//	@include calc-ems(padding-bottom, 10, 16);
-//	@include calc-ems(padding-top, 11, 16);
-
-//	overflow: hidden;
-
-////	$m: percentage($left-width + ($hud-width * 0.50));
-////	$n: percentage($left-width + ($hud-width * 0.75));
-////	$o: percentage($left-width + ($hud-width * 0.76));
-////	$p: percentage($left-width + ($hud-width * 0.92));
-
-//	$m: percentage(0.50 - $left-width);
-//	$n: percentage(0.75 - $left-width);
-//	$o: percentage(0.76 - $left-width);
-//	$p: percentage(0.92 - $left-width);
-
-//	@include chrome($m, $n, $o, $p);
-	
-////	@include chrome(50%, 75%, 76%, 92%);
-
-//	ul {
-//		margin: 0;
-//		padding: 0;
-//	}
-
-//	li {
-//		display: inline-block;
-//		width: 10%;
-//	}
-//}
-
-//.calculator {
-//	position: relative;
-//}
-
-//.inner {
-//	background: $softgrey;
-//	min-height: 260px;
-//	@include linear-gradient((top, $softgrey 0px, $white 260px));
-//}
-
-//.splash {
-//	background: $white;
-//	display: block;
-//	overflow: hidden;
-
-//	@include border-radius(12px 12px 0 0);
-
-//	img { position: absolute; }
-
-//	.radial   { bottom: 0;    left: -14%; max-width: 1050px; width: 114%; }
-//	.preview  { bottom: -2px; left:  18%; max-width: 897px;  width: 97.5%; }
-//	.subtitle { top: 35px;    right: 7%;  max-width: 349px;  width: 40%; }
-//	.title    { top: 87px;    left: 7.5%; max-width: 274px;  width: 32%; }
-
-//	.tl { top: -10%; left: -10%; opacity: 0.5; }
-//	.br { bottom: 0; right: 0; opacity: 0.5; }
-//}
-
-//.both,
-//.splash,
-//.inset {
-//	position: absolute;
-
-//	top: 0;
-//	right: 0;
-//	bottom: 0;
-//	left: 0;
-//}
-
-//.both,
-//.inset {
-//	margin: 0 1.5em;
-//	overflow: hidden;
-//}
-
-//.inset {
-//	/* http://stackoverflow.com/questions/3680429/click-through-a-div-to-underlying-elements */
-//	pointer-events:none;
-
-//	@include border-radius(12px 12px 0 0);
-//	@include box-shadow(inset 0 0 8px $hardalphablack);
-//}
-
-// print
+@import "h5bp/links";
+@import "h5bp/type/all";
+@import "h5bp/lists";
+@import "h5bp/forms/all";
+@import "h5bp/table";
+@import "h5bp/chromeframe";
+
+@import "gold/fluid-media";
+
+/* PRIMARY STYLES */
+@import "layout/all";
+@import "typography";
+
+/* CHOSEN */
+@import "chosen";
+
+/* MEDIA QUERIES */
+@import "04-col";
+@import "08-col";
+@import "16-col";
+
+@import "helpers";
+
+@import "h5bp/helpers";
+@import "h5bp/print";

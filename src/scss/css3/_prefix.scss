@@ -1,0 +1,8 @@
+$all-vendors: (webkit, moz, ms, o);
+
+@mixin prefix($property, $values, $vendors: $all-vendors) {
+  @each $vendor in $vendors {
+    -#{$vendor}-#{$property}: $values;
+  }
+  #{$property}: $values;
+}
