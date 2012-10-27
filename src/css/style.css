@@ -1056,9 +1056,9 @@ textarea {
  **/
 h1, h2, h3, h4, h5, h6,
 ul {
-  border: 0;
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 img {
@@ -1092,7 +1092,8 @@ a {
 header,
 nav,
 .inner,
-footer {
+footer,
+nav li {
   padding: 0 0.75em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1136,7 +1137,7 @@ h6 {
 }
 
 .main {
-  margin-top: 1em;
+  margin-top: 1.5em;
   position: relative;
 }
 
@@ -1165,7 +1166,7 @@ h6 {
   margin: 0 auto;
   padding: 0.75em 0.75em 0;
   position: relative;
-  width: 100%;
+  width: 37.5%;
   -webkit-border-radius: 12px 12px 0 0;
   -moz-border-radius: 12px 12px 0 0;
   -ms-border-radius: 12px 12px 0 0;
@@ -1176,15 +1177,11 @@ h6 {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  background-image: -webkit-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: -moz-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: -ms-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: -o-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-}
-.hud.sticky {
-  position: fixed;
-  top: 0;
+  background-image: -webkit-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 50%, #d0d0d0 75%, #dbdbdb 76%, #bcbcbc 92%);
+  background-image: -moz-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 50%, #d0d0d0 75%, #dbdbdb 76%, #bcbcbc 92%);
+  background-image: -ms-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 50%, #d0d0d0 75%, #dbdbdb 76%, #bcbcbc 92%);
+  background-image: -o-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 50%, #d0d0d0 75%, #dbdbdb 76%, #bcbcbc 92%);
+  background-image: linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 50%, #d0d0d0 75%, #dbdbdb 76%, #bcbcbc 92%);
 }
 .hud output, .hud a {
   color: white;
@@ -1209,35 +1206,22 @@ h5 {
   text-align: center;
   text-transform: uppercase;
   visibility: visible;
-  font-size: 0.625em;
-  line-height: 1.8em;
+  font-size: 0.75em;
+  line-height: 2em;
 }
 
 nav {
-  padding: 0.5em 0.75em;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  background-image: -webkit-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: -moz-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: -ms-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: -o-linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
-  background-image: linear-gradient(-30deg, #bcbcbc 0%, #bcbcbc 30%, #d0d0d0 55%, #dbdbdb 56%, #bcbcbc 72%);
+  position: relative;
+  top: -59px;
+  padding-bottom: 0.625em;
+  padding-top: 0.6875em;
 }
 nav ul {
   overflow: hidden;
 }
 nav li {
-  background: rgba(0, 0, 0, 0.25);
   display: inline-block;
-  overflow: hidden;
-  text-align: center;
-  width: 20%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -o-box-sizing: border-box;
-  box-sizing: border-box;
+  background: #bcbcbc;
 }
 nav li.left {
   float: left;
@@ -1245,16 +1229,15 @@ nav li.left {
 nav li.right {
   float: right;
 }
-nav li a {
-  background: rgba(0, 0, 0, 0.25);
+nav li a, nav li b {
   display: inline-block;
-  overflow: hidden;
   position: relative;
   padding-top: 5px;
   padding-bottom: 3px;
   white-space: nowrap;
+  overflow: hidden;
 }
-nav li a .icon {
+nav li a .icon, nav li b .icon {
   background: transparent url(../img/nav-icons.png) no-repeat scroll center center;
   display: block;
   left: 0;
@@ -1263,10 +1246,7 @@ nav li a .icon {
   margin-top: -16.5px;
   height: 33px;
 }
-nav li.start-over q {
-  overflow: hidden;
-}
-nav li.start-over q {
+nav li.start-over b {
   text-indent: 18px;
   width: 18px;
 }
@@ -1320,12 +1300,4 @@ nav li.print a:hover .icon {
 }
 nav li.share a:hover .icon {
   background-position: bottom right;
-}
-
-.splash {
-  display: none;
-}
-
-select {
-  max-width: 296px;
 }
