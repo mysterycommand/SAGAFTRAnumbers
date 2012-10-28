@@ -116,19 +116,7 @@ define [
 				# 	price: rates[categoryPrefix + 'session_extra' + extraSuffix]
 
 				lineItems.push lineItem
-
-			# lineItem = 
-			# 	label: ""
-			# 	first:
-			# 		label: ""
-			# 		price: 0
-			# 	items: []
-
-			# lineItem.items.push
-			# 	count: 0
-			# 	label: ""
-			# 	price: 0
-
+			
 			lineItems
 
 		@offCameraSessionLineItems: (rates) ->

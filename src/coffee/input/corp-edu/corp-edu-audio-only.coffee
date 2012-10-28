@@ -7,14 +7,15 @@ define [
 	'underscore'
 
 	'input/corp-edu/category'
-], ($, _, Category) ->
+	'input/corp-edu/principal-actor'
+], ($, _, Category, PrincipalActor) ->
 	class CorpEduAudioOnly
 		constructor: ->
 			@label = "Corporate/Educational & Non-Broadcast - (Audio Only)"
 			@value = "corp_edu_audio_only"
 			@steps = [
 				new Category()
-				# new PrincipalActor()
+				new PrincipalActor()
 			]
 			@el = []
 			_.each @steps, (el, i) => @el.push el.el

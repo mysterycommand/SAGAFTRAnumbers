@@ -154,4 +154,32 @@ root.sag_aftra_rates =
 
 		cat_2_session_actor_first_hour:   437.50
 		cat_2_session_actor_addl_half:    115.00
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
