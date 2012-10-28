@@ -14,6 +14,7 @@ define [
     constructor: ->
       @label = "Television Commercial - (Voiceover/Off Camera)"
       @value = "television_commercial_off_camera"
+      @definitionId = "tv-commercial"
       @steps = [
         new PrincipalActor()
         new Version()

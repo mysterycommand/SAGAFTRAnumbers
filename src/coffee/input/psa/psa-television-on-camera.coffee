@@ -12,6 +12,7 @@ define [
     constructor: ->
       @label = "Public Service Announcement - Television (On Camera)"
       @value = "psa_television_on_camera"
+      @definitionId = "psa"
       @steps = [
         new Day()
         new Version()

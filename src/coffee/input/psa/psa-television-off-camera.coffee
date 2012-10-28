@@ -13,6 +13,7 @@ define [
     constructor: ->
       @label = "Public Service Announcement - Television (Off Camera)"
       @value = "psa_television_off_camera"
+      @definitionId = "psa"
       @steps = [
         new PrincipalActor()
         new Version()

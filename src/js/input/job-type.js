@@ -41,7 +41,7 @@
           this.$el.siblings().detach();
           this.$el.find('a.term.open').remove();
           this.$el.afterPolyfill(this.selectedItem.$el);
-          this.$el.find('span').append("<a href=\"#" + (this.selectedItem.value.replace("_", "-")) + "\" class=\"term open\">What is: " + this.selectedItem.label + "?</a>");
+          this.$el.find('span').append("<a href=\"#" + this.selectedItem.definitionId + "\" class=\"term open\">What is: " + this.selectedItem.label + "?</a>");
           return this.selectedItem.$el.find('#num-days').trigger('input');
         } else {
           this.$el.siblings().find('input').filter('[type=number]').each(function(i, el) {

@@ -13,6 +13,7 @@ define [
 		constructor: ->
 			@label = "Corporate/Educational & Non-Broadcast - (Audio Only)"
 			@value = "corp_edu_audio_only"
+			@definitionId = "co-ed-contract"
 			@steps = [
 				new Category()
 				new PrincipalActor()

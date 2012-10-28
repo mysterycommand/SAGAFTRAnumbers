@@ -13,6 +13,7 @@ define [
     constructor: ->
       @label = "Television Commercial - (On Camera)"
       @value = "television_commercial_on_camera"
+      @definitionId = "tv-commercial"
       @steps = [
         new Day()
         new Use()

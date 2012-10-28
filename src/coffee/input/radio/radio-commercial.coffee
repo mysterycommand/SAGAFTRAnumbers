@@ -14,6 +14,7 @@ define [
     constructor: ->
       @label = "Radio Commercial"
       @value = "radio_commercial"
+      @definitionId = "radio-commercial"
       @steps = [
         new ActorAnnouncerSinger()
         new Version()
