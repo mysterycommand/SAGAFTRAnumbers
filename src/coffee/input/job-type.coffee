@@ -16,11 +16,13 @@ define [
 	class JobType
 		constructor: () ->
 			@html = """
-				<fieldset>
+				<fieldset class="job-type-fieldset">
 					I'm hiring for a
-					<select name="job-type" id="job-type" class="chzn-select" data-placeholder="please choose your job">
-						<option value="-1" data-value="none"></option>
-					</select>.
+					<span class="job-type-span">
+						<select name="job-type" id="job-type" class="chzn-select" data-placeholder="please choose your job">
+							<option value="-1" data-value="none"></option>
+						</select>
+					</span>
 				</fieldset>
 			"""
 			@$el = $ @html
@@ -63,7 +65,7 @@ define [
 				
 				# FIND ME LATER
 				@$el.afterPolyfill @selectedItem.$el
-				@$el.append """<a href="##{@selectedItem.value.replace "_", "-"}" class="term open">What is #{@selectedItem.label}?</a>"""
+				@$el.find('span').append """<a href="##{@selectedItem.value.replace "_", "-"}" class="term open">What is: #{@selectedItem.label}?</a>"""
 				# @$el.after @selectedItem.$el
 				
 				# This only applies to 'input/television/principal-actor-general-extra', but it needs to be called after that object is added to the DOM.

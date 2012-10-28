@@ -27,4 +27,19 @@
   }
 }
 
-#job-type { width: 70%; }
+.job-type-fieldset { vertical-align: top; }
+.job-type-span {
+  display: inline-block;
+  width: 70%;
+
+  a {
+    display: inline-block;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.2;
+    padding: 0.125em 0.25em;
+
+    @include box-sizing(border-box);
+  }
+}
+#job-type { width: 100%; }
