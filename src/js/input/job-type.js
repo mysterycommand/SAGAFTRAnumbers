@@ -39,14 +39,17 @@
         this.selectedItem = this.selectedIndex !== -1 ? this.options[this.selectedIndex] : null;
         if (this.selectedItem != null) {
           this.$el.siblings().detach();
+          this.$el.find('a.term.open').remove();
           this.$el.afterPolyfill(this.selectedItem.$el);
+          this.$el.append("<a href=\"#" + (this.selectedItem.value.replace("_", "-")) + "\" class=\"term open\">What is " + this.selectedItem.label + "?</a>");
           return this.selectedItem.$el.find('#num-days').trigger('input');
         } else {
           this.$el.siblings().find('input').filter('[type=number]').each(function(i, el) {
             return $(el).val($(el).attr('min') || 0).trigger('change');
           });
           this.$el.siblings().find('select').not('#job-type').val(-1).trigger('liszt:updated').trigger('change').filter('[multiple]').val([]).trigger('liszt:updated').trigger('change');
-          return this.$el.siblings().detach();
+          this.$el.siblings().detach();
+          return this.$el.find('a.term.open').remove();
         }
       };
 

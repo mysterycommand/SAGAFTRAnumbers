@@ -7,9 +7,9 @@ define [
 ], ($) ->
 	class CorpEdu
 		@onCameraSessionLineItems: (rates) ->
-			category = parseInt $('#category').val(), 10 # Should be 1, or 2.
-			categoryLabel = if (category == 1) then 'Category I' else 'Category II'
-			categoryPrefix = if (category == 1) then 'cat_1_' else 'cat_2_'
+			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, or 1.
+			categoryLabel = if (category == 0) then 'Category I' else 'Category II'
+			categoryPrefix = if (category == 0) then 'cat_1_' else 'cat_2_'
 			
 			numNarrators = parseInt $('#num-narrators').val(), 10
 			numPlayers = parseInt $('#num-players').val(), 10

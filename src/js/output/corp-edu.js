@@ -16,9 +16,9 @@
 
       CorpEdu.onCameraSessionLineItems = function(rates) {
         var category, categoryLabel, categoryPrefix, extraLabel, extraSuffix, extraTypeIndex, i, lineItem, lineItems, numDays, numExtras, numFiveDays, numFullDays, numHalfDays, numNarrators, numPlayers, numSingleDays, numThreeDays;
-        category = parseInt($('#category').val(), 10);
-        categoryLabel = category === 1 ? 'Category I' : 'Category II';
-        categoryPrefix = category === 1 ? 'cat_1_' : 'cat_2_';
+        category = parseInt($('input:radio[name=category]:checked').val(), 10);
+        categoryLabel = category === 0 ? 'Category I' : 'Category II';
+        categoryPrefix = category === 0 ? 'cat_1_' : 'cat_2_';
         numNarrators = parseInt($('#num-narrators').val(), 10);
         numPlayers = parseInt($('#num-players').val(), 10);
         numExtras = parseInt($('#num-extras').val(), 10);

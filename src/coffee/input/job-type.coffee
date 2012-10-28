@@ -59,9 +59,11 @@ define [
 			
 			if @selectedItem?
 				@$el.siblings().detach() # TODO: Make sure that detach is better than remove, and that we're not having a bunch of event handler references floating around.
+				@$el.find('a.term.open').remove()
 				
 				# FIND ME LATER
 				@$el.afterPolyfill @selectedItem.$el
+				@$el.append """<a href="##{@selectedItem.value.replace "_", "-"}" class="term open">What is #{@selectedItem.label}?</a>"""
 				# @$el.after @selectedItem.$el
 				
 				# This only applies to 'input/television/principal-actor-general-extra', but it needs to be called after that object is added to the DOM.
@@ -74,6 +76,7 @@ define [
 					.filter('[multiple]').val([]).trigger('liszt:updated').trigger('change')
 				
 				@$el.siblings().detach() # TODO: Make sure that detach is better than remove, and that we're not having a bunch of event handler references floating around.
+				@$el.find('a.term.open').remove()
 	
 	JobType
 

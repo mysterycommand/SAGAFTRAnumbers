@@ -15,23 +15,17 @@
 
       function Category() {
         this.onChange = __bind(this.onChange, this);
-        this.html = "<fieldset>\n	It's a\n	<select name=\"category\" id=\"category\" class=\"chzn-select\" data-placeholder=\"please choose...\">\n		<!-- USER MUST CHOOSE A CATEGORY! -->\n		<!-- <option value=\"-1\"></option> -->\n	</select>\n	program.\n</fieldset>";
+        this.html = "<fieldset>\n	<span style=\"vertical-align: top;\">It's a</span>\n	<span style=\"display: inline-block;\">\n		<input type=\"radio\" name=\"category\" id=\"category-i\" value=\"0\" checked /> <label for=\"category-i\">Category I</label><br/>\n		<input type=\"radio\" name=\"category\" id=\"category-ii\" value=\"1\" /> <label for=\"category-ii\">Category II</label>\n	</span>\n	program.\n</fieldset>";
         this.$el = $(this.html);
         this.el = this.$el[0];
         this.setupOptions();
-        this.$el.on('change', '#category', this.onChange);
+        this.$el.on('change', 'input', this.onChange);
       }
 
       Category.prototype.setupOptions = function() {
-        var html;
         this.selectedIndex = -1;
         this.selectedItem = null;
-        this.options = ['Category I', 'Category II'];
-        html = '';
-        _.each(this.options, function(el, i) {
-          return html += "<option value=\"" + (i + 1) + "\">" + el + "</option>";
-        });
-        return this.$el.find('select').append(html);
+        return this.options = ['Category I', 'Category II'];
       };
 
       Category.prototype.getSelectedItem = function() {
