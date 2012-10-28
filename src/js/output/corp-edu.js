@@ -15,11 +15,12 @@
       function CorpEdu() {}
 
       CorpEdu.onCameraSessionLineItems = function(rates) {
-        var category, categoryLabel, categoryPrefix, extraLabel, extraSuffix, extraTypeIndex, i, lineItem, lineItems, numDays, numExtras, numFiveDays, numFullDays, numHalfDays, numNarrators, numPlayers, numSingleDays, numThreeDays;
+        var category, categoryLabel, categoryPrefix, extraLabel, extraSuffix, extraTypeIndex, i, lineItem, lineItems, numDays, numExtras, numFiveDays, numFullDays, numHalfDays, numHalfPlayers, numNarrators, numPlayers, numSingleDays, numThreeDays;
         category = parseInt($('input:radio[name=category]:checked').val(), 10);
         categoryLabel = category === 0 ? 'Category I' : 'Category II';
         categoryPrefix = category === 0 ? 'cat_1_' : 'cat_2_';
         numNarrators = parseInt($('#num-narrators').val(), 10);
+        numHalfPlayers = parseInt($('#num-half-players').val(), 10);
         numPlayers = parseInt($('#num-players').val(), 10);
         numExtras = parseInt($('#num-extras').val(), 10);
         numDays = 0;
@@ -42,6 +43,18 @@
               price: rates[categoryPrefix + 'session_narrator_day_2']
             });
           }
+          lineItems.push(lineItem);
+        }
+        i = 0;
+        while (i++ < numHalfPlayers) {
+          lineItem = {
+            label: "" + categoryLabel + " Half-day Player " + i,
+            first: {
+              label: "4-hour Session at $ " + (rates[categoryPrefix + 'session_player_half_day'].toFixed(2)),
+              price: rates[categoryPrefix + 'session_player_half_day']
+            },
+            items: []
+          };
           lineItems.push(lineItem);
         }
         i = 0;
@@ -75,13 +88,6 @@
               count: numSingleDays,
               label: "Single Day Session(s) at $ " + (rates[categoryPrefix + 'session_player_day_1'].toFixed(2)),
               price: rates[categoryPrefix + 'session_player_day_1']
-            });
-          }
-          if (numHalfDays) {
-            lineItem.items.push({
-              count: numHalfDays,
-              label: "Half Day Session(s) at $ " + (rates[categoryPrefix + 'session_player_half_day'].toFixed(2)),
-              price: rates[categoryPrefix + 'session_player_half_day']
             });
           }
           lineItems.push(lineItem);
