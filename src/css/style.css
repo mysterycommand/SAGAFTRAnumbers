@@ -1030,7 +1030,7 @@ nav a .icon, nav q .icon {
 
 .job-type-span {
   display: inline-block;
-  width: 70%;
+  width: 73%;
 }
 .job-type-span a {
   display: inline-block;
@@ -1047,6 +1047,12 @@ nav a .icon, nav q .icon {
 
 #job-type {
   width: 100%;
+}
+
+#more-days {
+  display: block;
+  font-size: 15px;
+  font-style: italic;
 }
 
 .output {
@@ -1542,6 +1548,14 @@ footer {
   box-sizing: border-box;
 }
 
+/* TEMPORARILY HIDDEN! */
+section.twitter-feed {
+  border: 0;
+  height: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
 .twitter,
 .latest-tweet,
 .follow p {
@@ -1749,6 +1763,7 @@ fieldset {
 
 select {
   background: transparent;
+  width: 100%;
 }
 
 thead th {

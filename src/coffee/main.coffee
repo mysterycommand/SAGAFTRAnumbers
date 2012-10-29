@@ -50,9 +50,9 @@ require [
 		$app = $ '#app'
 		app = new App($app[0])
 	
-		# $('.chzn-select').not('.chzn-done').chosen
-		# 	allow_single_deselect: true
-		# 	disable_search_threshold: 20
+		$('.chzn-select').not('.chzn-done').chosen
+			allow_single_deselect: true
+			disable_search_threshold: 20
 		
 		onClickStartOver = (event) ->
 			event.preventDefault()
@@ -220,13 +220,13 @@ require [
 		#   $compare.show()
 		#   onResize()
 		
-		$document
-			.find('.start a').click().end()
-			# .find('.definitions a').click().end()
-			.find('#job-type').val(9).trigger('liszt:updated').trigger('change').end()
-			# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
-			# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
-			# .find('a[href=#actor-announcer]').click().end()
+		# $document
+		# 	.find('.start a').click().end()
+		# 	# .find('.definitions a').click().end()
+		# 	.find('#job-type').val(9).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('a[href=#actor-announcer]').click().end()
 			
 		# 	# # Radio Commercial
 		# 	# .find('#num-actors').val(3).trigger('change').end()

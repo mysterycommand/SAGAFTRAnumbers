@@ -22,6 +22,14 @@ footer {
   @include box-sizing(border-box);
 }
 
+/* TEMPORARILY HIDDEN! */
+section.twitter-feed {
+  border: 0;
+  height: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
 .twitter,
 .latest-tweet,
 .follow p {

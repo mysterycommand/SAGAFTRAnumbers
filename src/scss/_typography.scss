@@ -114,13 +114,16 @@ nav {
 }
 
 fieldset { @include line(17, 24); }
-select { background: transparent; }
+select {
+  background: transparent;
+  width: 100%;
+}
 
 thead {
   th {
     font-weight: normal;
-    text-transform: uppercase;
-  }
+    text-transform: uppercase
+      }
 }
 
 footer {

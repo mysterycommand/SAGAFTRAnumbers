@@ -24,6 +24,12 @@
       }
 
       Input.prototype.onChange = function(event) {
+        this.$el.find('.chzn-select').not('.chzn-done').each(function(i, el) {
+          return $(el).chosen({
+            allow_single_deselect: !!$(el).find('option[value=-1]').size(),
+            disable_search_threshold: 20
+          });
+        });
         this.$el.find('input[type=number]').not('.draggable-number').each(function(i, el) {
           return new DraggableNumber(el);
         });

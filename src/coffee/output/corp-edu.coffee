@@ -106,7 +106,7 @@ define [
 				lineItem = 
 					label: "#{categoryLabel} Extra #{i} - #{numDays} Days Total"
 					first:
-						label: "#{extraLabel} at #{rates[categoryPrefix + 'session_extra' + extraSuffix].toFixed(2)}"
+						label: "#{extraLabel} at $ #{rates[categoryPrefix + 'session_extra' + extraSuffix].toFixed(2)}"
 						price: rates[categoryPrefix + 'session_extra' + extraSuffix] * numDays
 					items: []
 
@@ -120,21 +120,33 @@ define [
 			lineItems
 
 		@offCameraSessionLineItems: (rates) ->
+			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, or 1.
+			categoryLabel = if (category == 0) then 'Category I' else 'Category II'
+			categoryPrefix = if (category == 0) then 'cat_1_' else 'cat_2_'
+
+			numPrincipals = parseInt $('#num-principals').val(), 10
+
 			lineItems = []
+
+			i = 0
+			while i++ < numPrincipals
+				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
 			
-			lineItem = 
-				label: ""
-				first:
-					label: ""
-					price: 0
-				items: []
+				lineItem = 
+					label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+					first:
+						label: "First Hour"
+						price: rates[categoryPrefix + 'session_actor_first_hour']
+					items: []
 
-			lineItem.items.push
-				count: 0
-				label: ""
-				price: 0
+				if numHours - 1
+					lineItem.items.push
+						count: (numHours - 1) * 2
+						label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
+						price: rates[categoryPrefix + 'session_actor_addl_half']
 
-			lineItems.push lineItem
+				lineItems.push lineItem
+			
 			lineItems
 
 		@audioOnlySessionLineItems: (rates) ->

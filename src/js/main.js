@@ -34,6 +34,10 @@
       $document = $(document);
       $app = $('#app');
       app = new App($app[0]);
+      $('.chzn-select').not('.chzn-done').chosen({
+        allow_single_deselect: true,
+        disable_search_threshold: 20
+      });
       onClickStartOver = function(event) {
         event.preventDefault();
         app.restart();
@@ -146,7 +150,6 @@
       };
       $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', '.share a', onClickShare).on('click', 'h1 a', onClickLogo);
       app.$el.on('update', onUpdate);
-      $document.find('.start a').click().end().find('#job-type').val(9).trigger('liszt:updated').trigger('change').end();
     });
   });
 
