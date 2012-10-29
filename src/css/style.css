@@ -1,5 +1,5 @@
 /*
-  Author: Matt Hayes
+	Author: Matt Hayes
 */
 #compare {
   background: transparent url(../img/_compare.png) no-repeat scroll center center;
@@ -1024,15 +1024,15 @@ nav a .icon, nav q .icon {
   list-style-type: none;
 }
 
-.job-type-fieldset {
+#job-type-fieldset {
   vertical-align: top;
 }
 
-.job-type-span {
+#job-type-span {
   display: inline-block;
   width: 73%;
 }
-.job-type-span a {
+#job-type-span > a {
   display: inline-block;
   font-size: 15px;
   font-style: italic;
@@ -2618,5 +2618,26 @@ address em {
 
   h2, h3 {
     page-break-after: avoid;
+  }
+}
+@media print {
+  .banner-top,
+  .hud,
+  nav,
+  #input-section,
+  footer,
+  .banner-bottom {
+    display: none;
+  }
+
+  header a[href]:after {
+    content: "";
+  }
+  header h6 {
+    margin-top: 1em;
+  }
+
+  #output-section {
+    width: 100%;
   }
 }

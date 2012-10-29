@@ -131,7 +131,8 @@ define [
 			return
 		
 		corp_edu_audio_only: ->
-			@sessionFeesEstimator.estimate CorpEdu.audioOnlySessionLineItems @rates
+			# @sessionFeesEstimator.estimate CorpEdu.audioOnlySessionLineItems @rates
+			@sessionFeesEstimator.estimate CorpEdu.offCameraSessionLineItems @rates # It looks llke these are the same.
 			
 			@html = @sessionFeesEstimator.html
 			@cost = @sessionFeesEstimator.cost

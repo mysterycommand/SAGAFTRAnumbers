@@ -149,22 +149,22 @@ define [
 			
 			lineItems
 
-		@audioOnlySessionLineItems: (rates) ->
-			lineItems = []
+		# @audioOnlySessionLineItems: (rates) ->
+		# 	lineItems = []
 			
-			lineItem = 
-				label: ""
-				first:
-					label: ""
-					price: 0
-				items: []
+		# 	lineItem = 
+		# 		label: ""
+		# 		first:
+		# 			label: ""
+		# 			price: 0
+		# 		items: []
 
-			lineItem.items.push
-				count: 0
-				label: ""
-				price: 0
+		# 	lineItem.items.push
+		# 		count: 0
+		# 		label: ""
+		# 		price: 0
 
-			lineItems.push lineItem
-			lineItems
+		# 	lineItems.push lineItem
+		# 	lineItems
 
 	CorpEdu

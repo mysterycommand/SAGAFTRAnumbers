@@ -1,20 +1,20 @@
 /*
-  Author: Matt Hayes
+	Author: Matt Hayes
 */
 
 #compare {
-  background: transparent url(../img/_compare.png) no-repeat scroll center center;
-  
-  width: 1200px;
-  height: 1200px;
+	background: transparent url(../img/_compare.png) no-repeat scroll center center;
+	
+	width: 1200px;
+	height: 1200px;
 
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -600px;
-  
-  opacity: 0.5;
-  text-align: center;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -600px;
+	
+	opacity: 0.5;
+	text-align: center;
 }
 
 @import "gold/resets";
@@ -47,3 +47,25 @@
 
 @import "h5bp/helpers";
 @import "h5bp/print";
+
+@media print {
+
+	.banner-top,
+	.hud,
+	nav,
+	#input-section,
+	footer,
+	.banner-bottom {
+		display: none;
+	}
+
+	header {
+		a[href]:after { content: ""; }
+		h6 { margin-top: 1em; }
+	}
+
+	#output-section {
+		width: 100%;
+	}
+
+}
