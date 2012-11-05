@@ -11,7 +11,7 @@ define [
 ], ($, _, PrincipalActor, Version, Tag) ->
 	class PublicServiceAnnouncementTelevisionOffCamera
     constructor: ->
-      @label = "Public Service Announcement - Television (Off Camera)"
+      @label = "Public Service Announcement - Television (Voiceover/Off Camera)"
       @value = "psa_television_off_camera"
       @definitionId = "psa"
       @steps = [

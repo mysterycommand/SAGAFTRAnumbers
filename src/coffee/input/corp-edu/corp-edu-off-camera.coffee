@@ -11,7 +11,7 @@ define [
 ], ($, _, Category, PrincipalActor) ->
 	class CorpEduOffCamera
 		constructor: ->
-			@label = "Corporate/Educational & Non-Broadcast - (Off Camera)"
+			@label = "Corporate/Educational & Non-Broadcast - (Voiceover/Off Camera)"
 			@value = "corp_edu_off_camera"
 			@definitionId = "co-ed-contract"
 			@steps = [

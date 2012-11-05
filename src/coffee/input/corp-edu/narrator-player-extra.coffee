@@ -20,12 +20,12 @@ define [
 						<a href="#narrator-spokesperson" class="term open">narrator/spokesperson</a>(s),
 					</div>
 					<div>
-						<input type="number" name="num-half-players" id="num-half-players" value="0" min="0" max="10">
-						<a href="#day-performer" class="term open">half day player</a>(s), and
+						<input type="number" name="num-players" id="num-players" value="0" min="0" max="10">
+						<a href="#day-performer" class="term open">day performer (or day player</a>(s)), and
 					</div>
 					<div>
-						<input type="number" name="num-players" id="num-players" value="0" min="0" max="10">
-						<a href="#day-performer" class="term open">day player</a>(s), and
+						<input type="number" name="num-half-players" id="num-half-players" value="0" min="0" max="10">
+						<a href="#day-performer" class="term open">half day player</a>(s), and
 					</div>
 					<div>
 						<input type="number" name="num-extras" id="num-extras" value="0" min="0" max="10">

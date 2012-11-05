@@ -17,7 +17,7 @@ define [
 		constructor: () ->
 			@html = """
 				<fieldset id="job-type-fieldset">
-					I'm hiring for a
+					<span style="vertical-align: top;">I'm hiring for a</span>
 					<span id="job-type-span">
 						<select name="job-type" id="job-type" class="chzn-select" data-placeholder="please choose your job">
 							<option value="-1" data-value="none"></option>

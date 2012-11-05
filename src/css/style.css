@@ -1024,10 +1024,6 @@ nav a .icon, nav q .icon {
   list-style-type: none;
 }
 
-#job-type-fieldset {
-  vertical-align: top;
-}
-
 #job-type-span {
   display: inline-block;
   width: 73%;
@@ -1139,6 +1135,19 @@ nav a .icon, nav q .icon {
 }
 .output .amount {
   text-align: right;
+}
+
+.cta {
+  background: #f3f4f5;
+  padding: 0.75em 1em;
+  margin: 3em 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 0.8125em;
+  line-height: 1.38462em;
 }
 
 .both,

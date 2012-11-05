@@ -82,3 +82,41 @@
     text-align: right;
   }
 }
+
+.cta {
+  background: $lightestgray;
+  padding: 0.75em 1em;
+  margin: 3em 0;
+
+  @include border-radius(10px);
+  @include small;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
