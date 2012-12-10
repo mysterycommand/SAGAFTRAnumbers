@@ -185,6 +185,9 @@ require [
 			
 			return
 		
+		updateCount = 0
+		updateCountToCTA = 10
+
 		onUpdate = (event) ->
 			# log 'main.onUpdate', event.type, event.target.id
 			$('div.tooltip').filter(":visible").fadeOut 400
@@ -193,6 +196,12 @@ require [
 			
 			$('#input').height height
 			$('#output').height height
+
+			if updateCount < updateCountToCTA
+				updateCount++
+				if updateCount == updateCountToCTA
+					$('#output-cta').fadeIn 400
+
 			return
 		
 		$document
@@ -220,26 +229,26 @@ require [
 		#   $compare.show()
 		#   onResize()
 		
-		# $document
-		# 	.find('.start a').click().end()
-		# 	# .find('.definitions a').click().end()
-		# 	.find('#job-type').val(0).trigger('liszt:updated').trigger('change').end()
-		# 	# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
-		# 	# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
-		# 	# .find('a[href=#actor-announcer]').click().end()
+		$document
+			.find('.start a').click().end()
+			# .find('.definitions a').click().end()
+			.find('#job-type').val(10).trigger('liszt:updated').trigger('change').end()
+			# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+			# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
+			# .find('a[href=#actor-announcer]').click().end()
 			
-		# 	# Radio Commercial
-		# 	.find('#num-actors').val(3).trigger('change').end()
-		# 	.find('#actor-1-num-characters').val(2).trigger('change').end()
-		# 	.find('#actor-2-num-characters').val(3).trigger('change').end()
-		# 	.find('#num-singers').val(1).trigger('change').end()
-		# 	.find('#num-versions').val(2).trigger('change').end()
-		# 	.find('#num-tags').val(12).trigger('change').end()
-		# 	.find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
-		# 	.find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
+			# # Radio Commercial
+			# .find('#num-actors').val(3).trigger('change').end()
+			# .find('#actor-1-num-characters').val(2).trigger('change').end()
+			# .find('#actor-2-num-characters').val(3).trigger('change').end()
+			# .find('#num-singers').val(1).trigger('change').end()
+			# .find('#num-versions').val(2).trigger('change').end()
+			# .find('#num-tags').val(12).trigger('change').end()
+			# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+			# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
 			
-		# 	# .find('#markets').val([0, 4, 6, 13, 21, 22, 30]).trigger('liszt:updated').trigger('change').end()
-		# 	# .find('#markets_chzn').trigger('mousedown').end()
+			# .find('#markets').val([0, 4, 6, 13, 21, 22, 30]).trigger('liszt:updated').trigger('change').end()
+			# .find('#markets_chzn').trigger('mousedown').end()
 		
 		return
 	

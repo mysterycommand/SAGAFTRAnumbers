@@ -10,7 +10,7 @@ define [
 			@html = """
 				<p>
 					I'll need principal actor #{@index} for
-					<input type="number" name="principal-#{@index}-num-hours" id="principal-#{@index}-num-hours" class="num-hours" value="1" min="1" max="8" step="0.5">
+					<input type="number" name="principal-#{@index}-num-hours" id="principal-#{@index}-num-hours" class="num-hours" value="1" min="1" max="8">
 					hours(s).
 				</p>
 

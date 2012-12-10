@@ -6,17 +6,15 @@ define [
 	'jquery'
 	'underscore'
 
-	'input/corp-edu/category'
-	'input/corp-edu/principal-actor'
-], ($, _, Category, PrincipalActor) ->
+	'input/corp-edu/category-audio-only'
+], ($, _, CategoryAudioOnly) ->
 	class CorpEduAudioOnly
 		constructor: ->
 			@label = "Corporate/Educational & Non-Broadcast - (Audio Only)"
 			@value = "corp_edu_audio_only"
 			@definitionId = "co-ed-contract"
 			@steps = [
-				new Category()
-				new PrincipalActor()
+				new CategoryAudioOnly()
 			]
 			@el = []
 			_.each @steps, (el, i) => @el.push el.el
