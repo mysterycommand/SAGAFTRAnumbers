@@ -8,14 +8,14 @@ define [
 
 	'input/corp-edu/principal-actor-hour'
 ], ($, _, PrincipalActorHour) ->
-	class PrincipalActor
+	class PrincipalActorAudioOnly
 		constructor: ->
 			@html = """
 				<fieldset>
 					I'll need:
 					<div>
 						<input type="number" name="num-principals" id="num-principals" value="0" min="0" max="10">
-						<a href="#principal-actor" class="term open">principal actor</a>(s),
+						<a href="#principal-actor-audio-only" class="term open">Audio Only - principal actor</a>(s),
 					</div>
 				</fieldset>
 			"""
@@ -42,4 +42,4 @@ define [
 
 			if event.type is 'input' then @$el.trigger 'change'
 
-	PrincipalActor
+	PrincipalActorAudioOnly

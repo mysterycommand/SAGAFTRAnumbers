@@ -6,16 +6,15 @@ define [
 	'jquery'
 	'underscore'
 
-	'input/corp-edu/principal-actor'
-	'input/corp-edu/principal-actor-storecasting'
-], ($, _, PrincipalActor, PrincipalActorStorecasting) ->
+	'input/corp-edu/use-storecasting'
+], ($, _, UseStorecasting) ->
 	class Category
 		constructor: ->
 			@html = """
 				<fieldset>
 					<span style="vertical-align: top;">This Audio Only program is a (please choose one):</span>
 					<div>
-						<input type="radio" name="category" id="category-i" value="0" /> <label for="category-i">Category I</label><br/>
+						<input type="radio" name="category" id="category-i" value="0" checked /> <label for="category-i">Category I</label><br/>
 						
 						<input type="radio" name="category" id="category-ii" value="1" /> <label for="category-ii">Category II</label><br/>
 						
@@ -35,16 +34,12 @@ define [
 			
 			@setupOptions()
 			@$el.on 'change', 'input', @onChange
-
-			@$el.find('input').first().prop('checked', true).change()
-			return
 		
 		setupOptions: ->
 			@selectedIndex = -1
 			@selectedItem = null
 			@options = [
-				new PrincipalActor(),
-				new PrincipalActorStorecasting()
+				new UseStorecasting()
 			]
 		# 	html = ''
 		# 	_.each @options, (el, i) -> html += """<option value="#{i}">#{el}</option>"""
@@ -53,21 +48,37 @@ define [
 		getSelectedItem: -> @selectedItem
 		
 		onChange: (event) =>
-			@selectedIndex = parseInt(event.target.value, 10)
-			# @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
-			if @selectedIndex isnt -1
-				if @selectedIndex is 0 or @selectedIndex is 1 or @selectedIndex is 3 
-					@selectedItem = @options[0]
-				else
-					@selectedItem = @options[1]
-			else
-				@selectedItem =  null
+			@selectedIndex = parseInt event.target.value, 10
 
-			@$el.nextAll().detach()
+			if @selectedIndex isnt parseInt @$el.find('#storecasting').val(), 10
+				@selectedItem.$el.detach() if @selectedItem?
+				@selectedItem = null
+				return
+
+			@selectedItem = @options[0]
+			# # @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
+			# if @selectedIndex isnt -1
+			# 	if @selectedIndex is 0 or @selectedIndex is 1 or @selectedIndex is 3 
+			# 		@selectedItem = @options[0]
+			# 	else
+			# 		@selectedItem = @options[1]
+			# else
+			# 	@selectedItem =  null
+
+			# @$el.nextAll().detach()
 			
 			if @selectedItem?
 				# FIND ME LATER
-				@$el.afterPolyfill @selectedItem.$el
-			# log @selectedIndex, @selectedItem
+				@$el.parent().appendPolyfill @selectedItem.$el
+				log @selectedIndex, @selectedItem, @$el
 	
 	Category
+
+
+
+
+
+
+
+
+
