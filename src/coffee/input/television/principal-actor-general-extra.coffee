@@ -29,8 +29,9 @@ define [
       @$el = $ @html
       @el = @$el[0]
       
-      @$el.on 'input change', "#day-#{@index}-num-actors", @onInputActors
-      @$el.on 'input change', "#day-#{@index}-num-extras", @onInputExtras
+      if @index is 1
+        @$el.on 'input change', "#day-#{@index}-num-actors", @onInputActors
+        @$el.on 'input change', "#day-#{@index}-num-extras", @onInputExtras
     
     onInputActors: (event) =>
       numActors = parseInt event.target.value, 10

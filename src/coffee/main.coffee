@@ -73,8 +73,10 @@ require [
 			return
 		
 		onClickShare = (event) ->
-			event.preventDefault()
-			url = $(event.target).attr 'href'
+			# event.preventDefault()
+			$targ = $(event.target)
+			url = $targ.attr 'href'
+			url = url.substr(0, url.indexOf('body=') + 5)
 			
 			$('#output tr')
 				.each (i, el) ->
@@ -110,9 +112,10 @@ require [
 					url += line
 					url += '------------------------------' + line if isSubtotal
 			
-			mailto = window.open url, 'mailto'
-			if mailto and mailto.open and ! mailto.closed then mailto.close()
-			
+			# mailto = window.open url, 'mailto'
+			# if mailto and mailto.open and ! mailto.closed then mailto.close()
+			$targ.attr 'href', url
+
 			return
 	
 		onClickLogo = (event) ->
@@ -229,27 +232,27 @@ require [
 		#   $compare.show()
 		#   onResize()
 		
-		$document
-			.find('.start a').click().end()
-			# .find('.definitions a').click().end()
-			.find('#job-type').val(10).trigger('liszt:updated').trigger('change').end()
-			# .find('#storecasting').prop('checked', true).trigger('change').end()
-			# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
-			# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
-			# .find('a[href=#actor-announcer]').click().end()
+		# $document
+		# 	.find('.start a').click().end()
+		# 	# .find('.definitions a').click().end()
+		# 	.find('#job-type').val(10).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('#storecasting').prop('checked', true).trigger('change').end()
+		# 	# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('a[href=#actor-announcer]').click().end()
 			
-			# # Radio Commercial
-			# .find('#num-actors').val(3).trigger('change').end()
-			# .find('#actor-1-num-characters').val(2).trigger('change').end()
-			# .find('#actor-2-num-characters').val(3).trigger('change').end()
-			# .find('#num-singers').val(1).trigger('change').end()
-			# .find('#num-versions').val(2).trigger('change').end()
-			# .find('#num-tags').val(12).trigger('change').end()
-			# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
-			# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
+		# 	# # Radio Commercial
+		# 	# .find('#num-actors').val(3).trigger('change').end()
+		# 	# .find('#actor-1-num-characters').val(2).trigger('change').end()
+		# 	# .find('#actor-2-num-characters').val(3).trigger('change').end()
+		# 	# .find('#num-singers').val(1).trigger('change').end()
+		# 	# .find('#num-versions').val(2).trigger('change').end()
+		# 	# .find('#num-tags').val(12).trigger('change').end()
+		# 	# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
 			
-			# .find('#markets').val([0, 4, 6, 13, 21, 22, 30]).trigger('liszt:updated').trigger('change').end()
-			# .find('#markets_chzn').trigger('mousedown').end()
+		# 	# .find('#markets').val([0, 4, 6, 13, 21, 22, 30]).trigger('liszt:updated').trigger('change').end()
+		# 	# .find('#markets_chzn').trigger('mousedown').end()
 		
 		return
 	

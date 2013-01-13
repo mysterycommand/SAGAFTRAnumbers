@@ -113,38 +113,38 @@ root.sag_aftra_rates =
     corp_edu_on_camera:
         
         # SESSION FEES
-        cat_1_session_narrator_day_1:     873.50
-        cat_1_session_narrator_day_2:     480.50
+        cat_1_session_narrator_day_1:     891.00
+        cat_1_session_narrator_day_2:     490.00
 
-        cat_1_session_player_half_day:    312.50
-        cat_1_session_player_day_1:       480.50
-        cat_1_session_player_day_3:      1209.00
-        cat_1_session_player_week:       1687.50
+        cat_1_session_player_half_day:    318.50
+        cat_1_session_player_day_1:       490.00
+        cat_1_session_player_day_3:      1233.00
+        cat_1_session_player_week:       1721.50
 
-        cat_1_session_extra_general:      125.00
-        cat_1_session_extra_special:      137.50
-        cat_1_session_extra_silent:       233.50
+        cat_1_session_extra_general:      127.50
+        cat_1_session_extra_special:      140.50
+        cat_1_session_extra_silent:       238.00
 
-        cat_2_session_narrator_day_1:    1035.00
-        cat_2_session_narrator_day_2:     597.50
+        cat_2_session_narrator_day_1:    1056.00
+        cat_2_session_narrator_day_2:     609.50
 
-        cat_2_session_player_half_day:    388.50
-        cat_2_session_player_day_1:       597.50
-        cat_2_session_player_day_3:      1409.50
-        cat_2_session_player_week:       2089.50
+        cat_2_session_player_half_day:    396.00
+        cat_2_session_player_day_1:       609.50
+        cat_2_session_player_day_3:      1520.50
+        cat_2_session_player_week:       2344.50
 
-        cat_2_session_extra_general:      125.00
-        cat_2_session_extra_special:      137.50
-        cat_2_session_extra_silent:       233.50
+        cat_2_session_extra_general:      127.50
+        cat_2_session_extra_special:      140.50
+        cat_2_session_extra_silent:       238.00
         
     corp_edu_off_camera:
         
         # SESSION FEES
-        cat_1_session_actor_first_hour:   393.00
-        cat_1_session_actor_addl_half:    115.00
+        cat_1_session_actor_first_hour:   401.00
+        cat_1_session_actor_addl_half:    117.50
 
-        cat_2_session_actor_first_hour:   437.50
-        cat_2_session_actor_addl_half:    115.00
+        cat_2_session_actor_first_hour:   446.50
+        cat_2_session_actor_addl_half:    117.50
         
     corp_edu_audio_only:
         

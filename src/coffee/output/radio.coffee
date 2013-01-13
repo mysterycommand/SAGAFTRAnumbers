@@ -41,8 +41,8 @@ define [
           label: "Add'l Versions of the Script"
           price: rates.session_actor
         
-        if (tagRate) then lineItem.items.push
-          count: numTags - 2
+        if (i is 1 and tagRate) then lineItem.items.push
+          count: numTags - 1
           label: "Add'l Tags at $ #{tagRate.toFixed(2)}"
           price: tagRate
         
