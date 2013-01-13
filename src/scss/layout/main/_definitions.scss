@@ -12,18 +12,20 @@
   
   header {
     margin: 0;
-    padding-bottom: 0.75em;
-    &#advisory {
-      padding-bottom: 0;
-      h6 { text-align: center; }
-    }
+//    padding-bottom: 0.75em;
     
     position: relative;
     overflow: hidden;
     
-    height: 20%;
+//    height: 20%;
     max-height: 100px;
     @include box-sizing(border-box);
+
+    &#advisory {
+      height: auto;
+      padding: 0.5em 0;
+      text-align: center;
+    }
     
     h2 {
       background-color: $orange;
@@ -91,18 +93,24 @@
   .terms {
     border-top: 3px solid $darkgray;
     margin: 0;
-    padding-top: 0.75em;
+//    padding-top: 0.75em;
     
     @include definitions-font;
     @include box-sizing(border-box);
     
-    height: 80%;
+//    height: 66.5%;
+    position: absolute;
+    top: 170px;
+    right: 0.75em;
+    bottom: 0.75em;
+    left: 0.75em;
+
     overflow: scroll;
     
     ul {
       background-color: $lightgray;
       list-style: none;
-      margin: 0.75em 0 0 0;
+      margin: 0;
       padding: 0;
       
       li:first-child dl {
@@ -130,7 +138,7 @@
   h5 {
     float: none;
     font-size: 1em;
-    text-align: center;
+//    text-align: center;
   }
   
   h6 {
@@ -139,7 +147,7 @@
     font-style: normal;
     margin: 0 1.5em;
 //    padding: 0 0 1.5em 0;
-    text-align: left;
+    text-align: center;
   }
 }
 

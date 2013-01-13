@@ -132,8 +132,21 @@ define [
 			while i++ < numPrincipals
 				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
 			
+				# lineItem = 
+				# 	label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+				# 	first:
+				# 		label: "First Hour"
+				# 		price: rates[categoryPrefix + 'session_actor_first_hour']
+				# 	items: []
+
+				# if numHours - 1
+				# 	lineItem.items.push
+				# 		count: (numHours - 1) * 2
+				# 		label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
+				# 		price: rates[categoryPrefix + 'session_actor_addl_half']
+
 				lineItem = 
-					label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+					label: "#{categoryLabel} Principal #{i}"
 					first:
 						label: "First Hour"
 						price: rates[categoryPrefix + 'session_actor_first_hour']
@@ -141,9 +154,9 @@ define [
 
 				if numHours - 1
 					lineItem.items.push
-						count: (numHours - 1) * 2
-						label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
-						price: rates[categoryPrefix + 'session_actor_addl_half']
+						count: (numHours - 1)
+						label: "Add'l Hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half'] * 2).toFixed(2)}"
+						price: rates[categoryPrefix + 'session_actor_addl_half'] * 2
 
 				lineItems.push lineItem
 			
@@ -173,8 +186,21 @@ define [
 			while i++ < numPrincipals
 				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
 			
+				# lineItem = 
+				# 	label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+				# 	first:
+				# 		label: "First Hour"
+				# 		price: rates[categoryPrefix + 'session_actor_first_hour']
+				# 	items: []
+
+				# if numHours - 1
+				# 	lineItem.items.push
+				# 		count: (numHours - 1) * 2
+				# 		label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
+				# 		price: rates[categoryPrefix + 'session_actor_addl_half']
+			
 				lineItem = 
-					label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+					label: "#{categoryLabel} Principal #{i}"
 					first:
 						label: "First Hour"
 						price: rates[categoryPrefix + 'session_actor_first_hour']
@@ -182,9 +208,9 @@ define [
 
 				if numHours - 1
 					lineItem.items.push
-						count: (numHours - 1) * 2
-						label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
-						price: rates[categoryPrefix + 'session_actor_addl_half']
+						count: (numHours - 1)
+						label: "Add'l Hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half'] * 2).toFixed(2)}"
+						price: rates[categoryPrefix + 'session_actor_addl_half'] * 2
 
 				lineItems.push lineItem
 			
@@ -203,14 +229,16 @@ define [
 
 			lineItems = []
 			
-			lineItem = 
-				label: "Storecasting (#{useLabel})"
-				first:
-					label: "#{numPrincipals} Principal Actor(s)"
-					price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
-				items: []
+			i = 0
+			while i++ < numPrincipals
+				lineItem = 
+					label: "Storecasting (#{useLabel})"
+					first:
+						label: "#{numPrincipals} Principal Actor(s)"
+						price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
+					items: []
 
-			lineItems.push lineItem
+				lineItems.push lineItem
 
 			lineItems
 

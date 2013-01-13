@@ -122,7 +122,7 @@
         while (i++ < numPrincipals) {
           numHours = parseFloat($("#principal-" + i + "-num-hours").val(), 10);
           lineItem = {
-            label: "" + categoryLabel + " Principal " + i + " - " + numHours + " Hours Total",
+            label: "" + categoryLabel + " Principal " + i,
             first: {
               label: "First Hour",
               price: rates[categoryPrefix + 'session_actor_first_hour']
@@ -131,9 +131,9 @@
           };
           if (numHours - 1) {
             lineItem.items.push({
-              count: (numHours - 1) * 2,
-              label: "Add'l Half Hours at $ " + (rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)),
-              price: rates[categoryPrefix + 'session_actor_addl_half']
+              count: numHours - 1,
+              label: "Add'l Hours at $ " + ((rates[categoryPrefix + 'session_actor_addl_half'] * 2).toFixed(2)),
+              price: rates[categoryPrefix + 'session_actor_addl_half'] * 2
             });
           }
           lineItems.push(lineItem);
@@ -174,7 +174,7 @@
         while (i++ < numPrincipals) {
           numHours = parseFloat($("#principal-" + i + "-num-hours").val(), 10);
           lineItem = {
-            label: "" + categoryLabel + " Principal " + i + " - " + numHours + " Hours Total",
+            label: "" + categoryLabel + " Principal " + i,
             first: {
               label: "First Hour",
               price: rates[categoryPrefix + 'session_actor_first_hour']
@@ -183,9 +183,9 @@
           };
           if (numHours - 1) {
             lineItem.items.push({
-              count: (numHours - 1) * 2,
-              label: "Add'l Half Hours at $ " + (rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)),
-              price: rates[categoryPrefix + 'session_actor_addl_half']
+              count: numHours - 1,
+              label: "Add'l Hours at $ " + ((rates[categoryPrefix + 'session_actor_addl_half'] * 2).toFixed(2)),
+              price: rates[categoryPrefix + 'session_actor_addl_half'] * 2
             });
           }
           lineItems.push(lineItem);
@@ -194,7 +194,7 @@
       };
 
       CorpEdu.audioOnlyUsageLineItems = function(rates) {
-        var category, categoryPrefix, lineItem, lineItems, numPrincipals, use, useLabel, useSuffix;
+        var category, categoryPrefix, i, lineItem, lineItems, numPrincipals, use, useLabel, useSuffix;
         category = parseInt($('input:radio[name=category]:checked').val(), 10);
         if (category !== 3) {
           return [];
@@ -205,15 +205,18 @@
         useLabel = use === 0 ? '3 Month Use' : '6 Month Use';
         numPrincipals = parseInt($('#num-principals').val(), 10);
         lineItems = [];
-        lineItem = {
-          label: "Storecasting (" + useLabel + ")",
-          first: {
-            label: "" + numPrincipals + " Principal Actor(s)",
-            price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
-          },
-          items: []
-        };
-        lineItems.push(lineItem);
+        i = 0;
+        while (i++ < numPrincipals) {
+          lineItem = {
+            label: "Storecasting (" + useLabel + ")",
+            first: {
+              label: "" + numPrincipals + " Principal Actor(s)",
+              price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
+            },
+            items: []
+          };
+          lineItems.push(lineItem);
+        }
         return lineItems;
       };
 

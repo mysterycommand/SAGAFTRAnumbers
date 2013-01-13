@@ -158,7 +158,7 @@
       };
       $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', '.share a', onClickShare).on('click', 'h1 a', onClickLogo);
       app.$el.on('update', onUpdate);
-      $document.find('.start a').click().end().find('#job-type').val(10).trigger('liszt:updated').trigger('change').end().find('#storecasting').prop('checked', true).trigger('change').end();
+      $document.find('.start a').click().end().find('#job-type').val(10).trigger('liszt:updated').trigger('change').end();
     });
   });
 

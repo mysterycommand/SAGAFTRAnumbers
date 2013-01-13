@@ -225,7 +225,7 @@ dfn {
 
 hr {
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   display: block;
   height: 1px;
   margin: 1em 0;
@@ -255,7 +255,7 @@ code,
 kbd,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em;
 }
 
@@ -1195,10 +1195,8 @@ nav a .icon, nav q .icon {
 }
 #definitions header {
   margin: 0;
-  padding-bottom: 0.75em;
   position: relative;
   overflow: hidden;
-  height: 20%;
   max-height: 100px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1207,9 +1205,8 @@ nav a .icon, nav q .icon {
   box-sizing: border-box;
 }
 #definitions header#advisory {
-  padding-bottom: 0;
-}
-#definitions header#advisory h6 {
+  height: auto;
+  padding: 0.5em 0;
   text-align: center;
 }
 #definitions header h2 {
@@ -1278,7 +1275,6 @@ nav a .icon, nav q .icon {
 #definitions .terms {
   border-top: 3px solid #474747;
   margin: 0;
-  padding-top: 0.75em;
   font-family: Arial, Helvitica, sans-serif;
   font-weight: 300;
   -webkit-box-sizing: border-box;
@@ -1286,13 +1282,17 @@ nav a .icon, nav q .icon {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  height: 80%;
+  position: absolute;
+  top: 170px;
+  right: 0.75em;
+  bottom: 0.75em;
+  left: 0.75em;
   overflow: scroll;
 }
 #definitions .terms ul {
   background-color: #e6e7e8;
   list-style: none;
-  margin: 0.75em 0 0 0;
+  margin: 0;
   padding: 0;
 }
 #definitions .terms ul li:first-child dl {
@@ -1314,13 +1314,12 @@ nav a .icon, nav q .icon {
 #advisory h5 {
   float: none;
   font-size: 1em;
-  text-align: center;
 }
 #advisory h6 {
   font-size: 0.8em;
   font-style: normal;
   margin: 0 1.5em;
-  text-align: left;
+  text-align: center;
 }
 
 #definitions-overlay {
@@ -1831,7 +1830,7 @@ address em {
 
 .chzn-container .chzn-drop {
   background: #fff;
-  border: 1px solid #aaa;
+  border: 1px solid #aaaaaa;
   border-top: 0;
   position: absolute;
   top: 29px;
@@ -1860,7 +1859,7 @@ address em {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  border: 1px solid #aaa;
+  border: 1px solid #aaaaaa;
   display: block;
   overflow: hidden;
   white-space: nowrap;
@@ -1915,7 +1914,7 @@ address em {
   background-image: -ms-linear-gradient(top, #cccccc 0%, #eeeeee 60%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#eeeeee',GradientType=0 );
   background-image: linear-gradient(top, #cccccc 0%, #eeeeee 60%);
-  border-left: 1px solid #aaa;
+  border-left: 1px solid #aaaaaa;
   position: absolute;
   right: 0;
   top: 0;
@@ -1951,7 +1950,7 @@ address em {
   margin: 1px 0;
   padding: 4px 20px 4px 5px;
   outline: 0;
-  border: 1px solid #aaa;
+  border: 1px solid #aaaaaa;
   font-family: sans-serif;
   font-size: 1em;
 }
@@ -1982,7 +1981,7 @@ address em {
   background-image: -ms-linear-gradient(top, white 85%, #eeeeee 99%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
   background-image: linear-gradient(top, white 85%, #eeeeee 99%);
-  border: 1px solid #aaa;
+  border: 1px solid #aaaaaa;
   margin: 0;
   padding: 0;
   cursor: text;
@@ -2144,11 +2143,11 @@ address em {
 }
 
 .chzn-container-active .chzn-single-with-drop {
-  border: 1px solid #aaa;
-  -webkit-box-shadow: 0 1px 0 #fff inset;
-  -moz-box-shadow: 0 1px 0 #fff inset;
-  -o-box-shadow: 0 1px 0 #fff inset;
-  box-shadow: 0 1px 0 #fff inset;
+  border: 1px solid #aaaaaa;
+  -webkit-box-shadow: 0 1px 0 white inset;
+  -moz-box-shadow: 0 1px 0 white inset;
+  -o-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
   background-color: #eee;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, white), color-stop(0.5, #eeeeee));
   background-image: -webkit-linear-gradient(center bottom, white 0%, #eeeeee 50%);
@@ -2183,7 +2182,7 @@ address em {
 }
 
 .chzn-container-active .chzn-choices .search-field input {
-  color: #111 !important;
+  color: #111111 !important;
 }
 
 /* @end */
@@ -2599,7 +2598,7 @@ address em {
 
   /* Don't show links for images, or javascript/internal links */
   pre, blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid;
   }
 

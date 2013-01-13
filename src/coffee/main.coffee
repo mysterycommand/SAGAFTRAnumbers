@@ -130,7 +130,7 @@ require [
 			event.preventDefault()
 			
 			$targ = $ @hash
-			
+
 			if $targ.is(':visible')
 				$(@hash + '-overlay').fadeOut 400
 				$targ.fadeOut 400
@@ -233,7 +233,7 @@ require [
 			.find('.start a').click().end()
 			# .find('.definitions a').click().end()
 			.find('#job-type').val(10).trigger('liszt:updated').trigger('change').end()
-			.find('#storecasting').prop('checked', true).trigger('change').end()
+			# .find('#storecasting').prop('checked', true).trigger('change').end()
 			# .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
 			# .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
 			# .find('a[href=#actor-announcer]').click().end()
