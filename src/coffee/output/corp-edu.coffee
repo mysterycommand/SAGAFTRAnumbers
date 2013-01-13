@@ -149,22 +149,69 @@ define [
 			
 			lineItems
 
-		# @audioOnlySessionLineItems: (rates) ->
-		# 	lineItems = []
+		@audioOnlySessionLineItems: (rates) ->
+			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
+
+			categoryLabel = switch category
+				when 0 then 'Category I'
+				when 1 then 'Category II'
+				when 2 then 'Interactive Voice Recording (IVR), Phone Prompt System, or Phonecasting'
+				when 3 then 'Storecasting'
+
+			categoryPrefix = switch category
+				when 0 then 'cat_1_'
+				when 1 then 'cat_2_'
+				when 2 then 'ivr_'
+				when 3 then 'store_'
+
+			# log categoryLabel, categoryPrefix
+			numPrincipals = parseInt $('#num-principals').val(), 10
+
+			lineItems = []
+
+			i = 0
+			while i++ < numPrincipals
+				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
 			
-		# 	lineItem = 
-		# 		label: ""
-		# 		first:
-		# 			label: ""
-		# 			price: 0
-		# 		items: []
+				lineItem = 
+					label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+					first:
+						label: "First Hour"
+						price: rates[categoryPrefix + 'session_actor_first_hour']
+					items: []
 
-		# 	lineItem.items.push
-		# 		count: 0
-		# 		label: ""
-		# 		price: 0
+				if numHours - 1
+					lineItem.items.push
+						count: (numHours - 1) * 2
+						label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
+						price: rates[categoryPrefix + 'session_actor_addl_half']
 
-		# 	lineItems.push lineItem
-		# 	lineItems
+				lineItems.push lineItem
+			
+			lineItems
+
+		@audioOnlyUsageLineItems: (rates) ->
+			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
+			if category isnt 3 then return []
+			categoryPrefix = 'store_' # This is only used for Storecasting.
+
+			use = parseInt $('#use-type-storecasting').val(), 10
+			useSuffix = if use is 0 then '_3_month' else '_6_month'
+			useLabel = if use is 0 then '3 Month Use' else '6 Month Use'
+
+			numPrincipals = parseInt $('#num-principals').val(), 10
+
+			lineItems = []
+			
+			lineItem = 
+				label: "Storecasting (#{useLabel})"
+				first:
+					label: "#{numPrincipals} Principal Actor(s)"
+					price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
+				items: []
+
+			lineItems.push lineItem
+
+			lineItems
 
 	CorpEdu

@@ -141,6 +141,82 @@
         return lineItems;
       };
 
+      CorpEdu.audioOnlySessionLineItems = function(rates) {
+        var category, categoryLabel, categoryPrefix, i, lineItem, lineItems, numHours, numPrincipals;
+        category = parseInt($('input:radio[name=category]:checked').val(), 10);
+        categoryLabel = (function() {
+          switch (category) {
+            case 0:
+              return 'Category I';
+            case 1:
+              return 'Category II';
+            case 2:
+              return 'Interactive Voice Recording (IVR), Phone Prompt System, or Phonecasting';
+            case 3:
+              return 'Storecasting';
+          }
+        })();
+        categoryPrefix = (function() {
+          switch (category) {
+            case 0:
+              return 'cat_1_';
+            case 1:
+              return 'cat_2_';
+            case 2:
+              return 'ivr_';
+            case 3:
+              return 'store_';
+          }
+        })();
+        numPrincipals = parseInt($('#num-principals').val(), 10);
+        lineItems = [];
+        i = 0;
+        while (i++ < numPrincipals) {
+          numHours = parseFloat($("#principal-" + i + "-num-hours").val(), 10);
+          lineItem = {
+            label: "" + categoryLabel + " Principal " + i + " - " + numHours + " Hours Total",
+            first: {
+              label: "First Hour",
+              price: rates[categoryPrefix + 'session_actor_first_hour']
+            },
+            items: []
+          };
+          if (numHours - 1) {
+            lineItem.items.push({
+              count: (numHours - 1) * 2,
+              label: "Add'l Half Hours at $ " + (rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)),
+              price: rates[categoryPrefix + 'session_actor_addl_half']
+            });
+          }
+          lineItems.push(lineItem);
+        }
+        return lineItems;
+      };
+
+      CorpEdu.audioOnlyUsageLineItems = function(rates) {
+        var category, categoryPrefix, lineItem, lineItems, numPrincipals, use, useLabel, useSuffix;
+        category = parseInt($('input:radio[name=category]:checked').val(), 10);
+        if (category !== 3) {
+          return [];
+        }
+        categoryPrefix = 'store_';
+        use = parseInt($('#use-type-storecasting').val(), 10);
+        useSuffix = use === 0 ? '_3_month' : '_6_month';
+        useLabel = use === 0 ? '3 Month Use' : '6 Month Use';
+        numPrincipals = parseInt($('#num-principals').val(), 10);
+        lineItems = [];
+        lineItem = {
+          label: "Storecasting (" + useLabel + ")",
+          first: {
+            label: "" + numPrincipals + " Principal Actor(s)",
+            price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
+          },
+          items: []
+        };
+        lineItems.push(lineItem);
+        return lineItems;
+      };
+
       return CorpEdu;
 
     })();

@@ -122,9 +122,14 @@
       };
 
       Output.prototype.corp_edu_audio_only = function() {
-        this.sessionFeesEstimator.estimate(CorpEdu.offCameraSessionLineItems(this.rates));
+        this.sessionFeesEstimator.estimate(CorpEdu.audioOnlySessionLineItems(this.rates));
         this.html = this.sessionFeesEstimator.html;
         this.cost = this.sessionFeesEstimator.cost;
+        if (parseInt($('input:radio[name=category]:checked').val(), 10) === 3) {
+          this.usageFeesEstimator.estimate(CorpEdu.audioOnlyUsageLineItems(this.rates));
+          this.html += this.usageFeesEstimator.html;
+          this.cost += this.usageFeesEstimator.cost;
+        }
       };
 
       return Output;

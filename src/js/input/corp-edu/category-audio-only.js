@@ -15,7 +15,7 @@
 
       function Category() {
         this.onChange = __bind(this.onChange, this);
-        this.html = "<fieldset>\n	<span style=\"vertical-align: top;\">This Audio Only program is a (please choose one):</span>\n	<div>\n		<input type=\"radio\" name=\"category\" id=\"category-i\" value=\"0\" checked /> <label for=\"category-i\">Category I</label><br/>\n		\n		<input type=\"radio\" name=\"category\" id=\"category-ii\" value=\"1\" /> <label for=\"category-ii\">Category II</label><br/>\n		\n		<input type=\"radio\" name=\"category\" id=\"ivr-category\" value=\"2\" />\n		<label for=\"ivr-category\" style=\"display: inline-block; vertical-align: top;\">\n			Interactive Voice Recording (IVR), <br/>\n			Phone Prompt Systems, or <br/>\n			Phonecasting\n		</label><br/>\n\n		<input type=\"radio\" name=\"category\" id=\"storecasting\" value=\"3\" /> <label for=\"storecasting\">Storecasting</label>\n	</div>\n</fieldset>";
+        this.html = "<fieldset>\n	<span style=\"vertical-align: top;\">This Audio Only program is a (please choose one):</span>\n	<div>\n		<input type=\"radio\" name=\"category\" id=\"category-i\" value=\"0\" checked /> <label for=\"category-i\">Category I</label><br/>\n		\n		<input type=\"radio\" name=\"category\" id=\"category-ii\" value=\"1\" /> <label for=\"category-ii\">Category II</label><br/>\n		\n		<input type=\"radio\" name=\"category\" id=\"ivr-category\" value=\"2\" />\n		<label for=\"ivr-category\" style=\"display: inline-block; vertical-align: top;\">\n			Interactive Voice Recording (IVR), <br/>\n			Phone Prompt System, or <br/>\n			Phonecasting\n		</label><br/>\n\n		<input type=\"radio\" name=\"category\" id=\"storecasting\" value=\"3\" /> <label for=\"storecasting\">Storecasting</label>\n	</div>\n</fieldset>";
         this.$el = $(this.html);
         this.el = this.$el[0];
         this.setupOptions();
@@ -43,8 +43,7 @@
         }
         this.selectedItem = this.options[0];
         if (this.selectedItem != null) {
-          this.$el.parent().appendPolyfill(this.selectedItem.$el);
-          return log(this.selectedIndex, this.selectedItem, this.$el);
+          return this.$el.parent().appendPolyfill(this.selectedItem.$el);
         }
       };
 

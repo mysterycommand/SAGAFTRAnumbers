@@ -131,11 +131,16 @@ define [
 			return
 		
 		corp_edu_audio_only: ->
-			# @sessionFeesEstimator.estimate CorpEdu.audioOnlySessionLineItems @rates
-			@sessionFeesEstimator.estimate CorpEdu.offCameraSessionLineItems @rates # It looks llke these are the same.
+			@sessionFeesEstimator.estimate CorpEdu.audioOnlySessionLineItems @rates
 			
 			@html = @sessionFeesEstimator.html
 			@cost = @sessionFeesEstimator.cost
+
+			if parseInt($('input:radio[name=category]:checked').val(), 10) is 3
+				@usageFeesEstimator.estimate CorpEdu.audioOnlyUsageLineItems @rates # Only Audio Only - Storecasting has usage.
+				@html += @usageFeesEstimator.html
+				@cost += @usageFeesEstimator.cost
+
 			return
 	
 	Output

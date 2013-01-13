@@ -69,8 +69,8 @@ define [
 				# @$el.after @selectedItem.$el
 				
 				# There are a couple of special cases that need to be handled after the job-type is added to the DOM.
-				if 2 <= @selectedIndex <= 4 then @selectedItem.$el.find('#num-days').trigger 'input' # TV
-				# if @selectedIndex is 10 then @selectedItem.$el.find('#category-i').trigger 'change' # CorpEdu.AudioOnly
+				if 2 <= @selectedIndex <= 4 then @selectedItem.$el.find('#num-days').trigger 'input' # TV.*
+				# if @selectedIndex is 10 then @selectedItem.$el.find('#storecasting').trigger 'change' # CorpEdu.AudioOnly
 			else
 				@$el.siblings().find('input')
 					.filter('[type=number]').each (i, el) -> $(el).val($(el).attr('min') || 0).trigger 'change'

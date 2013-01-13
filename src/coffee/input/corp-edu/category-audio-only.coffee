@@ -21,7 +21,7 @@ define [
 						<input type="radio" name="category" id="ivr-category" value="2" />
 						<label for="ivr-category" style="display: inline-block; vertical-align: top;">
 							Interactive Voice Recording (IVR), <br/>
-							Phone Prompt Systems, or <br/>
+							Phone Prompt System, or <br/>
 							Phonecasting
 						</label><br/>
 
@@ -70,7 +70,6 @@ define [
 			if @selectedItem?
 				# FIND ME LATER
 				@$el.parent().appendPolyfill @selectedItem.$el
-				log @selectedIndex, @selectedItem, @$el
 	
 	Category
 
