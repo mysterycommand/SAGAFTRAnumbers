@@ -256,7 +256,7 @@ require [
             # .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
             
             # # Television Commercial
-            .find('#job-type').val(2).trigger('liszt:updated').trigger('change').end()
+            .find('#job-type').val(3).trigger('liszt:updated').trigger('change').end()
             .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
             .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
             

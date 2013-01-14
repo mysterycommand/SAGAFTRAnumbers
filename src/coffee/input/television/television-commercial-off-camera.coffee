@@ -8,7 +8,7 @@ define [
   'input/television/principal-actor'
   'input/version'
   'input/tag'
-  'input/television/use'
+  'input/television/use-off-camera'
 ], ($, _, PrincipalActor, Version, Tag, Use) ->
 	class TelevisionCommercialOffCamera
     constructor: ->

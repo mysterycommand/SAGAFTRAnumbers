@@ -7,7 +7,7 @@ define [
   'underscore'
   
   'input/television/day'
-  'input/television/use'
+  'input/television/use-on-camera'
 ], ($, _, Day, Use) ->
 	class TelevisionCommercialOnCamera
     constructor: ->

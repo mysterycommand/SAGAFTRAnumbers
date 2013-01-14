@@ -116,13 +116,13 @@ define [
             cities[cities.length] = markets.splice(newYorkIndex, 1)[0]
             cityRate = rates.wild_13_major_new_york
           
-          if cities.length is 3 then cityRate = rates.wild_13_major_all_3
           if cities.length is 2 then cityRate = rates.wild_13_major_any_2
+          if cities.length is 3 then cityRate = rates.wild_13_major_all_3
           
           numUnits = if markets.length then markets.reduce((t, s) -> t + s) - 1 else 0
           
           unitRate = 0
-          if numUnits > 2  then unitRate = rates.wild_13_unit_2_25
+          if numUnits > 1  then unitRate = rates.wild_13_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
           
           if cityRate then lineItem.items.push
@@ -168,12 +168,12 @@ define [
             cities[cities.length] = markets.splice(newYorkIndex, 1)[0]
             cityRate = rates.wild_8_major_new_york
           
-          if cities.length is 3 then cityRate = rates.wild_8_major_all_3
           if cities.length is 2 then cityRate = rates.wild_8_major_any_2
+          if cities.length is 3 then cityRate = rates.wild_8_major_all_3
           
           numUnits = if markets.length then markets.reduce((t, s) -> t + s) else 0
           unitRate = 0
-          if numUnits > 2  then unitRate = rates.wild_8_unit_2_25
+          if numUnits > 1  then unitRate = rates.wild_8_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_8_unit_26
           
           if cityRate then lineItem.items.push

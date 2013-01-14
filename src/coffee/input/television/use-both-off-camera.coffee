@@ -5,7 +5,7 @@ define = root.define
 define [
   'jquery'
   'underscore'
-  'input/television/use-broadcast'
+  'input/television/use-broadcast-off-camera'
   'input/television/use-internet'
 ], ($, _, UseBroadcast, UseInternet) ->
 	class UseBoth

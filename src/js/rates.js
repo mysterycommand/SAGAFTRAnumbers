@@ -72,13 +72,36 @@
       network_2: 135.80,
       network_3: 107.75,
       network_4_13: 107.75,
-      network_14: 51.65
+      network_14: 51.65,
+      internet_8_week: 787.65,
+      internet_1_year: 2072.70
     },
     television_commercial_off_camera: {
       session_actor: 445.30,
       tag_2_25: 132.45,
       tag_26_50: 73.50,
-      tag_51: 40.05
+      tag_51: 40.05,
+      wild_13_unit_2_25: 13.87,
+      wild_13_unit_26: 5.90,
+      wild_13_major_new_york: 822.20,
+      wild_13_major_chicago: 715.45,
+      wild_13_major_los_angeles: 715.45,
+      wild_13_major_any_2: 1078.40,
+      wild_13_major_all_3: 1372.10,
+      local_1_50k: 17.85,
+      local_50k_100k: 35.90,
+      local_100k_150k: 53.85,
+      local_150k_200k: 71.85,
+      local_200k_250k: 89.75,
+      local_250k_500k: 179.65,
+      local_500k_750k: 269.40,
+      local_750k_1m: 359.25,
+      network_2: 106.25,
+      network_3: 84.55,
+      network_4_13: 84.55,
+      network_14: 38.40,
+      internet_8_week: 592.25,
+      internet_1_year: 1558.55
     },
     television_commercial_demo: {
       session_actor: 445.30
