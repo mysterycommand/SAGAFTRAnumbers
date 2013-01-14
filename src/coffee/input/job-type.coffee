@@ -54,7 +54,7 @@ define [
             ]
             
             html = ''
-            _.each @options, (el, i) -> html += """<option value="#{i}" data-value="#{el.value}" #{if el.value.indexOf('mailto') > -1 then 'class="mailto"' else ''}>#{el.label}</option>"""
+            _.each @options, (el, i) -> html += """<option value="#{i}" data-value="#{el.value}"#{if el.value.toString().indexOf('mailto') > -1 then ' class="mailto"' else ''}>#{el.label}</option>"""
             @$el.find('select').append(html)
         
         onChange: (event) =>

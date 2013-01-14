@@ -80,7 +80,7 @@ define [
           {value: "mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Looking for Smaller Markets or State-wide Buys?  Ask Tim"}
       ]
       html = ''
-      _.each @options, (el, i) -> html += """<option value="#{i}" data-value="#{el.value}">#{el.label}</option>"""
+      _.each @options, (el, i) -> html += """<option value="#{i}" data-value="#{el.value}"#{if el.value.toString().indexOf('mailto') > -1 then ' class="mailto"' else ''}>#{el.label}</option>"""
       @$el.find('select').append(html);
     
     getSelectedItem: -> @selectedItem
