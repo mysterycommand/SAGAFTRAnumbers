@@ -1024,6 +1024,14 @@ nav a .icon, nav q .icon {
   list-style-type: none;
 }
 
+.chzn-container .chzn-results li.active-result {
+  line-height: 1.2;
+}
+
+.chzn-container .mailto {
+  color: #ff8106;
+}
+
 #job-type-span {
   display: inline-block;
   width: 73%;

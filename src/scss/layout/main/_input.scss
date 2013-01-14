@@ -27,6 +27,11 @@
   }
 }
 
+.chzn-container .chzn-results li.active-result { line-height: 1.2; }
+.chzn-container .mailto {
+  color: $orange;
+}
+
 //#job-type-fieldset { vertical-align: top; }
 #job-type-span {
   display: inline-block;
@@ -42,6 +47,7 @@
     @include box-sizing(border-box);
   }
 }
+
 #job-type { width: 100%; }
 #more-days {
   display: block;
