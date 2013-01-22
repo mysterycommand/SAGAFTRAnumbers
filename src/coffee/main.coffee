@@ -49,6 +49,9 @@ require [
         
         $app = $ '#app'
         app = new App($app[0])
+        
+        updateCount = 0
+        updateCountToCTA = 10
     
         $('.chzn-select').not('.chzn-done').chosen
             allow_single_deselect: true
@@ -57,6 +60,9 @@ require [
         onClickStartOver = (event) ->
             event.preventDefault()
             app.restart()
+
+            updateCount = 0
+            $('#output-cta').fadeOut 400
             return
     
         onClickStart = (event) ->
@@ -187,9 +193,6 @@ require [
             if ! $targ.is(':visible') then $targ.fadeIn 400
             
             return
-        
-        updateCount = 0
-        updateCountToCTA = 10
 
         onUpdate = (event) ->
             # log 'main.onUpdate', event.type, event.target.id
