@@ -68,6 +68,12 @@ define [
                 # FIND ME LATER
                 @$el.afterPolyfill @selectedItem.$el
                 @$el.find('#job-type-span').append """<a href="##{@selectedItem.definitionId}" class="term open">What is: #{@selectedItem.label}?</a>"""
+                @$el.parent().append """
+                <div id="input-cta" class="cta" style="display: none;">
+                    <p>Heads Up! These things might apply to your #{@selectedItem.label}: <span id="input-cta-items">#{@selectedItem.headsUpItems.join(', ') + ', etc.'}</span>. For details <a href="mailto:Timothy.Ogren@sagaftra.org">Ask Tim</a>.</p>
+                </div>
+                """
+                # @selectedItem.headsUpItems.join(', ') + ', etc.'
                 # @$el.after @selectedItem.$el
                 
                 # There are a couple of special cases that need to be handled after the job-type is added to the DOM.
