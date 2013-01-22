@@ -50,7 +50,7 @@ define [
                 new CorpEdu.OffCamera()
                 new CorpEdu.AudioOnly()
                 
-                {value: "mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Not seeing what you're looking for?  Ask Tim"}
+                {value: "mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Not seeing the job you're looking for?  Ask Tim"}
             ]
             
             html = ''
