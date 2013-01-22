@@ -14,6 +14,13 @@ define [
       @label = "Television Commercial - (On Camera)"
       @value = "television_commercial_on_camera"
       @definitionId = "tv-commercial"
+      @headsUpItems = [
+        'Night Shoots'
+        'Hazard Pay'
+        'Travel time'
+        'Holiday pay'
+        'Lifts'
+      ]
       @steps = [
         new Day()
         new Use()

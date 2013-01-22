@@ -68,9 +68,17 @@ define [
                 # FIND ME LATER
                 @$el.afterPolyfill @selectedItem.$el
                 @$el.find('#job-type-span').append """<a href="##{@selectedItem.definitionId}" class="term open">What is: #{@selectedItem.label}?</a>"""
+
+                isPSA = (4 < @selectedIndex < 8)
+                headsUp = if isPSA then "Prior Union authorization required for PSA waivers." else """
+                    These things might apply to your #{@selectedItem.label}:
+                    <span id="input-cta-items">
+                        #{@selectedItem.headsUpItems.join(', ') + ', etc'}
+                    </span>.
+                """
                 @$el.parent().append """
                 <div id="input-cta" class="cta" style="display: none;">
-                    <p>Heads Up! These things might apply to your #{@selectedItem.label}: <span id="input-cta-items">#{@selectedItem.headsUpItems.join(', ') + ', etc.'}</span>. For details <a href="mailto:Timothy.Ogren@sagaftra.org">Ask Tim</a>.</p>
+                    <p>Heads Up! #{headsUp} For details <a href="mailto:Timothy.Ogren@sagaftra.org">Ask Tim</a>.</p>
                 </div>
                 """
                 # @selectedItem.headsUpItems.join(', ') + ', etc.'

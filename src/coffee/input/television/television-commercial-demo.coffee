@@ -13,6 +13,10 @@ define [
       @label = "Television Commercial Demo - (Voiceover/Off Camera, Non-air)"
       @value = "television_commercial_demo"
       @definitionId = "tv-commercial-demo"
+      @headsUpItems = [
+        'Lifts'
+        'Holiday pay'
+      ]
       @steps = [
         new PrincipalActorDemo()
         new Version()

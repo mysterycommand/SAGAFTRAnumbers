@@ -14,6 +14,10 @@ define [
 			@label = "Corporate/Educational & Non-Broadcast - (Audio Only)"
 			@value = "corp_edu_audio_only"
 			@definitionId = "co-ed-contract"
+			@headsUpItems = [
+				'Retakes'
+				'Multiple characters'
+			]
 			@steps = [
 				new CategoryAudioOnly()
 				new PrincipalActorAudioOnly()

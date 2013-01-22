@@ -15,6 +15,10 @@ define [
       @label = "Television Commercial - (Voiceover/Off Camera)"
       @value = "television_commercial_off_camera"
       @definitionId = "tv-commercial"
+      @headsUpItems = [
+        'Lifts'
+        'Non-broadcast use'
+      ]
       @steps = [
         new PrincipalActor()
         new Version()

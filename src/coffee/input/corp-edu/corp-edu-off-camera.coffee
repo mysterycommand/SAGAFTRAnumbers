@@ -14,6 +14,11 @@ define [
 			@label = "Corporate/Educational & Non-Broadcast - (Voiceover/Off Camera)"
 			@value = "corp_edu_off_camera"
 			@definitionId = "co-ed-contract"
+			@headsUpItems = [
+				'Retakes'
+				'Multiple characters'
+				'Supplemental use'
+			]
 			@steps = [
 				new Category()
 				new PrincipalActor()
