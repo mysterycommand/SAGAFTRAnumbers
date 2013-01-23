@@ -41,10 +41,10 @@ define [
           label: "Add'l Versions of the Script"
           price: rates.session_actor
         
-        if (tagRate) then lineItem.items.push
-          count: numTags - 1
-          label: "Add'l Tags at $ #{tagRate.toFixed(2)}"
-          price: tagRate
+        # if (tagRate) then lineItem.items.push
+        #   count: numTags - 1
+        #   label: "Add'l Tags at $ #{tagRate.toFixed(2)}"
+        #   price: tagRate
         
         lineItems.push lineItem
       
@@ -63,6 +63,13 @@ define [
           price: rates.session_singer
         
         lineItems.push lineItem
+
+      if (tagRate) then lineItems.push
+        label: "Tags"
+        first:
+          label: "#{numTags - 1} Additional Tags at $ #{tagRate.toFixed(2)} ea."
+          price: tagRate * (numTags - 1)
+        items: []
       
       lineItems
     
@@ -149,12 +156,19 @@ define [
           label: "Add'l Versions of the Script"
           price: rates.session_actor
         
-        if (tagRate) then lineItem.items.push
-          count: numTags - 1
-          label: "Add'l Tags at $ #{tagRate.toFixed(2)}"
-          price: tagRate
+        # if (tagRate) then lineItem.items.push
+        #   count: numTags - 1
+        #   label: "Add'l Tags at $ #{tagRate.toFixed(2)}"
+        #   price: tagRate
         
         lineItems.push lineItem
+
+      if (tagRate) then lineItems.push
+        label: "Tags"
+        first:
+          label: "#{numTags - 1} Additional Tags at $ #{tagRate.toFixed(2)} ea."
+          price: tagRate * (numTags - 1)
+        items: []
       
       lineItems
   
