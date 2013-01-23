@@ -65,7 +65,7 @@ define [
 			# else
 			# 	@selectedItem =  null
 
-			# @$el.nextAll().detach()
+			# @$el.nextAll().not('#input-cta').detach()
 			
 			if @selectedItem?
 				# FIND ME LATER

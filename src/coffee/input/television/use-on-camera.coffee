@@ -43,7 +43,7 @@ define [
       @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
       
       @$el.find('p').detach()
-      @$el.nextAll().detach()
+      @$el.nextAll().not('#input-cta').detach()
       
       if @selectedItem?
         @$el.appendPolyfill @selectedItem.$el
@@ -54,7 +54,7 @@ define [
           @selectedItem.$el.find('#broadcast-type').trigger 'change'
         
     onBroadcastChange: (event) =>
-      @$el.nextAll().detach()
+      @$el.nextAll().not('#input-cta').detach()
       
       broadcastType = @selectedItem.getSelectedItem()
       if broadcastType? then @$el.afterPolyfill broadcastType.$el

@@ -193,25 +193,26 @@ require [
 
         onUpdate = (event) ->
             # log 'main.onUpdate', event.type, event.target.id
-            $('div.tooltip').filter(":visible").fadeOut 400
-            # if $('#output').height() > $('#input').height() then $('#input').height($('#output').height())
-            height = Math.max $('#input').css('height', 'auto').height(), $('#output').css('height', 'auto').height()
+
+            # $('div.tooltip').filter(":visible").fadeOut 400
+            # # if $('#output').height() > $('#input').height() then $('#input').height($('#output').height())
+            # height = Math.max $('#input').css('height', 'auto').height(), $('#output').css('height', 'auto').height()
+
+            # $('#input').height height
+            # $('#output').height height
+
+            # if $('#job-type').val() is '-1'
+            #     updateCount = 0
+            #     $('#output-cta').fadeOut 400
+            #     $('#input-cta').fadeOut 400
+            #     return;
+
+            # if updateCount < updateCountToCTA
+            #     updateCount++
+            #     if updateCount == updateCountToCTA
+            #         $('#output-cta').fadeIn 400
+            #         $('#input-cta').fadeIn 400
             
-            $('#input').height height
-            $('#output').height height
-
-            if $('#job-type').val() is '-1'
-                updateCount = 0
-                $('#output-cta').fadeOut 400
-                $('#input-cta').fadeOut 400
-                return;
-
-            if updateCount < updateCountToCTA
-                updateCount++
-                if updateCount == updateCountToCTA
-                    $('#output-cta').fadeIn 400
-                    $('#input-cta').fadeIn 400
-
             return
         
         $document

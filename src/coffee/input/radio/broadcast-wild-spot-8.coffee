@@ -18,6 +18,7 @@ define [
         </fieldset>
       """
       @$el = $ @html
+      @$markets = @$el.find '#markets'
       @el = @$el[0]
       
       @setupOptions()
