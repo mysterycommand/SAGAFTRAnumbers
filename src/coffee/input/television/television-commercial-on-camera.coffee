@@ -18,8 +18,6 @@ define [
         'Night Shoots'
         'Hazard Pay'
         'Travel time'
-        'Holiday pay'
-        'Lifts'
       ]
       @steps = [
         new Day()

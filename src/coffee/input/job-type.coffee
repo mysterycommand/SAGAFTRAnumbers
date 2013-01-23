@@ -72,9 +72,7 @@ define [
                 isPSA = (4 < @selectedIndex < 8)
                 headsUp = if isPSA then "Prior Union authorization required for PSA waivers." else """
                     These things might apply to your #{@selectedItem.label}:
-                    <span id="input-cta-items">
-                        #{@selectedItem.headsUpItems.join(', ') + ', etc'}
-                    </span>.
+                    #{@selectedItem.headsUpItems.join(', ') + ', etc'}.
                 """
                 @$el.parent().append """
                 <div id="input-cta" class="cta" style="display: none;">
