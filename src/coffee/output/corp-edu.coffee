@@ -154,9 +154,9 @@ define [
 
 				if numHours - 1
 					lineItem.items.push
-						count: (numHours - 1)
-						label: "Add'l Hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half'] * 2).toFixed(2)}"
-						price: rates[categoryPrefix + 'session_actor_addl_half'] * 2
+						count: (numHours - 1) * 2
+						label: "Add'l Half-hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half']).toFixed(2)} ea."
+						price: rates[categoryPrefix + 'session_actor_addl_half']
 
 				lineItems.push lineItem
 			
@@ -164,6 +164,7 @@ define [
 
 		@audioOnlySessionLineItems: (rates) ->
 			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
+			storecastingUse = if category is 3 then parseInt $('#use-type-storecasting').val(), 10
 
 			categoryLabel = switch category
 				when 0 then 'Category I'
@@ -175,7 +176,7 @@ define [
 				when 0 then 'cat_1_'
 				when 1 then 'cat_2_'
 				when 2 then 'ivr_'
-				when 3 then 'store_'
+				when 3 then 'store_' + (unless storecastingUse then '3_month_' else '6_month_')
 
 			# log categoryLabel, categoryPrefix
 			numPrincipals = parseInt $('#num-principals').val(), 10
@@ -202,44 +203,44 @@ define [
 				lineItem = 
 					label: "#{categoryLabel} Principal #{i}"
 					first:
-						label: "First Hour"
+						label: "First Hour" + (if category is 3 then (unless storecastingUse then ' (3 Month Use)' else ' (6 Month Use)'))
 						price: rates[categoryPrefix + 'session_actor_first_hour']
 					items: []
 
 				if numHours - 1
 					lineItem.items.push
-						count: (numHours - 1)
-						label: "Add'l Hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half'] * 2).toFixed(2)}"
-						price: rates[categoryPrefix + 'session_actor_addl_half'] * 2
+						count: (numHours - 1) * 2
+						label: "Add'l Half-hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half']).toFixed(2)} ea."
+						price: rates[categoryPrefix + 'session_actor_addl_half']
 
 				lineItems.push lineItem
 			
 			lineItems
 
-		@audioOnlyUsageLineItems: (rates) ->
-			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
-			if category isnt 3 then return []
-			categoryPrefix = 'store_' # This is only used for Storecasting.
+		# @audioOnlyUsageLineItems: (rates) ->
+		# 	category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
+		# 	if category isnt 3 then return []
+		# 	categoryPrefix = 'store_' # This is only used for Storecasting.
 
-			use = parseInt $('#use-type-storecasting').val(), 10
-			useSuffix = if use is 0 then '_3_month' else '_6_month'
-			useLabel = if use is 0 then '3 Month Use' else '6 Month Use'
+		# 	use = parseInt $('#use-type-storecasting').val(), 10
+		# 	useSuffix = if use is 0 then '_3_month' else '_6_month'
+		# 	useLabel = if use is 0 then '3 Month Use' else '6 Month Use'
 
-			numPrincipals = parseInt $('#num-principals').val(), 10
+		# 	numPrincipals = parseInt $('#num-principals').val(), 10
 
-			lineItems = []
+		# 	lineItems = []
 			
-			i = 0
-			while i++ < numPrincipals
-				lineItem = 
-					label: "Storecasting (#{useLabel})"
-					first:
-						label: "#{numPrincipals} Principal Actor(s)"
-						price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
-					items: []
+		# 	i = 0
+		# 	while i++ < numPrincipals
+		# 		lineItem = 
+		# 			label: "Storecasting (#{useLabel})"
+		# 			first:
+		# 				label: "#{numPrincipals} Principal Actor(s)"
+		# 				price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
+		# 			items: []
 
-				lineItems.push lineItem
+		# 		lineItems.push lineItem
 
-			lineItems
+		# 	lineItems
 
 	CorpEdu

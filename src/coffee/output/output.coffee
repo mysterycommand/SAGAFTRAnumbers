@@ -136,10 +136,10 @@ define [
 			@html = @sessionFeesEstimator.html
 			@cost = @sessionFeesEstimator.cost
 
-			if parseInt($('input:radio[name=category]:checked').val(), 10) is 3
-				@usageFeesEstimator.estimate CorpEdu.audioOnlyUsageLineItems @rates # Only Audio Only - Storecasting has usage.
-				@html += @usageFeesEstimator.html
-				@cost += @usageFeesEstimator.cost
+			# if parseInt($('input:radio[name=category]:checked').val(), 10) is 3
+			# 	@usageFeesEstimator.estimate CorpEdu.audioOnlyUsageLineItems @rates # Only Audio Only - Storecasting has usage.
+			# 	@html += @usageFeesEstimator.html
+			# 	@cost += @usageFeesEstimator.cost
 
 			return
 	

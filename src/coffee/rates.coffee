@@ -210,11 +210,11 @@ root.sag_aftra_rates =
         ivr_session_actor_first_hour:     223.00
         ivr_session_actor_addl_half:      111.00
 
-        store_session_actor_first_hour:   223.00
-        store_session_actor_addl_half:    111.00
+        store_3_month_session_actor_first_hour:         401.00
+        store_3_month_session_actor_addl_half:          117.50
 
-        store_use_3_month:                401.00
-        store_use_6_month:                802.00
+        store_6_month_session_actor_first_hour:         802.00
+        store_6_month_session_actor_addl_half:          117.50
 
 
 
