@@ -15,6 +15,9 @@
   .br { bottom: 0; right: 0; opacity: 0.5; }
 }
 
+.lt-ie9 .splash { behavior: url(htc/PIE.htc); }
+.lt-ie9 .ie-splash-shadow { behavior: url(htc/PIE.htc); }
+
 .ie-splash-shadow {
   border: 1px solid #999;
 

@@ -105,3 +105,10 @@ nav {
 }
 
 .home nav li { display: none }
+
+
+
+.lt-ie9 nav { behavior: url(htc/PIE.htc); }
+.lt-ie9 nav li.start-over .inset-button { behavior: url(htc/PIE.htc); border: 1px solid #999; }
+
+

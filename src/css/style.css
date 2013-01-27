@@ -765,6 +765,15 @@ h6 {
   display: none;
 }
 
+.lt-ie9 .hud {
+  behavior: url(htc/PIE.htc);
+}
+
+.lt-ie9 .hud h2 {
+  behavior: url(htc/PIE.htc);
+  border-top: 1px solid #999999;
+}
+
 nav {
   background: #cccccc;
   overflow: hidden;
@@ -912,6 +921,15 @@ nav a .icon, nav q .icon {
   display: none;
 }
 
+.lt-ie9 nav {
+  behavior: url(htc/PIE.htc);
+}
+
+.lt-ie9 nav li.start-over .inset-button {
+  behavior: url(htc/PIE.htc);
+  border: 1px solid #999999;
+}
+
 .calculator {
   position: relative;
 }
@@ -997,6 +1015,14 @@ nav a .icon, nav q .icon {
   opacity: 0.5;
 }
 
+.lt-ie9 .splash {
+  behavior: url(htc/PIE.htc);
+}
+
+.lt-ie9 .ie-splash-shadow {
+  behavior: url(htc/PIE.htc);
+}
+
 .ie-splash-shadow {
   border: 1px solid #999999;
   -webkit-border-radius: 12px 12px 0 0;
@@ -1026,7 +1052,6 @@ nav a .icon, nav q .icon {
   -ms-border-radius: 12px 0 0 0;
   -o-border-radius: 12px 0 0 0;
   border-radius: 12px 0 0 0;
-  behavior: url(htc/PIE.htc);
 }
 .input fieldset {
   background: white url(../img/input-rarr.jpg) no-repeat scroll left 1.25em;
@@ -1087,9 +1112,9 @@ nav a .icon, nav q .icon {
 }
 
 .ie .input {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  border-left: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  border-left: 1px solid #999999;
 }
 
 .output {
@@ -1179,9 +1204,15 @@ nav a .icon, nav q .icon {
 }
 
 .ie .output {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  border-right: 1px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+}
+
+.lt-ie9 .output {
+  background-image: url(../img/13x1-medgrey-lightgrey.jpg);
+  background-position: top left;
+  background-repeat: repeat-y;
 }
 
 .cta {

@@ -7,7 +7,6 @@
   
   @include box-sizing(border-box);
   @include border-radius(12px 0 0 0);
-  behavior: url(htc/PIE.htc);
   
   fieldset {
     background: #fff url(../img/input-rarr.jpg) no-repeat scroll left 1.25em;
@@ -60,8 +59,12 @@
   margin: 1.5em 0;
 }
 
+
+
 .ie .input {
-  border-top: 1px solid $alphagray;
-  border-bottom: 1px solid $alphagray;
-  border-left: 1px solid $alphagray;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  border-left: 1px solid #999;
 }
+
+

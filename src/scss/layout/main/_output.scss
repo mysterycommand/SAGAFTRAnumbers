@@ -84,9 +84,15 @@
 }
 
 .ie .output {
-  border-top: 1px solid $alphagray;
-  border-right: 1px solid $alphagray;
-  border-bottom: 1px solid $alphagray;
+  border-top: 1px solid #999;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #999;
+}
+
+.lt-ie9 .output {
+  background-image: url(../img/13x1-medgrey-lightgrey.jpg);
+  background-position: top left;
+  background-repeat: repeat-y;
 }
 
 .cta {

@@ -86,6 +86,7 @@ define [
       return
   
     onMouseUp: (event) =>
+      return unless @touches
       @touches._goUpWithEvent event
       @triggerTouchUp @touches
     
