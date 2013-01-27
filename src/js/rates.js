@@ -149,10 +149,10 @@
       cat_2_session_actor_addl_half: 117.50
     },
     corp_edu_audio_only: {
-      cat_1_session_actor_first_hour: 393.00,
-      cat_1_session_actor_addl_half: 115.00,
-      cat_2_session_actor_first_hour: 437.50,
-      cat_2_session_actor_addl_half: 115.00,
+      cat_1_session_actor_first_hour: 401.00,
+      cat_1_session_actor_addl_half: 117.50,
+      cat_2_session_actor_first_hour: 446.50,
+      cat_2_session_actor_addl_half: 117.50,
       ivr_session_actor_first_hour: 223.00,
       ivr_session_actor_addl_half: 111.00,
       store_3_month_session_actor_first_hour: 401.00,

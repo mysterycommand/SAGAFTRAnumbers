@@ -69,7 +69,8 @@ define [
 			
 			if @selectedItem?
 				# FIND ME LATER
-				@$el.parent().appendPolyfill @selectedItem.$el
+				@$el.siblings('fieldset').last().after @selectedItem.$el
+				# @$el.afterPolyfill @selectedItem.$el
 	
 	Category
 

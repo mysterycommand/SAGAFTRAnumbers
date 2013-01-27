@@ -13,7 +13,7 @@
     border-bottom: 1px solid $medgray;
     padding: 1em 0 1em 2em;
     
-    &:last-child {
+    &:last-of-type {
       border-bottom: none;
     }
     

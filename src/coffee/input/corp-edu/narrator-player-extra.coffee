@@ -57,7 +57,8 @@ define [
 					# FIND ME LATER
 					# @$el.appendPolyfill narrator.$el
 					# @$el.append narrator.$el
-					$(event.target).closest('div').appendPolyfill narrator.$el
+					$(event.target).closest('div').append narrator.$el
+					# $(event.target).closest('div').appendPolyfill narrator.$el
 			else
 				while @narrators.length > numNarrators
 					@narrators.pop().$el.remove()
@@ -75,7 +76,8 @@ define [
 					# FIND ME LATER
 					# @$el.appendPolyfill player.$el
 					# @$el.append player.$el
-					$(event.target).closest('div').appendPolyfill player.$el
+					$(event.target).closest('div').append player.$el
+					# $(event.target).closest('div').appendPolyfill player.$el
 			else
 				while @players.length > numPlayers
 					@players.pop().$el.remove()
@@ -93,7 +95,8 @@ define [
 					# FIND ME LATER
 					# @$el.appendPolyfill extra.$el
 					# @$el.append extra.$el
-					$(event.target).closest('div').appendPolyfill extra.$el
+					$(event.target).closest('div').append1 extra.$el
+					# $(event.target).closest('div').appendPolyfill extra.$el
 			else
 				while @extras.length > numExtras
 					@extras.pop().$el.remove()

@@ -1010,7 +1010,7 @@ nav a .icon, nav q .icon {
   border-bottom: 1px solid #bcbcbc;
   padding: 1em 0 1em 2em;
 }
-.input fieldset:last-child {
+.input fieldset:last-of-type {
   border-bottom: none;
 }
 .input fieldset p, .input fieldset div {

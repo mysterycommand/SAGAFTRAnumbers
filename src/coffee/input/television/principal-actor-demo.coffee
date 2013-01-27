@@ -29,7 +29,10 @@ define [
         while @actors.length < numActors
           actor = new PrincipalActorCharacter(@actors.length + 1)
           @actors.push actor
-          @$el.appendPolyfill actor.$el
+
+          # FIND ME LATER
+          @$el.append actor.$el
+          # @$el.appendPolyfill actor.$el
       else
         while @actors.length > numActors
           @actors.pop().$el.remove()

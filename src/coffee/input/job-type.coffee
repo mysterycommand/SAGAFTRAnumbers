@@ -66,7 +66,8 @@ define [
                 @$el.find('a.term.open').remove()
                 
                 # FIND ME LATER
-                @$el.afterPolyfill @selectedItem.$el
+                @$el.after @selectedItem.$el
+                # @$el.afterPolyfill @selectedItem.$el
                 @$el.find('#job-type-span').append """<a href="##{@selectedItem.definitionId}" class="term open">What is: #{@selectedItem.label}?</a>"""
 
                 isPSA = (4 < @selectedIndex < 8)

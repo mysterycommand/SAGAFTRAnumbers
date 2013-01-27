@@ -203,7 +203,7 @@ define [
 				lineItem = 
 					label: "#{categoryLabel} Principal #{i}"
 					first:
-						label: "First Hour" + (if category is 3 then (unless storecastingUse then ' (3 Month Use)' else ' (6 Month Use)'))
+						label: "First Hour" + (if category is 3 then (unless storecastingUse then ' (3 Month Use)' else ' (6 Month Use)') else '')
 						price: rates[categoryPrefix + 'session_actor_first_hour']
 					items: []
 

@@ -46,7 +46,11 @@ define [
       @$el.nextAll().not('#input-cta').detach()
       
       if @selectedItem?
-        @$el.appendPolyfill @selectedItem.$el
+        
+        # FIND ME LATER
+        @$el.append @selectedItem.$el
+        # @$el.appendPolyfill @selectedItem.$el
+        
         if @selectedIndex is 0 or @selectedIndex is 2
           @$el
             .off('change', '#broadcast-type')
@@ -57,7 +61,8 @@ define [
       @$el.nextAll().not('#input-cta').detach()
       
       broadcastType = @selectedItem.getSelectedItem()
-      if broadcastType? then @$el.afterPolyfill broadcastType.$el
+      if broadcastType? then @$el.after broadcastType.$el
+      # if broadcastType? then @$el.afterPolyfill broadcastType.$el
   
   Use
   
