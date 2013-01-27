@@ -194,3 +194,14 @@
   }
 }
 
+.ie .tooltip .close {
+  padding-top: 0.55em;
+  padding-right: 2.5em;
+}
+.ie .tooltip .close span {
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+

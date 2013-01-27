@@ -83,6 +83,12 @@
   }
 }
 
+.ie .output {
+  border-top: 1px solid $alphagray;
+  border-right: 1px solid $alphagray;
+  border-bottom: 1px solid $alphagray;
+}
+
 .cta {
   background: $lightestgray;
   padding: 0.75em 1em;
