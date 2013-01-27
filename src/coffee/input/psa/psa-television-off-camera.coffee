@@ -17,7 +17,7 @@ define [
       @steps = [
         new PrincipalActor()
         new Version()
-        new Tag()
+        # new Tag()
       ]
       @el = []
       _.each @steps, (el, i) => @el.push el.el
