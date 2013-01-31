@@ -2,37 +2,32 @@
     Author: Matt Hayes
 ###
 
-root = this
-log = root.log
-require = root.require
+# root = this
+# log = root.log
+# require = root.require
 
-require.config(
-    paths: {
-        'jquery': 'libs/jquery-1.7.1'
-        'underscore': 'libs/underscore-1.3.2'
+# require.config(
+#     paths: {
+#         'jquery': 'libs/jquery-1.7.1'
+#         'underscore': 'libs/underscore-1.3.2'
     
-        # jQuery plugins.
+#         # jQuery plugins.
         
-        # FIND ME LATER
-        'webshim': 'plugins/webshim-1.8.9/polyfiller'
-        'chosen': 'plugins/chosen/chosen.jquery'
-        # 'chosen': 'plugins/chosen.jquery-0.9.8'
+#         # FIND ME LATER
+#         'webshim': 'plugins/webshim-1.8.9/polyfiller'
+#         'chosen': 'plugins/chosen/chosen.jquery'
+#         # 'chosen': 'plugins/chosen.jquery-0.9.8'
         
-        # Require JS plugins.
-        'order': 'plugins/order-1.0.5'
-    }
-)
+#         # Require JS plugins.
+#         'order': 'plugins/order-1.0.5'
+#     }
+# )
 
 require [
-    'order!jquery'
-    'order!app'
-    
-    # jQuery plugins.
-
-    # FIND ME LATER
-    'order!webshim'
-    
-    'order!chosen'
+    'jquery'
+    'app'
+    'webshim'
+    'chosen'
 ], (jQuery, App) ->
     
     # On scripts loaded.
@@ -40,7 +35,11 @@ require [
     $ = jQuery
 
     # FIND ME LATER
-    $.webshims.polyfill()
+    $.webshims.debug = false
+    $.webshims.setOptions
+      basePath: 'js/plugins/webshim/shims/'
+      waitReady: false
+    $.webshims.polyfill 'forms forms-ext'
     
     # On DOM loaded.
     $ ->

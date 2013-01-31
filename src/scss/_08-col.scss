@@ -64,6 +64,7 @@ $margin: 100% / 18;
   .input,
   .output {
     min-height: 390px;
+    overflow: visible;
   }
 
   .disclaimer { display: none; }
