@@ -20,12 +20,26 @@ $margin: 100% / 18;
   @include box-sizing(border-box);
 }
 
-/*
- *
- *  Fixes for IE6-8
- *  http://jonikorpi.com/leaving-old-IE-behind/
- *
- */
+@media screen and (min-width: 20em) {
+  .input,
+  .output {
+    min-height: 190px;
+  }
+}
+
+@media screen and (min-width: 28em) {
+  .input,
+  .output {
+    min-height: 250px;
+  }
+}
+
+@media screen and (min-width: 32em) {
+  .input,
+  .output {
+    min-height: 310px;
+  }
+}
 
 /* @media screen and (min-width: 640px) */
 @media screen and (min-width: 40em) {

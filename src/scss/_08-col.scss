@@ -41,6 +41,11 @@ $margin: 100% / 18;
     @include line(12, 18);
     @include calc(margin-top, 48, 24);
   }
+
+  .input,
+  .output {
+    min-height: 390px;
+  }
 }
 
 /* @media screen and (min-width: 888px) */
@@ -96,13 +101,18 @@ $margin: 100% / 18;
     &.print       a { padding-left: 20px + 6px; text-indent: 0; width: auto; }
     &.share       a { padding-left: 22px + 6px; text-indent: 0; width: auto; }
   }
+
+  .input,
+  .output {
+    min-height: 460px;
+  }
 }
 
 /* @media screen and (min-width: 1080px) */
 @media screen and (min-width: 67.5em) {
   .splash {
     .radial   { bottom: 0;    left: 50%; margin-left: -590px; max-width: 1050px; width: 114%; }
-    .preview  { bottom: -2px; left: 50%; margin-left: -295px; max-width: 897px;  width: 97.5%; }
+//    .preview  { bottom: -2px; left: 50%; margin-left: -295px; max-width: 897px;  width: 97.5%; }
   }
 }
 
