@@ -107,7 +107,7 @@ require [
                         else
                             tab + encodeURIComponent($el.find('.label').text())
                     amount = encodeURIComponent $el.find('.amount').text()
-                    log amount, isHeader
+                    # log amount, isHeader
                     
                     url += line + '------------------------------' if isSubtotal
                     url += label
