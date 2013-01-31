@@ -4,4 +4,3 @@ vendor/*
 .DS_Store
 
 aftra.sublime-project
-*.js
