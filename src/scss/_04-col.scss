@@ -21,6 +21,11 @@ $margin: 100% / 18;
 }
 
 @media screen and (min-width: 20em) {
+    .hud {
+        h2 {
+            @include line(16, 36);
+        }
+    }
   .input,
   .output {
     min-height: 190px;
@@ -35,10 +40,19 @@ $margin: 100% / 18;
 }
 
 @media screen and (min-width: 32em) {
-  .input,
-  .output {
-    min-height: 310px;
-  }
+    .hud {
+        h2 {
+            @include large;
+        }
+        .start b {
+            top: 2px;
+        }
+    }
+
+    .input,
+    .output {
+        min-height: 310px;
+    }
 }
 
 /* @media screen and (min-width: 640px) */

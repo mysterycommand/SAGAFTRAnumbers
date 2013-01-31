@@ -58,7 +58,7 @@ h6 {
   color: $white;
   
   h2 {
-    @include large;
+    @include normal;
     
     output, a {
       font-weight: normal;
