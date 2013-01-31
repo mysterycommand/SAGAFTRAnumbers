@@ -8,7 +8,7 @@
 
   define = root.define;
 
-  define(['jquery', 'underscore', 'input/television/day', 'input/television/use'], function($, _, Day, Use) {
+  define(['jquery', 'underscore', 'input/television/day', 'input/television/use-on-camera'], function($, _, Day, Use) {
     var TelevisionCommercialOnCamera;
     TelevisionCommercialOnCamera = (function() {
 
@@ -16,6 +16,8 @@
         var _this = this;
         this.label = "Television Commercial - (On Camera)";
         this.value = "television_commercial_on_camera";
+        this.definitionId = "tv-commercial";
+        this.headsUpItems = ['Night Shoots', 'Hazard Pay', 'Travel time'];
         this.steps = [new Day(), new Use()];
         this.el = [];
         _.each(this.steps, function(el, i) {

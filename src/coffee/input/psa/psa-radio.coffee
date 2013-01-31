@@ -12,6 +12,7 @@ define [
     constructor: ->
       @label = "Public Service Announcement - Radio"
       @value = "psa_radio"
+      @definitionId = "psa"
       @steps = [
         new ActorAnnouncerSinger()
         new Version()

@@ -10,11 +10,11 @@ define [
 		constructor: ->
 			@html = """
 				<fieldset>
-					It's a
-					<select name="category" id="category" class="chzn-select" data-placeholder="please choose...">
-						<!-- USER MUST CHOOSE A CATEGORY! -->
-						<!-- <option value="-1"></option> -->
-					</select>
+					<span style="vertical-align: top;">It's a</span>
+					<span style="display: inline-block;">
+						<input type="radio" name="category" id="category-i" value="0" checked /> <label for="category-i">Category I</label><br/>
+						<input type="radio" name="category" id="category-ii" value="1" /> <label for="category-ii">Category II</label>
+					</span>
 					program.
 				</fieldset>
 			"""
@@ -22,7 +22,7 @@ define [
 			@el = @$el[0]
 			
 			@setupOptions()
-			@$el.on 'change', '#category', @onChange
+			@$el.on 'change', 'input', @onChange
 		
 		setupOptions: ->
 			@selectedIndex = -1
@@ -31,14 +31,15 @@ define [
 				'Category I'
 				'Category II'
 			]
-			html = ''
-			_.each @options, (el, i) -> html += """<option value="#{i + 1}">#{el}</option>"""
-			@$el.find('select').append(html);
+		# 	html = ''
+		# 	_.each @options, (el, i) -> html += """<option value="#{i}">#{el}</option>"""
+		# 	@$el.find('select').append(html);
 		
 		getSelectedItem: -> @selectedItem
 		
 		onChange: (event) =>
 			@selectedIndex = parseInt(event.target.value, 10)
 			@selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
+			# log @selectedIndex, @selectedItem
 	
 	Category

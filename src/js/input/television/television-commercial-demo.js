@@ -16,6 +16,8 @@
         var _this = this;
         this.label = "Television Commercial Demo - (Voiceover/Off Camera, Non-air)";
         this.value = "television_commercial_demo";
+        this.definitionId = "tv-commercial-demo";
+        this.headsUpItems = ['Lifts', 'Holiday pay'];
         this.steps = [new PrincipalActorDemo(), new Version()];
         this.el = [];
         _.each(this.steps, function(el, i) {

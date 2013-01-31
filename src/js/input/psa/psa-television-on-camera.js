@@ -16,6 +16,7 @@
         var _this = this;
         this.label = "Public Service Announcement - Television (On Camera)";
         this.value = "psa_television_on_camera";
+        this.definitionId = "psa";
         this.steps = [new Day(), new Version()];
         this.el = [];
         _.each(this.steps, function(el, i) {

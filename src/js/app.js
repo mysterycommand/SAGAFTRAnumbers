@@ -17,6 +17,8 @@
         this.el = el;
         this.onChange = __bind(this.onChange, this);
 
+        this.updateCount = 0;
+        this.updateCountToCTA = 10;
         this.$el = $(this.el);
         this.input = new Input(this.$el.find('#input')[0]);
         this.output = new Output(this.$el.find('#output')[0]);
@@ -26,8 +28,38 @@
 
       App.prototype.start = function() {};
 
-      App.prototype.onChange = function(event) {
+      App.prototype.onChange = function(event, isReset) {
+        if (isReset == null) {
+          isReset = false;
+        }
         this.$el.trigger('update');
+        $('div.tooltip').filter(":visible").fadeOut(400);
+        this.calcHeight();
+        if (isReset) {
+          this.updateCount = 0;
+          return;
+        }
+        if (event.target.id === 'job-type') {
+          this.updateCount = 0;
+          $('#output-cta').fadeOut(400);
+          $('#input-cta').fadeOut(400);
+          return;
+        }
+        if (this.updateCount < this.updateCountToCTA) {
+          this.updateCount++;
+          if (this.updateCount === this.updateCountToCTA) {
+            $('#output-cta').fadeIn(400);
+            $('#input-cta').fadeIn(400);
+            this.calcHeight();
+          }
+        }
+      };
+
+      App.prototype.calcHeight = function() {
+        var height;
+        height = Math.max(this.input.$el.css('height', 'auto').height(), this.output.$el.css('height', 'auto').height());
+        this.input.$el.height(height);
+        this.output.$el.height(height);
       };
 
       App.prototype.restart = function() {

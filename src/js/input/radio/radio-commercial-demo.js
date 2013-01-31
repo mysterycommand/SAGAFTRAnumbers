@@ -16,6 +16,8 @@
         var _this = this;
         this.label = "Radio Commercial Demo";
         this.value = "radio_commercial_demo";
+        this.definitionId = "radio-commercial-demo";
+        this.headsUpItems = ['Holiday pay', 'Lifts'];
         this.steps = [new ActorAnnouncerSinger(), new Version()];
         this.el = [];
         _.each(this.steps, function(el, i) {

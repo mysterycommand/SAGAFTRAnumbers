@@ -4,7 +4,8 @@ define = root.define
 
 define [
   'jquery'
-], ($) ->
+  'underscore'
+], ($, _) ->
   class Radio
   	@sessionLineItems: (rates) ->
       numActors = parseInt $('#num-actors').val(), 10
@@ -16,7 +17,7 @@ define [
       numTags = parseInt $('#num-tags').val(), 10
 
       tagRate = 0
-      if numTags > 2  then tagRate = rates.tag_2_25
+      if numTags > 1  then tagRate = rates.tag_2_25
       if numTags > 25 then tagRate = rates.tag_26_50
       if numTags > 50 then tagRate = rates.tag_51
 
@@ -41,10 +42,10 @@ define [
           label: "Add'l Versions of the Script"
           price: rates.session_actor
         
-        if (tagRate) then lineItem.items.push
-          count: numTags - 2
-          label: "Add'l Tags at $ #{tagRate.toFixed(2)}"
-          price: tagRate
+        # if (i is 1 and tagRate) then lineItem.items.push
+        #   count: numTags - 1
+        #   label: "Add'l Tags at $ #{tagRate.toFixed(2)}"
+        #   price: tagRate
         
         lineItems.push lineItem
       
@@ -63,6 +64,13 @@ define [
           price: rates.session_singer
         
         lineItems.push lineItem
+
+      if (tagRate) then lineItems.push
+        label: "Tags"
+        first:
+          label: "#{numTags - 1} Additional Tags at $ #{tagRate.toFixed(2)} ea."
+          price: tagRate * (numTags - 1)
+        items: []
       
       lineItems
     
@@ -101,28 +109,28 @@ define [
           cities = []
           cityRate = 0
           
-          chicagoIndex = markets.indexOf 'Chicago'
+          chicagoIndex = _.indexOf markets, 'Chicago'
           if chicagoIndex isnt -1
             cities[cities.length] = markets.splice(chicagoIndex, 1)[0]
             cityRate = rates.wild_13_major_chicago
           
-          losAngelesIndex = markets.indexOf 'Los Angeles'
+          losAngelesIndex = _.indexOf markets, 'Los Angeles'
           if losAngelesIndex isnt -1
             cities[cities.length] = markets.splice(losAngelesIndex, 1)[0]
             cityRate = rates.wild_13_major_los_angeles
           
-          newYorkIndex = markets.indexOf 'New York'
+          newYorkIndex = _.indexOf markets, 'New York'
           if newYorkIndex isnt -1
             cities[cities.length] = markets.splice(newYorkIndex, 1)[0]
             cityRate = rates.wild_13_major_new_york
           
-          if cities.length is 3 then cityRate = rates.wild_13_major_all_3
           if cities.length is 2 then cityRate = rates.wild_13_major_any_2
+          if cities.length is 3 then cityRate = rates.wild_13_major_all_3
           
-          numUnits = if markets.length then markets.reduce((t, s) -> t + s) - 1 else 0
+          numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
           
           unitRate = 0
-          if numUnits > 2  then unitRate = rates.wild_13_unit_2_25
+          if numUnits > 1  then unitRate = rates.wild_13_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
           
           if cityRate then lineItem.items.push
@@ -153,27 +161,27 @@ define [
           cities = []
           cityRate = 0
           
-          chicagoIndex = markets.indexOf 'Chicago'
+          chicagoIndex = _.indexOf markets, 'Chicago'
           if chicagoIndex isnt -1
             cities[cities.length] = markets.splice(chicagoIndex, 1)[0]
             cityRate = rates.wild_8_major_chicago
           
-          losAngelesIndex = markets.indexOf 'Los Angeles'
+          losAngelesIndex = _.indexOf markets, 'Los Angeles'
           if losAngelesIndex isnt -1
             cities[cities.length] = markets.splice(losAngelesIndex, 1)[0]
             cityRate = rates.wild_8_major_los_angeles
           
-          newYorkIndex = markets.indexOf 'New York'
+          newYorkIndex = _.indexOf markets, 'New York'
           if newYorkIndex isnt -1
             cities[cities.length] = markets.splice(newYorkIndex, 1)[0]
             cityRate = rates.wild_8_major_new_york
           
-          if cities.length is 3 then cityRate = rates.wild_8_major_all_3
           if cities.length is 2 then cityRate = rates.wild_8_major_any_2
+          if cities.length is 3 then cityRate = rates.wild_8_major_all_3
           
-          numUnits = if markets.length then markets.reduce((t, s) -> t + s) else 0
+          numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
           unitRate = 0
-          if numUnits > 2  then unitRate = rates.wild_8_unit_2_25
+          if numUnits > 1  then unitRate = rates.wild_8_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_8_unit_26
           
           if cityRate then lineItem.items.push

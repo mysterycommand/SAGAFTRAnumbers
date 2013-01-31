@@ -16,6 +16,8 @@
         var _this = this;
         this.label = "Corporate/Educational & Non-Broadcast - (On Camera)";
         this.value = "corp_edu_on_camera";
+        this.definitionId = "co-ed-contract";
+        this.headsUpItems = ['Night Shoots', 'Travel time', 'Wardrobe fees'];
         this.steps = [new Category(), new NarratorPlayerExtra()];
         this.el = [];
         _.each(this.steps, function(el, i) {

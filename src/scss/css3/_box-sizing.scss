@@ -1,0 +1,5 @@
+@import "prefix";
+
+@mixin box-sizing($method: border-box, $vendors: $all-vendors) {
+  @include prefix(box-sizing, $method, $vendors);
+}

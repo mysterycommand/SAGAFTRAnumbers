@@ -26,10 +26,10 @@ define [
 			
 			# if $(event.target).is('#job-type') and parseInt($('#job-type').val(), 10) is -1 then @clear()
 			@$el.find('.chzn-select').not('.chzn-done').each (i, el) ->
-				$(el).chosen(
+				$(el).chosen
 					allow_single_deselect: ( !! $(el).find('option[value=-1]').size())
 					disable_search_threshold: 20
-				)
+			
 			@$el.find('input[type=number]').not('.draggable-number').each (i, el) -> new DraggableNumber el
 			
 			return

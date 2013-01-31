@@ -19,7 +19,7 @@
         this.onInputPlayers = __bind(this.onInputPlayers, this);
 
         this.onInputNarrators = __bind(this.onInputNarrators, this);
-        this.html = "<fieldset>\n	I'll need:\n	<div>\n		<input type=\"number\" name=\"num-narrators\" id=\"num-narrators\" value=\"0\" min=\"0\" max=\"2\">\n		<a href=\"#narrator-spokesperson\" class=\"term open\">narrator/spokesperson</a>(s),\n	</div>\n	<div>\n		<input type=\"number\" name=\"num-players\" id=\"num-players\" value=\"0\" min=\"0\" max=\"10\">\n		<a href=\"#day-player\" class=\"term open\">day player</a>(s), and\n	</div>\n	<div>\n		<input type=\"number\" name=\"num-extras\" id=\"num-extras\" value=\"0\" min=\"0\" max=\"10\">\n		<a href=\"#general-extra\" class=\"term open\">extra</a>(s).\n	</div>\n</fieldset>";
+        this.html = "<fieldset>\n	I'll need:\n	<div>\n		<input type=\"number\" name=\"num-narrators\" id=\"num-narrators\" value=\"0\" min=\"0\" max=\"2\">\n		<a href=\"#narrator-spokesperson\" class=\"term open\">narrator/spokesperson</a>(s),\n	</div>\n	<div>\n		<input type=\"number\" name=\"num-players\" id=\"num-players\" value=\"0\" min=\"0\" max=\"10\">\n		<a href=\"#day-performer\" class=\"term open\">day performer (or day player</a>(s)), and\n	</div>\n	<div>\n		<input type=\"number\" name=\"num-half-players\" id=\"num-half-players\" value=\"0\" min=\"0\" max=\"10\">\n		<a href=\"#day-performer\" class=\"term open\">half day player</a>(s), and\n	</div>\n	<div>\n		<input type=\"number\" name=\"num-extras\" id=\"num-extras\" value=\"0\" min=\"0\" max=\"10\">\n		<a href=\"#general-extra\" class=\"term open\">extra</a>(s).\n	</div>\n</fieldset>";
         this.$el = $(this.html);
         this.el = this.$el[0];
         this.narrators = [];

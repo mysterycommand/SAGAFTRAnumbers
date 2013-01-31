@@ -80,7 +80,7 @@ define [
           {value: "mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Looking for Smaller Markets or State-wide Buys?  Ask Tim"}
       ]
       html = ''
-      _.each @options, (el, i) -> html += """<option value="#{i}" data-value="#{el.value}">#{el.label}</option>"""
+      _.each @options, (el, i) -> html += """<option value="#{i}" data-value="#{el.value}"#{if el.value.toString().indexOf('mailto') > -1 then ' class="mailto"' else ''}>#{el.label}</option>"""
       @$el.find('select').append(html);
     
     getSelectedItem: -> @selectedItem
@@ -92,7 +92,7 @@ define [
       @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
       
       # log '1', val, @selectedIndex, @selectedItem
-      return if @selectedItem is null
+      return if ! @selectedItem or @selectedItem is null
       
       # log '2', @selectedItem.value, isNaN(parseInt(@selectedItem.value, 10))
       return unless isNaN(parseInt(@selectedItem.value, 10))

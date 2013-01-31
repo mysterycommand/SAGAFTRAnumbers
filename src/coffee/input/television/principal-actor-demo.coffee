@@ -29,6 +29,9 @@ define [
         while @actors.length < numActors
           actor = new PrincipalActorCharacter(@actors.length + 1)
           @actors.push actor
+
+          # FIND ME LATER
+          # @$el.append actor.$el
           @$el.appendPolyfill actor.$el
       else
         while @actors.length > numActors

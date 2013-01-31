@@ -93,6 +93,9 @@
       };
 
       Touchable.prototype.onMouseUp = function(event) {
+        if (!this.touches) {
+          return;
+        }
         this.touches._goUpWithEvent(event);
         this.triggerTouchUp(this.touches);
         delete this.touches;

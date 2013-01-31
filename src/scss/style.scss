@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "normalize";
 @import "chosen";
 
@@ -120,15 +121,28 @@ h2 {
 	@include box-shadow((0 0 25px $alphawhite, inset 0 0 5px $alphablack));
 	@include linear-gradient((left, $orange, #f2b16c, $orange));
 }
+=======
+/*
+	Author: Matt Hayes
+*/
 
-h6 {
-	font-style: italic;
-	font-weight: normal;
-	text-align: right;
+#compare {
+	background: transparent url(../img/_compare.png) no-repeat scroll center center;
 	
-	@include line(11, 18);
+	width: 1200px;
+	height: 1200px;
+>>>>>>> feature_javascript
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -600px;
+	
+	opacity: 0.5;
+	text-align: center;
 }
 
+<<<<<<< HEAD
 //.home {
 //  .estimate, h5,
 ////  nav ul,
@@ -142,48 +156,68 @@ h6 {
 	margin-top: 1em;
 	position: relative;
 }
+=======
+@import "gold/resets";
 
-.home .estimate { display: none; }
-.home .start { display: block; }
-.home h5 { visibility: hidden; }
+@import "norm/html5";
+>>>>>>> feature_javascript
 
-.estimate { display: block; }
-.start { display: none; }
+@import "h5bp/base";
+@import "h5bp/links";
+@import "h5bp/type/all";
+@import "h5bp/lists";
+@import "h5bp/forms/all";
+@import "h5bp/table";
+@import "h5bp/chromeframe";
 
+@import "gold/fluid-media";
+
+<<<<<<< HEAD
 $hud-width: 100%;
+=======
+/* PRIMARY STYLES */
+@import "layout/all";
+@import "typography";
+>>>>>>> feature_javascript
 
-.hud {
-	background: $softgrey;
-	margin: 0 auto;
-	padding: 0.75em 0.75em 0;
-	position: relative;
+/* CHOSEN */
+@import "chosen";
 
-	width: $hud-width;
+/* MEDIA QUERIES */
+@import "04-col";
+@import "08-col";
+@import "16-col";
 
-	@include border-radius(12px 12px 0 0);
-	@include box-sizing(border-box);
+@import "helpers";
 
+<<<<<<< HEAD
 	@include chrome(30%, 55%, 56%, 72%);
 
 	&.sticky {
 		position: fixed;
 		top: 0;
 	}
+=======
+@import "h5bp/helpers";
+@import "h5bp/print";
+>>>>>>> feature_javascript
 
-	output, a {
-		color: $textwhite;
-		display: inline-block;
-		font-weight: normal;
-		position: relative;
-		text-transform: uppercase;
+@media print {
 
-		@include text-shadow(0 0 16px $alphablack);
+	.banner-top,
+	.hud,
+	nav,
+	#input-section,
+	footer,
+	.banner-bottom {
+		display: none;
 	}
 
-	a b {
-		position: relative;
-		top: -2px;
+	header {
+		a[href]:after { content: ""; }
+		h6 { margin-top: 1em; }
 	}
+<<<<<<< HEAD
 }
 
 h5 {
@@ -406,5 +440,11 @@ select {
 //  @include border-radius(12px 12px 0 0);
 //  @include box-shadow(inset 0 0 8px $hardalphablack);
 //}
+=======
 
-// print
+	#output-section {
+		width: 100%;
+	}
+>>>>>>> feature_javascript
+
+}

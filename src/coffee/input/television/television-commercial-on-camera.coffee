@@ -7,12 +7,18 @@ define [
   'underscore'
   
   'input/television/day'
-  'input/television/use'
+  'input/television/use-on-camera'
 ], ($, _, Day, Use) ->
 	class TelevisionCommercialOnCamera
     constructor: ->
       @label = "Television Commercial - (On Camera)"
       @value = "television_commercial_on_camera"
+      @definitionId = "tv-commercial"
+      @headsUpItems = [
+        'Night Shoots'
+        'Hazard Pay'
+        'Travel time'
+      ]
       @steps = [
         new Day()
         new Use()

@@ -73,14 +73,14 @@
 
       Output.prototype.television_commercial_on_camera = function() {
         this.sessionFeesEstimator.estimate(Television.onCameraSessionLineItems(this.rates));
-        this.usageFeesEstimator.estimate(Television.usageLineItems(this.rates));
+        this.usageFeesEstimator.estimate(Television.onCameraUsageLineItems(this.rates));
         this.html = this.sessionFeesEstimator.html + this.usageFeesEstimator.html;
         this.cost = this.sessionFeesEstimator.cost + this.usageFeesEstimator.cost;
       };
 
       Output.prototype.television_commercial_off_camera = function() {
         this.sessionFeesEstimator.estimate(Television.offCameraSessionLineItems(this.rates));
-        this.usageFeesEstimator.estimate(Television.usageLineItems(this.rates));
+        this.usageFeesEstimator.estimate(Television.offCameraUsageLineItems(this.rates));
         this.html = this.sessionFeesEstimator.html + this.usageFeesEstimator.html;
         this.cost = this.sessionFeesEstimator.cost + this.usageFeesEstimator.cost;
       };

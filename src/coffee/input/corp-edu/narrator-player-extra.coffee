@@ -21,7 +21,11 @@ define [
 					</div>
 					<div>
 						<input type="number" name="num-players" id="num-players" value="0" min="0" max="10">
-						<a href="#day-player" class="term open">day player</a>(s), and
+						<a href="#day-performer" class="term open">day performer (or day player</a>(s)), and
+					</div>
+					<div>
+						<input type="number" name="num-half-players" id="num-half-players" value="0" min="0" max="10">
+						<a href="#day-performer" class="term open">half day player</a>(s), and
 					</div>
 					<div>
 						<input type="number" name="num-extras" id="num-extras" value="0" min="0" max="10">
@@ -53,6 +57,7 @@ define [
 					# FIND ME LATER
 					# @$el.appendPolyfill narrator.$el
 					# @$el.append narrator.$el
+					# $(event.target).closest('div').append narrator.$el
 					$(event.target).closest('div').appendPolyfill narrator.$el
 			else
 				while @narrators.length > numNarrators
@@ -71,6 +76,7 @@ define [
 					# FIND ME LATER
 					# @$el.appendPolyfill player.$el
 					# @$el.append player.$el
+					# $(event.target).closest('div').append player.$el
 					$(event.target).closest('div').appendPolyfill player.$el
 			else
 				while @players.length > numPlayers
@@ -89,6 +95,7 @@ define [
 					# FIND ME LATER
 					# @$el.appendPolyfill extra.$el
 					# @$el.append extra.$el
+					# $(event.target).closest('div').append1 extra.$el
 					$(event.target).closest('div').appendPolyfill extra.$el
 			else
 				while @extras.length > numExtras

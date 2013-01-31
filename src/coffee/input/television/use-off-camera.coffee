@@ -5,9 +5,9 @@ define = root.define
 define [
   'jquery'
   'underscore'
-  'input/television/use-broadcast'
+  'input/television/use-broadcast-off-camera'
   'input/television/use-internet'
-  'input/television/use-both'
+  'input/television/use-both-off-camera'
 ], ($, _, UseBroadcast, UseInternet, UseBoth) ->
 	class Use
     constructor: ->
@@ -43,10 +43,14 @@ define [
       @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
       
       @$el.find('p').detach()
-      @$el.nextAll().detach()
+      @$el.nextAll().not('#input-cta').detach()
       
       if @selectedItem?
+        
+        # FIND ME LATER
+        # @$el.append @selectedItem.$el
         @$el.appendPolyfill @selectedItem.$el
+        
         if @selectedIndex is 0 or @selectedIndex is 2
           @$el
             .off('change', '#broadcast-type')
@@ -54,9 +58,12 @@ define [
           @selectedItem.$el.find('#broadcast-type').trigger 'change'
         
     onBroadcastChange: (event) =>
-      @$el.nextAll().detach()
+      @$el.nextAll().not('#input-cta').detach()
       
       broadcastType = @selectedItem.getSelectedItem()
+      
+      # FIND ME LATER
+      # if broadcastType? then @$el.after broadcastType.$el
       if broadcastType? then @$el.afterPolyfill broadcastType.$el
   
   Use

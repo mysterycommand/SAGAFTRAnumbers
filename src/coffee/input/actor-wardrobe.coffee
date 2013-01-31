@@ -10,7 +10,7 @@ define [
       @html = """
         <li>
           <input type="checkbox" name="actor-#{@index}-wardrobe-fitting" value="1" checked>
-          wardrobe fitting for principal actor #{@index + 1}.
+          <a href="#wardrobe-fitting" class="term open">wardrobe fitting</a> for principal actor #{@index + 1}.
         </li>
       """
       @$el = $ @html

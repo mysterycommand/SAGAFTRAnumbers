@@ -16,6 +16,7 @@
         var _this = this;
         this.label = "Public Service Announcement - Radio";
         this.value = "psa_radio";
+        this.definitionId = "psa";
         this.steps = [new ActorAnnouncerSinger(), new Version()];
         this.el = [];
         _.each(this.steps, function(el, i) {

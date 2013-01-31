@@ -1,0 +1,74 @@
+@import "../css3/box-sizing";
+@import "zoomable-baseline-func";
+
+/*
+ *
+ *  Four-column grid active
+ *  ----------------------------------------
+ *  Margin   | #  1   2   3   4   |   Margin
+ *  5.55555% | %  25  50  75  100 | 5.55555%
+ *
+ */
+$margin: 100% / 18;
+
+header {
+  margin: 0 $margin;
+}
+
+h1, h2 {
+  @include calc(margin-top, 24, 26);
+  @include calc(margin-bottom, 36, 26);
+}
+
+h2 {
+  font-weight: normal;
+}
+
+h3 {
+  @include calc(margin-top, 24, 16);
+  @include calc(margin-bottom, 24, 16);
+}
+
+/*
+ *  Simple elastic gutters
+ *  Note: box-sizing will not work in IE6-8
+ */
+.wrapper {
+  padding: 0 0.75em;
+  @include box-sizing(border-box);
+}
+
+/*
+ *
+ *  Fixes for IE6-8
+ *  http://jonikorpi.com/leaving-old-IE-behind/
+ *
+ */
+.ie body {
+  margin: 0 auto;
+  
+  @include calc(font-size, 17);
+  @include calc(width, 640);
+}
+.ie h1 {
+  @include huge;
+  @include calc(margin-top, 48, 42);
+  @include calc(margin-bottom, 24, 42);
+}
+
+
+/* @media screen and (min-width: 640px) */
+@media screen and (min-width: 40em) {
+  
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    @include calc(font-size, 17);
+  }
+  
+  h1 {
+    @include huge;
+    @include calc(margin-top, 48, 42);
+    @include calc(margin-bottom, 24, 42);
+  }
+  
+}

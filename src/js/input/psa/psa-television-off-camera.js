@@ -14,9 +14,10 @@
 
       function PublicServiceAnnouncementTelevisionOffCamera() {
         var _this = this;
-        this.label = "Public Service Announcement - Television (Off Camera)";
+        this.label = "Public Service Announcement - Television (Voiceover/Off Camera)";
         this.value = "psa_television_off_camera";
-        this.steps = [new PrincipalActor(), new Version(), new Tag()];
+        this.definitionId = "psa";
+        this.steps = [new PrincipalActor(), new Version()];
         this.el = [];
         _.each(this.steps, function(el, i) {
           return _this.el.push(el.el);

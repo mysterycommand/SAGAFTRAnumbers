@@ -15,7 +15,7 @@
 
       function JobType() {
         this.onChange = __bind(this.onChange, this);
-        this.html = "<fieldset>\n	I'm hiring for a\n	<select name=\"job-type\" id=\"job-type\" class=\"chzn-select\" data-placeholder=\"please choose your job\">\n		<option value=\"-1\" data-value=\"none\"></option>\n	</select>.\n</fieldset>";
+        this.html = "<fieldset id=\"job-type-fieldset\">\n    <span style=\"vertical-align: top;\">I'm hiring for a</span>\n    <span id=\"job-type-span\">\n        <select name=\"job-type\" id=\"job-type\" class=\"chzn-select\" data-placeholder=\"please choose your job\">\n            <option value=\"-1\" data-value=\"none\"></option>\n        </select>\n    </span>\n</fieldset>";
         this.$el = $(this.html);
         this.el = this.$el[0];
         this.setupOptions();
@@ -26,27 +26,57 @@
         var html;
         this.selectedIndex = -1;
         this.selectedItem = null;
-        this.options = [new Radio.Commercial(), new Radio.Demo(), new TV.OnCamera(), new TV.OffCamera(), new TV.Demo(), new PSA.Radio(), new PSA.OnCamera(), new PSA.OffCamera(), new CorpEdu.OnCamera(), new CorpEdu.OffCamera(), new CorpEdu.AudioOnly()];
+        this.options = [
+          new Radio.Commercial(), new Radio.Demo(), new TV.OnCamera(), new TV.OffCamera(), new TV.Demo(), new PSA.Radio(), new PSA.OnCamera(), new PSA.OffCamera(), new CorpEdu.OnCamera(), new CorpEdu.OffCamera(), new CorpEdu.AudioOnly(), {
+            value: "mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question",
+            label: "Not seeing the job you're looking for?  Ask Tim"
+          }
+        ];
         html = '';
         _.each(this.options, function(el, i) {
-          return html += "<option value=\"" + i + "\" data-value=\"" + el.value + "\">" + el.label + "</option>";
+          return html += "<option value=\"" + i + "\" data-value=\"" + el.value + "\"" + (el.value.toString().indexOf('mailto') > -1 ? ' class="mailto"' : '') + ">" + el.label + "</option>";
         });
         return this.$el.find('select').append(html);
       };
 
       JobType.prototype.onChange = function(event) {
+        var headsUp, isPSA, mailto, _ref;
         this.selectedIndex = parseInt(event.target.value, 10);
         this.selectedItem = this.selectedIndex !== -1 ? this.options[this.selectedIndex] : null;
         if (this.selectedItem != null) {
           this.$el.siblings().detach();
+          this.$el.find('a.term.open').remove();
           this.$el.afterPolyfill(this.selectedItem.$el);
-          return this.selectedItem.$el.find('#num-days').trigger('input');
+          this.$el.find('#job-type-span').append("<a href=\"#" + this.selectedItem.definitionId + "\" class=\"term open\">What is: " + this.selectedItem.label + "?</a>");
+          isPSA = (4 < (_ref = this.selectedIndex) && _ref < 8);
+          headsUp = isPSA ? "Prior Union authorization required for PSA waivers." : "These things might apply to your " + this.selectedItem.label + ":\n" + (this.selectedItem.headsUpItems.join(', ') + ', etc') + ".";
+          this.$el.parent().append("<div id=\"input-cta\" class=\"cta\" style=\"display: none;\">\n    <p>Heads Up! " + headsUp + " For details <a href=\"mailto:Timothy.Ogren@sagaftra.org\">Ask Tim</a>.</p>\n</div>");
+          this.selectedItem.$el.find('input[type="number"]').each(function(i, el) {
+            var val;
+            val = parseInt($(this).attr('min'), 10) || 0;
+            $(this).val(val).trigger('input', true).trigger('change', true);
+          });
+          this.selectedItem.$el.find('select').each(function(i, el) {
+            var val;
+            val = $(this).find('option[value="-1"]').size() === 0 ? 0 : -1;
+            $(this).val(val).trigger('liszt:updated').trigger('change', true);
+          });
+          this.selectedItem.$el.find('input[type="radio"]').val([0]);
+          if (this.selectedItem.value.indexOf('mailto') === -1) {
+            return;
+          }
+          mailto = window.open(this.selectedItem.value, 'mailto');
+          if (mailto && mailto.open && !mailto.closed) {
+            mailto.close();
+          }
+          return this.$el.find('#job-type').val(-1).trigger('change').trigger('liszt:updated');
         } else {
           this.$el.siblings().find('input').filter('[type=number]').each(function(i, el) {
             return $(el).val($(el).attr('min') || 0).trigger('change');
           });
           this.$el.siblings().find('select').not('#job-type').val(-1).trigger('liszt:updated').trigger('change').filter('[multiple]').val([]).trigger('liszt:updated').trigger('change');
-          return this.$el.siblings().detach();
+          this.$el.siblings().detach();
+          return this.$el.find('a.term.open').remove();
         }
       };
 

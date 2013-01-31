@@ -8,7 +8,7 @@
 
   define = root.define;
 
-  define(['jquery'], function($) {
+  define(['jquery', 'underscore'], function($, _) {
     var Radio;
     Radio = (function() {
 
@@ -25,7 +25,7 @@
         numVersions = parseInt($('#num-versions').val(), 10);
         numTags = parseInt($('#num-tags').val(), 10);
         tagRate = 0;
-        if (numTags > 2) {
+        if (numTags > 1) {
           tagRate = rates.tag_2_25;
         }
         if (numTags > 25) {
@@ -59,13 +59,6 @@
               price: rates.session_actor
             });
           }
-          if (tagRate) {
-            lineItem.items.push({
-              count: numTags - 2,
-              label: "Add'l Tags at $ " + (tagRate.toFixed(2)),
-              price: tagRate
-            });
-          }
           lineItems.push(lineItem);
         }
         i = 0;
@@ -86,6 +79,16 @@
             });
           }
           lineItems.push(lineItem);
+        }
+        if (tagRate) {
+          lineItems.push({
+            label: "Tags",
+            first: {
+              label: "" + (numTags - 1) + " Additional Tags at $ " + (tagRate.toFixed(2)) + " ea.",
+              price: tagRate * (numTags - 1)
+            },
+            items: []
+          });
         }
         return lineItems;
       };
@@ -124,32 +127,32 @@
             });
             cities = [];
             cityRate = 0;
-            chicagoIndex = markets.indexOf('Chicago');
+            chicagoIndex = _.indexOf(markets, 'Chicago');
             if (chicagoIndex !== -1) {
               cities[cities.length] = markets.splice(chicagoIndex, 1)[0];
               cityRate = rates.wild_13_major_chicago;
             }
-            losAngelesIndex = markets.indexOf('Los Angeles');
+            losAngelesIndex = _.indexOf(markets, 'Los Angeles');
             if (losAngelesIndex !== -1) {
               cities[cities.length] = markets.splice(losAngelesIndex, 1)[0];
               cityRate = rates.wild_13_major_los_angeles;
             }
-            newYorkIndex = markets.indexOf('New York');
+            newYorkIndex = _.indexOf(markets, 'New York');
             if (newYorkIndex !== -1) {
               cities[cities.length] = markets.splice(newYorkIndex, 1)[0];
               cityRate = rates.wild_13_major_new_york;
             }
-            if (cities.length === 3) {
-              cityRate = rates.wild_13_major_all_3;
-            }
             if (cities.length === 2) {
               cityRate = rates.wild_13_major_any_2;
             }
-            numUnits = markets.length ? markets.reduce(function(t, s) {
+            if (cities.length === 3) {
+              cityRate = rates.wild_13_major_all_3;
+            }
+            numUnits = markets.length ? _.reduce(markets, function(t, s) {
               return t + s;
             }) - 1 : 0;
             unitRate = 0;
-            if (numUnits > 2) {
+            if (numUnits > 1) {
               unitRate = rates.wild_13_unit_2_25;
             }
             if (numUnits > 25 || cities.length) {
@@ -187,32 +190,32 @@
             });
             cities = [];
             cityRate = 0;
-            chicagoIndex = markets.indexOf('Chicago');
+            chicagoIndex = _.indexOf(markets, 'Chicago');
             if (chicagoIndex !== -1) {
               cities[cities.length] = markets.splice(chicagoIndex, 1)[0];
               cityRate = rates.wild_8_major_chicago;
             }
-            losAngelesIndex = markets.indexOf('Los Angeles');
+            losAngelesIndex = _.indexOf(markets, 'Los Angeles');
             if (losAngelesIndex !== -1) {
               cities[cities.length] = markets.splice(losAngelesIndex, 1)[0];
               cityRate = rates.wild_8_major_los_angeles;
             }
-            newYorkIndex = markets.indexOf('New York');
+            newYorkIndex = _.indexOf(markets, 'New York');
             if (newYorkIndex !== -1) {
               cities[cities.length] = markets.splice(newYorkIndex, 1)[0];
               cityRate = rates.wild_8_major_new_york;
             }
-            if (cities.length === 3) {
-              cityRate = rates.wild_8_major_all_3;
-            }
             if (cities.length === 2) {
               cityRate = rates.wild_8_major_any_2;
             }
-            numUnits = markets.length ? markets.reduce(function(t, s) {
+            if (cities.length === 3) {
+              cityRate = rates.wild_8_major_all_3;
+            }
+            numUnits = markets.length ? _.reduce(markets, function(t, s) {
               return t + s;
-            }) : 0;
+            }) - 1 : 0;
             unitRate = 0;
-            if (numUnits > 2) {
+            if (numUnits > 1) {
               unitRate = rates.wild_8_unit_2_25;
             }
             if (numUnits > 25 || cities.length) {

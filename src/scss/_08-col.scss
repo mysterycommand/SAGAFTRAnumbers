@@ -1,0 +1,169 @@
+@import "gold/zoomable-baseline-func";
+@import "css3/box-sizing";
+
+/*
+ *
+ *  Eight-column grid active
+ *  ----------------------------------------------------------------------
+ *  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
+ *  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
+ *	
+ *
+ */
+$margin: 100% / 18;
+
+/* @media screen and (min-width: 768px) */
+/*
+@media screen and (min-width: 50em) {
+  $hud-width: 0.375;
+  $left-width: (1 - $hud-width) / 2;
+  
+  $m: percentage($left-width + ($hud-width * 0.50));
+  $n: percentage($left-width + ($hud-width * 0.75));
+  $o: percentage($left-width + ($hud-width * 0.76));
+  $p: percentage($left-width + ($hud-width * 0.92));
+  
+  .hud { width: percentage($hud-width); }
+  nav {
+    @include linear-gradient((-30deg, $medgray 0%, $medgray $m, lighten($medgray, 8%) $n, lighten($medgray, 12%) $o, $medgray $p));
+  }
+}
+*/
+
+/* @media screen and (min-width: 768px) */
+@media screen and (min-width: 50em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1 */
+    /*@include calc(font-size, 16);*/
+  }
+
+  h6 {
+    @include line(12, 18);
+  }
+
+  .inner {
+    &.left {
+      width: 62.5%;
+      padding-right: 0;
+    }
+      
+    &.right {
+      display: block;
+    }
+  }
+
+  .input {
+    @include border-radius(12px 0 0 0);
+    form { display: block; }
+  }
+
+  .output {
+    display: block;
+  }
+
+  .input,
+  .output {
+    min-height: 390px;
+    overflow: visible;
+  }
+
+  .disclaimer { display: none; }
+}
+
+/* @media screen and (min-width: 888px) */
+@media screen and (min-width: 55.5em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    /*@include calc(font-size, 17);*/
+  }
+}
+
+/* @media screen and (min-width: 984px) */
+@media screen and (min-width: 61.5em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+    /*@include calc(font-size, 16);*/
+  }
+  
+  h6 {
+    @include line(15, 22);
+    @include calc(margin-top, 24, 18);
+  }
+/*  
+  .hud { width: 25%; }
+  nav {
+    @include linear-gradient((-30deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 56.25%, lighten($medgray, 12%) 56.375%, $medgray 61.5%));
+  }
+*/
+  $hud-width: 0.25;
+  $left-width: (1 - $hud-width) / 2;
+  
+  $m: percentage($left-width + ($hud-width * 0.50));
+  $n: percentage($left-width + ($hud-width * 0.75));
+  $o: percentage($left-width + ($hud-width * 0.76));
+  $p: percentage($left-width + ($hud-width * 0.92));
+  
+  .hud { width: percentage($hud-width); }
+  nav {
+    @include linear-gradient((-30deg, $medgray 0%, $medgray $m, lighten($medgray, 8%) $n, lighten($medgray, 12%) $o, $medgray $p));
+  }
+
+  nav li {
+    width: 11%;
+    
+    &.start-over  { width: 16%; }
+    &.ask-tim     { width: 21.5%; }
+    &.definitions { width: 13%; }
+    &.print       {}
+    &.share       {}
+    
+    &.start-over  q { padding-left: 18px + 6px; text-indent: 0; width: auto; }
+    &.ask-tim     a { padding-left: 39px + 6px; text-indent: 0; width: auto; }
+    &.definitions a { padding-left: 25px + 6px; text-indent: 0; width: auto; }
+    &.print       a { padding-left: 20px + 6px; text-indent: 0; width: auto; }
+    &.share       a { padding-left: 22px + 6px; text-indent: 0; width: auto; }
+  }
+
+  .input,
+  .output {
+    min-height: 460px;
+  }
+}
+
+/* @media screen and (min-width: 1080px) */
+@media screen and (min-width: 67.5em) {
+  .splash {
+    .radial   { bottom: 0;    left: 50%; margin-left: -590px; max-width: 1050px; width: 114%; }
+//    .preview  { bottom: -2px; left: 50%; margin-left: -295px; max-width: 897px;  width: 97.5%; }
+  }
+}
+
+/* @media screen and (min-width: 1200px) */
+@media screen and (min-width: 75em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    /*@include calc(font-size, 17);*/
+  }
+}
+
+/* @media screen and (min-width: 1392px) */
+@media screen and (min-width: 87em) {
+  body {
+    /* Reset baseline grid to 16/16 = 1.0 */
+    /*@include calc(font-size, 16);*/
+  }
+  
+  $margin: 100% / 18;
+
+  .page {
+    margin: 0 $margin * 3;
+  }
+}
+
+/* @media screen and (min-width: 1680px) */
+@media screen and (min-width: 105em) {
+  body {
+    /* Zoom baseline grid to 17/16 = 1.0625 */
+    /*@include calc(font-size, 17);*/
+  }
+}

@@ -1,0 +1,6 @@
+@import "prefix";
+
+@mixin box-shadow($values, $vendors: $all-vendors) {
+  @include prefix(box-shadow, $values, $vendors);
+//  behavior: url(htc/PIE.htc);
+}

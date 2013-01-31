@@ -59,13 +59,6 @@
               price: rates.session_actor
             });
           }
-          if (tagRate) {
-            lineItem.items.push({
-              count: numTags - 1,
-              label: "Add'l Tags at $ " + (tagRate.toFixed(2)),
-              price: tagRate
-            });
-          }
           lineItems.push(lineItem);
         }
         i = 0;
@@ -86,6 +79,16 @@
             });
           }
           lineItems.push(lineItem);
+        }
+        if (tagRate) {
+          lineItems.push({
+            label: "Tags",
+            first: {
+              label: "" + (numTags - 1) + " Additional Tags at $ " + (tagRate.toFixed(2)) + " ea.",
+              price: tagRate * (numTags - 1)
+            },
+            items: []
+          });
         }
         return lineItems;
       };
@@ -190,14 +193,17 @@
               price: rates.session_actor
             });
           }
-          if (tagRate) {
-            lineItem.items.push({
-              count: numTags - 1,
-              label: "Add'l Tags at $ " + (tagRate.toFixed(2)),
-              price: tagRate
-            });
-          }
           lineItems.push(lineItem);
+        }
+        if (tagRate) {
+          lineItems.push({
+            label: "Tags",
+            first: {
+              label: "" + (numTags - 1) + " Additional Tags at $ " + (tagRate.toFixed(2)) + " ea.",
+              price: tagRate * (numTags - 1)
+            },
+            items: []
+          });
         }
         return lineItems;
       };

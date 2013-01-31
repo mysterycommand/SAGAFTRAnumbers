@@ -37,6 +37,9 @@ define [
         while @performers.length < numPerformers
           performer = new PrincipalActorGeneralExtra(@performers.length + 1)
           @performers.push performer
+
+          # FIND ME LATER
+          # @$el.append performer.$el
           @$el.appendPolyfill performer.$el
       else
         while @performers.length > numPerformers

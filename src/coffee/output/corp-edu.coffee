@@ -7,11 +7,12 @@ define [
 ], ($) ->
 	class CorpEdu
 		@onCameraSessionLineItems: (rates) ->
-			category = parseInt $('#category').val(), 10 # Should be 1, or 2.
-			categoryLabel = if (category == 1) then 'Category I' else 'Category II'
-			categoryPrefix = if (category == 1) then 'cat_1_' else 'cat_2_'
+			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, or 1.
+			categoryLabel = if (category == 0) then 'Category I' else 'Category II'
+			categoryPrefix = if (category == 0) then 'cat_1_' else 'cat_2_'
 			
 			numNarrators = parseInt $('#num-narrators').val(), 10
+			numHalfPlayers = parseInt $('#num-half-players').val(), 10
 			numPlayers = parseInt $('#num-players').val(), 10
 			numExtras = parseInt $('#num-extras').val(), 10
 			numDays = 0
@@ -34,6 +35,17 @@ define [
 						count: numDays - 1
 						label: "Add'l Days at $ #{rates[categoryPrefix + 'session_narrator_day_2'].toFixed(2)}"
 						price: rates[categoryPrefix + 'session_narrator_day_2']
+
+				lineItems.push lineItem
+
+			i = 0
+			while i++ < numHalfPlayers
+				lineItem = 
+					label: "#{categoryLabel} Half-day Player #{i}"
+					first:
+						label: "4-hour Session at $ #{rates[categoryPrefix + 'session_player_half_day'].toFixed(2)}"
+						price: rates[categoryPrefix + 'session_player_half_day']
+					items: []
 
 				lineItems.push lineItem
 
@@ -66,10 +78,10 @@ define [
 					label: "Single Day Session(s) at $ #{rates[categoryPrefix + 'session_player_day_1'].toFixed(2)}"
 					price: rates[categoryPrefix + 'session_player_day_1']
 
-				if numHalfDays then lineItem.items.push
-					count: numHalfDays
-					label: "Half Day Session(s) at $ #{rates[categoryPrefix + 'session_player_half_day'].toFixed(2)}"
-					price: rates[categoryPrefix + 'session_player_half_day']
+				# if numHalfDays then lineItem.items.push
+				# 	count: numHalfDays
+				# 	label: "Half Day Session(s) at $ #{rates[categoryPrefix + 'session_player_half_day'].toFixed(2)}"
+				# 	price: rates[categoryPrefix + 'session_player_half_day']
 
 				lineItems.push lineItem
 
@@ -94,7 +106,7 @@ define [
 				lineItem = 
 					label: "#{categoryLabel} Extra #{i} - #{numDays} Days Total"
 					first:
-						label: "#{extraLabel} at #{rates[categoryPrefix + 'session_extra' + extraSuffix].toFixed(2)}"
+						label: "#{extraLabel} at $ #{rates[categoryPrefix + 'session_extra' + extraSuffix].toFixed(2)}"
 						price: rates[categoryPrefix + 'session_extra' + extraSuffix] * numDays
 					items: []
 
@@ -104,55 +116,131 @@ define [
 				# 	price: rates[categoryPrefix + 'session_extra' + extraSuffix]
 
 				lineItems.push lineItem
-
-			# lineItem = 
-			# 	label: ""
-			# 	first:
-			# 		label: ""
-			# 		price: 0
-			# 	items: []
-
-			# lineItem.items.push
-			# 	count: 0
-			# 	label: ""
-			# 	price: 0
-
+			
 			lineItems
 
 		@offCameraSessionLineItems: (rates) ->
+			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, or 1.
+			categoryLabel = if (category == 0) then 'Category I' else 'Category II'
+			categoryPrefix = if (category == 0) then 'cat_1_' else 'cat_2_'
+
+			numPrincipals = parseInt $('#num-principals').val(), 10
+
 			lineItems = []
+
+			i = 0
+			while i++ < numPrincipals
+				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
 			
-			lineItem = 
-				label: ""
-				first:
-					label: ""
-					price: 0
-				items: []
+				# lineItem = 
+				# 	label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+				# 	first:
+				# 		label: "First Hour"
+				# 		price: rates[categoryPrefix + 'session_actor_first_hour']
+				# 	items: []
 
-			lineItem.items.push
-				count: 0
-				label: ""
-				price: 0
+				# if numHours - 1
+				# 	lineItem.items.push
+				# 		count: (numHours - 1) * 2
+				# 		label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
+				# 		price: rates[categoryPrefix + 'session_actor_addl_half']
 
-			lineItems.push lineItem
+				lineItem = 
+					label: "#{categoryLabel} Principal #{i}"
+					first:
+						label: "First Hour"
+						price: rates[categoryPrefix + 'session_actor_first_hour']
+					items: []
+
+				if numHours - 1
+					lineItem.items.push
+						count: (numHours - 1) * 2
+						label: "Add'l Half-hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half']).toFixed(2)} ea."
+						price: rates[categoryPrefix + 'session_actor_addl_half']
+
+				lineItems.push lineItem
+			
 			lineItems
 
 		@audioOnlySessionLineItems: (rates) ->
+			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
+			storecastingUse = if category is 3 then parseInt $('#use-type-storecasting').val(), 10
+
+			categoryLabel = switch category
+				when 0 then 'Category I'
+				when 1 then 'Category II'
+				when 2 then 'Interactive Voice Recording (IVR), Phone Prompt System, or Phonecasting'
+				when 3 then 'Storecasting'
+
+			categoryPrefix = switch category
+				when 0 then 'cat_1_'
+				when 1 then 'cat_2_'
+				when 2 then 'ivr_'
+				when 3 then 'store_' + (unless storecastingUse then '3_month_' else '6_month_')
+
+			# log categoryLabel, categoryPrefix
+			numPrincipals = parseInt $('#num-principals').val(), 10
+
 			lineItems = []
+
+			i = 0
+			while i++ < numPrincipals
+				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
 			
-			lineItem = 
-				label: ""
-				first:
-					label: ""
-					price: 0
-				items: []
+				# lineItem = 
+				# 	label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
+				# 	first:
+				# 		label: "First Hour"
+				# 		price: rates[categoryPrefix + 'session_actor_first_hour']
+				# 	items: []
 
-			lineItem.items.push
-				count: 0
-				label: ""
-				price: 0
+				# if numHours - 1
+				# 	lineItem.items.push
+				# 		count: (numHours - 1) * 2
+				# 		label: "Add'l Half Hours at $ #{rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)}"
+				# 		price: rates[categoryPrefix + 'session_actor_addl_half']
+			
+				lineItem = 
+					label: "#{categoryLabel} Principal #{i}"
+					first:
+						label: "First Hour" + (if category is 3 then (unless storecastingUse then ' (3 Month Use)' else ' (6 Month Use)') else '')
+						price: rates[categoryPrefix + 'session_actor_first_hour']
+					items: []
 
-			lineItems.push lineItem
+				if numHours - 1
+					lineItem.items.push
+						count: (numHours - 1) * 2
+						label: "Add'l Half-hours at $ #{(rates[categoryPrefix + 'session_actor_addl_half']).toFixed(2)} ea."
+						price: rates[categoryPrefix + 'session_actor_addl_half']
+
+				lineItems.push lineItem
+			
 			lineItems
+
+		# @audioOnlyUsageLineItems: (rates) ->
+		# 	category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
+		# 	if category isnt 3 then return []
+		# 	categoryPrefix = 'store_' # This is only used for Storecasting.
+
+		# 	use = parseInt $('#use-type-storecasting').val(), 10
+		# 	useSuffix = if use is 0 then '_3_month' else '_6_month'
+		# 	useLabel = if use is 0 then '3 Month Use' else '6 Month Use'
+
+		# 	numPrincipals = parseInt $('#num-principals').val(), 10
+
+		# 	lineItems = []
+			
+		# 	i = 0
+		# 	while i++ < numPrincipals
+		# 		lineItem = 
+		# 			label: "Storecasting (#{useLabel})"
+		# 			first:
+		# 				label: "#{numPrincipals} Principal Actor(s)"
+		# 				price: numPrincipals * rates[categoryPrefix + 'use' + useSuffix]
+		# 			items: []
+
+		# 		lineItems.push lineItem
+
+		# 	lineItems
 
 	CorpEdu

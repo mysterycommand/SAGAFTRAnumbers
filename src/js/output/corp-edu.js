@@ -15,11 +15,12 @@
       function CorpEdu() {}
 
       CorpEdu.onCameraSessionLineItems = function(rates) {
-        var category, categoryLabel, categoryPrefix, extraLabel, extraSuffix, extraTypeIndex, i, lineItem, lineItems, numDays, numExtras, numFiveDays, numFullDays, numHalfDays, numNarrators, numPlayers, numSingleDays, numThreeDays;
-        category = parseInt($('#category').val(), 10);
-        categoryLabel = category === 1 ? 'Category I' : 'Category II';
-        categoryPrefix = category === 1 ? 'cat_1_' : 'cat_2_';
+        var category, categoryLabel, categoryPrefix, extraLabel, extraSuffix, extraTypeIndex, i, lineItem, lineItems, numDays, numExtras, numFiveDays, numFullDays, numHalfDays, numHalfPlayers, numNarrators, numPlayers, numSingleDays, numThreeDays;
+        category = parseInt($('input:radio[name=category]:checked').val(), 10);
+        categoryLabel = category === 0 ? 'Category I' : 'Category II';
+        categoryPrefix = category === 0 ? 'cat_1_' : 'cat_2_';
         numNarrators = parseInt($('#num-narrators').val(), 10);
+        numHalfPlayers = parseInt($('#num-half-players').val(), 10);
         numPlayers = parseInt($('#num-players').val(), 10);
         numExtras = parseInt($('#num-extras').val(), 10);
         numDays = 0;
@@ -42,6 +43,18 @@
               price: rates[categoryPrefix + 'session_narrator_day_2']
             });
           }
+          lineItems.push(lineItem);
+        }
+        i = 0;
+        while (i++ < numHalfPlayers) {
+          lineItem = {
+            label: "" + categoryLabel + " Half-day Player " + i,
+            first: {
+              label: "4-hour Session at $ " + (rates[categoryPrefix + 'session_player_half_day'].toFixed(2)),
+              price: rates[categoryPrefix + 'session_player_half_day']
+            },
+            items: []
+          };
           lineItems.push(lineItem);
         }
         i = 0;
@@ -77,13 +90,6 @@
               price: rates[categoryPrefix + 'session_player_day_1']
             });
           }
-          if (numHalfDays) {
-            lineItem.items.push({
-              count: numHalfDays,
-              label: "Half Day Session(s) at $ " + (rates[categoryPrefix + 'session_player_half_day'].toFixed(2)),
-              price: rates[categoryPrefix + 'session_player_half_day']
-            });
-          }
           lineItems.push(lineItem);
         }
         i = 0;
@@ -95,7 +101,7 @@
           lineItem = {
             label: "" + categoryLabel + " Extra " + i + " - " + numDays + " Days Total",
             first: {
-              label: "" + extraLabel + " at " + (rates[categoryPrefix + 'session_extra' + extraSuffix].toFixed(2)),
+              label: "" + extraLabel + " at $ " + (rates[categoryPrefix + 'session_extra' + extraSuffix].toFixed(2)),
               price: rates[categoryPrefix + 'session_extra' + extraSuffix] * numDays
             },
             items: []
@@ -106,42 +112,85 @@
       };
 
       CorpEdu.offCameraSessionLineItems = function(rates) {
-        var lineItem, lineItems;
+        var category, categoryLabel, categoryPrefix, i, lineItem, lineItems, numHours, numPrincipals;
+        category = parseInt($('input:radio[name=category]:checked').val(), 10);
+        categoryLabel = category === 0 ? 'Category I' : 'Category II';
+        categoryPrefix = category === 0 ? 'cat_1_' : 'cat_2_';
+        numPrincipals = parseInt($('#num-principals').val(), 10);
         lineItems = [];
-        lineItem = {
-          label: "",
-          first: {
-            label: "",
-            price: 0
-          },
-          items: []
-        };
-        lineItem.items.push({
-          count: 0,
-          label: "",
-          price: 0
-        });
-        lineItems.push(lineItem);
+        i = 0;
+        while (i++ < numPrincipals) {
+          numHours = parseFloat($("#principal-" + i + "-num-hours").val(), 10);
+          lineItem = {
+            label: "" + categoryLabel + " Principal " + i,
+            first: {
+              label: "First Hour",
+              price: rates[categoryPrefix + 'session_actor_first_hour']
+            },
+            items: []
+          };
+          if (numHours - 1) {
+            lineItem.items.push({
+              count: (numHours - 1) * 2,
+              label: "Add'l Half-hours at $ " + (rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)) + " ea.",
+              price: rates[categoryPrefix + 'session_actor_addl_half']
+            });
+          }
+          lineItems.push(lineItem);
+        }
         return lineItems;
       };
 
       CorpEdu.audioOnlySessionLineItems = function(rates) {
-        var lineItem, lineItems;
+        var category, categoryLabel, categoryPrefix, i, lineItem, lineItems, numHours, numPrincipals, storecastingUse;
+        category = parseInt($('input:radio[name=category]:checked').val(), 10);
+        storecastingUse = category === 3 ? parseInt($('#use-type-storecasting').val(), 10) : void 0;
+        categoryLabel = (function() {
+          switch (category) {
+            case 0:
+              return 'Category I';
+            case 1:
+              return 'Category II';
+            case 2:
+              return 'Interactive Voice Recording (IVR), Phone Prompt System, or Phonecasting';
+            case 3:
+              return 'Storecasting';
+          }
+        })();
+        categoryPrefix = (function() {
+          switch (category) {
+            case 0:
+              return 'cat_1_';
+            case 1:
+              return 'cat_2_';
+            case 2:
+              return 'ivr_';
+            case 3:
+              return 'store_' + (!storecastingUse ? '3_month_' : '6_month_');
+          }
+        })();
+        numPrincipals = parseInt($('#num-principals').val(), 10);
         lineItems = [];
-        lineItem = {
-          label: "",
-          first: {
-            label: "",
-            price: 0
-          },
-          items: []
-        };
-        lineItem.items.push({
-          count: 0,
-          label: "",
-          price: 0
-        });
-        lineItems.push(lineItem);
+        i = 0;
+        while (i++ < numPrincipals) {
+          numHours = parseFloat($("#principal-" + i + "-num-hours").val(), 10);
+          lineItem = {
+            label: "" + categoryLabel + " Principal " + i,
+            first: {
+              label: "First Hour" + (category === 3 ? (!storecastingUse ? ' (3 Month Use)' : ' (6 Month Use)') : ''),
+              price: rates[categoryPrefix + 'session_actor_first_hour']
+            },
+            items: []
+          };
+          if (numHours - 1) {
+            lineItem.items.push({
+              count: (numHours - 1) * 2,
+              label: "Add'l Half-hours at $ " + (rates[categoryPrefix + 'session_actor_addl_half'].toFixed(2)) + " ea.",
+              price: rates[categoryPrefix + 'session_actor_addl_half']
+            });
+          }
+          lineItems.push(lineItem);
+        }
         return lineItems;
       };
 

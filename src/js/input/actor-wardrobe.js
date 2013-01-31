@@ -14,7 +14,7 @@
 
       function ActorWardrobe(index) {
         this.index = index;
-        this.html = "<li>\n  <input type=\"checkbox\" name=\"actor-" + this.index + "-wardrobe-fitting\" value=\"1\" checked>\n  wardrobe fitting for principal actor " + (this.index + 1) + ".\n</li>";
+        this.html = "<li>\n  <input type=\"checkbox\" name=\"actor-" + this.index + "-wardrobe-fitting\" value=\"1\" checked>\n  <a href=\"#wardrobe-fitting\" class=\"term open\">wardrobe fitting</a> for principal actor " + (this.index + 1) + ".\n</li>";
         this.$el = $(this.html);
         this.el = this.$el[0];
         throw "This class was deprecated as of version 0.5!";

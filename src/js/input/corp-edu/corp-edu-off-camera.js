@@ -8,15 +8,17 @@
 
   define = root.define;
 
-  define(['jquery', 'underscore', 'input/corp-edu/category'], function($, _, Category) {
+  define(['jquery', 'underscore', 'input/corp-edu/category', 'input/corp-edu/principal-actor'], function($, _, Category, PrincipalActor) {
     var CorpEduOffCamera;
     CorpEduOffCamera = (function() {
 
       function CorpEduOffCamera() {
         var _this = this;
-        this.label = "Corporate/Educational & Non-Broadcast - (Off Camera)";
+        this.label = "Corporate/Educational & Non-Broadcast - (Voiceover/Off Camera)";
         this.value = "corp_edu_off_camera";
-        this.steps = [new Category()];
+        this.definitionId = "co-ed-contract";
+        this.headsUpItems = ['Retakes', 'Multiple characters', 'Supplemental use'];
+        this.steps = [new Category(), new PrincipalActor()];
         this.el = [];
         _.each(this.steps, function(el, i) {
           return _this.el.push(el.el);

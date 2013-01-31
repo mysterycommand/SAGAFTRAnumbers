@@ -13,6 +13,12 @@ define [
 		constructor: ->
 			@label = "Corporate/Educational & Non-Broadcast - (On Camera)"
 			@value = "corp_edu_on_camera"
+			@definitionId = "co-ed-contract"
+			@headsUpItems = [
+				'Night Shoots'
+				'Travel time'
+				'Wardrobe fees'
+			]
 			@steps = [
 				new Category()
 				new NarratorPlayerExtra()

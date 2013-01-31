@@ -16,7 +16,7 @@
       function WildSpot13() {
         this.onChange = __bind(this.onChange, this);
         this.label = "Wild Spot - 13 week cycle";
-        this.html = "<fieldset>\n  It will be broadcast in the following markets:\n  <select name=\"markets\" id=\"markets\" multiple class=\"chzn-select\" data-placeholder=\"please choose all that apply...\">\n    <option value=\"-1\"></option>\n  </select>\n</fieldset>";
+        this.html = "<fieldset>\n    It will be broadcast in the following markets:\n    <select name=\"markets\" id=\"markets\" multiple class=\"chzn-select\" data-placeholder=\"please choose all that apply...\">\n        <option value=\"-1\"></option>\n    </select>\n</fieldset>";
         this.$el = $(this.html);
         this.$markets = this.$el.find('#markets');
         this.el = this.$el[0];
@@ -183,7 +183,7 @@
         ];
         html = '';
         _.each(this.options, function(el, i) {
-          return html += "<option value=\"" + i + "\" data-value=\"" + el.value + "\">" + el.label + "</option>";
+          return html += "<option value=\"" + i + "\" data-value=\"" + el.value + "\"" + (el.value.toString().indexOf('mailto') > -1 ? ' class="mailto"' : '') + ">" + el.label + "</option>";
         });
         return this.$el.find('select').append(html);
       };
@@ -197,7 +197,7 @@
         val = this.$markets.val();
         this.selectedIndex = (val != null ? val.pop() : void 0) || -1;
         this.selectedItem = this.selectedIndex !== -1 ? this.options[this.selectedIndex] : null;
-        if (this.selectedItem === null) {
+        if (!this.selectedItem || this.selectedItem === null) {
           return;
         }
         if (!isNaN(parseInt(this.selectedItem.value, 10))) {

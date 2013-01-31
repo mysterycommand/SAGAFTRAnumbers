@@ -1,0 +1,79 @@
+@import "../../css3/text-shadow";
+
+.hud {
+  background: $medgray;
+  margin: 0 auto;
+  padding: 0.75em 0.75em 0;
+  position: relative;
+  
+  width: 37.5%;
+  height: 84px;
+  
+  @include border-radius(12px 12px 0 0);
+  @include box-sizing(border-box);
+  @include linear-gradient((-30deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 75%, lighten($medgray, 12%) 76%, $medgray 92%));
+  
+  h2 {
+    background: $orange;
+    padding: 0.25em;
+    
+    /*width: 100%;*/
+    position: absolute;
+    right: 0.5em;
+    left: 0.5em;
+    
+    @include border-radius(8px);
+    
+    @include box-shadow((0 0 25px $alphawhite, inset 0 0 5px $alphagray));
+    @include box-sizing(border-box);
+    
+    @include linear-gradient((left, $orange, #f2b16c, $orange));
+  
+/*    b { position: absolute; }*/
+  }
+  
+  .estimate {
+    output, a {
+      display: inline-block;
+      width: 100%;
+      
+      @include text-shadow(0 0 16px $alphagray);
+    }
+  }
+  
+  .start {
+    display: none;
+    
+    b {
+      line-height: 0;
+      
+      position: relative;
+      top: 5px;
+    }
+    
+    a {
+      display: inline-block;
+      width: 100%;
+      
+      @include text-shadow(0 0 16px $alphagray);
+    }
+  }
+  
+  h5 {
+    display: block;
+    position: absolute;
+    right: 1em;
+    bottom: -0.375em;
+    left: 1em;
+  }
+}
+
+.home .hud .estimate { display: none; }
+.home .hud .start { display: block; }
+.home .hud h5 { display: none; }
+
+
+.lt-ie9 .hud { behavior: url(htc/PIE.htc); }
+.lt-ie9 .hud h2 { behavior: url(htc/PIE.htc); border-top: 1px solid #999; }
+
+
