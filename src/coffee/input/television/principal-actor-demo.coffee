@@ -31,8 +31,8 @@ define [
           @actors.push actor
 
           # FIND ME LATER
-          @$el.append actor.$el
-          # @$el.appendPolyfill actor.$el
+          # @$el.append actor.$el
+          @$el.appendPolyfill actor.$el
       else
         while @actors.length > numActors
           @actors.pop().$el.remove()

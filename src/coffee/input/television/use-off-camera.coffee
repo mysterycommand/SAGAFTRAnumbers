@@ -48,8 +48,8 @@ define [
       if @selectedItem?
         
         # FIND ME LATER
-        @$el.append @selectedItem.$el
-        # @$el.appendPolyfill @selectedItem.$el
+        # @$el.append @selectedItem.$el
+        @$el.appendPolyfill @selectedItem.$el
         
         if @selectedIndex is 0 or @selectedIndex is 2
           @$el
@@ -61,8 +61,10 @@ define [
       @$el.nextAll().not('#input-cta').detach()
       
       broadcastType = @selectedItem.getSelectedItem()
-      if broadcastType? then @$el.after broadcastType.$el
-      # if broadcastType? then @$el.afterPolyfill broadcastType.$el
+      
+      # FIND ME LATER
+      # if broadcastType? then @$el.after broadcastType.$el
+      if broadcastType? then @$el.afterPolyfill broadcastType.$el
   
   Use
   

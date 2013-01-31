@@ -39,8 +39,8 @@ define [
           @performers.push performer
 
           # FIND ME LATER
-          @$el.append performer.$el
-          # @$el.appendPolyfill performer.$el
+          # @$el.append performer.$el
+          @$el.appendPolyfill performer.$el
       else
         while @performers.length > numPerformers
           @performers.pop().$el.remove()

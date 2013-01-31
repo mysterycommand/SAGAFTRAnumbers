@@ -36,8 +36,8 @@ define [
 					# @principals.push "#{@principals.length + 1}"
 
 					# FIND ME LATER
-					$(event.target).closest('div').append principal.$el
-					# $(event.target).closest('div').appendPolyfill principal.$el
+					# $(event.target).closest('div').append principal.$el
+					$(event.target).closest('div').appendPolyfill principal.$el
 			else
 				while @principals.length > numPrincipals
 					@principals.pop().$el.remove()

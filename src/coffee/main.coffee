@@ -14,7 +14,7 @@ require.config(
         # jQuery plugins.
         
         # FIND ME LATER
-        # 'webshim': 'plugins/webshim-1.8.9/polyfiller'
+        'webshim': 'plugins/webshim-1.8.9/polyfiller'
         'chosen': 'plugins/chosen/chosen.jquery'
         # 'chosen': 'plugins/chosen.jquery-0.9.8'
         
@@ -30,7 +30,7 @@ require [
     # jQuery plugins.
 
     # FIND ME LATER
-    # 'order!webshim'
+    'order!webshim'
     
     'order!chosen'
 ], (jQuery, App) ->
@@ -40,7 +40,7 @@ require [
     $ = jQuery
 
     # FIND ME LATER
-    # $.webshims.polyfill()
+    $.webshims.polyfill()
     
     # On DOM loaded.
     $ ->
