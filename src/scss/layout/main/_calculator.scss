@@ -14,9 +14,16 @@
     position: relative;
     padding-left: 1.5em;
     width: 62.5%;
+
+    // Override in media queries!
+    width: 100%;
+    padding-right: 1.5em;
   }
     
   &.right {
+    // Override in media queries!
+    display: none;
+
     position: absolute;
     top: 0; right: 0; bottom: 0;
     

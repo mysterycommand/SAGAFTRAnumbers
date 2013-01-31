@@ -1,4 +1,7 @@
 .output {
+  // Override in media queries!
+  display: none;
+
   background: $lightgray;
   overflow: hidden;
   padding: 1em;

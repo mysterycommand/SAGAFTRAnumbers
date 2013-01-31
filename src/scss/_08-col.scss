@@ -36,16 +36,37 @@ $margin: 100% / 18;
     /* Reset baseline grid to 16/16 = 1 */
     /*@include calc(font-size, 16);*/
   }
-  
+
   h6 {
     @include line(12, 18);
-    @include calc(margin-top, 48, 24);
+  }
+
+  .inner {
+    &.left {
+      width: 62.5%;
+      padding-right: 0;
+    }
+      
+    &.right {
+      display: block;
+    }
+  }
+
+  .input {
+    @include border-radius(12px 0 0 0);
+    form { display: block; }
+  }
+
+  .output {
+    display: block;
   }
 
   .input,
   .output {
     min-height: 390px;
   }
+
+  .disclaimer { display: none; }
 }
 
 /* @media screen and (min-width: 888px) */

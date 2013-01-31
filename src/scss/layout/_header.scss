@@ -13,7 +13,7 @@ header {
 hgroup {
   overflow: hidden;
   padding: 0 0.75em;
-  width: 50%;
+//  width: 50%;
   
   @include box-sizing(border-box);
   
@@ -68,5 +68,5 @@ h1 {
 }
 
 h6 {
-  @include calc(margin-top, 52, 24);
+  margin-bottom: 0.5em;
 }

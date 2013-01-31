@@ -8,6 +8,10 @@
   
   @include box-sizing(border-box);
   @include border-radius(12px 0 0 0);
+
+  // Override in media queries!
+  @include border-radius(12px 12px 0 0);
+  form { display: none; }
   
   fieldset {
     background: #fff url(../img/input-rarr.jpg) no-repeat scroll left 1.25em;

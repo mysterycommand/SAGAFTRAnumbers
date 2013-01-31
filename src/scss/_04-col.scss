@@ -40,19 +40,25 @@ $margin: 100% / 18;
 }
 
 @media screen and (min-width: 32em) {
-    .hud {
-        h2 {
-            @include large;
-        }
-        .start b {
-            top: 2px;
-        }
-    }
+  .hud {
+      h2 {
+          @include large;
+      }
+      .start b {
+          top: 2px;
+      }
+  }
 
-    .input,
-    .output {
-        min-height: 310px;
-    }
+  .input,
+  .output {
+      min-height: 310px;
+  }
+
+  hgroup { width: 50%; }
+  
+  h6 {
+    @include calc(margin-top, 48, 24);
+  }
 }
 
 /* @media screen and (min-width: 640px) */
