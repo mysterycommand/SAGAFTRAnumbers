@@ -22,13 +22,19 @@ define [
     start: ->
       # @input.test()
     
-    onChange: (event) =>
+    onChange: (event, isReset=false) =>
+      # log event.type, isReset
       # log 'App.onChange', event.type, event.target.id
       @$el.trigger 'update'
 
       $('div.tooltip').filter(":visible").fadeOut 400
       # if $('#output').height() > $('#input').height() then $('#input').height($('#output').height())
       @calcHeight();
+
+      # As of v0.9, all job-types reset their fields when being navigated to, we don't want to show the CTA based on this "input"
+      if isReset
+        @updateCount = 0
+        return
 
       if event.target.id is 'job-type'
           @updateCount = 0

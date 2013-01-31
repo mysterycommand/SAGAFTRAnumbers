@@ -80,12 +80,19 @@ define [
                     <p>Heads Up! #{headsUp} For details <a href="mailto:Timothy.Ogren@sagaftra.org">Ask Tim</a>.</p>
                 </div>
                 """
-                # @selectedItem.headsUpItems.join(', ') + ', etc.'
-                # @$el.after @selectedItem.$el
                 
-                # There are a couple of special cases that need to be handled after the job-type is added to the DOM.
-                if 2 <= @selectedIndex <= 4 then @selectedItem.$el.find('#num-days').trigger 'input' # TV.*
-                # if @selectedIndex is 10 then @selectedItem.$el.find('#storecasting').trigger 'change' # CorpEdu.AudioOnly
+                # Reset all fields.
+                @selectedItem.$el.find('input[type="number"]').each (i, el) ->
+                    val = parseInt($(this).attr('min'), 10) || 0
+                    $(this).val(val).trigger('input', true).trigger('change', true)
+                    return
+
+                @selectedItem.$el.find('select').each (i, el) ->
+                    val = if $(this).find('option[value="-1"]').size() is 0 then 0 else -1
+                    $(this).val(val).trigger('liszt:updated').trigger('change', true)
+                    return
+
+                @selectedItem.$el.find('input[type="radio"]').val [0]
                 
                 # Handle the mailto: link.
                 return if @selectedItem.value.indexOf('mailto') is -1
