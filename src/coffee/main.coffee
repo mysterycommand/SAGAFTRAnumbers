@@ -73,52 +73,6 @@ require [
                 app.start()
         
             return
-        
-        onClickShare = (event) ->
-            # event.preventDefault()
-            $targ = $(event.target)
-            url = $targ.attr 'href'
-            url = url.substr(0, url.indexOf('body=') + 5)
-            
-            $('#output tr')
-                .each (i, el) ->
-                    $el = $ el
-                    
-                    line = '%0A'
-                    tab = '%09'
-                    
-                    isHeader = $el.find('th').size() > 0
-                    isFirst = $el.parent().is 'thead'
-                    isSubtotal = $el.parent().is('.session-fees-subtotal') or $el.parent().is('.usage-fees-subtotal')
-                    isTotal = $el.is('#subtotal') or $el.is('#total')
-                    isLast = $el.parent().is 'tfoot'
-                    
-                    label = 
-                        if isHeader 
-                            if isFirst
-                                encodeURIComponent($el.find('th').text().toUpperCase())
-                            else if isSubtotal
-                                line + encodeURIComponent($el.find('.label').text())
-                            else if isLast
-                                line + encodeURIComponent('*' + $el.find('.label').text() + '*')
-                            else
-                                line + encodeURIComponent('*' + $el.find('th').text() + '*')
-                        else
-                            tab + encodeURIComponent($el.find('.label').text())
-                    amount = encodeURIComponent $el.find('.amount').text()
-                    # log amount, isHeader
-                    
-                    url += line + '------------------------------' if isSubtotal
-                    url += label
-                    url += tab + amount unless isHeader and ! isSubtotal and ! isLast
-                    url += line
-                    url += '------------------------------' + line if isSubtotal
-            
-            # mailto = window.open url, 'mailto'
-            # if mailto and mailto.open and ! mailto.closed then mailto.close()
-            $targ.attr 'href', url
-
-            return
     
         onClickLogo = (event) ->
             event.preventDefault()
@@ -190,7 +144,53 @@ require [
             
             return
 
+        updateShareURL = () ->
+            $targ = $('#share')
+            url = $targ.attr 'href'
+            url = url.substr(0, url.indexOf('body=') + 5)
+            
+            $('#output tr')
+                .each (i, el) ->
+                    $el = $ el
+                    
+                    line = '%0A'
+                    tab = '%09'
+                    
+                    isHeader = $el.find('th').size() > 0
+                    isFirst = $el.parent().is 'thead'
+                    isSubtotal = $el.parent().is('.session-fees-subtotal') or $el.parent().is('.usage-fees-subtotal')
+                    isTotal = $el.is('#subtotal') or $el.is('#total')
+                    isLast = $el.parent().is 'tfoot'
+                    
+                    label = 
+                        if isHeader 
+                            if isFirst
+                                encodeURIComponent($el.find('th').text().toUpperCase())
+                            else if isSubtotal
+                                line + encodeURIComponent($el.find('.label').text())
+                            else if isLast
+                                line + encodeURIComponent('*' + $el.find('.label').text() + '*')
+                            else
+                                line + encodeURIComponent('*' + $el.find('th').text() + '*')
+                        else
+                            tab + encodeURIComponent($el.find('.label').text())
+                    amount = encodeURIComponent $el.find('.amount').text()
+                    # log amount, isHeader
+                    
+                    url += line + '------------------------------' if isSubtotal
+                    url += label
+                    url += tab + amount unless isHeader and ! isSubtotal and ! isLast
+                    url += line
+                    url += '------------------------------' + line if isSubtotal
+            
+            # mailto = window.open url, 'mailto'
+            # if mailto and mailto.open and ! mailto.closed then mailto.close()
+            $targ.attr 'href', url
+            return
+
         onUpdate = (event) ->
+            updateShareURL()
+
             # log 'main.onUpdate', event.type, event.target.id
 
             # $('div.tooltip').filter(":visible").fadeOut 400
@@ -219,7 +219,7 @@ require [
             .on('click', '.term.open, .term.close', onClickTerm)
             .on('click', '.start-over a', onClickStartOver)
             .on('click', '.start a', onClickStart)
-            .on('click', '.share a', onClickShare)
+            # .on('click', '.share a', onClickShare)
             .on('click', 'h1 a', onClickLogo)
         
         app.$el.on 'update', onUpdate

@@ -17,7 +17,7 @@
     });
     $.webshims.polyfill('forms forms-ext');
     $(function() {
-      var $app, $document, $window, app, onClickDefinitions, onClickLogo, onClickShare, onClickStart, onClickStartOver, onClickTerm, onUpdate, updateCount, updateCountToCTA;
+      var $app, $document, $window, app, onClickDefinitions, onClickLogo, onClickStart, onClickStartOver, onClickTerm, onUpdate, updateCount, updateCountToCTA, updateShareURL;
       $window = $(window);
       $document = $(document);
       $app = $('#app');
@@ -43,37 +43,6 @@
           $('.page').removeClass('home');
           return app.start();
         });
-      };
-      onClickShare = function(event) {
-        var $targ, url;
-        $targ = $(event.target);
-        url = $targ.attr('href');
-        url = url.substr(0, url.indexOf('body=') + 5);
-        $('#output tr').each(function(i, el) {
-          var $el, amount, isFirst, isHeader, isLast, isSubtotal, isTotal, label, line, tab;
-          $el = $(el);
-          line = '%0A';
-          tab = '%09';
-          isHeader = $el.find('th').size() > 0;
-          isFirst = $el.parent().is('thead');
-          isSubtotal = $el.parent().is('.session-fees-subtotal') || $el.parent().is('.usage-fees-subtotal');
-          isTotal = $el.is('#subtotal') || $el.is('#total');
-          isLast = $el.parent().is('tfoot');
-          label = isHeader ? isFirst ? encodeURIComponent($el.find('th').text().toUpperCase()) : isSubtotal ? line + encodeURIComponent($el.find('.label').text()) : isLast ? line + encodeURIComponent('*' + $el.find('.label').text() + '*') : line + encodeURIComponent('*' + $el.find('th').text() + '*') : tab + encodeURIComponent($el.find('.label').text());
-          amount = encodeURIComponent($el.find('.amount').text());
-          if (isSubtotal) {
-            url += line + '------------------------------';
-          }
-          url += label;
-          if (!(isHeader && !isSubtotal && !isLast)) {
-            url += tab + amount;
-          }
-          url += line;
-          if (isSubtotal) {
-            return url += '------------------------------' + line;
-          }
-        });
-        $targ.attr('href', url);
       };
       onClickLogo = function(event) {
         event.preventDefault();
@@ -128,8 +97,41 @@
           $targ.fadeIn(400);
         }
       };
-      onUpdate = function(event) {};
-      $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', '.share a', onClickShare).on('click', 'h1 a', onClickLogo);
+      updateShareURL = function() {
+        var $targ, url;
+        $targ = $('#share');
+        url = $targ.attr('href');
+        url = url.substr(0, url.indexOf('body=') + 5);
+        $('#output tr').each(function(i, el) {
+          var $el, amount, isFirst, isHeader, isLast, isSubtotal, isTotal, label, line, tab;
+          $el = $(el);
+          line = '%0A';
+          tab = '%09';
+          isHeader = $el.find('th').size() > 0;
+          isFirst = $el.parent().is('thead');
+          isSubtotal = $el.parent().is('.session-fees-subtotal') || $el.parent().is('.usage-fees-subtotal');
+          isTotal = $el.is('#subtotal') || $el.is('#total');
+          isLast = $el.parent().is('tfoot');
+          label = isHeader ? isFirst ? encodeURIComponent($el.find('th').text().toUpperCase()) : isSubtotal ? line + encodeURIComponent($el.find('.label').text()) : isLast ? line + encodeURIComponent('*' + $el.find('.label').text() + '*') : line + encodeURIComponent('*' + $el.find('th').text() + '*') : tab + encodeURIComponent($el.find('.label').text());
+          amount = encodeURIComponent($el.find('.amount').text());
+          if (isSubtotal) {
+            url += line + '------------------------------';
+          }
+          url += label;
+          if (!(isHeader && !isSubtotal && !isLast)) {
+            url += tab + amount;
+          }
+          url += line;
+          if (isSubtotal) {
+            return url += '------------------------------' + line;
+          }
+        });
+        $targ.attr('href', url);
+      };
+      onUpdate = function(event) {
+        updateShareURL();
+      };
+      $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', 'h1 a', onClickLogo);
       app.$el.on('update', onUpdate);
     });
   });
