@@ -18,6 +18,7 @@ define [
         'Night Shoots'
         'Hazard Pay'
         'Travel time'
+        'General Extra 13-Week rate'
       ]
       @steps = [
         new Day()

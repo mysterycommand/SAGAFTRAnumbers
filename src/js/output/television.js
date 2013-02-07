@@ -48,7 +48,7 @@
             lineItem = {
               label: "Day " + i + " General Extra " + j,
               first: {
-                label: "Initial Session Fee",
+                label: "Initial Session Fee (Unlimited Use)",
                 price: rates.session_extra
               },
               items: []

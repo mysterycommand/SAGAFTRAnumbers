@@ -17,7 +17,7 @@
         this.label = "Television Commercial - (On Camera)";
         this.value = "television_commercial_on_camera";
         this.definitionId = "tv-commercial";
-        this.headsUpItems = ['Night Shoots', 'Hazard Pay', 'Travel time'];
+        this.headsUpItems = ['Night Shoots', 'Hazard Pay', 'Travel time', 'General Extra 13-Week rate'];
         this.steps = [new Day(), new Use()];
         this.el = [];
         _.each(this.steps, function(el, i) {
