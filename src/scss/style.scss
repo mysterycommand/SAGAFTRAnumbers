@@ -38,6 +38,7 @@
 	.hud,
 	nav,
 	#input-section,
+	.inset,
 	footer,
 	.banner-bottom {
 		display: none;
@@ -45,11 +46,38 @@
 
 	header {
 		a[href]:after { content: ""; }
-		h6 { margin-top: 1em; }
+		.left { width: 50%; }
+		.right { margin-top: 1em; }
 	}
 
 	#output-section {
+		overflow: hidden;
+		padding: 0;
+		position: relative;
 		width: 100%;
+	}
+
+	#output-section,
+	.output {
+		display: block;
+		background: none;
+	}
+
+	.output {
+		thead tr th,
+		tfoot #subtotal th,
+		tfoot #subtotal td {
+			border-bottom-color: $lightgray;
+		}
+
+		tfoot #total th,
+		tfoot #total td {
+			border-top:    2px solid $lightgray;
+			border-bottom: 2px solid $lightgray;
+		}
+		
+		@include border-radius(0 0 0 0);
+		@include box-shadow(none);
 	}
 
 }
