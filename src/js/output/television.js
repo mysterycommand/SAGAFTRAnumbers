@@ -298,23 +298,11 @@
               items: []
             };
             numUses = parseInt($('#num-uses').val(), 10);
-            useRate = 0;
-            if (numUses === 2) {
-              useRate = rates.network_2;
-            }
-            if (numUses === 3) {
-              useRate = rates.network_3;
-            }
-            if (numUses < 14) {
-              useRate = rates.network_4_13;
-            }
-            if (numUses >= 14) {
-              useRate = rates.network_14;
-            }
+            useRate = rates.network_2 + (rates.network_3 * (numUses - 2));
             if (useRate) {
               lineItem.items.push({
-                count: numUses,
-                label: "Program Class A Uses",
+                count: 0,
+                label: "" + numUses + " Program Class A Uses",
                 price: useRate
               });
             }
@@ -492,23 +480,11 @@
               items: []
             };
             numUses = parseInt($('#num-uses').val(), 10);
-            useRate = 0;
-            if (numUses === 2) {
-              useRate = rates.network_2;
-            }
-            if (numUses === 3) {
-              useRate = rates.network_3;
-            }
-            if (numUses < 14) {
-              useRate = rates.network_4_13;
-            }
-            if (numUses >= 14) {
-              useRate = rates.network_14;
-            }
+            useRate = rates.network_2 + (rates.network_3 * (numUses - 2));
             if (useRate) {
               lineItem.items.push({
-                count: numUses,
-                label: "Program Class A Uses",
+                count: 0,
+                label: "" + numUses + " Program Class A Uses",
                 price: useRate
               });
             }
