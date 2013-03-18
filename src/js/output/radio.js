@@ -40,7 +40,7 @@
           lineItem = {
             label: "Actor/Announcer " + i,
             first: {
-              label: "Initial Session Fee",
+              label: "Session Fee",
               price: rates.session_actor
             },
             items: []
@@ -66,7 +66,7 @@
           lineItem = {
             label: "Singer " + i,
             first: {
-              label: "Initial Session Fee",
+              label: "Session Fee",
               price: rates.session_singer
             },
             items: []
@@ -152,7 +152,7 @@
               return t + s;
             }) - 1 : 0;
             unitRate = 0;
-            if (numUnits > 1) {
+            if (numUnits > 0) {
               unitRate = rates.wild_13_unit_2_25;
             }
             if (numUnits > 25 || cities.length) {
@@ -160,7 +160,7 @@
             }
             if (cityRate) {
               lineItem.items.push({
-                count: cities.length,
+                count: 1,
                 label: "Major Markets (" + (cities.join(', ')) + ")",
                 price: cityRate
               });
@@ -215,7 +215,7 @@
               return t + s;
             }) - 1 : 0;
             unitRate = 0;
-            if (numUnits > 1) {
+            if (numUnits > 0) {
               unitRate = rates.wild_8_unit_2_25;
             }
             if (numUnits > 25 || cities.length) {
@@ -223,7 +223,7 @@
             }
             if (cityRate) {
               lineItem.items.push({
-                count: cities.length,
+                count: 1,
                 label: "Major Markets (" + (cities.join(', ')) + ")",
                 price: cityRate
               });

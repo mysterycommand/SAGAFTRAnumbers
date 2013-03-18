@@ -28,7 +28,7 @@ define [
         lineItem = 
           label: "Actor/Announcer #{i}"
           first:
-            label: "Initial Session Fee"
+            label: "Session Fee"
             price: rates.session_actor
           items: []
         
@@ -54,7 +54,7 @@ define [
         lineItem = 
           label: "Singer #{i}"
           first:
-            label: "Initial Session Fee"
+            label: "Session Fee"
             price: rates.session_singer
           items: []
         
@@ -130,11 +130,11 @@ define [
           numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
           
           unitRate = 0
-          if numUnits > 1  then unitRate = rates.wild_13_unit_2_25
+          if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
           
           if cityRate then lineItem.items.push
-            count: cities.length
+            count: 1
             label: "Major Markets (#{cities.join ', '})"
             price: cityRate
           
@@ -181,11 +181,11 @@ define [
           
           numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
           unitRate = 0
-          if numUnits > 1  then unitRate = rates.wild_8_unit_2_25
+          if numUnits > 0  then unitRate = rates.wild_8_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_8_unit_26
           
           if cityRate then lineItem.items.push
-            count: cities.length
+            count: 1
             label: "Major Markets (#{cities.join ', '})"
             price: cityRate
           

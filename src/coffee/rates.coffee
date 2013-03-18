@@ -85,7 +85,7 @@ root.sag_aftra_rates =
         national_151_200:                   6.03
         national_201_1k:                    0.71
         national_1k_2k:                     0.67
-        national_max:                    2836.50
+        national_max:                    2836.00
 
         network_2:                        135.80
         network_3:                        107.75
@@ -122,6 +122,9 @@ root.sag_aftra_rates =
         local_250k_500k:                  179.65
         local_500k_750k:                  269.40
         local_750k_1m:                    359.25
+
+        national_min:                     445.30
+        national_max:                    1899.00
 
         network_2:                        106.25
         network_3:                         84.55

@@ -27,7 +27,7 @@ define [
         lineItem = 
           label: "Actor/Announcer #{i}"
           first:
-            label: "Initial Session Fee"
+            label: "Session Fee"
             price: rates.session_actor
           items: []
         
@@ -53,7 +53,7 @@ define [
         lineItem = 
           label: "Singer #{i}"
           first:
-            label: "Initial Session Fee"
+            label: "Session Fee"
             price: rates.session_singer
           items: []
         
@@ -91,7 +91,7 @@ define [
           lineItem = 
             label: "Day #{i} Principal Actor #{j}"
             first:
-              label: "Initial Session Fee"
+              label: "Session Fee"
               price: rates.session_actor
             items: []
         
@@ -112,7 +112,7 @@ define [
           lineItem = 
             label: "Day #{i} General Extra #{j}"
             first:
-              label: "Initial Session Fee"
+              label: "Session Fee"
               price: rates.session_extra
             items: []
         
@@ -147,7 +147,7 @@ define [
         lineItem = 
           label: "Principal Actor #{i}"
           first:
-            label: "Initial Session Fee"
+            label: "Session Fee"
             price: rates.session_actor
           items: []
         

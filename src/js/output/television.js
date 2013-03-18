@@ -29,7 +29,7 @@
             lineItem = {
               label: "Day " + i + " Principal Actor " + j,
               first: {
-                label: "Initial Session Fee",
+                label: "Session Fee",
                 price: rates.session_actor
               },
               items: []
@@ -48,7 +48,7 @@
             lineItem = {
               label: "Day " + i + " General Extra " + j,
               first: {
-                label: "Initial Session Fee (Unlimited Use)",
+                label: "Session Fee (Unlimited Use)",
                 price: rates.session_extra
               },
               items: []
@@ -87,7 +87,7 @@
           lineItem = {
             label: "Principal Actor " + i,
             first: {
-              label: "Initial Session Fee",
+              label: "Session Fee",
               price: rates.session_actor
             },
             items: []
@@ -128,7 +128,7 @@
           lineItem = {
             label: "Principal Actor " + i,
             first: {
-              label: "Initial Session Fee",
+              label: "Session Fee",
               price: rates.session_actor
             },
             items: []
@@ -218,7 +218,7 @@
             }
             if (cityRate) {
               lineItem.items.push({
-                count: cities.length,
+                count: 1,
                 label: "Major Markets (" + (cities.join(', ')) + ")",
                 price: cityRate
               });
@@ -227,7 +227,7 @@
               return t + s;
             }) - 1 : 0;
             unitRate = 0;
-            if (numUnits > 1) {
+            if (numUnits > 0) {
               unitRate = rates.wild_13_unit_2_25;
             }
             if (numUnits > 25 || cities.length) {
@@ -256,18 +256,17 @@
             subscribers = parseInt($('#subscribers').val(), 10);
             subscriberRates = [rates.local_1_50k, rates.local_50k_100k, rates.local_100k_150k, rates.local_150k_200k, rates.local_200k_250k, rates.local_250k_500k, rates.local_500k_750k, rates.local_750k_1m];
             subscriberRate = subscriberRates[subscribers] || 0;
-            if (numActors) {
+            if (!subscriberRate) {
+              lineItem.items.push({
+                count: 0,
+                label: "Please choose the number of subscribers.",
+                price: 0
+              });
+            } else if (numActors) {
               lineItem.items.push({
                 count: numActors,
                 label: "Principal Actors",
-                price: rates.session_actor + subscriberRate
-              });
-            }
-            if (numExtras) {
-              lineItem.items.push({
-                count: numExtras,
-                label: "General Extras",
-                price: rates.session_extra + subscriberRate
+                price: subscriberRate
               });
             }
             break;
@@ -276,18 +275,20 @@
               label: "National Cable - 13 week cycle",
               items: []
             };
-            if (numActors) {
+            subscribers = parseInt($('#subscribers').val(), 10);
+            subscriberRates = [rates.national_min, rates.national_max];
+            subscriberRate = subscriberRates[subscribers] || 0;
+            if (!subscriberRate) {
+              lineItem.items.push({
+                count: 0,
+                label: "Please choose the number of subscribers.",
+                price: 0
+              });
+            } else if (numActors) {
               lineItem.items.push({
                 count: numActors,
                 label: "Principal Actors",
-                price: rates.national_min
-              });
-            }
-            if (numExtras) {
-              lineItem.items.push({
-                count: numExtras,
-                label: "General Extras",
-                price: rates.national_min
+                price: subscriberRate
               });
             }
             break;
@@ -411,7 +412,7 @@
             }
             if (cityRate) {
               lineItem.items.push({
-                count: cities.length,
+                count: 1,
                 label: "Major Markets (" + (cities.join(', ')) + ")",
                 price: cityRate
               });
@@ -420,7 +421,7 @@
               return t + s;
             }) - 1 : 0;
             unitRate = 0;
-            if (numUnits > 1) {
+            if (numUnits > 0) {
               unitRate = rates.wild_13_unit_2_25;
             }
             if (numUnits > 25 || cities.length) {
@@ -449,15 +450,43 @@
             subscribers = parseInt($('#subscribers').val(), 10);
             subscriberRates = [rates.local_1_50k, rates.local_50k_100k, rates.local_100k_150k, rates.local_150k_200k, rates.local_200k_250k, rates.local_250k_500k, rates.local_500k_750k, rates.local_750k_1m];
             subscriberRate = subscriberRates[subscribers] || 0;
-            if (numActors) {
+            if (!subscriberRate) {
+              lineItem.items.push({
+                count: 0,
+                label: "Please choose the number of subscribers.",
+                price: 0
+              });
+            } else if (numActors) {
               lineItem.items.push({
                 count: numActors,
                 label: "Principal Actors",
-                price: rates.session_actor + subscriberRate
+                price: subscriberRate
               });
             }
             break;
           case 2:
+            lineItem = {
+              label: "National Cable - 13 week cycle",
+              items: []
+            };
+            subscribers = parseInt($('#subscribers').val(), 10);
+            subscriberRates = [rates.national_min, rates.national_max];
+            subscriberRate = subscriberRates[subscribers] || 0;
+            if (!subscriberRate) {
+              lineItem.items.push({
+                count: 0,
+                label: "Please choose the number of subscribers.",
+                price: 0
+              });
+            } else if (numActors) {
+              lineItem.items.push({
+                count: numActors,
+                label: "Principal Actors",
+                price: subscriberRate
+              });
+            }
+            break;
+          case 3:
             lineItem = {
               label: "Network Program Commercial",
               items: []

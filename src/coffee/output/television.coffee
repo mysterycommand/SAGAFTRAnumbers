@@ -23,7 +23,7 @@ define [
                     lineItem = 
                         label: "Day #{i} Principal Actor #{j}"
                         first:
-                            label: "Initial Session Fee"
+                            label: "Session Fee"
                             price: rates.session_actor
                         items: []
                 
@@ -39,7 +39,7 @@ define [
                     lineItem = 
                         label: "Day #{i} General Extra #{j}"
                         first:
-                            label: "Initial Session Fee (Unlimited Use)"
+                            label: "Session Fee (Unlimited Use)"
                             price: rates.session_extra
                         items: []
                 
@@ -69,7 +69,7 @@ define [
                 lineItem = 
                     label: "Principal Actor #{i}"
                     first:
-                        label: "Initial Session Fee"
+                        label: "Session Fee"
                         price: rates.session_actor
                     items: []
                 
@@ -108,7 +108,7 @@ define [
                 lineItem = 
                     label: "Principal Actor #{i}"
                     first:
-                        label: "Initial Session Fee"
+                        label: "Session Fee"
                         price: rates.session_actor
                     items: []
                 
@@ -190,7 +190,7 @@ define [
                     if cities.length is 3 then cityRate = rates.wild_13_major_all_3
                     
                     if cityRate then lineItem.items.push
-                        count: cities.length
+                        count: 1
                         label: "Major Markets (#{cities.join ', '})"
                         price: cityRate
 
@@ -199,7 +199,7 @@ define [
                     numUnits = if markets.length then markets.reduce((t, s) -> t + s) - 1 else 0
 
                     unitRate = 0
-                    if numUnits > 1  then unitRate = rates.wild_13_unit_2_25
+                    if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
                     if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
 
                     if unitRate then lineItem.items.push
@@ -235,15 +235,19 @@ define [
                     ]
                     subscriberRate = subscriberRates[subscribers] || 0
 
-                    if numActors then lineItem.items.push
+                    if ! subscriberRate then lineItem.items.push
+                        count: 0
+                        label: "Please choose the number of subscribers."
+                        price: 0
+                    else if numActors then lineItem.items.push
                         count: numActors
                         label: "Principal Actors"
-                        price: rates.session_actor + subscriberRate
+                        price: subscriberRate
 
-                    if numExtras then lineItem.items.push
-                        count: numExtras
-                        label: "General Extras"
-                        price: rates.session_extra + subscriberRate
+                    # if numExtras then lineItem.items.push
+                    #     count: numExtras
+                    #     label: "General Extras"
+                    #     price: rates.session_extra + subscriberRate
 
 
 
@@ -252,15 +256,26 @@ define [
                         label: "National Cable - 13 week cycle"
                         items: []
 
-                    if numActors then lineItem.items.push
+                    subscribers = parseInt $('#subscribers').val(), 10
+                    subscriberRates = [
+                        rates.national_min
+                        rates.national_max
+                    ]
+                    subscriberRate = subscriberRates[subscribers] || 0
+
+                    if ! subscriberRate then lineItem.items.push
+                        count: 0
+                        label: "Please choose the number of subscribers."
+                        price: 0
+                    else if numActors then lineItem.items.push
                         count: numActors
                         label: "Principal Actors"
-                        price: rates.national_min
+                        price: subscriberRate
 
-                    if numExtras then lineItem.items.push
-                        count: numExtras
-                        label: "General Extras"
-                        price: rates.national_min
+                    # if numExtras then lineItem.items.push
+                    #     count: numExtras
+                    #     label: "General Extras"
+                    #     price: rates.national_min
 
 
 
@@ -382,7 +397,7 @@ define [
                     if cities.length is 3 then cityRate = rates.wild_13_major_all_3
                     
                     if cityRate then lineItem.items.push
-                        count: cities.length
+                        count: 1
                         label: "Major Markets (#{cities.join ', '})"
                         price: cityRate
 
@@ -391,7 +406,7 @@ define [
                     numUnits = if markets.length then markets.reduce((t, s) -> t + s) - 1 else 0
 
                     unitRate = 0
-                    if numUnits > 1  then unitRate = rates.wild_13_unit_2_25
+                    if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
                     if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
 
                     if unitRate then lineItem.items.push
@@ -427,14 +442,46 @@ define [
                     ]
                     subscriberRate = subscriberRates[subscribers] || 0
 
-                    if numActors then lineItem.items.push
+                    if ! subscriberRate then lineItem.items.push
+                        count: 0
+                        label: "Please choose the number of subscribers."
+                        price: 0
+                    else if numActors then lineItem.items.push
                         count: numActors
                         label: "Principal Actors"
-                        price: rates.session_actor + subscriberRate
+                        price: subscriberRate
 
 
 
-                when 2 # Network Program 
+                when 2 # National Cable 13
+                    lineItem = 
+                        label: "National Cable - 13 week cycle"
+                        items: []
+
+                    subscribers = parseInt $('#subscribers').val(), 10
+                    subscriberRates = [
+                        rates.national_min
+                        rates.national_max
+                    ]
+                    subscriberRate = subscriberRates[subscribers] || 0
+
+                    if ! subscriberRate then lineItem.items.push
+                        count: 0
+                        label: "Please choose the number of subscribers."
+                        price: 0
+                    else if numActors then lineItem.items.push
+                        count: numActors
+                        label: "Principal Actors"
+                        price: subscriberRate
+
+                    # if numExtras then lineItem.items.push
+                    #     count: numExtras
+                    #     label: "General Extras"
+                    #     price: rates.national_min
+
+
+
+                when 3 # Network Program 
                     lineItem = 
                         label: "Network Program Commercial"
                         items: []

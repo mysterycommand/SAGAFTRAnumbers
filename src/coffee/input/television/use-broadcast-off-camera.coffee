@@ -33,6 +33,7 @@ define [
       @options = [
         new WildSpot13()
         new LocalCable13()
+        new NationalCable13()
         new NetworkProgramCommercial()
       ]
       

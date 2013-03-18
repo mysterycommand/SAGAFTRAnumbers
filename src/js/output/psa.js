@@ -40,7 +40,7 @@
           lineItem = {
             label: "Actor/Announcer " + i,
             first: {
-              label: "Initial Session Fee",
+              label: "Session Fee",
               price: rates.session_actor
             },
             items: []
@@ -66,7 +66,7 @@
           lineItem = {
             label: "Singer " + i,
             first: {
-              label: "Initial Session Fee",
+              label: "Session Fee",
               price: rates.session_singer
             },
             items: []
@@ -109,7 +109,7 @@
             lineItem = {
               label: "Day " + i + " Principal Actor " + j,
               first: {
-                label: "Initial Session Fee",
+                label: "Session Fee",
                 price: rates.session_actor
               },
               items: []
@@ -135,7 +135,7 @@
             lineItem = {
               label: "Day " + i + " General Extra " + j,
               first: {
-                label: "Initial Session Fee",
+                label: "Session Fee",
                 price: rates.session_extra
               },
               items: []
@@ -181,7 +181,7 @@
           lineItem = {
             label: "Principal Actor " + i,
             first: {
-              label: "Initial Session Fee",
+              label: "Session Fee",
               price: rates.session_actor
             },
             items: []

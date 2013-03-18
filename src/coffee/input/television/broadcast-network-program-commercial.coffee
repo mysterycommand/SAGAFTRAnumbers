@@ -11,7 +11,7 @@ define [
       @label = "Network Program Commercial"
       @html = """
         <fieldset>
-          In over 20 cities, with <input type="number" name="num-uses" id="num-uses" value="1" min="1"> uses.
+          In over 20 cities, with <input type="number" name="num-uses" id="num-uses" value="2" min="2" max="13"> uses.
         </fieldset>
       """
       @$el = $ @html
