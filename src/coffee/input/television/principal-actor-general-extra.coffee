@@ -20,10 +20,12 @@ define [
             <input type="number" name="day-#{@index}-actors-wardrobe" id="day-#{@index}-actors-wardrobe" class="actors-wardrobe" value="0" min="0" max="0">
             principal actor(s) will need <a href="#wardrobe-fitting" class="term open">wardrobe fittings</a>.
           </div>
+          <!--
           <div class="extras" style="display: none">
             <input type="number" name="day-#{@index}-extras-wardrobe" id="day-#{@index}-extras-wardrobe" class="extras-wardrobe" value="0" min="0" max="0">
             general extra(s) will need <a href="#wardrobe-fitting" class="term open">wardrobe fittings</a>.
           </div>
+          -->
         </div>
       """
       @$el = $ @html

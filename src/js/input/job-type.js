@@ -40,8 +40,16 @@
       };
 
       JobType.prototype.onChange = function(event) {
-        var headsUp, isPSA, mailto, _ref;
-        this.selectedIndex = parseInt(event.target.value, 10);
+        var headsUp, isPSA, mailto, newIndex, _ref;
+        newIndex = parseInt(event.target.value, 10);
+        if (newIndex === this.options.length - 1) {
+          mailto = window.open(this.options[newIndex].value, 'mailto');
+          if (mailto && mailto.open && !mailto.closed) {
+            mailto.close();
+          }
+          return false;
+        }
+        this.selectedIndex = newIndex;
         this.selectedItem = this.selectedIndex !== -1 ? this.options[this.selectedIndex] : null;
         if (this.selectedItem != null) {
           this.$el.siblings().detach();

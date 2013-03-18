@@ -23,7 +23,7 @@
           numActors = parseInt($("#day-" + i + "-num-actors").val(), 10);
           numExtras = parseInt($("#day-" + i + "-num-extras").val(), 10);
           numActorsWardrobe = parseInt($("#day-" + i + "-actors-wardrobe").val(), 10);
-          numExtrasWardrobe = parseInt($("#day-" + i + "-extras-wardrobe").val(), 10);
+          numExtrasWardrobe = 0;
           j = 0;
           while (j++ < numActors) {
             lineItem = {

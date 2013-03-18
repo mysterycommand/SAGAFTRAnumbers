@@ -106,7 +106,7 @@
       internet_1_year: 1558.55
     },
     television_commercial_demo: {
-      session_actor: 445.30
+      session_actor: 222.65
     },
     psa_radio: {
       session_actor: 594.65,
@@ -139,7 +139,7 @@
       cat_2_session_player_half_day: 396.00,
       cat_2_session_player_day_1: 609.50,
       cat_2_session_player_day_3: 1520.50,
-      cat_2_session_player_week: 2344.50,
+      cat_2_session_player_week: 2131.50,
       cat_2_session_extra_general: 127.50,
       cat_2_session_extra_special: 140.50,
       cat_2_session_extra_silent: 238.00

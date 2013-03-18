@@ -58,7 +58,13 @@ define [
             @$el.find('select').append(html)
         
         onChange: (event) =>
-            @selectedIndex = parseInt event.target.value, 10
+            newIndex = parseInt event.target.value, 10
+            if newIndex is @options.length - 1
+                mailto = window.open @options[newIndex].value, 'mailto'
+                if mailto and mailto.open and ! mailto.closed then mailto.close()
+                return false
+
+            @selectedIndex = newIndex
             @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
             
             if @selectedItem?

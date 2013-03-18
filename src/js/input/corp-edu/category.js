@@ -15,7 +15,7 @@
 
       function Category() {
         this.onChange = __bind(this.onChange, this);
-        this.html = "<fieldset>\n	<span style=\"vertical-align: top;\">It's a</span>\n	<span style=\"display: inline-block;\">\n		<input type=\"radio\" name=\"category\" id=\"category-i\" value=\"0\" checked /> <label for=\"category-i\">Category I</label><br/>\n		<input type=\"radio\" name=\"category\" id=\"category-ii\" value=\"1\" /> <label for=\"category-ii\">Category II</label>\n	</span>\n	program.\n</fieldset>";
+        this.html = "<fieldset>\n	<span style=\"vertical-align: top;\">It's a</span>\n	<span style=\"display: inline-block;\">\n		<input type=\"radio\" name=\"category\" id=\"category-i\" value=\"0\" checked /> <label for=\"category-i\"><a href=\"#category-i-definition\" class=\"term open\">Category I</a></label><br/>\n		<input type=\"radio\" name=\"category\" id=\"category-ii\" value=\"1\" /> <label for=\"category-ii\"><a href=\"#category-ii-definition\" class=\"term open\">Category II</a></label>\n	</span>\n	program.\n</fieldset>";
         this.$el = $(this.html);
         this.el = this.$el[0];
         this.setupOptions();

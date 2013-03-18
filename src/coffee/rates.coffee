@@ -137,7 +137,7 @@ root.sag_aftra_rates =
     television_commercial_demo:
         
         # SESSION FEES
-        session_actor:                    445.30
+        session_actor:                    222.65
         
     psa_radio:
         
@@ -186,7 +186,7 @@ root.sag_aftra_rates =
         cat_2_session_player_half_day:    396.00
         cat_2_session_player_day_1:       609.50
         cat_2_session_player_day_3:      1520.50
-        cat_2_session_player_week:       2344.50
+        cat_2_session_player_week:       2131.50
 
         cat_2_session_extra_general:      127.50
         cat_2_session_extra_special:      140.50
@@ -218,32 +218,3 @@ root.sag_aftra_rates =
 
         store_6_month_session_actor_first_hour:         802.00
         store_6_month_session_actor_addl_half:          117.50
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
