@@ -23,7 +23,7 @@
           return App.prototype.onChange.apply(_this, arguments);
         };
         this.updateCount = 0;
-        this.updateCountToCTA = 10;
+        this.updateCountToCTA = 6;
         this.$el = $(this.el);
         this.input = new Input(this.$el.find('#input')[0]);
         this.output = new Output(this.$el.find('#output')[0]);
