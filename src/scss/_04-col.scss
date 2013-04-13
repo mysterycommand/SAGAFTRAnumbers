@@ -10,6 +10,16 @@
  *
  */
 $margin: 100% / 18;
+.disclaimer { display: none; }
+
+.input {
+  @include border-radius(12px 0 0 0);
+  form { display: block; }
+}
+
+.output {
+  display: block;
+}
 
 /*
  *  Simple elastic gutters
