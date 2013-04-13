@@ -8,7 +8,7 @@
 
   define = root.define;
 
-  define(['jquery', 'underscore', 'input/television/day', 'input/version'], function($, _, Day, Version) {
+  define(['jquery', 'underscore', 'input/television/day'], function($, _, Day) {
     var PublicServiceAnnouncementTelevisionOnCamera;
     PublicServiceAnnouncementTelevisionOnCamera = (function() {
 
@@ -17,7 +17,7 @@
         this.label = "Public Service Announcement - Television (On Camera)";
         this.value = "psa_television_on_camera";
         this.definitionId = "psa";
-        this.steps = [new Day(), new Version()];
+        this.steps = [new Day()];
         this.el = [];
         _.each(this.steps, function(el, i) {
           return _this.el.push(el.el);

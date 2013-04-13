@@ -6,8 +6,7 @@ define [
   'jquery'
   'underscore'
   'input/television/day'
-  'input/version'
-], ($, _, Day, Version) ->
+], ($, _, Day) ->
 	class PublicServiceAnnouncementTelevisionOnCamera
     constructor: ->
       @label = "Public Service Announcement - Television (On Camera)"
@@ -15,7 +14,6 @@ define [
       @definitionId = "psa"
       @steps = [
         new Day()
-        new Version()
       ]
       @el = []
       _.each @steps, (el, i) => @el.push el.el
