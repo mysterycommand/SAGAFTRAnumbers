@@ -13,6 +13,7 @@ define [
       numCharacters = []
       $('.num-characters').each (i, el) ->
         numCharacters[i] = parseInt $(el).val(), 10
+        return
       numVersions = parseInt $('#num-versions').val(), 10
       numTags = parseInt $('#num-tags').val(), 10
 
@@ -104,7 +105,9 @@ define [
           selected = $markets.val()
           markets = []
           
-          $(selected).each (i, el) -> markets[i] = $markets.find("[value=#{el}]").data 'value'
+          $(selected).each (i, el) ->
+            markets[i] = $markets.find("[value=#{el}]").data 'value'
+            return
           
           cities = []
           cityRate = 0
@@ -127,22 +130,26 @@ define [
           if cities.length is 2 then cityRate = rates.wild_13_major_any_2
           if cities.length is 3 then cityRate = rates.wild_13_major_all_3
           
+          if cityRate then lineItem.items.push
+            count: 0
+            label: "#{cities.length} Major Markets (#{cities.join ', '})"
+            price: cityRate
+          
+
+
           numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
           
           unitRate = 0
           if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
           
-          if cityRate then lineItem.items.push
-            count: 1
-            label: "Major Markets (#{cities.join ', '})"
-            price: cityRate
-          
-          if unitRate then lineItem.items.push
+          if numUnits && unitRate then lineItem.items.push
             count: numUnits
             label: "Add'l Units at $ #{unitRate.toFixed 2}"
             price: unitRate
           
+
+
           if ! cityRate and ! unitRate then lineItem.items.push
             count: 0
             label: "Please choose broadcast markets."
@@ -156,7 +163,9 @@ define [
           selected = $markets.val()
           markets = []
           
-          $(selected).each (i, el) -> markets[i] = $markets.find("[value=#{el}]").data 'value'
+          $(selected).each (i, el) ->
+            markets[i] = $markets.find("[value=#{el}]").data 'value'
+            return
           
           cities = []
           cityRate = 0
@@ -179,20 +188,24 @@ define [
           if cities.length is 2 then cityRate = rates.wild_8_major_any_2
           if cities.length is 3 then cityRate = rates.wild_8_major_all_3
           
+          if cityRate then lineItem.items.push
+            count: 0
+            label: "#{cities.length} Major Markets (#{cities.join ', '})"
+            price: cityRate
+          
+
+
           numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
           unitRate = 0
           if numUnits > 0  then unitRate = rates.wild_8_unit_2_25
           if numUnits > 25 or cities.length then unitRate = rates.wild_8_unit_26
           
-          if cityRate then lineItem.items.push
-            count: 1
-            label: "Major Markets (#{cities.join ', '})"
-            price: cityRate
-          
-          if unitRate then lineItem.items.push
+          if numUnits && unitRate then lineItem.items.push
             count: numUnits
             label: "Add'l Units at $ #{unitRate.toFixed 2}"
             price: unitRate
+          
+
           
           if ! cityRate and ! unitRate then lineItem.items.push
             count: 0

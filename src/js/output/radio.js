@@ -20,7 +20,7 @@
         numSingers = parseInt($('#num-singers').val(), 10);
         numCharacters = [];
         $('.num-characters').each(function(i, el) {
-          return numCharacters[i] = parseInt($(el).val(), 10);
+          numCharacters[i] = parseInt($(el).val(), 10);
         });
         numVersions = parseInt($('#num-versions').val(), 10);
         numTags = parseInt($('#num-tags').val(), 10);
@@ -123,7 +123,7 @@
             selected = $markets.val();
             markets = [];
             $(selected).each(function(i, el) {
-              return markets[i] = $markets.find("[value=" + el + "]").data('value');
+              markets[i] = $markets.find("[value=" + el + "]").data('value');
             });
             cities = [];
             cityRate = 0;
@@ -148,6 +148,13 @@
             if (cities.length === 3) {
               cityRate = rates.wild_13_major_all_3;
             }
+            if (cityRate) {
+              lineItem.items.push({
+                count: 0,
+                label: "" + cities.length + " Major Markets (" + (cities.join(', ')) + ")",
+                price: cityRate
+              });
+            }
             numUnits = markets.length ? _.reduce(markets, function(t, s) {
               return t + s;
             }) - 1 : 0;
@@ -158,14 +165,7 @@
             if (numUnits > 25 || cities.length) {
               unitRate = rates.wild_13_unit_26;
             }
-            if (cityRate) {
-              lineItem.items.push({
-                count: 1,
-                label: "Major Markets (" + (cities.join(', ')) + ")",
-                price: cityRate
-              });
-            }
-            if (unitRate) {
+            if (numUnits && unitRate) {
               lineItem.items.push({
                 count: numUnits,
                 label: "Add'l Units at $ " + (unitRate.toFixed(2)),
@@ -186,7 +186,7 @@
             selected = $markets.val();
             markets = [];
             $(selected).each(function(i, el) {
-              return markets[i] = $markets.find("[value=" + el + "]").data('value');
+              markets[i] = $markets.find("[value=" + el + "]").data('value');
             });
             cities = [];
             cityRate = 0;
@@ -211,6 +211,13 @@
             if (cities.length === 3) {
               cityRate = rates.wild_8_major_all_3;
             }
+            if (cityRate) {
+              lineItem.items.push({
+                count: 0,
+                label: "" + cities.length + " Major Markets (" + (cities.join(', ')) + ")",
+                price: cityRate
+              });
+            }
             numUnits = markets.length ? _.reduce(markets, function(t, s) {
               return t + s;
             }) - 1 : 0;
@@ -221,14 +228,7 @@
             if (numUnits > 25 || cities.length) {
               unitRate = rates.wild_8_unit_26;
             }
-            if (cityRate) {
-              lineItem.items.push({
-                count: 1,
-                label: "Major Markets (" + (cities.join(', ')) + ")",
-                price: cityRate
-              });
-            }
-            if (unitRate) {
+            if (numUnits && unitRate) {
               lineItem.items.push({
                 count: numUnits,
                 label: "Add'l Units at $ " + (unitRate.toFixed(2)),
