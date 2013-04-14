@@ -174,6 +174,8 @@ define [
                     cities = []
                     cityRate = 0
 
+
+
                     chicagoIndex = markets.indexOf 'Chicago'
                     if chicagoIndex isnt -1
                         cities[cities.length] = markets.splice(chicagoIndex, 1)[0]
@@ -194,8 +196,8 @@ define [
                     
                     if cityRate then lineItem.items.push
                         count: 0
-                        label: "#{cities.length} Major Markets (#{cities.join ', '})"
-                        price: cityRate
+                        label: "#{cities.length} Major Markets (#{cities.join ', '}) for #{numActors} Principal Actor(s)"
+                        price: cityRate * numActors
 
 
 
@@ -205,11 +207,14 @@ define [
                     if numUnits > 0 then unitRate = rates.wild_13_unit_2_25
                     if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
 
-                    if numUnits && unitRate then lineItem.items.push
+                    if numUnits and unitRate then lineItem.items.push
                         count: numUnits
-                        label: "Add'l Units at $ #{unitRate.toFixed 2}"
-                        price: unitRate
-
+                        label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{numActors} Principal Actor(s)"
+                        price: unitRate * numActors
+                    else if cityRate then lineItem.items.push
+                        count: numActors
+                        label: "Session Fee(s) credited"
+                        price: -rates.session_actor
 
 
 
@@ -244,7 +249,7 @@ define [
                         price: 0
                     else if numActors then lineItem.items.push
                         count: numActors
-                        label: "Principal Actors"
+                        label: "Principal Actor(s)"
                         price: subscriberRate
 
                     # if numExtras then lineItem.items.push
@@ -272,7 +277,7 @@ define [
                         price: 0
                     else if numActors then lineItem.items.push
                         count: numActors
-                        label: "Principal Actors"
+                        label: "Principal Actor(s)"
                         price: subscriberRate
 
                     # if numExtras then lineItem.items.push
@@ -297,8 +302,8 @@ define [
                     useRate = rates.network_2 + (rates.network_3 * (numUses - 2))
 
                     if useRate then lineItem.items.push
-                        count: 0
-                        label: "#{numUses} Program Class A Uses"
+                        count: numActors
+                        label: "Principal Actor(s) with #{numUses} Program Class A Use(s)"
                         price: useRate
 
             if broadcastType isnt -1 then lineItems.push lineItem
@@ -310,8 +315,8 @@ define [
                     lineItem = 
                         label: "Internet or New Media Use"
                         items: [
-                            count: 0
-                            label: "8 Week Option"
+                            count: numActors
+                            label: "Principal Actor(s) with the 8 Week Option"
                             price: rates.internet_8_week
                         ]
 
@@ -321,8 +326,8 @@ define [
                     lineItem = 
                         label: "Internet or New Media Use"
                         items: [
-                            count: 0
-                            label: "1 Year Option"
+                            count: numActors
+                            label: "Principal Actor(s) with the 1 Year Option"
                             price: rates.internet_1_year
                         ]
 
@@ -404,8 +409,8 @@ define [
                     
                     if cityRate then lineItem.items.push
                         count: 0
-                        label: "#{cities.length} Major Markets (#{cities.join ', '})"
-                        price: cityRate
+                        label: "#{cities.length} Major Markets (#{cities.join ', '}) for #{numActors} Principal Actor(s)"
+                        price: cityRate * numActors
 
 
 
@@ -415,10 +420,14 @@ define [
                     if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
                     if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
 
-                    if numUnits && unitRate then lineItem.items.push
+                    if numUnits and unitRate then lineItem.items.push
                         count: numUnits
-                        label: "Add'l Units at $ #{unitRate.toFixed 2}"
-                        price: unitRate
+                        label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{numActors} Principal Actor(s)"
+                        price: unitRate * numActors
+                    else if cityRate then lineItem.items.push
+                        count: numActors
+                        label: "Session Fee(s) credited"
+                        price: -rates.session_actor
 
 
 
@@ -454,7 +463,7 @@ define [
                         price: 0
                     else if numActors then lineItem.items.push
                         count: numActors
-                        label: "Principal Actors"
+                        label: "Principal Actor(s)"
                         price: subscriberRate
 
 
@@ -477,7 +486,7 @@ define [
                         price: 0
                     else if numActors then lineItem.items.push
                         count: numActors
-                        label: "Principal Actors"
+                        label: "Principal Actor(s)"
                         price: subscriberRate
 
                     # if numExtras then lineItem.items.push
@@ -502,8 +511,8 @@ define [
                     useRate = rates.network_2 + (rates.network_3 * (numUses - 2))
 
                     if useRate then lineItem.items.push
-                        count: 0
-                        label: "#{numUses} Program Class A Uses"
+                        count: numActors
+                        label: "Principal Actor(s) with #{numUses} Program Class A Use(s)"
                         price: useRate
 
             if broadcastType isnt -1 then lineItems.push lineItem
@@ -515,8 +524,8 @@ define [
                     lineItem = 
                         label: "Internet or New Media Use"
                         items: [
-                            count: 0
-                            label: "8 Week Option"
+                            count: numActors
+                            label: "Principal Actor(s) with the 8 Week Option"
                             price: rates.internet_8_week
                         ]
 
@@ -526,8 +535,8 @@ define [
                     lineItem = 
                         label: "Internet or New Media Use"
                         items: [
-                            count: 0
-                            label: "1 Year Option"
+                            count: numActors
+                            label: "Principal Actor(s) with the 1 Year Option"
                             price: rates.internet_1_year
                         ]
 

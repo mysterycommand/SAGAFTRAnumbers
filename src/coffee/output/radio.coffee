@@ -109,6 +109,8 @@ define [
             markets[i] = $markets.find("[value=#{el}]").data 'value'
             return
           
+
+          
           cities = []
           cityRate = 0
           
@@ -167,6 +169,8 @@ define [
             markets[i] = $markets.find("[value=#{el}]").data 'value'
             return
           
+
+
           cities = []
           cityRate = 0
           
@@ -206,7 +210,7 @@ define [
             price: unitRate
           
 
-          
+
           if ! cityRate and ! unitRate then lineItem.items.push
             count: 0
             label: "Please choose broadcast markets."
