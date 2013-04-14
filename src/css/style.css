@@ -518,7 +518,7 @@ body {
   */ }
 
 .page {
-  margin: 0 5.55556%; }
+  margin: 0 0; }
 
 header {
   overflow: hidden;
@@ -816,21 +816,25 @@ nav {
   background-image: -moz-linear-gradient(top, #cccccc 0px, white 260px);
   background-image: -ms-linear-gradient(top, #cccccc 0px, white 260px);
   background-image: -o-linear-gradient(top, #cccccc 0px, white 260px);
-  background-image: linear-gradient(top, #cccccc 0px, white 260px); }
+  background-image: linear-gradient(top, #cccccc 0px, white 260px);
+  padding-left: 1.5em;
+  padding-right: 1.5em; }
   .inner.left {
-    position: relative;
-    padding-left: 1.5em;
-    width: 62.5%;
+    display: block;
     width: 100%;
-    padding-right: 1.5em; }
+    background-image: -webkit-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: -moz-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: -ms-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: -o-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: linear-gradient(top, #cccccc 0px, white 260px); }
   .inner.right {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    padding-right: 1.5em;
-    width: 37.5%; }
+    display: block;
+    width: 100%;
+    background-image: -webkit-linear-gradient(top, #cccccc 0px, white 0px);
+    background-image: -moz-linear-gradient(top, #cccccc 0px, white 0px);
+    background-image: -ms-linear-gradient(top, #cccccc 0px, white 0px);
+    background-image: -o-linear-gradient(top, #cccccc 0px, white 0px);
+    background-image: linear-gradient(top, #cccccc 0px, white 0px); }
 
 .ie .inner {
   background-color: white;
@@ -2050,20 +2054,35 @@ address em {
  *  5.55555% | %  25  50  75  100 | 5.55555%
  *
  */
-.disclaimer {
-  display: none; }
+header {
+  overflow: hidden;
+  width: 90%;
+  margin-right: 5.55556%;
+  margin-left: 5.55556%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
 
 .input {
-  -webkit-border-radius: 12px 0 0 0;
-  -moz-border-radius: 12px 0 0 0;
-  -ms-border-radius: 12px 0 0 0;
-  -o-border-radius: 12px 0 0 0;
-  border-radius: 12px 0 0 0; }
+  -webkit-border-radius: 12px 12px 0 0;
+  -moz-border-radius: 12px 12px 0 0;
+  -ms-border-radius: 12px 12px 0 0;
+  -o-border-radius: 12px 12px 0 0;
+  border-radius: 12px 12px 0 0; }
   .input form {
     display: block; }
 
 .output {
-  display: block; }
+  display: block;
+  -webkit-border-radius: 0 0 0 0;
+  -moz-border-radius: 0 0 0 0;
+  -ms-border-radius: 0 0 0 0;
+  -o-border-radius: 0 0 0 0;
+  border-radius: 0 0 0 0;
+  -webkit-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25); }
 
 /*
  *  Simple elastic gutters
@@ -2103,6 +2122,9 @@ address em {
   hgroup {
     width: 50%; }
 
+  hgroup.right {
+    padding-right: 0px; }
+
   h6 {
     margin-top: 2em; } }
 /* @media screen and (min-width: 640px) */
@@ -2124,15 +2146,32 @@ address em {
   .disclaimer {
     display: none; }
 
+  .page {
+    margin: 0 5.55556%; }
+
   h6 {
     font-size: 0.75em;
     line-height: 1.5em; }
 
   .inner.left {
     width: 62.5%;
-    padding-right: 0; }
+    padding-right: 0px;
+    background-image: -webkit-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: -moz-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: -ms-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: -o-linear-gradient(top, #cccccc 0px, white 260px);
+    background-image: linear-gradient(top, #cccccc 0px, white 260px); }
   .inner.right {
-    display: block; }
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 37.5%;
+    background-image: -webkit-linear-gradient(top, #cccccc 5px, white 260px);
+    background-image: -moz-linear-gradient(top, #cccccc 5px, white 260px);
+    background-image: -ms-linear-gradient(top, #cccccc 5px, white 260px);
+    background-image: -o-linear-gradient(top, #cccccc 5px, white 260px);
+    background-image: linear-gradient(top, #cccccc 5px, white 260px); }
 
   .input {
     -webkit-border-radius: 12px 0 0 0;
@@ -2144,7 +2183,17 @@ address em {
       display: block; }
 
   .output {
-    display: block; }
+    display: block;
+    -webkit-border-radius: 0 12px 0 0;
+    -moz-border-radius: 0 12px 0 0;
+    -ms-border-radius: 0 12px 0 0;
+    -o-border-radius: 0 12px 0 0;
+    border-radius: 0 12px 0 0;
+    -webkit-box-shadow: inset 8px 0px 8px -6px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 8px 0px 8px -6px rgba(0, 0, 0, 0.25);
+    -ms-box-shadow: inset 8px 0px 8px -6px rgba(0, 0, 0, 0.25);
+    -o-box-shadow: inset 8px 0px 8px -6px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 8px 0px 8px -6px rgba(0, 0, 0, 0.25); }
 
   .input,
   .output {

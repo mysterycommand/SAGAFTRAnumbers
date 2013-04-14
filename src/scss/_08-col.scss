@@ -15,6 +15,9 @@ $margin: 100% / 18;
 /* @media screen and (min-width: 768px) */
 @media screen and (min-width: 48em) {
   .disclaimer { display: none; }
+  .page {
+    margin: 0 $margin;
+  }
 
   h6 {
     @include line(12, 18);
@@ -23,11 +26,17 @@ $margin: 100% / 18;
   .inner {
     &.left {
       width: 62.5%;
-      padding-right: 0;
+     padding-right: 0px;
+      
+      @include linear-gradient((top, $medgray 0px, $white 260px));
     }
       
     &.right {
-      display: block;
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 37.5%;
+
+      @include linear-gradient((top, $medgray 5px, $white 260px));
     }
   }
 
@@ -38,6 +47,8 @@ $margin: 100% / 18;
 
   .output {
     display: block;
+    @include border-radius(0 12px 0 0);
+    @include box-shadow(inset 8px 0px 8px -6px $lightalphagray);
   }
 
   .input,
