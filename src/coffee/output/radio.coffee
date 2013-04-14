@@ -319,28 +319,16 @@ define [
       
       switch internetType
         when 0
-          lineItem.label += " - 8 Week Option"
-          if (numActors) then lineItem.items.push
-            count: numActors
-            label: "Actor/Announcer(s)"
-            price: rates.internet_8_week
-          
-          if (numSingers) then lineItem.items.push
-            count: numSingers
-            label: "Singer(s)"
-            price: rates.internet_8_week
+          if numActors or numSingers then lineItem.items.push
+            count: 0
+            label: "#{perActorSinger.join ' and '} with the 8 Week Option"
+            price: rates.internet_8_week * (numActors + numSingers)
 
         when 1
-          lineItem.label += " - 1 Year Option"
-          if (numActors) then lineItem.items.push
-            count: numActors
-            label: "Actor/Announcer(s)"
-            price: rates.internet_1_year
-          
-          if (numSingers) then lineItem.items.push
-            count: numSingers
-            label: "Singer(s)"
-            price: rates.internet_1_year
+          if numActors or numSingers then lineItem.items.push
+            count: 0
+            label: "#{perActorSinger.join ' and '} with the 1 Year Option"
+            price: rates.internet_1_year * (numActors + numSingers)
       
       if lineItem.items.length then lineItems.push lineItem
       

@@ -510,24 +510,18 @@
         };
         switch (internetType) {
           case 0:
-            lineItem.label += " - 8 Week Option";
-            if (numActors) {
-              lineItem.items.push({
-                count: numActors,
-                label: "Principal Actor(s)",
-                price: rates.internet_8_week
-              });
-            }
+            lineItem.items.push({
+              count: numActors,
+              label: "Principal Actor(s) with the 8 Week Option",
+              price: rates.internet_8_week
+            });
             break;
           case 1:
-            lineItem.label += " - 1 Year Option";
-            if (numActors) {
-              lineItem.items.push({
-                count: numActors,
-                label: "Principal Actor(s)",
-                price: rates.internet_1_year
-              });
-            }
+            lineItem.items.push({
+              count: numActors,
+              label: "Principal Actor(s) with the 1 Year Option",
+              price: rates.internet_1_year
+            });
         }
         if (internetType !== -1) {
           lineItems.push(lineItem);

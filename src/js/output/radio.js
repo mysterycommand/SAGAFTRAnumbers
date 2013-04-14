@@ -378,36 +378,20 @@
         };
         switch (internetType) {
           case 0:
-            lineItem.label += " - 8 Week Option";
-            if (numActors) {
+            if (numActors || numSingers) {
               lineItem.items.push({
-                count: numActors,
-                label: "Actor/Announcer(s)",
-                price: rates.internet_8_week
-              });
-            }
-            if (numSingers) {
-              lineItem.items.push({
-                count: numSingers,
-                label: "Singer(s)",
-                price: rates.internet_8_week
+                count: 0,
+                label: "" + (perActorSinger.join(' and ')) + " with the 8 Week Option",
+                price: rates.internet_8_week * (numActors + numSingers)
               });
             }
             break;
           case 1:
-            lineItem.label += " - 1 Year Option";
-            if (numActors) {
+            if (numActors || numSingers) {
               lineItem.items.push({
-                count: numActors,
-                label: "Actor/Announcer(s)",
-                price: rates.internet_1_year
-              });
-            }
-            if (numSingers) {
-              lineItem.items.push({
-                count: numSingers,
-                label: "Singer(s)",
-                price: rates.internet_1_year
+                count: 0,
+                label: "" + (perActorSinger.join(' and ')) + " with the 1 Year Option",
+                price: rates.internet_1_year * (numActors + numSingers)
               });
             }
         }
