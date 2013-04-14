@@ -78,6 +78,10 @@ define [
   	@usageLineItems: (rates) ->
       numActors = parseInt $('#num-actors').val(), 10
       numSingers = parseInt $('#num-singers').val(), 10
+
+      perActorSinger = []
+      if numActors > 0 then perActorSinger.push "#{numActors} Actor/Announcer(s)"
+      if numSingers > 0 then perActorSinger.push "#{numSingers} Singer(s)"
       
       useType = parseInt $('#use-type').val(), 10
       broadcastType = -1
@@ -110,7 +114,7 @@ define [
             return
           
 
-          
+
           cities = []
           cityRate = 0
           
@@ -134,8 +138,8 @@ define [
           
           if cityRate then lineItem.items.push
             count: 0
-            label: "#{cities.length} Major Markets (#{cities.join ', '})"
-            price: cityRate
+            label: "#{cities.length} Major Markets (#{cities.join ', '}) for #{perActorSinger.join ' and '}"
+            price: cityRate * (numActors + numSingers)
           
 
 
@@ -147,8 +151,17 @@ define [
           
           if numUnits && unitRate then lineItem.items.push
             count: numUnits
-            label: "Add'l Units at $ #{unitRate.toFixed 2}"
-            price: unitRate
+            label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{perActorSinger.join ' and '}"
+            price: unitRate * (numActors + numSingers)
+          else if cityRate
+            if numActors then lineItem.items.push
+              count: numActors
+              label: "Actor/Announcer Session Fee(s) credited"
+              price: -rates.session_actor
+            if numSingers then lineItem.items.push
+              count: numSingers
+              label: "Singer Session Fee(s) credited"
+              price: -rates.session_singer
           
 
 
@@ -194,8 +207,8 @@ define [
           
           if cityRate then lineItem.items.push
             count: 0
-            label: "#{cities.length} Major Markets (#{cities.join ', '})"
-            price: cityRate
+            label: "#{cities.length} Major Markets (#{cities.join ', '}) for #{perActorSinger.join ' and '}"
+            price: cityRate * (numActors + numSingers)
           
 
 
@@ -206,8 +219,17 @@ define [
           
           if numUnits && unitRate then lineItem.items.push
             count: numUnits
-            label: "Add'l Units at $ #{unitRate.toFixed 2}"
-            price: unitRate
+            label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{perActorSinger.join ' and '}"
+            price: unitRate * (numActors + numSingers)
+          else if cityRate
+            if numActors then lineItem.items.push
+              count: numActors
+              label: "Actor/Announcer Session Fee(s) credited"
+              price: -rates.session_actor
+            if numSingers then lineItem.items.push
+              count: numSingers
+              label: "Singer Session Fee(s) credited"
+              price: -rates.session_singer
           
 
 
@@ -297,14 +319,27 @@ define [
       
       switch internetType
         when 0
-          lineItem.items.push
-            count: 0
-            label: "8 Week Option"
+          lineItem.label += " - 8 Week Option"
+          if (numActors) then lineItem.items.push
+            count: numActors
+            label: "Actor/Announcer(s)"
             price: rates.internet_8_week
+          
+          if (numSingers) then lineItem.items.push
+            count: numSingers
+            label: "Singer(s)"
+            price: rates.internet_8_week
+
         when 1
-          lineItem.items.push
-            count: 0
-            label: "1 Year Option"
+          lineItem.label += " - 1 Year Option"
+          if (numActors) then lineItem.items.push
+            count: numActors
+            label: "Actor/Announcer(s)"
+            price: rates.internet_1_year
+          
+          if (numSingers) then lineItem.items.push
+            count: numSingers
+            label: "Singer(s)"
             price: rates.internet_1_year
       
       if lineItem.items.length then lineItems.push lineItem

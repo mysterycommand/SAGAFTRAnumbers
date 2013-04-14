@@ -94,9 +94,16 @@
       };
 
       Radio.usageLineItems = function(rates) {
-        var $markets, broadcastType, chicagoIndex, cities, cityRate, internetType, lineItem, lineItems, losAngelesIndex, markets, networkUseRate, networkUseType, newYorkIndex, numActors, numSingers, numUnits, selected, unitRate, useType;
+        var $markets, broadcastType, chicagoIndex, cities, cityRate, internetType, lineItem, lineItems, losAngelesIndex, markets, networkUseRate, networkUseType, newYorkIndex, numActors, numSingers, numUnits, perActorSinger, selected, unitRate, useType;
         numActors = parseInt($('#num-actors').val(), 10);
         numSingers = parseInt($('#num-singers').val(), 10);
+        perActorSinger = [];
+        if (numActors > 0) {
+          perActorSinger.push("" + numActors + " Actor/Announcer(s)");
+        }
+        if (numSingers > 0) {
+          perActorSinger.push("" + numSingers + " Singer(s)");
+        }
         useType = parseInt($('#use-type').val(), 10);
         broadcastType = -1;
         internetType = -1;
@@ -151,8 +158,8 @@
             if (cityRate) {
               lineItem.items.push({
                 count: 0,
-                label: "" + cities.length + " Major Markets (" + (cities.join(', ')) + ")",
-                price: cityRate
+                label: "" + cities.length + " Major Markets (" + (cities.join(', ')) + ") for " + (perActorSinger.join(' and ')),
+                price: cityRate * (numActors + numSingers)
               });
             }
             numUnits = markets.length ? _.reduce(markets, function(t, s) {
@@ -168,9 +175,24 @@
             if (numUnits && unitRate) {
               lineItem.items.push({
                 count: numUnits,
-                label: "Add'l Units at $ " + (unitRate.toFixed(2)),
-                price: unitRate
+                label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + (perActorSinger.join(' and ')),
+                price: unitRate * (numActors + numSingers)
               });
+            } else if (cityRate) {
+              if (numActors) {
+                lineItem.items.push({
+                  count: numActors,
+                  label: "Actor/Announcer Session Fee(s) credited",
+                  price: -rates.session_actor
+                });
+              }
+              if (numSingers) {
+                lineItem.items.push({
+                  count: numSingers,
+                  label: "Singer Session Fee(s) credited",
+                  price: -rates.session_singer
+                });
+              }
             }
             if (!cityRate && !unitRate) {
               lineItem.items.push({
@@ -214,8 +236,8 @@
             if (cityRate) {
               lineItem.items.push({
                 count: 0,
-                label: "" + cities.length + " Major Markets (" + (cities.join(', ')) + ")",
-                price: cityRate
+                label: "" + cities.length + " Major Markets (" + (cities.join(', ')) + ") for " + (perActorSinger.join(' and ')),
+                price: cityRate * (numActors + numSingers)
               });
             }
             numUnits = markets.length ? _.reduce(markets, function(t, s) {
@@ -231,9 +253,24 @@
             if (numUnits && unitRate) {
               lineItem.items.push({
                 count: numUnits,
-                label: "Add'l Units at $ " + (unitRate.toFixed(2)),
-                price: unitRate
+                label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + (perActorSinger.join(' and ')),
+                price: unitRate * (numActors + numSingers)
               });
+            } else if (cityRate) {
+              if (numActors) {
+                lineItem.items.push({
+                  count: numActors,
+                  label: "Actor/Announcer Session Fee(s) credited",
+                  price: -rates.session_actor
+                });
+              }
+              if (numSingers) {
+                lineItem.items.push({
+                  count: numSingers,
+                  label: "Singer Session Fee(s) credited",
+                  price: -rates.session_singer
+                });
+              }
             }
             if (!cityRate && !unitRate) {
               lineItem.items.push({
@@ -341,18 +378,38 @@
         };
         switch (internetType) {
           case 0:
-            lineItem.items.push({
-              count: 0,
-              label: "8 Week Option",
-              price: rates.internet_8_week
-            });
+            lineItem.label += " - 8 Week Option";
+            if (numActors) {
+              lineItem.items.push({
+                count: numActors,
+                label: "Actor/Announcer(s)",
+                price: rates.internet_8_week
+              });
+            }
+            if (numSingers) {
+              lineItem.items.push({
+                count: numSingers,
+                label: "Singer(s)",
+                price: rates.internet_8_week
+              });
+            }
             break;
           case 1:
-            lineItem.items.push({
-              count: 0,
-              label: "1 Year Option",
-              price: rates.internet_1_year
-            });
+            lineItem.label += " - 1 Year Option";
+            if (numActors) {
+              lineItem.items.push({
+                count: numActors,
+                label: "Actor/Announcer(s)",
+                price: rates.internet_1_year
+              });
+            }
+            if (numSingers) {
+              lineItem.items.push({
+                count: numSingers,
+                label: "Singer(s)",
+                price: rates.internet_1_year
+              });
+            }
         }
         if (lineItem.items.length) {
           lineItems.push(lineItem);

@@ -519,26 +519,24 @@ define [
 
 
 
+            lineItem = 
+                label: "Internet or New Media Use"
+                items: []
+            
             switch internetType
-                when 0 # 8 Week
-                    lineItem = 
-                        label: "Internet or New Media Use"
-                        items: [
-                            count: numActors
-                            label: "Principal Actor(s) with the 8 Week Option"
-                            price: rates.internet_8_week
-                        ]
+                when 0
+                    lineItem.label += " - 8 Week Option"
+                    if (numActors) then lineItem.items.push
+                        count: numActors
+                        label: "Principal Actor(s)"
+                        price: rates.internet_8_week
 
-
-
-                when 1 # 1 Year
-                    lineItem = 
-                        label: "Internet or New Media Use"
-                        items: [
-                            count: numActors
-                            label: "Principal Actor(s) with the 1 Year Option"
-                            price: rates.internet_1_year
-                        ]
+                when 1
+                    lineItem.label += " - 1 Year Option"
+                    if (numActors) then lineItem.items.push
+                        count: numActors
+                        label: "Principal Actor(s)"
+                        price: rates.internet_1_year
 
             if internetType isnt -1 then lineItems.push lineItem
 
