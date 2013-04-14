@@ -6,6 +6,11 @@
 
 
 (function() {
+  var log, root;
+
+  root = this;
+
+  log = root.log;
 
   require(['jquery', 'app', 'webshim', 'chosen'], function(jQuery, App) {
     var $;
@@ -77,7 +82,7 @@
           return;
         }
         top = ($this.position().top + $this.height() + 14) | 0;
-        left = ($this.position().left + ($this.width() / 2) - 46) | 0;
+        left = ($this.position().left + $this.width() - 46) | 0;
         if ($targ.find(this.hash).length) {
           newTop = $targ.position().top !== top;
           newLeft = $targ.find('.pointer').position().left !== left;
@@ -92,7 +97,7 @@
           }
           return;
         }
-        $targ.find('.content').empty().append($term.clone()).end().css('top', top).find('.pointer').css('left', left).end();
+        $targ.css('top', top).find('.pointer').css('left', left).end().find('.content').empty().append($term.clone()).end();
         if (!$targ.is(':visible')) {
           $targ.fadeIn(400);
         }

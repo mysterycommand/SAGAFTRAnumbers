@@ -2,8 +2,8 @@
     Author: Matt Hayes
 ###
 
-# root = this
-# log = root.log
+root = this
+log = root.log
 # require = root.require
 
 # require.config(
@@ -117,8 +117,9 @@ require [
                 return
             
             top = ($this.position().top + $this.height() + 14) | 0
-            left = ($this.position().left + ($this.width() / 2) - 46) | 0 # $this.offsetParent().position().left
-            
+            # fix = ($this.offsetParent().width() * 0.625) / 2
+            left = ($this.position().left + $this.width() - 46) | 0 # $this.offsetParent().position().left
+
             if $targ.find(@hash).length # you clicked the same term a second time
                 newTop = $targ.position().top isnt top
                 newLeft = $targ.find('.pointer').position().left isnt left
@@ -131,13 +132,13 @@ require [
                 return
             
             $targ
-                .find('.content')
-                    .empty()
-                    .append($term.clone())
-                .end()
                 .css('top', top)
                 .find('.pointer')
                     .css('left', left)
+                .end()
+                .find('.content')
+                    .empty()
+                    .append($term.clone())
                 .end()
 
             if ! $targ.is(':visible') then $targ.fadeIn 400
