@@ -10,7 +10,7 @@ define [
 	class App
     constructor: (@el) ->
       @updateCount = 0
-      @updateCountToCTA = 6
+      @updateCountToCTA = 5
 
       @$el = $ @el
       @input = new Input @$el.find('#input')[0]
