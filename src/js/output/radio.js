@@ -162,23 +162,7 @@
                 price: cityRate * (numActors + numSingers)
               });
             }
-            numUnits = markets.length ? _.reduce(markets, function(t, s) {
-              return t + s;
-            }) - 1 : 0;
-            unitRate = 0;
-            if (numUnits > 0) {
-              unitRate = rates.wild_13_unit_2_25;
-            }
-            if (numUnits > 25 || cities.length) {
-              unitRate = rates.wild_13_unit_26;
-            }
-            if (numUnits && unitRate) {
-              lineItem.items.push({
-                count: numUnits,
-                label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + (perActorSinger.join(' and ')),
-                price: unitRate * (numActors + numSingers)
-              });
-            } else if (cityRate) {
+            if (cityRate) {
               if (numActors) {
                 lineItem.items.push({
                   count: numActors,
@@ -193,6 +177,26 @@
                   price: -rates.session_singer
                 });
               }
+            }
+            numUnits = markets.length ? _.reduce(markets, function(t, s) {
+              return t + s;
+            }) : 0;
+            if (!cities.length) {
+              numUnits -= 1;
+            }
+            unitRate = 0;
+            if (numUnits > 0) {
+              unitRate = rates.wild_13_unit_2_25;
+            }
+            if (numUnits > 25 || cities.length) {
+              unitRate = rates.wild_13_unit_26;
+            }
+            if (numUnits && unitRate) {
+              lineItem.items.push({
+                count: numUnits,
+                label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + (perActorSinger.join(' and ')),
+                price: unitRate * (numActors + numSingers)
+              });
             }
             if (!cityRate && !unitRate) {
               lineItem.items.push({
@@ -240,23 +244,7 @@
                 price: cityRate * (numActors + numSingers)
               });
             }
-            numUnits = markets.length ? _.reduce(markets, function(t, s) {
-              return t + s;
-            }) - 1 : 0;
-            unitRate = 0;
-            if (numUnits > 0) {
-              unitRate = rates.wild_8_unit_2_25;
-            }
-            if (numUnits > 25 || cities.length) {
-              unitRate = rates.wild_8_unit_26;
-            }
-            if (numUnits && unitRate) {
-              lineItem.items.push({
-                count: numUnits,
-                label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + (perActorSinger.join(' and ')),
-                price: unitRate * (numActors + numSingers)
-              });
-            } else if (cityRate) {
+            if (cityRate) {
               if (numActors) {
                 lineItem.items.push({
                   count: numActors,
@@ -271,6 +259,26 @@
                   price: -rates.session_singer
                 });
               }
+            }
+            numUnits = markets.length ? _.reduce(markets, function(t, s) {
+              return t + s;
+            }) : 0;
+            if (!cities.length) {
+              numUnits -= 1;
+            }
+            unitRate = 0;
+            if (numUnits > 0) {
+              unitRate = rates.wild_8_unit_2_25;
+            }
+            if (numUnits > 25 || cities.length) {
+              unitRate = rates.wild_8_unit_26;
+            }
+            if (numUnits && unitRate) {
+              lineItem.items.push({
+                count: numUnits,
+                label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + (perActorSinger.join(' and ')),
+                price: unitRate * (numActors + numSingers)
+              });
             }
             if (!cityRate && !unitRate) {
               lineItem.items.push({

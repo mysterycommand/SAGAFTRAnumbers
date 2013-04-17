@@ -201,7 +201,15 @@ define [
 
 
 
-                    numUnits = if markets.length then markets.reduce((t, s) -> t + s) - 1 else 0
+                    if cityRate then lineItem.items.push
+                        count: numActors
+                        label: "Session Fee(s) credited"
+                        price: -rates.session_actor
+
+
+
+                    numUnits = if markets.length then markets.reduce((t, s) -> t + s) else 0
+                    numUnits -= 1 unless cities.length
 
                     unitRate = 0
                     if numUnits > 0 then unitRate = rates.wild_13_unit_2_25
@@ -211,10 +219,6 @@ define [
                         count: numUnits
                         label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{numActors} Principal Actor(s)"
                         price: unitRate * numActors
-                    else if cityRate then lineItem.items.push
-                        count: numActors
-                        label: "Session Fee(s) credited"
-                        price: -rates.session_actor
 
 
 
@@ -414,7 +418,15 @@ define [
 
 
 
-                    numUnits = if markets.length then markets.reduce((t, s) -> t + s) - 1 else 0
+                    if cityRate then lineItem.items.push
+                        count: numActors
+                        label: "Session Fee(s) credited"
+                        price: -rates.session_actor
+
+
+
+                    numUnits = if markets.length then markets.reduce((t, s) -> t + s) else 0
+                    numUnits -= 1 unless cities.length
 
                     unitRate = 0
                     if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
@@ -424,10 +436,6 @@ define [
                         count: numUnits
                         label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{numActors} Principal Actor(s)"
                         price: unitRate * numActors
-                    else if cityRate then lineItem.items.push
-                        count: numActors
-                        label: "Session Fee(s) credited"
-                        price: -rates.session_actor
 
 
 

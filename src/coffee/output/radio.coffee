@@ -140,10 +140,23 @@ define [
             count: 0
             label: "#{cities.length} Major Markets (#{cities.join ', '}) for #{perActorSinger.join ' and '}"
             price: cityRate * (numActors + numSingers)
+
+
           
+          if cityRate
+            if numActors then lineItem.items.push
+              count: numActors
+              label: "Actor/Announcer Session Fee(s) credited"
+              price: -rates.session_actor
+            if numSingers then lineItem.items.push
+              count: numSingers
+              label: "Singer Session Fee(s) credited"
+              price: -rates.session_singer
 
 
-          numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
+
+          numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) else 0
+          numUnits -= 1 unless cities.length
           
           unitRate = 0
           if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
@@ -153,15 +166,6 @@ define [
             count: numUnits
             label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{perActorSinger.join ' and '}"
             price: unitRate * (numActors + numSingers)
-          else if cityRate
-            if numActors then lineItem.items.push
-              count: numActors
-              label: "Actor/Announcer Session Fee(s) credited"
-              price: -rates.session_actor
-            if numSingers then lineItem.items.push
-              count: numSingers
-              label: "Singer Session Fee(s) credited"
-              price: -rates.session_singer
           
 
 
@@ -212,16 +216,7 @@ define [
           
 
 
-          numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) - 1 else 0
-          unitRate = 0
-          if numUnits > 0  then unitRate = rates.wild_8_unit_2_25
-          if numUnits > 25 or cities.length then unitRate = rates.wild_8_unit_26
-          
-          if numUnits && unitRate then lineItem.items.push
-            count: numUnits
-            label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{perActorSinger.join ' and '}"
-            price: unitRate * (numActors + numSingers)
-          else if cityRate
+          if cityRate
             if numActors then lineItem.items.push
               count: numActors
               label: "Actor/Announcer Session Fee(s) credited"
@@ -230,6 +225,20 @@ define [
               count: numSingers
               label: "Singer Session Fee(s) credited"
               price: -rates.session_singer
+
+
+
+          numUnits = if markets.length then _.reduce(markets, (t, s) -> t + s) else 0
+          numUnits -= 1 unless cities.length
+
+          unitRate = 0
+          if numUnits > 0  then unitRate = rates.wild_8_unit_2_25
+          if numUnits > 25 or cities.length then unitRate = rates.wild_8_unit_26
+          
+          if numUnits && unitRate then lineItem.items.push
+            count: numUnits
+            label: "Add'l Units at $ #{unitRate.toFixed 2} ea. for #{perActorSinger.join ' and '}"
+            price: unitRate * (numActors + numSingers)
           
 
 

@@ -223,9 +223,19 @@
                 price: cityRate * numActors
               });
             }
+            if (cityRate) {
+              lineItem.items.push({
+                count: numActors,
+                label: "Session Fee(s) credited",
+                price: -rates.session_actor
+              });
+            }
             numUnits = markets.length ? markets.reduce(function(t, s) {
               return t + s;
-            }) - 1 : 0;
+            }) : 0;
+            if (!cities.length) {
+              numUnits -= 1;
+            }
             unitRate = 0;
             if (numUnits > 0) {
               unitRate = rates.wild_13_unit_2_25;
@@ -238,12 +248,6 @@
                 count: numUnits,
                 label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + numActors + " Principal Actor(s)",
                 price: unitRate * numActors
-              });
-            } else if (cityRate) {
-              lineItem.items.push({
-                count: numActors,
-                label: "Session Fee(s) credited",
-                price: -rates.session_actor
               });
             }
             if (!cityRate && !unitRate) {
@@ -411,9 +415,19 @@
                 price: cityRate * numActors
               });
             }
+            if (cityRate) {
+              lineItem.items.push({
+                count: numActors,
+                label: "Session Fee(s) credited",
+                price: -rates.session_actor
+              });
+            }
             numUnits = markets.length ? markets.reduce(function(t, s) {
               return t + s;
-            }) - 1 : 0;
+            }) : 0;
+            if (!cities.length) {
+              numUnits -= 1;
+            }
             unitRate = 0;
             if (numUnits > 0) {
               unitRate = rates.wild_13_unit_2_25;
@@ -426,12 +440,6 @@
                 count: numUnits,
                 label: "Add'l Units at $ " + (unitRate.toFixed(2)) + " ea. for " + numActors + " Principal Actor(s)",
                 price: unitRate * numActors
-              });
-            } else if (cityRate) {
-              lineItem.items.push({
-                count: numActors,
-                label: "Session Fee(s) credited",
-                price: -rates.session_actor
               });
             }
             if (!cityRate && !unitRate) {
