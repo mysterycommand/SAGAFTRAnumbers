@@ -7,7 +7,7 @@
   
   @include box-sizing(border-box);
   @include border-radius(0 12px 0 0);
-  @include box-shadow(inset 12px 0 8px -6px $lightalphagray);
+  @include box-shadow(inset 6px 0 8px -6px $lightalphagray);
   
   a         { color: $textorange; text-decoration: none; }
   a:hover   { color: darken($textorange,  8%); }

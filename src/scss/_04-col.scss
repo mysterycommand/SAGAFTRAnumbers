@@ -9,7 +9,32 @@
  *  5.55555% | %  25  50  75  100 | 5.55555%
  *
  */
+
+
+
+header {
+  overflow: hidden;
+  width: 90%;
+  margin-right: 5.55556%; 
+  margin-left: 5.55556%; 
+  margin-top: 0.5em;
+  margin-bottom: 0.5em; }
+
 $margin: 100% / 18;
+// .disclaimer { display: none; }
+
+.input {
+  @include border-radius(12px 12px 0 0);
+  form { display: block; }
+  
+}
+
+.output {
+  display: block;
+  @include border-radius(0 0 0 0);
+  @include box-shadow(inset 0px 10px 8px -6px $lightalphagray);
+   
+}
 
 /*
  *  Simple elastic gutters
@@ -53,11 +78,22 @@ $margin: 100% / 18;
   .output {
       min-height: 310px;
   }
+  
 
-  hgroup { width: 50%; }
+  hgroup { 
+    width: 50%;
+
+   }
+   hgroup.right {
+    padding-right: 0px;
+   }
+
   
   h6 {
-    @include calc(margin-top, 48, 24);
+
+    @include calc(
+      margin-top, 48, 24);
+
   }
 }
 
