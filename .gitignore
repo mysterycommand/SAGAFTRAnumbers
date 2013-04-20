@@ -6,3 +6,6 @@ vendor/*
 aftra.sublime-project
 aftra.sublime-workspace
 .jshintrc
+
+src/css/*
+src/js/*
