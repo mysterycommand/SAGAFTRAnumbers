@@ -14,7 +14,7 @@ $margin: 100% / 18;
 
 /* @media screen and (min-width: 768px) */
 @media screen and (min-width: 48em) {
-  .disclaimer { display: none; }
+  
   .page {
     margin: 0 $margin;
   }
@@ -32,6 +32,7 @@ $margin: 100% / 18;
     }
       
     &.right {
+      padding-left: 0px;
       position: absolute;
       top: 0; right: 0; bottom: 0;
       width: 37.5%;

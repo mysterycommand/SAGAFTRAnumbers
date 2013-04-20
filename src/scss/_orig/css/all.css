@@ -404,16 +404,16 @@ nav {
   -ms-box-sizing: border-box;
   -o-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-border-radius: 0 0 0 0;
-  -moz-border-radius: 0 0 0 0;
-  -ms-border-radius: 0 0 0 0;
-  -o-border-radius: 0 0 0 0;
-  border-radius: 0 0 0 0;
-  -webkit-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
-  -ms-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
-  -o-box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0px 10px 8px -6px rgba(0, 0, 0, 0.25); }
+  -webkit-border-radius: 0 12px 0 0;
+  -moz-border-radius: 0 12px 0 0;
+  -ms-border-radius: 0 12px 0 0;
+  -o-border-radius: 0 12px 0 0;
+  border-radius: 0 12px 0 0;
+  -webkit-box-shadow: inset 6px 0 8px -6px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 6px 0 8px -6px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: inset 6px 0 8px -6px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: inset 6px 0 8px -6px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 6px 0 8px -6px rgba(0, 0, 0, 0.25); }
   .output a {
     color: #ff9933;
     text-decoration: none; }
