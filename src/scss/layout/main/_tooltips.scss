@@ -203,20 +203,82 @@
   
   @include box-sizing(border-box);
 
+  .pointer {
+    display: block;
+    position: absolute;
+    margin-left: -14px;
+    
+    top: -14px;
+    left: 50%;
+    
+    width: 29px;
+    height: 23px;
+  }
+
   &.left,
   &.right {
     .inner {
-      background: $darkgray;
+      background: $gray;
       float: none;
-      padding: 0 0.75em;
+      padding: 0 0.75em 0 0.75em;
       width: 100%;
 
       @include box-sizing(border-box);
+      @include box-shadow(inset 0 0 10px $hardalphawhite);
+    }
+  }
+  
+  .content {
+    color: $white;
+    
+
+    dt {
+      font-size: 1em;
+      font-weight: bold;
+      text-align: left;
+      padding: 0.25em 0;
+    }
+    
+    dd {
+      background: transparent;
+      font-size: 0.875em;
+      font-style: italic;
+      line-height: 1.5;
+      padding: 0.5em 0 0.75em;
+    }
+  }
+  
+  .close {
+    color: $white;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    
+    position: absolute;
+    top: 2em;
+    right: 1.25em;
+    
+    span {
+      background: $white;
+      color: $darkgray;
+      display: inline-block;
+      margin-top: 0.1em;
+      margin-left: 0.25em;
+    
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      line-height: 0.7;
+    
+      width: 1em;
+      height: 1em;
+  
+      @include border-radius(10px 10px 10px 10px);
     }
   }
 }
 
 .ie .tooltip .close {
+
   padding-top: 0.55em;
   padding-right: 2.5em;
 }
@@ -226,17 +288,6 @@
   top: 0;
   right: 0;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
