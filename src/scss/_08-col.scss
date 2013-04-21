@@ -52,6 +52,7 @@ $margin: 100% / 18;
     @include box-shadow(inset 8px 0px 8px -6px $lightalphagray);
   }
 
+  .home .calculator { height: auto; }
   .input,
   .output {
     min-height: 390px;

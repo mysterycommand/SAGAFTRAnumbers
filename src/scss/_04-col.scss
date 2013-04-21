@@ -45,6 +45,7 @@ $margin: 100% / 18;
 }
 
 @media screen and (min-width: 20em) {
+  .home .calculator { height: 190px; }
   .input,
   .output {
     min-height: 95px;
@@ -52,11 +53,12 @@ $margin: 100% / 18;
 }
 
 @media screen and (min-width: 28em) {
-    .hud {
-        h2 {
-            @include line(16, 36);
-        }
-    }
+  .hud {
+      h2 {
+          @include line(16, 36);
+      }
+  }
+  .home .calculator { height: 250px; }
   .input,
   .output {
     min-height: 125px;
@@ -73,6 +75,7 @@ $margin: 100% / 18;
       }
   }
 
+  .home .calculator { height: 310px; }
   .input,
   .output {
       min-height: 155px;
@@ -105,4 +108,10 @@ $margin: 100% / 18;
   
   h1 {}
   h6 {}
+
+  .home .calculator { height: 350px; }
+  .input,
+  .output {
+      min-height: 175px;
+  }
 }

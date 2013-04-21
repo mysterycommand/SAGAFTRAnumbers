@@ -1,6 +1,7 @@
 .splash {
   background: $white;
   display: block;
+  overflow: hidden;
   
   @include border-radius(12px 12px 0 0);
   

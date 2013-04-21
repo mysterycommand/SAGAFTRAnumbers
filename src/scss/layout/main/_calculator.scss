@@ -1,8 +1,11 @@
 @import "../../css3/background-clip";
 
+.home .calculator { height: 190px; }
 .calculator {
+  overflow: hidden;
   position: relative;
-  @include linear-gradient((top, $medgray 0px, $white 260px));
+  height: auto;
+  @include linear-gradient((top, $medgray 0px, $white 220px));
 }
 
 .inner {
