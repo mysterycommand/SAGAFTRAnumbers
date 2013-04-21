@@ -7,15 +7,12 @@
 .inner {
   background: $medgray;
 
-  
-  
   @include box-sizing(border-box);
   @include linear-gradient((top, $medgray 0px, $white 260px));
   
   padding-left: 1.5em;
   padding-right: 1.5em;
  
-
   &.left {
     display:block;
     width: 100%;
@@ -25,10 +22,9 @@
     
   &.right {
     // Override in media queries!
+    background: transparent;
     display: block;
     width: 100%;
-
-    @include linear-gradient((top, $medgray 0px, $white 0px));
   }
 }
 

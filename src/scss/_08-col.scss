@@ -26,7 +26,7 @@ $margin: 100% / 18;
   .inner {
     &.left {
       width: 62.5%;
-     padding-right: 0px;
+      padding-right: 0px;
       
       @include linear-gradient((top, $medgray 0px, $white 260px));
     }
@@ -56,6 +56,26 @@ $margin: 100% / 18;
   .output {
     min-height: 390px;
     overflow: visible;
+  }
+
+  .tooltip {
+    &.left {
+      left: 0;
+      padding-left: 0.75em;
+      padding-right: 2.25em;
+      margin-left: 1.5em;
+      width: 62.5%;
+    }
+    
+    &.right {
+      right: 0;
+      padding-left: 2.25em;
+      padding-right: 0.75em;
+      margin-right: 1.5em;
+      width: 37.5%;
+
+      .inner.right { position: relative; }
+    }
   }
 }
 
