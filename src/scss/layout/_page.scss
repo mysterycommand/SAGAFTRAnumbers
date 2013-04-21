@@ -6,6 +6,8 @@
 @import "../css3/linear-gradient";
 @import "../colors";
 
+$margin: 100% / 18;
+
 body {
   background: $white;
   position: relative;
@@ -41,4 +43,9 @@ body {
 
 
 .page {
-  margin: 0 0; }
+  margin: 0;
+
+  & > header {
+    margin: 0 $margin;
+  }
+}

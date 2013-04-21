@@ -10,29 +10,17 @@
  *
  */
 
-
-
-header {
-  overflow: hidden;
-  width: 90%;
-  margin-right: 5.55556%; 
-  margin-left: 5.55556%; 
-  margin-top: 0.5em;
-  margin-bottom: 0.5em; }
-
 $margin: 100% / 18;
 
 .input {
   @include border-radius(12px 12px 0 0);
   form { display: block; }
-  
 }
 
 .output {
   display: block;
   @include border-radius(0 0 0 0);
   @include box-shadow(inset 0px 10px 8px -6px $lightalphagray);
-   
 }
 
 /*

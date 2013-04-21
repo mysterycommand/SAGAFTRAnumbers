@@ -17,6 +17,10 @@ $margin: 100% / 18;
   
   .page {
     margin: 0 $margin;
+
+    & > header {
+      margin: 0;
+    }
   }
 
   h6 {
@@ -77,6 +81,10 @@ $margin: 100% / 18;
 
       .inner.right { position: relative; }
     }
+  }
+
+  footer .colophon {
+    width: auto;
   }
 }
 

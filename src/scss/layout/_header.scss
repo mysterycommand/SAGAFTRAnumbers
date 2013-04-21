@@ -4,7 +4,6 @@
 
 header {
   overflow: hidden;
-  width: 100%;
   
   @include calc(margin-top, 12, 24);
   @include calc(margin-bottom, 12, 24);
@@ -31,16 +30,6 @@ hgroup {
 }
 
 h1 {
-/*  
-  .kir { 
-    background: transparent url(../img/logo-type.jpg) no-repeat scroll center center;
-    display: inline-block;
-    display: none;
-    
-    width: 399px;
-    height: 47px;
-  }
-*/  
   a {
     display: inline-block;
     line-height: 0;

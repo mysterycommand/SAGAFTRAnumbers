@@ -69,7 +69,8 @@ require [
     
         onClickStart = (event) ->
             event.preventDefault()
-        
+            return unless $('.page.home').size() is 1
+
             $('.hud .start, .calculator .both').fadeOut 400
             $('.hud .estimate, .hud h5, nav li').fadeIn 400
             # $('.calculator .left, .calculator .right').fadeIn 400
@@ -82,6 +83,7 @@ require [
     
         onClickLogo = (event) ->
             event.preventDefault()
+            return unless $('.page.home').size() is 0
         
             $('.page').addClass 'home'
             $('.hud .start, #splash').fadeIn 400
