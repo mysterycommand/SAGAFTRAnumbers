@@ -22,14 +22,20 @@
     });
     $.webshims.polyfill('forms forms-ext');
     $(function() {
-      var $app, $document, $window, app, onClickDefinitions, onClickLogo, onClickStart, onClickStartOver, onClickTerm, onUpdate, updateCount, updateCountToCTA, updateShareURL;
+      var $app, $document, $window, app, onClickDefinitions, onClickLogo, onClickStart, onClickStartOver, onClickTerm, onResize, onUpdate, updateShareURL;
       $window = $(window);
       $document = $(document);
       $app = $('#app');
       app = new App($app[0]);
-      updateCount = 0;
-      updateCountToCTA = 10;
-      $('.chzn-select').not('.chzn-done').chosen({
+      $('.touch .chzn-select').each(function(i, el) {
+        var $opt, isEmpty;
+        $opt = $(this).find('option').first();
+        isEmpty = $opt.text() === '';
+        if (isEmpty) {
+          $opt.text($(this).data('placeholder'));
+        }
+      });
+      $('.no-touch .chzn-select').not('.chzn-done').chosen({
         allow_single_deselect: true,
         disable_search_threshold: 20
       });
@@ -138,6 +144,16 @@
       };
       $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', 'h1 a', onClickLogo);
       app.$el.on('update', onUpdate);
+      onResize = function(event) {
+        var $debug;
+        $debug = $('#debug');
+        if (!$debug.size()) {
+          $debug = $('<div id="debug" style="position: absolute; top: 0; left: 0;"/>');
+        }
+        $('body').append($debug.text($window.width() + ' x ' + $window.height()));
+      };
+      $window.on('resize', onResize);
+      onResize();
     });
   });
 

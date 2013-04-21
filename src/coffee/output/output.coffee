@@ -21,7 +21,7 @@ define [
 			@$el.find('tbody').remove()
 		
 		onChange: (event) =>
-			# log event.type, event.target.id
+			# log 'Output.onChange', event.type, event.target.id
 			# event.preventDefault()
 			# event.stopPropagation()
 			

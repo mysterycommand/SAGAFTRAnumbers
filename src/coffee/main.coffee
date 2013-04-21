@@ -49,10 +49,16 @@ require [
         $app = $ '#app'
         app = new App($app[0])
         
-        updateCount = 0
-        updateCountToCTA = 10
-    
-        $('.chzn-select').not('.chzn-done').chosen
+        # updateCount = 0
+        # updateCountToCTA = 10
+
+        $('.touch .chzn-select').each (i, el) ->
+            $opt = $(@).find('option').first()
+            isEmpty = $opt.text() is ''
+            if isEmpty then $opt.text($(@).data('placeholder'))
+            return
+
+        $('.no-touch .chzn-select').not('.chzn-done').chosen
             allow_single_deselect: true
             disable_search_threshold: 20
         
@@ -225,13 +231,16 @@ require [
         
         app.$el.on 'update', onUpdate
 
-        # onResize = (event) ->
-        #   $debug = $ '#debug'
-        #   $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
-        #   $('body').append $debug.text($window.width() + ' x ' + $window.height())
+        onResize = (event) ->
+          $debug = $ '#debug'
+          $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
+          $('body').append $debug.text($window.width() + ' x ' + $window.height())
+          # # 
+          # $('.chzn-select').trigger 'liszt:updated'
+          return
 
-        # $window.on 'resize', onResize
-        # onResize()
+        $window.on 'resize', onResize
+        onResize()
         
         # TODO: Remove for production.
         # $compare = $ '#compare'

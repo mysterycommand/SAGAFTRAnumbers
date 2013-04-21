@@ -1,6 +1,6 @@
 .input {
   background: $white;
-  overflow: hidden;
+  overflow: visible;
   padding: 1.5em;
   
   min-height: 120px;
@@ -17,12 +17,21 @@
     background: #fff url(../img/input-rarr.jpg) no-repeat scroll left 1.25em;
     border-bottom: 1px solid $medgray;
     padding: 1em 0 1em 2em;
+
+    & > select {
+      min-width: 190px;
+    }
     
     &:last-of-type {
       border-bottom: none;
     }
     
-    p, div { margin: 1em 0 0 2em; }
+    p, div {
+      margin: 1em 0 0 2em;
+      & > select {
+        min-width: 156px;
+      }
+    }
     .chzn-container,
     .chzn-container div { margin: 0; }
     
@@ -40,7 +49,6 @@
 //#job-type-fieldset { vertical-align: top; }
 #job-type-span {
   display: inline-block;
-  width: 73%;
 
   & > a {
     display: inline-block;
@@ -53,7 +61,6 @@
   }
 }
 
-#job-type { width: 100%; }
 #more-days {
   display: block;
   font-size: 15px;

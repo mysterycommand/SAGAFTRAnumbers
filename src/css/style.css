@@ -902,7 +902,7 @@ nav {
 
 .input {
   background: white;
-  overflow: hidden;
+  overflow: visible;
   padding: 1.5em;
   min-height: 120px;
   height: 100%;
@@ -927,10 +927,14 @@ nav {
     background: white url(../img/input-rarr.jpg) no-repeat scroll left 1.25em;
     border-bottom: 1px solid #cccccc;
     padding: 1em 0 1em 2em; }
+    .input fieldset > select {
+      min-width: 190px; }
     .input fieldset:last-of-type {
       border-bottom: none; }
     .input fieldset p, .input fieldset div {
       margin: 1em 0 0 2em; }
+      .input fieldset p > select, .input fieldset div > select {
+        min-width: 156px; }
     .input fieldset .chzn-container,
     .input fieldset .chzn-container div {
       margin: 0; }
@@ -944,8 +948,7 @@ nav {
   color: #ff8106; }
 
 #job-type-span {
-  display: inline-block;
-  width: 73%; }
+  display: inline-block; }
   #job-type-span > a {
     display: inline-block;
     font-size: 15px;
@@ -957,9 +960,6 @@ nav {
     -ms-box-sizing: border-box;
     -o-box-sizing: border-box;
     box-sizing: border-box; }
-
-#job-type {
-  width: 100%; }
 
 #more-days {
   display: block;
