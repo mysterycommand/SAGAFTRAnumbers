@@ -21,7 +21,7 @@ $margin: 100% / 18;
 @media screen and (min-width: 130em) {
 	body {
 		/* Zoom baseline grid to 18/16 = 1.125 */
-    @include calc(font-size, 18);
-    @include calc(max-width, 2560);
+        @include calc(font-size, 18);
+        @include calc(max-width, 2560);
 	}
 }
