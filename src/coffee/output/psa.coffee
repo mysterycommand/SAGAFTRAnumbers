@@ -7,13 +7,14 @@ define [
 ], ($) ->
   class PSA
   	@radioSessionLineItems: (rates) ->
-      numActors = parseInt $('#num-actors').val(), 10
-      numSingers = parseInt $('#num-singers').val(), 10
+      numActors = +$('#num-actors').val()
+      numSingers = +$('#num-singers').val()
       numCharacters = []
       $('.num-characters').each (i, el) ->
-        numCharacters[i] = parseInt $(el).val(), 10
-      numVersions = parseInt $('#num-versions').val(), 10
-      numTags = parseInt $('#num-tags').val(), 10
+        numCharacters[i] = +$(el).val()
+        return
+      numVersions = +$('#num-versions').val()
+      numTags = +$('#num-tags').val()
 
       tagRate = 0
       if numTags > 1  then tagRate = rates.tag_2_25
@@ -74,17 +75,17 @@ define [
       lineItems
     
     @tvOnCameraSessionLineItems: (rates) ->
-      numDays = parseInt $('#num-days').val(), 10
-      numVersions = parseInt $('#num-versions').val(), 10
+      numDays = +$('#num-days').val()
+      numVersions = +$('#num-versions').val()
       
       lineItems = []
       
       i = 0
       while i++ < numDays
-        numActors = parseInt $("#day-#{i}-num-actors").val(), 10
-        numExtras = parseInt $("#day-#{i}-num-extras").val(), 10
-        numActorsWardrobe = parseInt $("#day-#{i}-actors-wardrobe").val(), 10
-        numExtrasWardrobe = parseInt $("#day-#{i}-extras-wardrobe").val(), 10
+        numActors = +$("#day-#{i}-num-actors").val()
+        numExtras = +$("#day-#{i}-num-extras").val()
+        numActorsWardrobe = +$("#day-#{i}-actors-wardrobe").val()
+        numExtrasWardrobe = +$("#day-#{i}-extras-wardrobe").val()
       
         j = 0
         while j++ < numActors
@@ -131,9 +132,9 @@ define [
       lineItems
     
     @tvOffCameraSessionLineItems: (rates) ->
-      numActors = parseInt $("#num-actors").val(), 10
-      numVersions = parseInt $('#num-versions').val(), 10
-      numTags = parseInt $('#num-tags').val(), 10
+      numActors = +$("#num-actors").val()
+      numVersions = +$('#num-versions').val()
+      numTags = +$('#num-tags').val()
 
       tagRate = 0
       if numTags > 1  then tagRate = rates.tag_2_25

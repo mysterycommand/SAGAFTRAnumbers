@@ -14,6 +14,8 @@ define [
     estimate: (@data) ->
       @html = ""
       @cost = 0
+      price = 0
+      count = 0
       
       @html += """
         <tbody class="#{@classNames.join ' '}">
@@ -23,22 +25,25 @@ define [
       """
       
       if @data.first?
+        price = if isNaN @data.first.price then 0 else @data.first.price
         @html += """
           <tr>
             <td headers="line-item-label" class="label">#{@data.first.label}</td>
-            <td headers="line-item-amount" class="amount">$ #{@data.first.price.toFixed(2)}</td>
+            <td headers="line-item-amount" class="amount">$ #{price.toFixed(2)}</td>
           </tr>
         """
-        @cost += @data.first.price
+        @cost += price
       
       for item in @data.items
+        count = if isNaN item.count then 0 else item.count
+        price = if isNaN item.price then 0 else item.price
         @html += """
           <tr>
-            <td headers="line-item-label" class="label">#{if item.count > 0 then item.count.toString() + ' ' else ''}#{item.label}</td>
-            <td headers="line-item-amount" class="amount">$ #{if item.count > 0 then (item.count * item.price).toFixed(2) else item.price.toFixed(2)}</td>
+            <td headers="line-item-label" class="label">#{if count > 0 then count.toString() + ' ' else ''}#{item.label}</td>
+            <td headers="line-item-amount" class="amount">$ #{if count > 0 then (count * price).toFixed(2) else price.toFixed(2)}</td>
           </tr>
         """
-        @cost += if item.count > 0 then (item.count * item.price) else item.price
+        @cost += if count > 0 then (count * price) else price
       
       @html += """
         </tbody>

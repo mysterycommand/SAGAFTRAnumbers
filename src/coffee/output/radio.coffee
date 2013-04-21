@@ -8,14 +8,14 @@ define [
 ], ($, _) ->
   class Radio
   	@sessionLineItems: (rates) ->
-      numActors = parseInt $('#num-actors').val(), 10
-      numSingers = parseInt $('#num-singers').val(), 10
+      numActors = +$('#num-actors').val()
+      numSingers = +$('#num-singers').val()
       numCharacters = []
       $('.num-characters').each (i, el) ->
-        numCharacters[i] = parseInt $(el).val(), 10
+        numCharacters[i] = +$(el).val()
         return
-      numVersions = parseInt $('#num-versions').val(), 10
-      numTags = parseInt $('#num-tags').val(), 10
+      numVersions = +$('#num-versions').val()
+      numTags = +$('#num-tags').val()
 
       tagRate = 0
       if numTags > 1  then tagRate = rates.tag_2_25
@@ -76,14 +76,14 @@ define [
       lineItems
     
   	@usageLineItems: (rates) ->
-      numActors = parseInt $('#num-actors').val(), 10
-      numSingers = parseInt $('#num-singers').val(), 10
+      numActors = +$('#num-actors').val()
+      numSingers = +$('#num-singers').val()
 
       perActorSinger = []
       if numActors > 0 then perActorSinger.push "#{numActors} Actor/Announcer(s)"
       if numSingers > 0 then perActorSinger.push "#{numSingers} Singer(s)"
       
-      useType = parseInt $('#use-type').val(), 10
+      useType = +$('#use-type').val()
       broadcastType = -1
       internetType = -1
       
@@ -94,12 +94,12 @@ define [
       
       switch useType
         when 0 # Broadcast
-          broadcastType = parseInt $('#broadcast-type').val(), 10
+          broadcastType = +$('#broadcast-type').val()
         when 1 # Internet/New Media
-          internetType = parseInt $('#internet-type').val(), 10
+          internetType = +$('#internet-type').val()
         when 2 # Both
-          broadcastType = parseInt $('#broadcast-type').val(), 10
-          internetType = parseInt $('#internet-type').val(), 10
+          broadcastType = +$('#broadcast-type').val()
+          internetType = +$('#internet-type').val()
       
       switch broadcastType
         when 0 # Wild 13
@@ -265,7 +265,7 @@ define [
         when 3 # Network
           lineItem.label = "Network Program Commercial (13 Week Cycle"
           
-          networkUseType = parseInt $('#network-program-use-type').val(), 10
+          networkUseType = +$('#network-program-use-type').val()
           networkUseRate = 0
           
           switch networkUseType

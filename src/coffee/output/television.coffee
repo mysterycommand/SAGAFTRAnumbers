@@ -7,16 +7,16 @@ define [
 ], ($) ->
     class Television
         @onCameraSessionLineItems: (rates) ->
-            numDays = parseInt $('#num-days').val(), 10
+            numDays = +$('#num-days').val()
             
             lineItems = []
             
             i = 0
             while i++ < numDays
-                numActors = parseInt $("#day-#{i}-num-actors").val(), 10
-                numExtras = parseInt $("#day-#{i}-num-extras").val(), 10
-                numActorsWardrobe = parseInt $("#day-#{i}-actors-wardrobe").val(), 10
-                numExtrasWardrobe = 0 # parseInt $("#day-#{i}-extras-wardrobe").val(), 10
+                numActors = +$("#day-#{i}-num-actors").val()
+                numExtras = +$("#day-#{i}-num-extras").val()
+                numActorsWardrobe = +$("#day-#{i}-actors-wardrobe").val()
+                numExtrasWardrobe = 0 # +$("#day-#{i}-extras-wardrobe").val()
             
                 j = 0
                 while j++ < numActors
@@ -53,9 +53,9 @@ define [
             lineItems
         
         @offCameraSessionLineItems: (rates) ->
-            numActors = parseInt $("#num-actors").val(), 10
-            numVersions = parseInt $('#num-versions').val(), 10
-            numTags = parseInt $('#num-tags').val(), 10
+            numActors = +$("#num-actors").val()
+            numVersions = +$('#num-versions').val()
+            numTags = +$('#num-tags').val()
 
             tagRate = 0
             if numTags > 1  then tagRate = rates.tag_2_25
@@ -95,12 +95,12 @@ define [
             lineItems
         
         @demoSessionLineItems: (rates) ->
-            numActors = parseInt $("#num-actors").val(), 10
+            numActors = +$("#num-actors").val()
             numCharacters = []
             $('.num-characters').each (i, el) ->
-                numCharacters[i] = parseInt $(el).val(), 10
+                numCharacters[i] = +$(el).val()
                 return
-            numVersions = parseInt $('#num-versions').val(), 10
+            numVersions = +$('#num-versions').val()
             
             lineItems = []
             
@@ -128,27 +128,27 @@ define [
             lineItems
         
         @onCameraUsageLineItems: (rates) ->
-            numDays = parseInt $('#num-days').val(), 10
+            numDays = +$('#num-days').val()
             numActors = 0
             numExtras = 0
 
             i = 0
             while i++ < numDays
-                numActors += parseInt $("#day-#{i}-num-actors").val(), 10
-                numExtras += parseInt $("#day-#{i}-num-extras").val(), 10
+                numActors += +$("#day-#{i}-num-actors").val()
+                numExtras += +$("#day-#{i}-num-extras").val()
 
-            useType = parseInt $('#use-type').val(), 10
+            useType = +$('#use-type').val()
             broadcastType = -1
             internetType = -1
 
             switch useType
                 when 0 # Broadcast
-                    broadcastType = parseInt $('#broadcast-type').val(), 10
+                    broadcastType = +$('#broadcast-type').val()
                 when 1 # Internet/New Media
-                    internetType = parseInt $('#internet-type').val(), 10
+                    internetType = +$('#internet-type').val()
                 when 2 # Both
-                    broadcastType = parseInt $('#broadcast-type').val(), 10
-                    internetType = parseInt $('#internet-type').val(), 10
+                    broadcastType = +$('#broadcast-type').val()
+                    internetType = +$('#internet-type').val()
 
             lineItems = []
             lineItem =
@@ -234,7 +234,7 @@ define [
                         label: "Local Cable - 13 week cycle"
                         items: []
 
-                    subscribers = parseInt $('#subscribers').val(), 10
+                    subscribers = +$('#subscribers').val()
                     subscriberRates = [
                         rates.local_1_50k
                         rates.local_50k_100k
@@ -268,7 +268,7 @@ define [
                         label: "National Cable - 13 week cycle"
                         items: []
 
-                    subscribers = parseInt $('#subscribers').val(), 10
+                    subscribers = +$('#subscribers').val()
                     subscriberRates = [
                         rates.national_min
                         rates.national_max
@@ -296,7 +296,7 @@ define [
                         label: "Network Program Commercial"
                         items: []
 
-                    numUses = parseInt $('#num-uses').val(), 10
+                    numUses = +$('#num-uses').val()
                     
                     # useRate = 0
                     # useRate = rates.network_2 if numUses is 2
@@ -354,20 +354,20 @@ define [
             lineItems
         
         @offCameraUsageLineItems: (rates) ->
-            numActors = parseInt $("#num-actors").val(), 10
+            numActors = +$("#num-actors").val()
 
-            useType = parseInt $('#use-type').val(), 10
+            useType = +$('#use-type').val()
             broadcastType = -1
             internetType = -1
 
             switch useType
                 when 0 # Broadcast
-                    broadcastType = parseInt $('#broadcast-type').val(), 10
+                    broadcastType = +$('#broadcast-type').val()
                 when 1 # Internet/New Media
-                    internetType = parseInt $('#internet-type').val(), 10
+                    internetType = +$('#internet-type').val()
                 when 2 # Both
-                    broadcastType = parseInt $('#broadcast-type').val(), 10
-                    internetType = parseInt $('#internet-type').val(), 10
+                    broadcastType = +$('#broadcast-type').val()
+                    internetType = +$('#internet-type').val()
 
             lineItems = []
             lineItem =
@@ -452,7 +452,7 @@ define [
                         label: "Local Cable - 13 week cycle"
                         items: []
 
-                    subscribers = parseInt $('#subscribers').val(), 10
+                    subscribers = +$('#subscribers').val()
                     subscriberRates = [
                         rates.local_1_50k
                         rates.local_50k_100k
@@ -481,7 +481,7 @@ define [
                         label: "National Cable - 13 week cycle"
                         items: []
 
-                    subscribers = parseInt $('#subscribers').val(), 10
+                    subscribers = +$('#subscribers').val()
                     subscriberRates = [
                         rates.national_min
                         rates.national_max
@@ -509,7 +509,7 @@ define [
                         label: "Network Program Commercial"
                         items: []
 
-                    numUses = parseInt $('#num-uses').val(), 10
+                    numUses = +$('#num-uses').val()
                     
                     # useRate = 0
                     # useRate = rates.network_2 if numUses is 2

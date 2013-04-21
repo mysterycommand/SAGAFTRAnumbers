@@ -7,21 +7,21 @@ define [
 ], ($) ->
 	class CorpEdu
 		@onCameraSessionLineItems: (rates) ->
-			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, or 1.
+			category = +$('input:radio[name=category]:checked').val() # Should be 0, or 1.
 			categoryLabel = if (category == 0) then 'Category I' else 'Category II'
 			categoryPrefix = if (category == 0) then 'cat_1_' else 'cat_2_'
 			
-			numNarrators = parseInt $('#num-narrators').val(), 10
-			numHalfPlayers = parseInt $('#num-half-players').val(), 10
-			numPlayers = parseInt $('#num-players').val(), 10
-			numExtras = parseInt $('#num-extras').val(), 10
+			numNarrators = +$('#num-narrators').val()
+			numHalfPlayers = +$('#num-half-players').val()
+			numPlayers = +$('#num-players').val()
+			numExtras = +$('#num-extras').val()
 			numDays = 0
 
 			lineItems = []
 
 			i = 0
 			while i++ < numNarrators
-				numDays = parseInt $("#narrator-#{i}-num-days").val(), 10
+				numDays = +$("#narrator-#{i}-num-days").val()
 
 				lineItem = 
 					label: "#{categoryLabel} Narrator #{i} - #{numDays} Days Total"
@@ -51,7 +51,7 @@ define [
 
 			i = 0
 			while i++ < numPlayers
-				numDays = parseFloat $("#player-#{i}-num-days").val(), 10
+				numDays = +$("#player-#{i}-num-days").val()
 
 				numFullDays = Math.floor(numDays)
 				numHalfDays = Math.ceil(numDays - numFullDays)
@@ -87,9 +87,9 @@ define [
 
 			i = 0
 			while i++ < numExtras
-				numDays = parseInt $("#extra-#{i}-num-days").val(), 10
+				numDays = +$("#extra-#{i}-num-days").val()
 
-				extraTypeIndex = parseInt($("#extra-#{i}-type").val(), 10) || 0
+				extraTypeIndex = +$("#extra-#{i}-type").val()
 				
 				extraLabel = [
 					'General Extra'
@@ -120,17 +120,17 @@ define [
 			lineItems
 
 		@offCameraSessionLineItems: (rates) ->
-			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, or 1.
+			category = +$('input:radio[name=category]:checked').val() # Should be 0, or 1.
 			categoryLabel = if (category == 0) then 'Category I' else 'Category II'
 			categoryPrefix = if (category == 0) then 'cat_1_' else 'cat_2_'
 
-			numPrincipals = parseInt $('#num-principals').val(), 10
+			numPrincipals = +$('#num-principals').val()
 
 			lineItems = []
 
 			i = 0
 			while i++ < numPrincipals
-				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
+				numHours = +$("#principal-#{i}-num-hours").val()
 			
 				# lineItem = 
 				# 	label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
@@ -163,8 +163,8 @@ define [
 			lineItems
 
 		@audioOnlySessionLineItems: (rates) ->
-			category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
-			storecastingUse = if category is 3 then parseInt $('#use-type-storecasting').val(), 10
+			category = +$('input:radio[name=category]:checked').val() # Should be 0, 1, 2, or 3.
+			storecastingUse = if category is 3 then +$('#use-type-storecasting').val()
 
 			categoryLabel = switch category
 				when 0 then 'Category I'
@@ -179,13 +179,13 @@ define [
 				when 3 then 'store_' + (unless storecastingUse then '3_month_' else '6_month_')
 
 			# log categoryLabel, categoryPrefix
-			numPrincipals = parseInt $('#num-principals').val(), 10
+			numPrincipals = +$('#num-principals').val()
 
 			lineItems = []
 
 			i = 0
 			while i++ < numPrincipals
-				numHours = parseFloat $("#principal-#{i}-num-hours").val(), 10
+				numHours = +$("#principal-#{i}-num-hours").val()
 			
 				# lineItem = 
 				# 	label: "#{categoryLabel} Principal #{i} - #{numHours} Hours Total"
@@ -218,15 +218,15 @@ define [
 			lineItems
 
 		# @audioOnlyUsageLineItems: (rates) ->
-		# 	category = parseInt $('input:radio[name=category]:checked').val(), 10 # Should be 0, 1, 2, or 3.
+		# 	category = +$('input:radio[name=category]:checked').val() # Should be 0, 1, 2, or 3.
 		# 	if category isnt 3 then return []
 		# 	categoryPrefix = 'store_' # This is only used for Storecasting.
 
-		# 	use = parseInt $('#use-type-storecasting').val(), 10
+		# 	use = +$('#use-type-storecasting').val()
 		# 	useSuffix = if use is 0 then '_3_month' else '_6_month'
 		# 	useLabel = if use is 0 then '3 Month Use' else '6 Month Use'
 
-		# 	numPrincipals = parseInt $('#num-principals').val(), 10
+		# 	numPrincipals = +$('#num-principals').val()
 
 		# 	lineItems = []
 			
