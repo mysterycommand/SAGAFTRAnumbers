@@ -52,6 +52,7 @@ define [
       return
 
     calcHeight: ->
+      if $(document).width() < 768 then return # We only need to make the input/output sections match height if we're in "8-column" mode.
       height = Math.max @input.$el.css('height', 'auto').height(), @output.$el.css('height', 'auto').height()
 
       @input.$el.height height

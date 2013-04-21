@@ -62,6 +62,9 @@
 
       App.prototype.calcHeight = function() {
         var height;
+        if ($(document).width() < 768) {
+          return;
+        }
         height = Math.max(this.input.$el.css('height', 'auto').height(), this.output.$el.css('height', 'auto').height());
         this.input.$el.height(height);
         this.output.$el.height(height);
