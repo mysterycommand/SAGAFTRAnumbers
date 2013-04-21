@@ -115,25 +115,8 @@ $margin: 100% / 18;
     @include line(15, 22);
     @include calc(margin-top, 24, 18);
   }
-/*  
+  
   .hud { width: 25%; }
-  nav {
-    @include linear-gradient((-30deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 56.25%, lighten($medgray, 12%) 56.375%, $medgray 61.5%));
-  }
-*/
-  $hud-width: 0.25;
-  $left-width: (1 - $hud-width) / 2;
-  
-  $m: percentage($left-width + ($hud-width * 0.50));
-  $n: percentage($left-width + ($hud-width * 0.75));
-  $o: percentage($left-width + ($hud-width * 0.76));
-  $p: percentage($left-width + ($hud-width * 0.92));
-  
-  .hud { width: percentage($hud-width); }
-  nav {
-    @include linear-gradient((-30deg, $medgray 0%, $medgray $m, lighten($medgray, 8%) $n, lighten($medgray, 12%) $o, $medgray $p));
-  }
-
   nav li {
     width: 11%;
     
