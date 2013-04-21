@@ -41,11 +41,6 @@ $margin: 100% / 18;
 }
 
 @media screen and (min-width: 28em) {
-  .hud {
-      h2 {
-          @include line(16, 36);
-      }
-  }
   .home .calculator { height: 250px; }
   .input,
   .output {
@@ -53,15 +48,63 @@ $margin: 100% / 18;
   }
 }
 
-@media screen and (min-width: 32em) {
+@media screen and (min-width: 30em) {
   .hud {
-      h2 {
-          @include large;
-      }
-      .start b {
-          top: 2px;
-      }
+    padding: 0.75em 0.75em 0;
+    
+    width: 37.5%;
+    height: 84px;
+  
+    h2 {
+        @include large;
+    }
+
+    .start b {
+        top: 2px;
+    }
+
+    h5 {
+      bottom: -1px;
+    }
   }
+
+  nav {
+    
+    @include calc(padding-top, 11, 16);
+    padding-right: 0;
+    @include calc(padding-bottom, 10, 16);
+    padding-left: 0;
+
+    margin-top: -53px;
+    
+    li {
+      padding: 0 0.75em;
+      width: 10%;
+      
+      &.start-over {
+        padding-left: 2.25em;
+        padding-right: 0;
+        width: 15.625%;
+      }
+      
+      &.ask-tim     { width: 15.625%; }
+      &.definitions { padding-right: 0; width: 11%; }
+      &.print       { }
+      
+      &.share {
+        padding-left: 0;
+        padding-right: 2.25em;
+      }
+    }
+  }
+
+  .home nav {
+    height: 53px;
+    margin-top: -53px;
+  }
+}
+
+@media screen and (min-width: 32em) {
 
   .home .calculator { height: 310px; }
   .input,

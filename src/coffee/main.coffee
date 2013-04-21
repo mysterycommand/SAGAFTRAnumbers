@@ -2,10 +2,6 @@
     Author: Matt Hayes
 ###
 
-root = this
-log = root.log
-# require = root.require
-
 # require.config(
 #     paths: {
 #         'jquery': 'libs/jquery-1.7.1'
@@ -58,7 +54,7 @@ require [
             if isEmpty then $opt.text($(@).data('placeholder'))
             return
 
-        $('.no-touch .chzn-select').not('.chzn-done').chosen
+        $('.no-touch .chzn-select').chosen
             allow_single_deselect: true
             disable_search_threshold: 20
         
@@ -73,6 +69,8 @@ require [
 
             $('.hud .start, .calculator .both').fadeOut 400
             $('.hud .estimate, .hud h5, nav li').fadeIn 400
+
+            if $document.width() < 480 then $('nav').animate { height: '53px', marginTop: '-53px'}, 400
             # $('.calculator .left, .calculator .right').fadeIn 400
             $('footer .colophon').animate { height: 'toggle', opacity: 1 }, 400, () ->
                 return null if ( ! $('.page').hasClass('home')) # This is silly, not sure how best to get this event to only trigger once though.
@@ -88,6 +86,8 @@ require [
             $('.page').addClass 'home'
             $('.hud .start, #splash').fadeIn 400
             $('.hud .estimate, .hud h5, nav li').fadeOut 400
+            
+            if $document.width() < 480 then $('nav').animate { height: '24px', marginTop: '-65px'}, 400
             # $('.calculator .left, .calculator .right').fadeOut 400
             $('footer .colophon').animate { height: 'toggle', opacity: 0 }, 400
         
@@ -233,16 +233,16 @@ require [
         
         app.$el.on 'update', onUpdate
 
-        # onResize = (event) ->
-        #   $debug = $ '#debug'
-        #   $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
-        #   $('body').append $debug.text($window.width() + ' x ' + $window.height())
-        #   # # 
-        #   # $('.chzn-select').trigger 'liszt:updated'
-        #   return
+        onResize = (event) ->
+          $debug = $ '#debug'
+          $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
+          $('body').append $debug.text($window.width() + ' x ' + $window.height())
+          # # 
+          # $('.chzn-select').trigger 'liszt:updated'
+          return
 
-        # $window.on 'resize', onResize
-        # onResize()
+        $window.on 'resize', onResize
+        onResize()
         
         # TODO: Remove for production.
         # $compare = $ '#compare'

@@ -2,23 +2,23 @@
 
 .hud {
   background: $medgray;
-  margin: 0 auto;
-  padding: 0.75em 0.75em 0;
+  height: 101px;
+  margin: 0.5em auto 0;
+  overflow: visible;
   position: relative;
-  
-  width: 37.5%;
-  height: 84px;
-  
-  @include border-radius(12px 12px 0 0);
+  width: 75%;
+
   @include box-sizing(border-box);
-  @include linear-gradient((-30deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 75%, lighten($medgray, 12%) 76%, $medgray 92%));
-  
+  @include border-radius(12px 12px 0 0);
+
+  @include linear-gradient((105deg, $medgray 0%, $medgray 50%, lighten($medgray, 8%) 70%, lighten($medgray, 12%) 71%, $medgray 87%, $medgray 100%));
+
   h2 {
     background: $orange;
     padding: 0.25em;
     
-    /*width: 100%;*/
     position: absolute;
+    top: 0.5em;
     right: 0.5em;
     left: 0.5em;
     
@@ -28,10 +28,8 @@
     @include box-sizing(border-box);
     
     @include linear-gradient((left, $orange, #f2b16c, $orange));
-  
-/*    b { position: absolute; }*/
   }
-  
+
   .estimate {
     output, a {
       display: inline-block;
@@ -58,12 +56,12 @@
       @include text-shadow(0 0 16px $alphagray);
     }
   }
-  
+
   h5 {
     display: block;
     position: absolute;
     right: 1em;
-    bottom: -0.375em;
+    bottom: 40px;
     left: 1em;
   }
 }
@@ -72,8 +70,35 @@
 .home .hud .start { display: block; }
 .home .hud h5 { display: none; }
 
-
 .lt-ie9 .hud { behavior: url(htc/PIE.htc); }
 .lt-ie9 .hud h2 { behavior: url(htc/PIE.htc); border-top: 1px solid #999; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

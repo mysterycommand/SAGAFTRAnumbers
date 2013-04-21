@@ -21,6 +21,7 @@
     "smarttabs": true,
     "globals": {
         "require": true,
-        "define": true
+        "define": true,
+        "log": true
     }
 }
