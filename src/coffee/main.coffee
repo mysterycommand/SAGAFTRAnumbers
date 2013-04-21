@@ -73,7 +73,7 @@ require [
             $('.hud .start, .calculator .both').fadeOut 400
             $('.hud .estimate, .hud h5, nav li').fadeIn 400
             # $('.calculator .left, .calculator .right').fadeIn 400
-            $('footer h3, footer h4, footer address').show 400, () ->
+            $('footer .colophon').animate { height: 'toggle', opacity: 1 }, 400, () ->
                 return null if ( ! $('.page').hasClass('home')) # This is silly, not sure how best to get this event to only trigger once though.
                 $('.page').removeClass('home')
                 app.start()
@@ -87,7 +87,7 @@ require [
             $('.hud .start, #splash').fadeIn 400
             $('.hud .estimate, .hud h5, nav li').fadeOut 400
             # $('.calculator .left, .calculator .right').fadeOut 400
-            $('footer h3, footer h4, footer address').hide 400
+            $('footer .colophon').animate { height: 'toggle', opacity: 0 }, 400
         
             return
             
@@ -231,16 +231,16 @@ require [
         
         app.$el.on 'update', onUpdate
 
-        onResize = (event) ->
-          $debug = $ '#debug'
-          $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
-          $('body').append $debug.text($window.width() + ' x ' + $window.height())
-          # # 
-          # $('.chzn-select').trigger 'liszt:updated'
-          return
+        # onResize = (event) ->
+        #   $debug = $ '#debug'
+        #   $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
+        #   $('body').append $debug.text($window.width() + ' x ' + $window.height())
+        #   # # 
+        #   # $('.chzn-select').trigger 'liszt:updated'
+        #   return
 
-        $window.on 'resize', onResize
-        onResize()
+        # $window.on 'resize', onResize
+        # onResize()
         
         # TODO: Remove for production.
         # $compare = $ '#compare'

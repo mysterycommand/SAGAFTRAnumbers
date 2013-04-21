@@ -70,8 +70,8 @@ address {
   clear: left;
 }
 
-.home footer h3,
-.home footer h4,
-.home footer address {
+footer .colophon {
   display: none;
+  opacity: 0;
+  width: 100%;
 }

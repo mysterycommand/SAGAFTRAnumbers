@@ -22,7 +22,7 @@
     });
     $.webshims.polyfill('forms forms-ext');
     $(function() {
-      var $app, $document, $window, app, onClickDefinitions, onClickLogo, onClickStart, onClickStartOver, onClickTerm, onResize, onUpdate, updateShareURL;
+      var $app, $document, $window, app, onClickDefinitions, onClickLogo, onClickStart, onClickStartOver, onClickTerm, onUpdate, updateShareURL;
       $window = $(window);
       $document = $(document);
       $app = $('#app');
@@ -47,7 +47,10 @@
         event.preventDefault();
         $('.hud .start, .calculator .both').fadeOut(400);
         $('.hud .estimate, .hud h5, nav li').fadeIn(400);
-        $('footer h3, footer h4, footer address').show(400, function() {
+        $('footer .colophon').animate({
+          height: 'toggle',
+          opacity: 1
+        }, 400, function() {
           if (!$('.page').hasClass('home')) {
             return null;
           }
@@ -60,7 +63,10 @@
         $('.page').addClass('home');
         $('.hud .start, #splash').fadeIn(400);
         $('.hud .estimate, .hud h5, nav li').fadeOut(400);
-        $('footer h3, footer h4, footer address').hide(400);
+        $('footer .colophon').animate({
+          height: 'toggle',
+          opacity: 0
+        }, 400);
       };
       onClickDefinitions = function(event) {
         var $targ;
@@ -144,16 +150,6 @@
       };
       $document.on('click', '.definitions.open, .definitions.close', onClickDefinitions).on('click', '.term.open, .term.close', onClickTerm).on('click', '.start-over a', onClickStartOver).on('click', '.start a', onClickStart).on('click', 'h1 a', onClickLogo);
       app.$el.on('update', onUpdate);
-      onResize = function(event) {
-        var $debug;
-        $debug = $('#debug');
-        if (!$debug.size()) {
-          $debug = $('<div id="debug" style="position: absolute; top: 0; left: 0;"/>');
-        }
-        $('body').append($debug.text($window.width() + ' x ' + $window.height()));
-      };
-      $window.on('resize', onResize);
-      onResize();
     });
   });
 
