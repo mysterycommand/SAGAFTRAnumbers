@@ -1,5 +1,5 @@
-art/*
-vendor/*
+art/
+vendor/
 
 .DS_Store
 
@@ -7,5 +7,5 @@ aftra.sublime-project
 aftra.sublime-workspace
 .jshintrc
 
-src/css/*
-src/js/*
+src/css/
+src/js/
