@@ -66,6 +66,10 @@ $margin: 100% / 18;
     @include box-shadow(inset 8px 0px 8px -6px $lightalphagray);
   }
 
+  .mobile-total {
+      display: none;
+  }
+
   .home .calculator { height: auto; }
   .input,
   .output {
