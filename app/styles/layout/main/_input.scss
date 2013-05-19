@@ -18,8 +18,9 @@
     border-bottom: 1px solid $medgray;
     padding: 1em 0 1em 2em;
 
-    & > select {
-      min-width: 190px;
+    select {
+      border: 1px solid $gray;
+      padding: 0 0.375em;
     }
 
     &:last-of-type {

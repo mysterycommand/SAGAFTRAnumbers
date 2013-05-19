@@ -1,6 +1,6 @@
 {
-  "name": "sagaftranumbers",
-  "version": "0.0.0",
+  "name": "SAG-AFTRAnumbers.com",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",

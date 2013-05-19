@@ -43,20 +43,11 @@ define [
                 allow_single_deselect: true
                 disable_search_threshold: 20
 
-            # logtype = (event) -> console.log event.type
             $('.touch input[type=number]')
-                # .on 'touchstart touchend mousedown mouseup focus click', logtype
                 .off('focus mouseup')
                 .on('focus', (event) ->
-                    # console.log this, event
-                    # $this = $(this)
-                    # select = () -> $this.select()
-                    # setTimeout select, 10
-                    # $this.select()
-                    console.log event.type
                     this.setSelectionRange(0, 9999))
                 .on('mouseup', (event) ->
-                    console.log event.type
                     event.preventDefault())
 
             # @$el.find('input[type=number]')
