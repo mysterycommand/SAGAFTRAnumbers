@@ -1,0 +1,83 @@
+/*
+	Author: Matt Hayes
+*/
+@import "gold/resets";
+
+@import "norm/html5";
+
+@import "h5bp/base";
+@import "h5bp/links";
+@import "h5bp/type/all";
+@import "h5bp/lists";
+@import "h5bp/forms/all";
+@import "h5bp/table";
+@import "h5bp/chromeframe";
+
+@import "gold/fluid-media";
+
+/* PRIMARY STYLES */
+@import "layout/all";
+@import "typography";
+
+/* CHOSEN */
+@import "chosen";
+
+/* MEDIA QUERIES */
+@import "04-col";
+@import "08-col";
+@import "16-col";
+
+@import "helpers";
+
+@import "h5bp/helpers";
+@import "h5bp/print";
+
+@media print {
+
+	.banner-top,
+	.hud,
+	nav,
+	#input-section,
+	.inset,
+	footer,
+	.banner-bottom {
+		display: none;
+	}
+
+	header {
+		a[href]:after { content: ""; }
+		.left { width: 50%; }
+		.right { margin-top: 1em; }
+	}
+
+	#output-section {
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		width: 100%;
+	}
+
+	#output-section,
+	.output {
+		display: block;
+		background: none;
+	}
+
+	.output {
+		thead tr th,
+		tfoot #subtotal th,
+		tfoot #subtotal td {
+			border-bottom-color: $lightgray;
+		}
+
+		tfoot #total th,
+		tfoot #total td {
+			border-top:    2px solid $lightgray;
+			border-bottom: 2px solid $lightgray;
+		}
+
+		@include border-radius(0 0 0 0);
+		@include box-shadow(none);
+	}
+
+}
