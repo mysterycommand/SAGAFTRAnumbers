@@ -237,16 +237,16 @@ require [
 
         app.$el.on 'update', onUpdate
 
-        onResize = (event) ->
-          $debug = $ '#debug'
-          $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
-          $('body').append $debug.text($window.width() + ' x ' + $window.height())
-          # #
-          # $('.chzn-select').trigger 'liszt:updated'
-          return
+        # onResize = (event) ->
+        #   $debug = $ '#debug'
+        #   $debug = $ '<div id="debug" style="position: absolute; top: 0; left: 0;"/>' unless $debug.size()
+        #   $('body').append $debug.text($window.width() + ' x ' + $window.height())
+        #   # #
+        #   # $('.chzn-select').trigger 'liszt:updated'
+        #   return
 
-        $window.on 'resize', onResize
-        onResize()
+        # $window.on 'resize', onResize
+        # onResize()
 
         # TODO: Remove for production.
         # $compare = $ '#compare'
