@@ -200,6 +200,7 @@ module.exports = function (grunt) {
                 files: {
                     src: [
                         '<%= yeoman.dist %>/scripts/{,*/}*.js',
+                        '!<%= yeoman.dist %>/scripts/shims/{,*/}*.{css,js}',
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
                         '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '<%= yeoman.dist %>/styles/fonts/*'
@@ -284,8 +285,6 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/*',
-                        //
-                        'scripts/shims/styles/shim.css'
                     ]
                 }, {
                     expand: true,
@@ -293,6 +292,15 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>/images',
                     src: [
                         'generated/*'
+                    ]
+                }, {
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/bower_components/webshim/src/',
+                    dest: '<%= yeoman.dist %>/scripts/',
+                    src: [
+                        'shims/styles/shim.css',
+                        'shims/form-core.js',
+                        'shims/form-validation.js'
                     ]
                 }]
             }
@@ -326,7 +334,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
+            return grunt.task.run(['build', /*'open',*/ 'connect:dist:keepalive']);
         }
 
         grunt.task.run([
