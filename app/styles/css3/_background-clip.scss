@@ -1,5 +1,0 @@
-@import "prefix";
-
-@mixin background-clip($values, $vendors: $all-vendors) {
-  @include prefix(background-clip, $values, $vendors);
-}

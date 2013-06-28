@@ -1,6 +1,0 @@
-@import "prefix";
-
-@mixin border-radius($value, $vendors: $all-vendors) {
-  @include prefix(border-radius, $value, $vendors);
-//  behavior: url(htc/PIE.htc);
-}

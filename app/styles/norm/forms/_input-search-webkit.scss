@@ -1,8 +1,0 @@
-/*
- * Removes inner padding and search cancel button in S5, Chrome on OS X
- */
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}

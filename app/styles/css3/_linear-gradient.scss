@@ -1,9 +1,0 @@
-@import "prefix";
-
-@mixin linear-gradient($values, $vendors: $all-vendors) {
-  @each $vendor in $vendors {
-    background-image: -#{$vendor}-linear-gradient($values);
-  }
-  background-image: linear-gradient($values...);
-//  behavior: url(htc/PIE.htc);
-}
