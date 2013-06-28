@@ -191,7 +191,7 @@ module.exports = function (grunt) {
                     //
                     include: '../../app/bower_components/requirejs/require',
                     mainConfigFile: '.tmp/scripts/build.js',
-                    out: '.tmp/scripts/app.min.js'
+                    out: '<%= yeoman.dist %>/scripts/app.min.js'
                 }
             }
         },
@@ -360,7 +360,7 @@ module.exports = function (grunt) {
         'requirejs',
         'cssmin',
         'concat',
-        'uglify',
+        // 'uglify',
         'copy',
         'rev',
         'usemin'

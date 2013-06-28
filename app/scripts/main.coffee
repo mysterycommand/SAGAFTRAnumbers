@@ -27,7 +27,7 @@ require [
 ], (jQuery, App) ->
 
     # On scripts loaded.
-    # log jQuery
+    # window.console.log jQuery
     $ = jQuery
 
     # FIND ME LATER
