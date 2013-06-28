@@ -5,7 +5,7 @@ define [
   'input/television/day'
   'input/television/use-on-camera'
 ], ($, _, Day, Use) ->
-	class TelevisionCommercialOnCamera
+  class TelevisionCommercialOnCamera
     constructor: ->
       @label = "Television Commercial - (On Camera)"
       @value = "television_commercial_on_camera"

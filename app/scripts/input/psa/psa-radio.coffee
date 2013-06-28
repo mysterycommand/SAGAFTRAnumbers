@@ -4,7 +4,7 @@ define [
   'input/radio/actor-announcer-singer'
   'input/version'
 ], ($, _, ActorAnnouncerSinger, Version) ->
-	class PublicServiceAnnouncementRadio
+  class PublicServiceAnnouncementRadio
     constructor: ->
       @label = "Public Service Announcement - Radio"
       @value = "psa_radio"

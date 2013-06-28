@@ -1,7 +1,7 @@
 define [
   'jquery'
 ], ($) ->
-	class Version
+  class Version
     constructor: ->
       @html = """
         <fieldset>

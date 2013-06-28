@@ -2,7 +2,7 @@ define [
   'jquery'
   'underscore'
 ], ($, _) ->
-	class NationalCable13
+  class NationalCable13
     constructor: ->
       @label = "National Cable - 13 week cycle"
       @html = """

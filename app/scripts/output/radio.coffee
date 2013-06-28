@@ -3,7 +3,7 @@ define [
   'underscore'
 ], ($, _) ->
   class Radio
-  	@sessionLineItems: (rates) ->
+    @sessionLineItems: (rates) ->
       numActors = +$('#num-actors').val()
       numSingers = +$('#num-singers').val()
       numCharacters = []

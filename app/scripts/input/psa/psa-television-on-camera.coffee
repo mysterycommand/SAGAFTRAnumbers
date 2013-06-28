@@ -3,7 +3,7 @@ define [
   'underscore'
   'input/television/day'
 ], ($, _, Day) ->
-	class PublicServiceAnnouncementTelevisionOnCamera
+  class PublicServiceAnnouncementTelevisionOnCamera
     constructor: ->
       @label = "Public Service Announcement - Television (On Camera)"
       @value = "psa_television_on_camera"

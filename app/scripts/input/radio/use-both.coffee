@@ -4,7 +4,7 @@ define [
   'input/radio/use-broadcast'
   'input/radio/use-internet'
 ], ($, _, UseBroadcast, UseInternet) ->
-	class UseBoth
+  class UseBoth
     constructor: ->
       @label = "both as a radio broadcast, and on the Internet or in new media"
       @steps = [

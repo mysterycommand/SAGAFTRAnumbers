@@ -2,7 +2,7 @@ define [
   'jquery'
 ], ($) ->
   class PSA
-  	@radioSessionLineItems: (rates) ->
+    @radioSessionLineItems: (rates) ->
       numActors = +$('#num-actors').val()
       numSingers = +$('#num-singers').val()
       numCharacters = []

@@ -5,7 +5,7 @@ define [
   'input/version'
   'input/tag'
 ], ($, _, PrincipalActor, Version, Tag) ->
-	class PublicServiceAnnouncementTelevisionOffCamera
+  class PublicServiceAnnouncementTelevisionOffCamera
     constructor: ->
       @label = "Public Service Announcement - Television (Voiceover/Off Camera)"
       @value = "psa_television_off_camera"

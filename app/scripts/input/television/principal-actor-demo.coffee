@@ -2,7 +2,7 @@ define [
   'jquery'
   'input/principal-actor-character'
 ], ($, PrincipalActorCharacter) ->
-	class PrincipalActorDemo
+  class PrincipalActorDemo
     constructor: (@index) ->
       @html = """
         <fieldset>

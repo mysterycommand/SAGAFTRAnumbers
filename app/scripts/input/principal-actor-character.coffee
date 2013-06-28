@@ -1,7 +1,7 @@
 define [
   'jquery'
 ], ($) ->
-	class PrincipalActorCharacter
+  class PrincipalActorCharacter
     constructor: (@index) ->
       @html = """
         <p>

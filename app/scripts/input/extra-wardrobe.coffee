@@ -1,7 +1,7 @@
 define [
   'jquery'
 ], ($) ->
-	class ExtraWardrobe
+  class ExtraWardrobe
     constructor: (@index) ->
       @html = """
         <li>

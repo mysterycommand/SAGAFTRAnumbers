@@ -4,7 +4,7 @@ define [
   'input/television/principal-actor-demo'
   'input/version'
 ], ($, _, PrincipalActorDemo, Version) ->
-	class TelevisionCommercialDemo
+  class TelevisionCommercialDemo
     constructor: ->
       @label = "Television Commercial Demo - (Voiceover/Off Camera, Non-air)"
       @value = "television_commercial_demo"

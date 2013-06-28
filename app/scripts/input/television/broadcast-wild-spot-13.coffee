@@ -3,7 +3,7 @@ define [
   'underscore'
   'input/util/broadcastMarkets'
 ], ($, _, broadcastMarkets) ->
-	class WildSpot13
+  class WildSpot13
     constructor: ->
       @label = "Wild Spot - 13 week cycle"
       @html = """

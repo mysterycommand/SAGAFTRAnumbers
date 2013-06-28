@@ -3,7 +3,7 @@ define [
   'input/input'
   'output/output'
 ], ($, Input, Output) ->
-	class App
+  class App
     constructor: (@el) ->
       @updateCount = 0
       @updateCountToCTA = 5

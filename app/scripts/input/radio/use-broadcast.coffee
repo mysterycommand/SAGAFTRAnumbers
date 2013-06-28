@@ -7,7 +7,7 @@ define [
   'input/radio/broadcast-network-program-commercial'
   'input/radio/broadcast-regional-network-program-commercial'
 ], ($, _, WildSpot13, WildSpot8, DealerCommercial, NetworkProgramCommercial, RegionalNetworkProgramCommercial) ->
-	class UseBroadcast
+  class UseBroadcast
     constructor: ->
       @label = "only as a radio broadcast"
       @html = """

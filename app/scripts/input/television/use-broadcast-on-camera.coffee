@@ -6,7 +6,7 @@ define [
   'input/television/broadcast-national-cable-13'
   'input/television/broadcast-network-program-commercial'
 ], ($, _, WildSpot13, LocalCable13, NationalCable13, NetworkProgramCommercial) ->
-	class UseBroadcast
+  class UseBroadcast
     constructor: ->
       @label = "only as a television broadcast"
       @html = """

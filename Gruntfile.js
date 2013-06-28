@@ -172,13 +172,22 @@ module.exports = function (grunt) {
         /*concat: {
             dist: {}
         },*/
+        uglify: {
+            dist: {
+                files: {
+                    // '.tmp/scripts/shims/styles/shim.css': ['/styles/shim.css'],
+                    '.tmp/scripts/shims/form-core.js': ['<%= yeoman.app %>/bower_components/webshim/src/shims/form-core.js'],
+                    '.tmp/scripts/shims/form-validation.js': ['<%= yeoman.app %>/bower_components/webshim/src/shims/form-validation.js']
+                }
+            }
+        },
         requirejs: {
             dist: {
                 // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
                 options: {
                     // `name` and `out` is set by grunt-usemin
                     baseUrl: '.tmp/scripts',
-                    optimize: 'none',
+                    optimize: 'uglify',
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
                     //generateSourceMaps: true,
@@ -243,12 +252,19 @@ module.exports = function (grunt) {
         },
         cssmin: {
             dist: {
-                files: {
+                files: [{
                     '<%= yeoman.dist %>/styles/main.css': [
                         '.tmp/styles/{,*/}*.css',
                         '<%= yeoman.app %>/styles/{,*/}*.css'
                     ]
-                }
+                }, {
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/bower_components/webshim/src/',
+                    dest: '<%= yeoman.dist %>/scripts/',
+                    src: [
+                        'shims/styles/shim.css'
+                    ]
+                }]
             }
         },
         htmlmin: {
@@ -295,12 +311,19 @@ module.exports = function (grunt) {
                     ]
                 }, {
                     expand: true,
-                    cwd: '<%= yeoman.app %>/bower_components/webshim/src/',
+                    cwd: '.tmp/scripts',
                     dest: '<%= yeoman.dist %>/scripts/',
                     src: [
                         'shims/styles/shim.css',
                         'shims/form-core.js',
                         'shims/form-validation.js'
+                    ]
+                }, {
+                    expand: true,
+                    cwd: '.tmp/scripts',
+                    dest: '<%= yeoman.dist %>/scripts/',
+                    src: [
+                        'rates.js'
                     ]
                 }]
             }
@@ -360,7 +383,7 @@ module.exports = function (grunt) {
         'requirejs',
         'cssmin',
         'concat',
-        // 'uglify',
+        'uglify',
         'copy',
         'rev',
         'usemin'

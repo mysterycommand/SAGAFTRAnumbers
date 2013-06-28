@@ -4,7 +4,7 @@ define [
   'input/use/internet-8-week'
   'input/use/internet-1-year'
 ], ($, _, Internet8Week, Internet1Year) ->
-	class UseInternet
+  class UseInternet
     constructor: ->
       @label = "on the Internet or in new media"
       @html = """

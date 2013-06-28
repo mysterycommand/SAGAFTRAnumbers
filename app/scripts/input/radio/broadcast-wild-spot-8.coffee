@@ -1,9 +1,9 @@
 define [
   'jquery'
   'underscore'
-    'input/util/broadcastMarkets'
+  'input/util/broadcastMarkets'
 ], ($, _, broadcastMarkets) ->
-	class WildSpot8
+  class WildSpot8
     constructor: ->
       @label = "Wild Spot - 8 week cycle"
       @html = """

@@ -4,7 +4,7 @@ define [
   'input/television/use-broadcast-off-camera'
   'input/television/use-internet'
 ], ($, _, UseBroadcast, UseInternet) ->
-	class UseBoth
+  class UseBoth
     constructor: ->
       @label = "both as a television broadcast, and on the Internet or in new media"
       @steps = [

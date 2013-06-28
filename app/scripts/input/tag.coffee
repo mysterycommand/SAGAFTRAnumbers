@@ -1,7 +1,7 @@
 define [
   'jquery'
 ], ($) ->
-	class Tag
+  class Tag
     constructor: ->
       @html = """
         <fieldset>

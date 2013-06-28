@@ -3,7 +3,7 @@ define [
   # 'input/actor-wardrobe'
   # 'input/extra-wardrobe'
 ], ($) -> #, ActorWardrobe, ExtraWardrobe
-	class PrincipalActorGeneralExtra
+  class PrincipalActorGeneralExtra
     constructor: (@index) ->
       @html = """
         <div>

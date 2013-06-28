@@ -6,7 +6,7 @@ define [
   'input/tag'
   'input/radio/use'
 ], ($, _, ActorAnnouncerSinger, Version, Tag, Use) ->
-	class RadioCommercial
+  class RadioCommercial
     constructor: ->
       @label = "Radio Commercial"
       @value = "radio_commercial"

@@ -5,7 +5,7 @@ define [
   'input/television/use-internet'
   'input/television/use-both-on-camera'
 ], ($, _, UseBroadcast, UseInternet, UseBoth) ->
-	class Use
+  class Use
     constructor: ->
       @html = """
         <fieldset>

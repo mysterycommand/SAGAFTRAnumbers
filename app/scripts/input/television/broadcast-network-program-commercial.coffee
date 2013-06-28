@@ -2,7 +2,7 @@ define [
   'jquery'
   'underscore'
 ], ($, _) ->
-	class NetworkProgramCommercial
+  class NetworkProgramCommercial
     constructor: ->
       @label = "Network Program Commercial"
       @html = """

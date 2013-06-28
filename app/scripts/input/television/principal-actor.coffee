@@ -1,7 +1,7 @@
 define [
   'jquery'
 ], ($) ->
-	class PrincipalActor
+  class PrincipalActor
     constructor: (@index) ->
       @html = """
         <fieldset>

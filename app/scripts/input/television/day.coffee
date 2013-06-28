@@ -2,7 +2,7 @@ define [
   'jquery'
   'input/television/principal-actor-general-extra'
 ], ($, PrincipalActorGeneralExtra) ->
-	class Day
+  class Day
     constructor: ->
       @html = """
         <fieldset>
