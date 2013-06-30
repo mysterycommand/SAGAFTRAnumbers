@@ -230,6 +230,12 @@ module.exports = function (grunt) {
             html: ['<%= yeoman.dist %>/{,*/}*.html'],
             css: ['<%= yeoman.dist %>/styles/{,*/}*.css']
         },
+        usereplace: {
+            options: {
+                dest: '<%= yeoman.dist %>'
+            },
+            html: '<%= yeoman.dist %>/index.html'
+        },
         imagemin: {
             dist: {
                 files: [{
@@ -386,7 +392,8 @@ module.exports = function (grunt) {
         'uglify',
         'copy',
         'rev',
-        'usemin'
+        'usemin',
+        'usereplace'
     ]);
 
     grunt.registerTask('default', [

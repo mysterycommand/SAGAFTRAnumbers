@@ -71,7 +71,7 @@ define [
 
       lineItems
 
-  	@usageLineItems: (rates) ->
+    @usageLineItems: (rates) ->
       numActors = +$('#num-actors').val()
       numSingers = +$('#num-singers').val()
 
