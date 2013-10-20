@@ -41,7 +41,9 @@ define [
 
             agents10 = @cost * 0.1
             subtotal = @cost + agents10
-            hrph = subtotal * 0.155
+            hrph = switch @type
+              when 'radio_commercial', 'radio_commercial_demo', 'television_commercial_on_camera', 'television_commercial_off_camera', 'television_commercial_demo' then subtotal * 0.168
+              else subtotal * 0.155
             payroll = subtotal * 0.14
             total = subtotal + hrph + payroll
 
