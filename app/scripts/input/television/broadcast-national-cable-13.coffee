@@ -25,7 +25,7 @@ define [
       @selectedItem = null
       @options = [
         'Minimum'
-        'Maximum (2,000 units)'
+        'Maximum (3,000 units)'
       ]
       html = ''
       _.each @options, (el, i) -> html += """<option value="#{i}">#{el}</option>"""

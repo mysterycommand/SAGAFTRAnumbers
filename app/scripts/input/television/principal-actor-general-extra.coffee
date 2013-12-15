@@ -33,11 +33,12 @@ define [
 
     onInputActors: (event) =>
       numActors = parseInt event.target.value, 10
+      console.log event.target.value, numActors
       if numActors > 0 then @$el.find('.actors').show() else @$el.find('.actors').hide()
 
       $fittings = @$el.find '.actors-wardrobe'
-      prevMax = parseInt $fittings.prop('max'), 10
-      prevVal = parseInt $fittings.val(), 10
+      prevMax = parseInt($fittings.prop('max'), 10) or 0
+      prevVal = parseInt($fittings.val(), 10) or 0
       $fittings.prop 'max', numActors
 
       $fittings.val Math.max(0, prevVal + (numActors - prevMax))

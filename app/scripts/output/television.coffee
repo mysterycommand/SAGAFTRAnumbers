@@ -208,8 +208,9 @@ define [
                     numUnits -= 1 unless cities.length
 
                     unitRate = 0
-                    if numUnits > 0 then unitRate = rates.wild_13_unit_2_25
+                    if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
                     if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
+                    if cities.length is 3 then unitRate = rates.wild_13_major_all_3_addl
 
                     if numUnits and unitRate then lineItem.items.push
                         count: numUnits
@@ -427,6 +428,7 @@ define [
                     unitRate = 0
                     if numUnits > 0  then unitRate = rates.wild_13_unit_2_25
                     if numUnits > 25 or cities.length then unitRate = rates.wild_13_unit_26
+                    if cities.length is 3 then unitRate = rates.wild_13_major_all_3_addl
 
                     if numUnits and unitRate then lineItem.items.push
                         count: numUnits

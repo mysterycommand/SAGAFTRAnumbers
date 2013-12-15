@@ -58,7 +58,7 @@ root.sag_aftra_rates =
 
         # WARDROBE FITTINGS
         actor_wardrobe:                    78.74
-        extra_wardrobe:                   342.40 / 8
+        extra_wardrobe:                    78.74
 
         # USAGE
         wild_13_unit_2_25:                 21.49
@@ -68,6 +68,7 @@ root.sag_aftra_rates =
         wild_13_major_los_angeles:       1075.30
         wild_13_major_any_2:             1697.70
         wild_13_major_all_3:             2047.75
+        wild_13_major_all_3_addl:           8.17
 
         local_1_50k:                       27.70
         local_50k_100k:                    55.70
@@ -116,6 +117,7 @@ root.sag_aftra_rates =
         wild_13_major_los_angeles:        758.40
         wild_13_major_any_2:             1143.10
         wild_13_major_all_3:             1454.45
+        wild_13_major_all_3_addl:           6.40
 
         local_1_50k:                       18.90
         local_50k_100k:                    38.05
@@ -146,7 +148,7 @@ root.sag_aftra_rates =
     psa_radio:
 
         # SESSION FEES
-        session_actor:                    594.65
+        session_actor:                    630.35
         session_singer:                   617.50
 
     psa_television_on_camera:
@@ -157,12 +159,12 @@ root.sag_aftra_rates =
 
         # WARDROBE FITTINGS
         actor_wardrobe:                    78.74
-        extra_wardrobe:                   342.40 / 8
+        extra_wardrobe:                    78.74
 
     psa_television_off_camera:
 
         # SESSION FEES
-        session_actor:                    445.30
+        session_actor:                    472.00
 
         # TAGS
         tag_2_25:                         132.45
