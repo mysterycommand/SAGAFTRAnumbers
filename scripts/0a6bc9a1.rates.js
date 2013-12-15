@@ -44,7 +44,7 @@
       session_actor: 627.75,
       session_extra: 342.40,
       actor_wardrobe: 78.74,
-      extra_wardrobe: 342.40 / 8,
+      extra_wardrobe: 78.74,
       wild_13_unit_2_25: 21.49,
       wild_13_unit_26: 7.97,
       wild_13_major_new_york: 1233.65,
@@ -52,6 +52,7 @@
       wild_13_major_los_angeles: 1075.30,
       wild_13_major_any_2: 1697.70,
       wild_13_major_all_3: 2047.75,
+      wild_13_major_all_3_addl: 8.17,
       local_1_50k: 27.70,
       local_50k_100k: 55.70,
       local_100k_150k: 83.40,
@@ -87,6 +88,7 @@
       wild_13_major_los_angeles: 758.40,
       wild_13_major_any_2: 1143.10,
       wild_13_major_all_3: 1454.45,
+      wild_13_major_all_3_addl: 6.40,
       local_1_50k: 18.90,
       local_50k_100k: 38.05,
       local_100k_150k: 57.10,
@@ -108,17 +110,17 @@
       session_actor: 236.00
     },
     psa_radio: {
-      session_actor: 594.65,
+      session_actor: 630.35,
       session_singer: 617.50
     },
     psa_television_on_camera: {
       session_actor: 627.75,
       session_extra: 627.75,
       actor_wardrobe: 78.74,
-      extra_wardrobe: 342.40 / 8
+      extra_wardrobe: 78.74
     },
     psa_television_off_camera: {
-      session_actor: 445.30,
+      session_actor: 472.00,
       tag_2_25: 132.45,
       tag_26_50: 73.50,
       tag_51: 40.05
