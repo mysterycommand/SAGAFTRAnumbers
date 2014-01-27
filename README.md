@@ -11,4 +11,4 @@ Steps to build:
 3. Run `grunt build` to build the project files into the `/dist` directory.
 4. Run `grunt server` to serve the project on your localhost and watch/livereload as you make changes to the source files.
 
-The project is built via a Travis CI hook, and built assets are deployed to the gh-pages branch. It's publicly visible at [http://mysterycommand.github.io/sag-aftranumbers.com/](http://mysterycommand.github.io/sag-aftranumbers.com/).
+The project is built via a Travis CI hook, and (successfully) built assets are deployed to the gh-pages branch. It's publicly visible at [http://mysterycommand.github.io/sag-aftranumbers.com/](http://mysterycommand.github.io/sag-aftranumbers.com/). The CI process is visible at [https://travis-ci.org/mysterycommand/sag-aftranumbers.com](https://travis-ci.org/mysterycommand/sag-aftranumbers.com).
