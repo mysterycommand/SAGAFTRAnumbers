@@ -7,7 +7,7 @@
 .calculator {
   position: relative;
   height: auto;
-  @include linear-gradient((top, $medgray 0px, $white 220px));
+  @include linear-gradient((to bottom, $medgray 0px, $white 220px));
 }
 
 .inner {

@@ -16,43 +16,43 @@
   h2 {
     background: $orange;
     padding: 0.25em;
-    
+
     position: absolute;
     top: 0.5em;
     right: 0.5em;
     left: 0.5em;
-    
+
     @include border-radius(8px);
-    
+
     @include box-shadow((0 0 25px $alphawhite, inset 0 0 5px $alphagray));
     @include box-sizing(border-box);
-    
-    @include linear-gradient((left, $orange, #f2b16c, $orange));
+
+    @include linear-gradient((to right, $orange, #f2b16c, $orange));
   }
 
   .estimate {
     output, a {
       display: inline-block;
       width: 100%;
-      
+
       @include text-shadow(0 0 16px $alphagray);
     }
   }
-  
+
   .start {
     display: none;
-    
+
     b {
       line-height: 0;
-      
+
       position: relative;
       top: 5px;
     }
-    
+
     a {
       display: inline-block;
       width: 100%;
-      
+
       @include text-shadow(0 0 16px $alphagray);
     }
   }
