@@ -40,7 +40,7 @@
       @include definitions-font;
       @include border-radius(8px);
       @include box-shadow((inset 0 0 5px $alphagray));
-      @include linear-gradient((left, $orange, #f2b16c, $orange));
+      @include linear-gradient((to right, $orange, #f2b16c, $orange));
 
       .icon {
         background: transparent url(../images/definitions-icon.png) no-repeat scroll top left;
