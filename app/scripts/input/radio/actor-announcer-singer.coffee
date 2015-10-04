@@ -14,7 +14,7 @@ define [
           <a href="#singer" class="term open">singer</a>(s).
           <span style="display: none;" id="more-singers">
             Looking for more singers?
-            <a href="mailto:togren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question">Contact Tim at SAG-AFTRA</a>!
+            <a href="mailto:sean.hennessy@sagaftra.org?subject=SAG-AFTRAnumbers%20Question">Contact Sean at SAG-AFTRA</a>!
           </span>
         </fieldset>
       """

@@ -11,7 +11,7 @@ define [
           day shoot.
           <span style="display: none;" id="more-days">
             Looking for longer shoots?
-            <a href="mailto:togren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question">Contact Tim at SAG-AFTRA</a>!
+            <a href="mailto:sean.hennessy@sagaftra.org?subject=SAG-AFTRAnumbers%20Question">Contact Sean at SAG-AFTRA</a>!
           </span>
         </fieldset>
       """
