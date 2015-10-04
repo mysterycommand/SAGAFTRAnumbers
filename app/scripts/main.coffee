@@ -259,6 +259,9 @@ require [
         #     .find('.start a').click().end()
         #     # .find('.definitions a').click().end()
 
+        #     # # Co/Ed On Camera
+        #     .find('#job-type').val(8).trigger('liszt:updated').trigger('change').end()
+
         #     # # Co/Ed Audio Only
         #     # .find('#job-type').val(10).trigger('liszt:updated').trigger('change').end()
         #     # .find('#storecasting').prop('checked', true).trigger('change').end()
@@ -279,9 +282,9 @@ require [
         #     # .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
 
         #     # # Television Commercial
-        #     .find('#job-type').val(3).trigger('liszt:updated').trigger('change').end()
-        #     .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
-        #     .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
+        #     # .find('#job-type').val(3).trigger('liszt:updated').trigger('change').end()
+        #     # .find('#use-type').val(0).trigger('liszt:updated').trigger('change').end()
+        #     # .find('#broadcast-type').val(0).trigger('liszt:updated').trigger('change').end()
 
         #     # .find('#markets').val([0, 4, 6, 13, 21, 22, 30]).trigger('liszt:updated').trigger('change').end()
         #     # .find('#markets_chzn').trigger('mousedown').end()
