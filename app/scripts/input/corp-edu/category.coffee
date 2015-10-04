@@ -4,6 +4,7 @@ define [
 ], ($, _) ->
   class Category
     constructor: ->
+      @notice = '<span id="category-i-notice">Choose Category I for approved Twin Cities Local waivers.</span>'
       @html = """
         <fieldset>
           <span style="vertical-align: top;">It's a</span>
@@ -11,7 +12,8 @@ define [
             <input type="radio" name="category" id="category-i" value="0" checked /> <label for="category-i"><a href="#category-i-definition" class="term open">Category I</a></label><br/>
             <input type="radio" name="category" id="category-ii" value="1" /> <label for="category-ii"><a href="#category-ii-definition" class="term open">Category II</a></label>
           </span>
-          program.
+          program.<br/>
+          #{@notice}
         </fieldset>
       """
       @$el = $ @html
@@ -36,6 +38,10 @@ define [
     onChange: (event) =>
       @selectedIndex = parseInt(event.target.value, 10)
       @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
+      if @selectedIndex != 0
+        @$el.find('#category-i-notice').remove()
+      else
+        @$el.append(@notice)
       # log @selectedIndex, @selectedItem
 
   Category
