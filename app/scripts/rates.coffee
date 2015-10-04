@@ -174,6 +174,7 @@ root.sag_aftra_rates =
   corp_edu_on_camera:
 
     # SESSION FEES
+    cat_1_session_narrator_half_day:  504.50
     cat_1_session_narrator_day_1:     891.00
     cat_1_session_narrator_day_2:     490.00
 
