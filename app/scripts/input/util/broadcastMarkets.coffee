@@ -52,5 +52,5 @@ define [
     {value: 6, label: "Washington, D.C."}
     {value: 2, label: "West Palm Beach-Ft. Pierce"}
     {value: 0, label: "No markets at this time."}
-    {value: "mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Looking for Smaller Markets or State-wide Buys?  Ask Tim"}
+    {value: "mailto:sean.hennessy@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Looking for Smaller Markets or State-wide Buys?  Ask Sean"}
   ]

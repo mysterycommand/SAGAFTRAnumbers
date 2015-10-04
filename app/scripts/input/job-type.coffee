@@ -46,7 +46,7 @@ define [
         new CorpEdu.OffCamera()
         new CorpEdu.AudioOnly()
 
-        {value: "mailto:Timothy.Ogren@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Not seeing the job you're looking for?  Ask Tim"}
+        {value: "mailto:sean.hennessy@sagaftra.org?subject=SAG-AFTRAnumbers%20Question", label: "Not seeing the job you're looking for?  Ask Sean"}
       ]
 
       html = ''
@@ -79,7 +79,7 @@ define [
         """
         @$el.parent().append """
         <div id="input-cta" class="cta" style="display: none;">
-          <p>Heads Up! #{headsUp} For details <a href="mailto:Timothy.Ogren@sagaftra.org">Ask Tim</a>.</p>
+          <p>Heads Up! #{headsUp} For details <a href="mailto:sean.hennessy@sagaftra.org">Ask Sean</a>.</p>
         </div>
         """
 
