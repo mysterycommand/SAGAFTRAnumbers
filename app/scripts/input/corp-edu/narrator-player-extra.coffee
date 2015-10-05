@@ -16,7 +16,7 @@ define [
             <a href="#narrator-spokesperson" class="term open">narrator/spokesperson</a>(s),
           </div>
           <div>
-            <input type="number" name="num-half-narrators" id="num-half-narrators" value="0" min="0" max="2">
+            <input type="number" name="num-half-narrators" id="num-half-narrators" value="0" min="0" max="10">
             <a href="#narrator-spokesperson" class="term open">half day narrator/spokesperson</a>(s),
           </div>
           <div>
