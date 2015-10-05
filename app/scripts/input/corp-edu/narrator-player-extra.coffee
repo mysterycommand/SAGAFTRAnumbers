@@ -31,6 +31,7 @@ define [
             <input type="number" name="num-extras" id="num-extras" value="0" min="0" max="10">
             <a href="#general-extra" class="term open">extra</a>(s).
           </div>
+          <div>Half day narrator/spokespersons are only approved for Twin Cities Local waiver contracts.</div>
         </fieldset>
       """
       @$el = $ @html
