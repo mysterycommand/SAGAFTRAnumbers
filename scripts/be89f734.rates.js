@@ -126,6 +126,7 @@
       tag_51: 40.05
     },
     corp_edu_on_camera: {
+      cat_1_session_narrator_half_day: 504.50,
       cat_1_session_narrator_day_1: 891.00,
       cat_1_session_narrator_day_2: 490.00,
       cat_1_session_player_half_day: 318.50,
