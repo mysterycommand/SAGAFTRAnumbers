@@ -8,6 +8,7 @@ define [
       categoryPrefix = if (category == 0) then 'cat_1_' else 'cat_2_'
 
       numNarrators = +$('#num-narrators').val()
+      numHalfNarrators = +$('#num-half-narrators').val()
       numHalfPlayers = +$('#num-half-players').val()
       numPlayers = +$('#num-players').val()
       numExtras = +$('#num-extras').val()
@@ -35,12 +36,12 @@ define [
         lineItems.push lineItem
 
       i = 0
-      while i++ < numHalfPlayers
+      while i++ < numHalfNarrators
         lineItem =
-          label: "#{categoryLabel} Half-day Player #{i}"
+          label: "#{categoryLabel} Half-day Narrator #{i}"
           first:
-            label: "4-hour Session at $ #{rates[categoryPrefix + 'session_player_half_day'].toFixed(2)}"
-            price: rates[categoryPrefix + 'session_player_half_day']
+            label: "4-hour Session at $ #{rates[categoryPrefix + 'session_narrator_half_day'].toFixed(2)}"
+            price: rates[categoryPrefix + 'session_narrator_half_day']
           items: []
 
         lineItems.push lineItem
@@ -78,6 +79,17 @@ define [
         #   count: numHalfDays
         #   label: "Half Day Session(s) at $ #{rates[categoryPrefix + 'session_player_half_day'].toFixed(2)}"
         #   price: rates[categoryPrefix + 'session_player_half_day']
+
+        lineItems.push lineItem
+
+      i = 0
+      while i++ < numHalfPlayers
+        lineItem =
+          label: "#{categoryLabel} Half-day Player #{i}"
+          first:
+            label: "4-hour Session at $ #{rates[categoryPrefix + 'session_player_half_day'].toFixed(2)}"
+            price: rates[categoryPrefix + 'session_player_half_day']
+          items: []
 
         lineItems.push lineItem
 
