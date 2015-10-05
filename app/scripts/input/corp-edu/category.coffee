@@ -4,7 +4,7 @@ define [
 ], ($, _) ->
   class Category
     constructor: ->
-      @notice = '<span id="category-i-notice">Choose Category I for approved <a href="#twin-cities-co-ed-waiver" class="term open">Twin Cities Local waiver</a>s.</span>'
+      @notice = '<p id="category-i-notice" class="outset">Choose Category I for approved <a href="#twin-cities-co-ed-waiver" class="term open">Twin Cities Local waiver</a>s.</p>'
       @html = """
         <fieldset>
           <span style="vertical-align: top;">It's a</span>
