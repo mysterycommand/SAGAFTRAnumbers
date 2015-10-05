@@ -29,6 +29,7 @@
 
     p, div {
       margin: 1em 0 0 2em;
+      &.outset { margin-left: 0; }
       & > select {
         min-width: 156px;
       }
