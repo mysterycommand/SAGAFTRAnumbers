@@ -76,6 +76,9 @@
       font-size: 0.875em;
       font-style: italic;
     }
+
+    a { color: $textorange; }
+    a:hover { color: $textdarkorange; }
   }
 
   &.left {

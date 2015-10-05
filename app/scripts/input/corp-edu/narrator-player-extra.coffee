@@ -16,6 +16,10 @@ define [
             <a href="#narrator-spokesperson" class="term open">narrator/spokesperson</a>(s),
           </div>
           <div>
+            <input type="number" name="num-half-narrators" id="num-half-narrators" value="0" min="0" max="10">
+            <a href="#narrator-spokesperson" class="term open">half day narrator/spokesperson</a>(s),
+          </div>
+          <div>
             <input type="number" name="num-players" id="num-players" value="0" min="0" max="10">
             <a href="#day-performer" class="term open">day performer (or day player</a>(s)), and
           </div>
@@ -27,6 +31,7 @@ define [
             <input type="number" name="num-extras" id="num-extras" value="0" min="0" max="10">
             <a href="#general-extra" class="term open">extra</a>(s).
           </div>
+          <div>Half day narrator/spokespersons are only approved for <a href="#twin-cities-co-ed-waiver" class="term open">Twin Cities Local waiver</a> contracts.</div>
         </fieldset>
       """
       @$el = $ @html
