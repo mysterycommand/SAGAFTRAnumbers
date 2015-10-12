@@ -6,11 +6,12 @@ define [
 ], ($, _, UseStorecasting) ->
   class Category
     constructor: ->
+      @notice = '<p id="category-i-notice" class="outset">*Choose Category I for approved <a href="#twin-cities-co-ed-waiver" class="term open">Twin Cities Local waiver</a>s.</p>'
       @html = """
         <fieldset>
           <span style="vertical-align: top;">This Audio Only program is a (please choose one):</span>
           <div>
-            <input type="radio" name="category" id="category-i" value="0" checked /> <label for="category-i"><a href="#category-i-definition" class="term open">Category I</a></label><br/>
+            <input type="radio" name="category" id="category-i" value="0" checked /> <label for="category-i"><a href="#category-i-definition" class="term open">Category I</a>*</label><br/>
 
             <input type="radio" name="category" id="category-ii" value="1" /> <label for="category-ii"><a href="#category-ii-definition" class="term open">Category II</a></label><br/>
 
@@ -25,6 +26,7 @@ define [
 
             <input type="radio" name="category" id="storecasting" value="3" /> <label for="storecasting"><a href="#storecasting-definition" class="term open">Storecasting</a></label>
           </div>
+          #{@notice}
         </fieldset>
       """
       @$el = $ @html
@@ -47,6 +49,12 @@ define [
 
     onChange: (event) =>
       @selectedIndex = parseInt event.target.value, 10
+
+      # Hide the notice if Category I isn't selected.
+      if @selectedIndex != 0
+        @$el.find('#category-i-notice').remove()
+      else
+        @$el.append(@notice)
 
       if @selectedIndex isnt parseInt @$el.find('#storecasting').val(), 10
         @selectedItem.$el.detach() if @selectedItem?
