@@ -40,10 +40,30 @@ define [
       @selectedItem = if @selectedIndex isnt -1 then @options[@selectedIndex] else null
 
       # Hide the notice if Category I isn't selected.
+      $halfNarrators = $ '#num-half-narrators' # Kind of a hack.
+      # This grabs the #num-half-narrators input field from the next fieldset
+      # and hide/shows it (and it's label/notice) based on the current category.
+      # This particular kind of branching was never really planned for in the
+      # original app design. ¯\_(ツ)_/¯
       if @selectedIndex != 0
         @$el.find('#category-i-notice').remove()
+        $halfNarrators
+          .val(0)
+          .closest('div')
+          .hide()
+          .end()
+          .closest('fieldset')
+          .find('.notice')
+          .hide()
       else
         @$el.append(@notice)
+        $halfNarrators
+          .closest('div')
+          .show()
+          .end()
+          .closest('fieldset')
+          .find('.notice')
+          .show()
       # log @selectedIndex, @selectedItem
 
   Category
