@@ -52,9 +52,15 @@ define [
 
       # Hide the notice if Category I isn't selected.
       if @selectedIndex != 0
-        @$el.find('#category-i-notice').remove()
+        @$el
+          .find('#category-i-asterisk')
+          .css('visibility', 'hidden').end()
+          .find('#category-i-notice').remove()
       else
-        @$el.append(@notice)
+        @$el
+          .find('#category-i-asterisk')
+          .css('visibility', 'visible').end()
+          .append(@notice)
 
       if @selectedIndex isnt parseInt @$el.find('#storecasting').val(), 10
         @selectedItem.$el.detach() if @selectedItem?

@@ -46,7 +46,11 @@ define [
       # This particular kind of branching was never really planned for in the
       # original app design. ¯\_(ツ)_/¯
       if @selectedIndex != 0
-        @$el.find('#category-i-notice').remove()
+        @$el
+          .find('#category-i-asterisk')
+          .css('visibility', 'hidden').end()
+          .find('#category-i-notice').remove()
+
         $halfNarrators
           .val(0)
           .closest('div')
@@ -55,7 +59,11 @@ define [
           .find('#half-day-narrator-notice')
           .hide()
       else
-        @$el.append(@notice)
+        @$el
+          .find('#category-i-asterisk')
+          .css('visibility', 'visible').end()
+          .append(@notice)
+
         $halfNarrators
           .closest('div')
           .show()
