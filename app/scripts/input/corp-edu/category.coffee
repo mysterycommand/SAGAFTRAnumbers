@@ -51,18 +51,16 @@ define [
           .val(0)
           .closest('div')
           .hide()
-          .end()
           .closest('fieldset')
-          .find('.notice')
+          .find('#half-day-narrator-notice')
           .hide()
       else
         @$el.append(@notice)
         $halfNarrators
           .closest('div')
           .show()
-          .end()
           .closest('fieldset')
-          .find('.notice')
+          .find('#half-day-narrator-notice')
           .show()
       # log @selectedIndex, @selectedItem
 
