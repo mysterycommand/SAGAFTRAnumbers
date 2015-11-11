@@ -1,25 +1,43 @@
 {
   "name": "SAG-AFTRAnumbers.com",
-  "version": "1.0.1",
+  "version": "1.0.2",
+  "description": "A handy calculator to estimate the cost of hiring union talent for your next project.",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mysterycommand/sag-aftranumbers.com.git"
+  },
+  "author": {
+    "name": "Matt Hayes",
+    "email": "matt@mysterycommand"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mysterycommand/sag-aftranumbers.com/issues"
+  },
+  "homepage": "http://mysterycommand.github.io/sag-aftranumbers.com/",
   "dependencies": {},
   "devDependencies": {
-    "bower": "^1.5.3",
+    "bower": "^1.6.5",
     "connect-livereload": "^0.5.3",
     "grunt": "^0.4.5",
     "grunt-bower-requirejs": "^2.0.0",
-    "grunt-concurrent": "^2.0.3",
+    "grunt-concurrent": "^2.0.4",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-coffee": "^0.13.0",
     "grunt-contrib-compass": "^1.0.4",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-connect": "^0.11.2",
-    "grunt-contrib-copy": "^0.8.1",
+    "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-cssmin": "^0.14.0",
-    "grunt-contrib-htmlmin": "^0.5.0",
-    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-htmlmin": "^0.6.0",
+    "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-uglify": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-mocha": "^0.4.13",
     "grunt-open": "^0.2.3",
@@ -28,8 +46,5 @@
     "grunt-usemin": "^3.1.1",
     "grunt-usereplace": "^0.1.4",
     "matchdep": "^1.0.0"
-  },
-  "engines": {
-    "node": ">=4.0.0"
   }
 }
