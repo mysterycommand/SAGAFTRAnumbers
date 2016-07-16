@@ -36,7 +36,7 @@ root.sag_aftra_rates =
     network_13_limited_26:            808.92
     network_13_limited_39:           1218.20
 
-    regional_network:                 912.35
+    regional_network:                 976.21
 
     dealer_actor:                     753.45
     dealer_singer:                    597.70
