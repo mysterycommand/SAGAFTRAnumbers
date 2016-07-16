@@ -138,8 +138,8 @@ root.sag_aftra_rates =
   psa_radio:
 
     # SESSION FEES
-    session_actor:                    630.35
-    session_singer:                   617.50
+    session_actor:                    674.47
+    session_singer:                   674.47
 
   psa_television_on_camera:
 
