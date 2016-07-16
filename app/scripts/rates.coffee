@@ -133,7 +133,7 @@ root.sag_aftra_rates =
   television_commercial_demo:
 
     # SESSION FEES
-    session_actor:                    236.00
+    session_actor:                    252.55
 
   psa_radio:
 
