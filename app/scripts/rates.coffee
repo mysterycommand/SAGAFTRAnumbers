@@ -154,12 +154,7 @@ root.sag_aftra_rates =
   psa_television_off_camera:
 
     # SESSION FEES
-    session_actor:                    472.00
-
-    # TAGS
-    tag_2_25:                         132.45
-    tag_26_50:                         73.50
-    tag_51:                            40.05
+    session_actor:                    505.04
 
   corp_edu_on_camera:
 
