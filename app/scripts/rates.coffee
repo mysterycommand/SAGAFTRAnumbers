@@ -29,12 +29,12 @@ root.sag_aftra_rates =
     wild_8_major_any_2:               435.54
     wild_8_major_all_3:               550.30
 
-    network_1:                        471.45
-    network_4:                        764.85
-    network_8:                       1218.35
-    network_13:                      1511.90
-    network_13_limited_26:            756.00
-    network_13_limited_39:           1138.50
+    network_1:                        504.45
+    network_4:                        818.39
+    network_8:                       1303.63
+    network_13:                      1617.73
+    network_13_limited_26:            808.92
+    network_13_limited_39:           1218.20
 
     regional_network:                 912.35
 
