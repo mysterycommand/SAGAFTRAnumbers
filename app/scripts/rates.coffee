@@ -87,8 +87,8 @@ root.sag_aftra_rates =
     network_3:                        124.64
     network_4_13:                     124.64
 
-    internet_8_week:                  834.90
-    internet_1_year:                 2197.15
+    internet_8_week:                 1007.54
+    internet_1_year:                 2518.84
 
   television_commercial_off_camera:
 
