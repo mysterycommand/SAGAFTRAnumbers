@@ -53,12 +53,12 @@ root.sag_aftra_rates =
   television_commercial_on_camera:
 
     # SESSION FEES
-    session_actor:                    627.75
-    session_extra:                    342.40
+    session_actor:                    671.69
+    session_extra:                    366.37
 
     # WARDROBE FITTINGS
-    actor_wardrobe:                    78.74
-    extra_wardrobe:                    78.74
+    actor_wardrobe:                    83.96
+    extra_wardrobe:                    83.96
 
     # USAGE
     wild_13_unit_2_25:                 21.49
