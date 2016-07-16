@@ -119,8 +119,8 @@ root.sag_aftra_rates =
     local_500k_750k:                  305.54
     local_750k_1m:                    407.46
 
-    national_min:                     472.00
-    national_max:                    2317.00
+    national_min:                     505.04
+    national_max:                    2618.50
 
     # A.K.A. Program Class A
     network_2:                        112.65
