@@ -41,8 +41,8 @@ root.sag_aftra_rates =
     dealer_actor:                     753.45
     dealer_singer:                    597.70
 
-    internet_8_week:                  370.55
-    internet_1_year:                  975.10
+    internet_8_week:                  396.47
+    internet_1_year:                 1043.35
 
   radio_commercial_demo:
 
