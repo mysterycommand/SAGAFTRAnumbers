@@ -4,8 +4,8 @@ root.sag_aftra_rates =
   radio_commercial:
 
     # SESSION FEES
-    session_actor:                    278.60
-    session_singer:                   278.60
+    session_actor:                    298.10
+    session_singer:                   298.10
 
     # TAGS
     tag_2_25:                         115.30
