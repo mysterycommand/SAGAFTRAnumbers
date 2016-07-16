@@ -21,13 +21,13 @@ root.sag_aftra_rates =
     wild_13_major_any_2:              544.42
     wild_13_major_all_3:              687.90
 
-    wild_8_unit_2_25:                   3.28
-    wild_8_unit_26:                     2.46
-    wild_8_major_new_york:            333.70
-    wild_8_major_chicago:             302.70
-    wild_8_major_los_angeles:         302.70
-    wild_8_major_any_2:               407.05
-    wild_8_major_all_3:               514.30
+    wild_8_unit_2_25:                   3.51
+    wild_8_unit_26:                     2.64
+    wild_8_major_new_york:            357.06
+    wild_8_major_chicago:             323.89
+    wild_8_major_los_angeles:         323.89
+    wild_8_major_any_2:               435.54
+    wild_8_major_all_3:               550.30
 
     network_1:                        471.45
     network_4:                        764.85
