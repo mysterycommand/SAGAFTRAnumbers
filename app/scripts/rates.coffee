@@ -61,13 +61,13 @@ root.sag_aftra_rates =
     extra_wardrobe:                    83.96
 
     # USAGE
-    wild_13_unit_2_25:                 21.49
-    wild_13_unit_26:                    7.97
-    wild_13_major_new_york:          1233.65
-    wild_13_major_chicago:           1075.30
-    wild_13_major_los_angeles:       1075.30
-    wild_13_major_any_2:             1697.70
-    wild_13_major_all_3:             2047.75
+    wild_13_unit_2_25:                 22.99
+    wild_13_unit_26:                    8.53
+    wild_13_major_new_york:          1320.01
+    wild_13_major_chicago:           1150.57
+    wild_13_major_los_angeles:       1150.57
+    wild_13_major_any_2:             1816.54
+    wild_13_major_all_3:             2191.09
     wild_13_major_all_3_addl:           8.17
 
     local_1_50k:                       27.70
