@@ -93,12 +93,12 @@ root.sag_aftra_rates =
   television_commercial_off_camera:
 
     # SESSION FEES
-    session_actor:                    472.00
+    session_actor:                    505.04
 
     # TAGS
-    tag_2_25:                         140.40
-    tag_26_50:                         77.90
-    tag_51:                            42.45
+    tag_2_25:                         150.23
+    tag_26_50:                         83.35
+    tag_51:                            45.42
 
     # USAGE
     wild_13_unit_2_25:                 14.70
