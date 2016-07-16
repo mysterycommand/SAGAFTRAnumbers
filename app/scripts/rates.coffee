@@ -101,13 +101,13 @@ root.sag_aftra_rates =
     tag_51:                            45.42
 
     # USAGE
-    wild_13_unit_2_25:                 14.70
-    wild_13_unit_26:                    6.25
-    wild_13_major_new_york:           871.55
-    wild_13_major_chicago:            758.40
-    wild_13_major_los_angeles:        758.40
-    wild_13_major_any_2:             1143.10
-    wild_13_major_all_3:             1454.45
+    wild_13_unit_2_25:                 15.73
+    wild_13_unit_26:                    6.69
+    wild_13_major_new_york:           932.56
+    wild_13_major_chicago:            811.49
+    wild_13_major_los_angeles:        811.49
+    wild_13_major_any_2:             1223.12
+    wild_13_major_all_3:             1556.26
     wild_13_major_all_3_addl:           6.40
 
     local_1_50k:                       18.90
