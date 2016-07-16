@@ -70,14 +70,14 @@ root.sag_aftra_rates =
     wild_13_major_all_3:             2191.09
     wild_13_major_all_3_addl:           8.17
 
-    local_1_50k:                       27.70
-    local_50k_100k:                    55.70
-    local_100k_150k:                   83.40
-    local_150k_200k:                  111.25
-    local_200k_250k:                  138.95
-    local_250k_500k:                  278.15
-    local_500k_750k:                  417.10
-    local_750k_1m:                    556.15
+    local_1_50k:                       29.64
+    local_50k_100k:                    59.60
+    local_100k_150k:                   89.24
+    local_150k_200k:                  119.04
+    local_200k_250k:                  148.68
+    local_250k_500k:                  297.62
+    local_500k_750k:                  446.30
+    local_750k_1m:                    595.08
 
     national_min:                     627.75
     national_1_50:                     10.55
