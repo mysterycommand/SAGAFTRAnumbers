@@ -83,10 +83,9 @@ root.sag_aftra_rates =
     national_max:                    3906.00
 
     # A.K.A. Program Class A
-    network_2:                        143.95
-    network_3:                        114.20
-    network_4_13:                     114.20
-    network_14:                        54.75
+    network_2:                        157.11
+    network_3:                        124.64
+    network_4_13:                     124.64
 
     internet_8_week:                  834.90
     internet_1_year:                 2197.15
