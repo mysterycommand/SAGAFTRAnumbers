@@ -7,7 +7,7 @@
     radio_commercial: {
       session_actor: 298.10,
       session_singer: 298.10,
-      tag_2_25: 115.30,
+      tag_2_25: 123.37,
       tag_26_50: 82.75,
       tag_51: 45.15,
       wild_13_unit_2_25: 4.39,
