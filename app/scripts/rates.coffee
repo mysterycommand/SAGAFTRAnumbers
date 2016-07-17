@@ -38,7 +38,7 @@ root.sag_aftra_rates =
 
     regional_network:                 976.21
 
-    dealer_actor:                     753.45
+    dealer_actor:                     806.19
     dealer_singer:                    597.70
 
     internet_8_week:                  396.47
