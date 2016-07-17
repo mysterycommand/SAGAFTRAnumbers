@@ -45,6 +45,10 @@ root.sag_aftra_rates =
     internet_8_week:                  396.47
     internet_1_year:                 1043.35
 
+    internet_4_week_move_over:        372.63
+    internet_8_week_move_over:        447.15
+    internet_1_year_move_over:       1192.40
+
   radio_commercial_demo:
 
     # SESSION FEES
@@ -92,6 +96,10 @@ root.sag_aftra_rates =
     internet_8_week:                 1007.54
     internet_1_year:                 2518.84
 
+    internet_4_week_move_over:        839.61
+    internet_8_week_move_over:       1175.46
+    internet_1_year_move_over:       2854.68
+
   television_commercial_off_camera:
 
     # SESSION FEES
@@ -132,6 +140,10 @@ root.sag_aftra_rates =
     internet_4_week:                  631.30
     internet_8_week:                  757.56
     internet_1_year:                 1893.90
+
+    internet_4_week_move_over:        631.30
+    internet_8_week_move_over:        883.82
+    internet_1_year_move_over:       2146.42
 
   television_commercial_demo:
 
