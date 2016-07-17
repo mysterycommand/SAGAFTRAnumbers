@@ -8,7 +8,7 @@ root.sag_aftra_rates =
     session_singer:                   298.10
 
     # TAGS
-    tag_2_25:                         115.30
+    tag_2_25:                         123.37
     tag_26_50:                         82.75
     tag_51:                            45.15
 
