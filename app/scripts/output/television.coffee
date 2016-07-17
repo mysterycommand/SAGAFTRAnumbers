@@ -312,7 +312,16 @@ define [
 
 
             switch internetType
-                when 0 # 8 Week
+                when 0 # 4 Week
+                    lineItem =
+                        label: "Internet or New Media Use"
+                        items: [
+                            count: numActors
+                            label: "Principal Actor(s) with the 4 Week Option"
+                            price: rates.internet_4_week
+                        ]
+
+                when 1 # 8 Week
                     lineItem =
                         label: "Internet or New Media Use"
                         items: [
@@ -321,9 +330,7 @@ define [
                             price: rates.internet_8_week
                         ]
 
-
-
-                when 1 # 1 Year
+                when 2 # 1 Year
                     lineItem =
                         label: "Internet or New Media Use"
                         items: [
@@ -530,13 +537,19 @@ define [
                 items: []
 
             switch internetType
-                when 0 # 8 Week
+                when 0 # 4 Week
+                    lineItem.items.push
+                        count: numActors
+                        label: "Principal Actor(s) with the 4 Week Option"
+                        price: rates.internet_4_week
+
+                when 1 # 8 Week
                     lineItem.items.push
                         count: numActors
                         label: "Principal Actor(s) with the 8 Week Option"
                         price: rates.internet_8_week
 
-                when 1 # 1 Year
+                when 2 # 1 Year
                     lineItem.items.push
                         count: numActors
                         label: "Principal Actor(s) with the 1 Year Option"

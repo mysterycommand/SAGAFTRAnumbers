@@ -326,10 +326,16 @@ define [
         when 0
           if numActors or numSingers then lineItem.items.push
             count: 0
+            label: "#{perActorSinger.join ' and '} with the 4 Week Option"
+            price: rates.internet_4_week * (numActors + numSingers)
+
+        when 1
+          if numActors or numSingers then lineItem.items.push
+            count: 0
             label: "#{perActorSinger.join ' and '} with the 8 Week Option"
             price: rates.internet_8_week * (numActors + numSingers)
 
-        when 1
+        when 2
           if numActors or numSingers then lineItem.items.push
             count: 0
             label: "#{perActorSinger.join ' and '} with the 1 Year Option"

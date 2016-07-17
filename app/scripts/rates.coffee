@@ -41,6 +41,7 @@ root.sag_aftra_rates =
     dealer_actor:                     806.19
     dealer_singer:                    597.70
 
+    internet_4_week:                  372.63
     internet_8_week:                  396.47
     internet_1_year:                 1043.35
 
@@ -87,6 +88,7 @@ root.sag_aftra_rates =
     network_3:                        124.64
     network_4_13:                     124.64
 
+    internet_4_week:                  839.61
     internet_8_week:                 1007.54
     internet_1_year:                 2518.84
 
@@ -127,6 +129,7 @@ root.sag_aftra_rates =
     network_3:                         97.79
     network_4_13:                      97.79
 
+    internet_4_week:                  631.30
     internet_8_week:                  757.56
     internet_1_year:                 1893.90
 
