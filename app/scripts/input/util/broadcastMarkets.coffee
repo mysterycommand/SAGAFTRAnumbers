@@ -28,7 +28,7 @@ define [
     {value: 43, label:"Mexico/Mexico City"}
     {value: 4, label: "Miami"}
     {value: 2, label: "Milwaukee"}
-    {value: 5, label: "Montreal"}
+    {value: 4, label: "Montreal"}
     {value: 2, label: "Nashville"}
     {value: "New York", label: "New York"}
     {value: 2, label: "Norfolk-Portsmouth-Newport News"}
