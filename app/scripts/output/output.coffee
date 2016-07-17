@@ -49,7 +49,7 @@ define [
               ,    'television_commercial_demo'
               ,    'psa_radio'
               ,    'psa_television_on_camera'
-              ,    'psa_television_off_camera' then subtotal * 0.168
+              ,    'psa_television_off_camera' then subtotal * 0.18
               else subtotal * 0.16
             payroll = subtotal * 0.14
             total = subtotal + hrph + payroll
