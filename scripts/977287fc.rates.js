@@ -8,8 +8,8 @@
       session_actor: 298.10,
       session_singer: 298.10,
       tag_2_25: 123.37,
-      tag_26_50: 82.75,
-      tag_51: 45.15,
+      tag_26_50: 88.54,
+      tag_51: 48.31,
       wild_13_unit_2_25: 4.39,
       wild_13_unit_26: 3.30,
       wild_13_major_new_york: 446.35,
@@ -32,7 +32,7 @@
       network_13_limited_39: 1218.20,
       regional_network: 976.21,
       dealer_actor: 806.19,
-      dealer_singer: 597.70,
+      dealer_singer: 639.54,
       internet_4_week: 372.63,
       internet_8_week: 396.47,
       internet_1_year: 1043.35,
@@ -42,7 +42,7 @@
     },
     radio_commercial_demo: {
       session_actor: 205.44,
-      session_singer: 205.44
+      session_singer: 207.31
     },
     television_commercial_on_camera: {
       session_actor: 671.69,
@@ -56,7 +56,7 @@
       wild_13_major_los_angeles: 1150.57,
       wild_13_major_any_2: 1816.54,
       wild_13_major_all_3: 2191.09,
-      wild_13_major_all_3_addl: 8.17,
+      wild_13_major_all_3_addl: 8.74,
       local_1_50k: 29.64,
       local_50k_100k: 59.60,
       local_100k_150k: 89.24,
@@ -89,7 +89,7 @@
       wild_13_major_los_angeles: 811.49,
       wild_13_major_any_2: 1223.12,
       wild_13_major_all_3: 1556.26,
-      wild_13_major_all_3_addl: 6.40,
+      wild_13_major_all_3_addl: 6.85,
       local_1_50k: 20.22,
       local_50k_100k: 40.71,
       local_100k_150k: 61.10,
@@ -115,7 +115,7 @@
     },
     psa_radio: {
       session_actor: 674.47,
-      session_singer: 674.47
+      session_singer: 700.37
     },
     psa_television_on_camera: {
       session_actor: 671.69,
