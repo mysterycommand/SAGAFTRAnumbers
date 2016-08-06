@@ -4,172 +4,172 @@ root.sag_aftra_rates =
   radio_commercial:
 
     # SESSION FEES
-    session_actor:                    278.60
-    session_singer:                   278.60
+    session_actor:                    298.10
+    session_singer:                   298.10
 
     # TAGS
-    tag_2_25:                         115.30
-    tag_26_50:                         82.75
-    tag_51:                            45.15
+    tag_2_25:                         123.37
+    tag_26_50:                         88.54
+    tag_51:                            48.31
 
     # USAGE
-    wild_13_unit_2_25:                  4.10
-    wild_13_unit_26:                    3.08
-    wild_13_major_new_york:           417.15
-    wild_13_major_chicago:            378.35
-    wild_13_major_los_angeles:        378.35
-    wild_13_major_any_2:              508.80
-    wild_13_major_all_3:              642.90
+    wild_13_unit_2_25:                  4.39
+    wild_13_unit_26:                    3.30
+    wild_13_major_new_york:           446.35
+    wild_13_major_chicago:            404.83
+    wild_13_major_los_angeles:        404.83
+    wild_13_major_any_2:              544.42
+    wild_13_major_all_3:              687.90
 
-    wild_8_unit_2_25:                   3.28
-    wild_8_unit_26:                     2.46
-    wild_8_major_new_york:            333.70
-    wild_8_major_chicago:             302.70
-    wild_8_major_los_angeles:         302.70
-    wild_8_major_any_2:               407.05
-    wild_8_major_all_3:               514.30
+    wild_8_unit_2_25:                   3.51
+    wild_8_unit_26:                     2.64
+    wild_8_major_new_york:            357.06
+    wild_8_major_chicago:             323.89
+    wild_8_major_los_angeles:         323.89
+    wild_8_major_any_2:               435.54
+    wild_8_major_all_3:               550.30
 
-    network_1:                        471.45
-    network_4:                        764.85
-    network_8:                       1218.35
-    network_13:                      1511.90
-    network_13_limited_26:            756.00
-    network_13_limited_39:           1138.50
+    network_1:                        504.45
+    network_4:                        818.39
+    network_8:                       1303.63
+    network_13:                      1617.73
+    network_13_limited_26:            808.92
+    network_13_limited_39:           1218.20
 
-    regional_network:                 912.35
+    regional_network:                 976.21
 
-    dealer_actor:                     753.45
-    dealer_singer:                    597.70
+    dealer_actor:                     806.19
+    dealer_singer:                    639.54
 
-    internet_8_week:                  370.55
-    internet_1_year:                  975.10
+    internet_4_week:                  372.63
+    internet_8_week:                  396.47
+    internet_1_year:                 1043.35
+
+    internet_4_week_move_over:        372.63
+    internet_8_week_move_over:        447.15
+    internet_1_year_move_over:       1192.40
 
   radio_commercial_demo:
 
     # SESSION FEES
-    session_actor:                    192.00
-    session_singer:                   193.75
+    session_actor:                    205.44
+    session_singer:                   207.31
 
   television_commercial_on_camera:
 
     # SESSION FEES
-    session_actor:                    627.75
-    session_extra:                    342.40
+    session_actor:                    671.69
+    session_extra:                    366.37
 
     # WARDROBE FITTINGS
-    actor_wardrobe:                    78.74
-    extra_wardrobe:                    78.74
+    actor_wardrobe:                    83.96
+    extra_wardrobe:                    83.96
 
     # USAGE
-    wild_13_unit_2_25:                 21.49
-    wild_13_unit_26:                    7.97
-    wild_13_major_new_york:          1233.65
-    wild_13_major_chicago:           1075.30
-    wild_13_major_los_angeles:       1075.30
-    wild_13_major_any_2:             1697.70
-    wild_13_major_all_3:             2047.75
-    wild_13_major_all_3_addl:           8.17
+    wild_13_unit_2_25:                 22.99
+    wild_13_unit_26:                    8.53
+    wild_13_major_new_york:          1320.01
+    wild_13_major_chicago:           1150.57
+    wild_13_major_los_angeles:       1150.57
+    wild_13_major_any_2:             1816.54
+    wild_13_major_all_3:             2191.09
+    wild_13_major_all_3_addl:           8.74
 
-    local_1_50k:                       27.70
-    local_50k_100k:                    55.70
-    local_100k_150k:                   83.40
-    local_150k_200k:                  111.25
-    local_200k_250k:                  138.95
-    local_250k_500k:                  278.15
-    local_500k_750k:                  417.10
-    local_750k_1m:                    556.15
+    local_1_50k:                       29.64
+    local_50k_100k:                    59.60
+    local_100k_150k:                   89.24
+    local_150k_200k:                  119.04
+    local_200k_250k:                  148.68
+    local_250k_500k:                  297.62
+    local_500k_750k:                  446.30
+    local_750k_1m:                    595.08
 
-    national_min:                     627.75
-    national_1_50:                     10.55
-    national_51_100:                    9.16
-    national_101_150:                   7.78
-    national_151_200:                   6.39
-    national_201_1k:                    0.75
-    national_1k_2k:                     0.71
-    # national_1k_2500:                   0.71
-    # national_2500_3k:                   0.16
-    national_max:                    3439.00
+    national_min:                     671.69
+    national_max:                    3906.00
 
     # A.K.A. Program Class A
-    network_2:                        143.95
-    network_3:                        114.20
-    network_4_13:                     114.20
-    network_14:                        54.75
+    network_2:                        157.11
+    network_3:                        124.64
+    network_4_13:                     124.64
 
-    internet_8_week:                  834.90
-    internet_1_year:                 2197.15
+    internet_4_week:                  839.61
+    internet_8_week:                 1007.54
+    internet_1_year:                 2518.84
+
+    internet_4_week_move_over:        839.61
+    internet_8_week_move_over:       1175.46
+    internet_1_year_move_over:       2854.68
 
   television_commercial_off_camera:
 
     # SESSION FEES
-    session_actor:                    472.00
+    session_actor:                    505.04
 
     # TAGS
-    tag_2_25:                         140.40
-    tag_26_50:                         77.90
-    tag_51:                            42.45
+    tag_2_25:                         150.23
+    tag_26_50:                         83.35
+    tag_51:                            45.42
 
     # USAGE
-    wild_13_unit_2_25:                 14.70
-    wild_13_unit_26:                    6.25
-    wild_13_major_new_york:           871.55
-    wild_13_major_chicago:            758.40
-    wild_13_major_los_angeles:        758.40
-    wild_13_major_any_2:             1143.10
-    wild_13_major_all_3:             1454.45
-    wild_13_major_all_3_addl:           6.40
+    wild_13_unit_2_25:                 15.73
+    wild_13_unit_26:                    6.69
+    wild_13_major_new_york:           932.56
+    wild_13_major_chicago:            811.49
+    wild_13_major_los_angeles:        811.49
+    wild_13_major_any_2:             1223.12
+    wild_13_major_all_3:             1556.26
+    wild_13_major_all_3_addl:           6.85
 
-    local_1_50k:                       18.90
-    local_50k_100k:                    38.05
-    local_100k_150k:                   57.10
-    local_150k_200k:                   76.15
-    local_200k_250k:                   95.15
-    local_250k_500k:                  190.45
-    local_500k_750k:                  285.55
-    local_750k_1m:                    380.80
+    local_1_50k:                       20.22
+    local_50k_100k:                    40.71
+    local_100k_150k:                   61.10
+    local_150k_200k:                   81.48
+    local_200k_250k:                  101.81
+    local_250k_500k:                  203.78
+    local_500k_750k:                  305.54
+    local_750k_1m:                    407.46
 
-    national_min:                     472.00
-    national_max:                    2317.00
+    national_min:                     505.04
+    national_max:                    2618.50
 
     # A.K.A. Program Class A
-    network_2:                        112.65
-    network_3:                         89.60
-    network_4_13:                      89.60
-    network_14:                        40.70
+    network_2:                        122.95
+    network_3:                         97.79
+    network_4_13:                      97.79
 
-    internet_8_week:                  627.75
-    internet_1_year:                 1652.00
+    internet_4_week:                  631.30
+    internet_8_week:                  757.56
+    internet_1_year:                 1893.90
+
+    internet_4_week_move_over:        631.30
+    internet_8_week_move_over:        883.82
+    internet_1_year_move_over:       2146.42
 
   television_commercial_demo:
 
     # SESSION FEES
-    session_actor:                    236.00
+    session_actor:                    252.55
 
   psa_radio:
 
     # SESSION FEES
-    session_actor:                    630.35
-    session_singer:                   617.50
+    session_actor:                    674.47
+    session_singer:                   700.37
 
   psa_television_on_camera:
 
     # SESSION FEES
-    session_actor:                    627.75
-    session_extra:                    627.75
+    session_actor:                    671.69
+    session_extra:                    366.37
 
     # WARDROBE FITTINGS
-    actor_wardrobe:                    78.74
-    extra_wardrobe:                    78.74
+    actor_wardrobe:                    83.96
+    extra_wardrobe:                    83.96
 
   psa_television_off_camera:
 
     # SESSION FEES
-    session_actor:                    472.00
-
-    # TAGS
-    tag_2_25:                         132.45
-    tag_26_50:                         73.50
-    tag_51:                            40.05
+    session_actor:                    505.04
 
   corp_edu_on_camera:
 

@@ -1,9 +1,10 @@
 define [
   'jquery'
   'underscore'
+  'input/use/internet-4-week'
   'input/use/internet-8-week'
   'input/use/internet-1-year'
-], ($, _, Internet8Week, Internet1Year) ->
+], ($, _, Internet4Week, Internet8Week, Internet1Year) ->
   class UseInternet
     constructor: ->
       @label = "on the Internet or in new media"
@@ -25,6 +26,7 @@ define [
       @selectedIndex = -1
       @selectedItem = null
       @options = [
+        new Internet4Week()
         new Internet8Week()
         new Internet1Year()
       ]

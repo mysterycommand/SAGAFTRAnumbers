@@ -326,14 +326,32 @@ define [
         when 0
           if numActors or numSingers then lineItem.items.push
             count: 0
-            label: "#{perActorSinger.join ' and '} with the 8 Week Option"
-            price: rates.internet_8_week * (numActors + numSingers)
+            label: "#{perActorSinger.join ' and '} with the 4 Week Option"
+            price: switch useType
+              when 1
+                rates.internet_4_week * (numActors + numSingers)
+              when 2
+                rates.internet_4_week_move_over * (numActors + numSingers)
 
         when 1
           if numActors or numSingers then lineItem.items.push
             count: 0
+            label: "#{perActorSinger.join ' and '} with the 8 Week Option"
+            price: switch useType
+              when 1
+                rates.internet_8_week * (numActors + numSingers)
+              when 2
+                rates.internet_8_week_move_over * (numActors + numSingers)
+
+        when 2
+          if numActors or numSingers then lineItem.items.push
+            count: 0
             label: "#{perActorSinger.join ' and '} with the 1 Year Option"
-            price: rates.internet_1_year * (numActors + numSingers)
+            price: switch useType
+              when 1
+                rates.internet_1_year * (numActors + numSingers)
+              when 2
+                rates.internet_1_year_move_over * (numActors + numSingers)
 
       if lineItem.items.length then lineItems.push lineItem
 

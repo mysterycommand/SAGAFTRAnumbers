@@ -312,24 +312,43 @@ define [
 
 
             switch internetType
-                when 0 # 8 Week
+                when 0 # 4 Week
+                    lineItem =
+                        label: "Internet or New Media Use"
+                        items: [
+                            count: numActors
+                            label: "Principal Actor(s) with the 4 Week Option"
+                            price: switch useType
+                              when 1
+                                rates.internet_4_week
+                              when 2
+                                rates.internet_4_week_move_over
+                        ]
+
+                when 1 # 8 Week
                     lineItem =
                         label: "Internet or New Media Use"
                         items: [
                             count: numActors
                             label: "Principal Actor(s) with the 8 Week Option"
-                            price: rates.internet_8_week
+                            price: switch useType
+                              when 1
+                                rates.internet_8_week
+                              when 2
+                                rates.internet_8_week_move_over
                         ]
 
-
-
-                when 1 # 1 Year
+                when 2 # 1 Year
                     lineItem =
                         label: "Internet or New Media Use"
                         items: [
                             count: numActors
                             label: "Principal Actor(s) with the 1 Year Option"
-                            price: rates.internet_1_year
+                            price: switch useType
+                              when 1
+                                rates.internet_1_year
+                              when 2
+                                rates.internet_1_year_move_over
                         ]
 
             if internetType isnt -1 then lineItems.push lineItem
@@ -530,17 +549,35 @@ define [
                 items: []
 
             switch internetType
-                when 0 # 8 Week
+                when 0 # 4 Week
+                    lineItem.items.push
+                        count: numActors
+                        label: "Principal Actor(s) with the 4 Week Option"
+                        price: switch useType
+                          when 1
+                            rates.internet_4_week
+                          when 2
+                            rates.internet_4_week_move_over
+
+                when 1 # 8 Week
                     lineItem.items.push
                         count: numActors
                         label: "Principal Actor(s) with the 8 Week Option"
-                        price: rates.internet_8_week
+                        price: switch useType
+                          when 1
+                            rates.internet_8_week
+                          when 2
+                            rates.internet_8_week_move_over
 
-                when 1 # 1 Year
+                when 2 # 1 Year
                     lineItem.items.push
                         count: numActors
                         label: "Principal Actor(s) with the 1 Year Option"
-                        price: rates.internet_1_year
+                        price: switch useType
+                          when 1
+                            rates.internet_1_year
+                          when 2
+                            rates.internet_1_year_move_over
 
             if internetType isnt -1 then lineItems.push lineItem
 
