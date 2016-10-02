@@ -14,6 +14,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="styles/main.css">
 
         <!-- build:js scripts/vendor/modernizr.js -->
@@ -23,6 +24,42 @@
         <script src="bower_components/respond/respond.src.js"></script>
         <!-- endbuild -->
         <script src="scripts/rates.js"></script>
+        <style>
+        .footerLinksDiv {
+            margin: 0 auto;
+        }
+
+        .footerLinks {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footerLinks li {
+            float: left;
+            padding-right: 24px;
+        }
+
+        .footerLinks a {
+            text-decoration: none
+        }
+
+        #footerLinksUl {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #footerLinksUl li::before {
+            content: " ";
+            clear: both;
+            display: table;
+        }
+
+        #footerLinksUl li > * {
+            height: 18px;
+            margin: 0;
+            padding: 0;
+        }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -37,12 +74,13 @@
         <div class="page home">
             <header>
                 <hgroup class="left">
-                    <h1>
+                    <!-- <h1> -->
                         <!-- <a href="" class="kir">SAG-AFTRA<b>numbers</b><em>Twin Cities</em></a> -->
-                        <a href=""><img src="images/SAG-AFTRA-numbers-Twin-Cities-logo-type.jpg" alt="SAG-AFTRAnumbers | Twin Cities"></a>
-                    </h1>
+                        <!-- <a href=""><img src="images/SAG-AFTRA-numbers-Twin-Cities-logo-type.jpg" alt="SAG-AFTRAnumbers | Twin Cities"></a>
+                    </h1> -->
+                    <h3 style="font-style: initial;">SAG-AFTRAnumbers | Twin Cities <span style="color: #6D6D6D; font-size: 75%;">(Beta)</span></h3>
                 </hgroup>
-                <hgroup class="right"><h6>A handy calculator to estimate the cost of<br/> hiring <b>union talent</b> for your next project</h6></hgroup>
+                <hgroup class="right"><h6>A handy calculator to estimate the cost of<br> hiring <b>union talent</b> for your next project</h6></hgroup>
             </header>
 
             <div role="main" class="main">
@@ -53,12 +91,13 @@
                             <b>$</b> <span class="amount">0.00</span>
                         </output>
                     </h2>
-                    <h2 class="start">
+                    <!-- Commented for custom section for Legal -->
+                    <!-- <h2 class="start">
                         <a href="#app">
                             <b><img src="images/rarr.png" alt=""></b>
                             Start
                         </a>
-                    </h2>
+                    </h2> -->
                     <h5>Estimate Total</h5>
                 </header>
 
@@ -71,7 +110,7 @@
                             <a href="mailto:sean.hennessy@sagaftra.org?subject=SAG-AFTRAnumbers%20Question"><span class="icon"></span>Ask <b>Sean</b> at SAG-AFTRA</a>
                         </li>
                         <li class="share right">
-                            <a id="share" href="mailto:?subject=SAG-AFTRAnumbers%20Estimate&amp;body="><span class="icon"></span>Share</a>
+                            <a id="share" href="mailto:?subject=SAG-AFTRAnumbers%20Estimate%20%5BEstimates%20are%20informational%20only%20and%20are%20non-binding%5D&amp;body="><span class="icon"></span>Share</a>
                         </li>
                         <li class="print right">
                             <a href="javascript:window.print()"><span class="icon"></span>Print</a>
@@ -140,10 +179,17 @@
                                             <th headers="#line-item-label" class="label"><a href="#estimate-total" class="term open">Estimate Total</a></th>
                                             <th headers="#line-item-amount">$ <span class="amount">0.00</span></th>
                                         </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <small><em>
+                                                    Please note: All content on this site is for information purposes only and does not represent a complete or binding estimate of your costs under any SAG-AFTRA agreement. Nothing herein is intended as a waiver of any terms or conditions under any SAG-AFTRA agreement.
+                                                </em></small>
+                                            </td>
+                                        </tr>
                                     </tfoot>
                                 </table>
                                 <div id="output-cta" class="cta" style="display: none;">
-                                    <p>Congratulations!  You can afford Union talent!</p>
+                                    <p>It's that easy!  Email Sean at SAG-AFTRA. We'd love to walk you through the process and answer all your questions!</p>
                                     <p>
                                         <a href="mailto:sean.hennessy@sagaftra.org">Contact SAG-AFTRA Twin Cities</a> now to ask how we can help you take the next step!
                                     </p>
@@ -540,7 +586,57 @@
 
                 </div><!-- end #app.calculator -->
             </div><!-- end .main -->
+            <!--START: Custom section for Legal-->
+            <div id="start-button-fix">
+                <style>
+                #start-button-fix {
+                    position: relative;
+                }
 
+                #start-button {
+                    /*position:absolute;
+                    top: -285px;*/
+                    background-color: #ccc;
+                    padding: 8px 8px;
+                    border-radius: 10px;
+                    margin: 20px;
+                    border: 1px double #888;
+                }
+
+                #start-button p {
+                    font-size: 75%;
+                    margin-bottom: 8px;
+                }
+
+                #start-button-message {
+                    margin: 8px;
+                    padding: 4px 8px;
+                    background-color: #fff;
+                    border-radius: 10px;
+                    border: 1px #aaa solid;
+                    max-height: 120px;
+                    overflow-y: scroll;
+                }
+
+                #start-button div.hud {
+                    background-color: transparent;
+                    background: none;
+                }
+                </style>
+                <div id="start-button">
+                    <div id="start-button-message">
+                        <p>This site has been created as a simplified tool to help you get a general idea of the cost of hiring talent under SAG-AFTRA commercials and corporate/educational contracts. Estimates obtained using this site are an approximation only and may not include all costs that you might incur. The definitions and descriptions used on this site are simplified. If you have questions, you might want to review the <a href="http://www.sagaftra.org/production-center/commercial/signatory-information" target="_blank">SAG-AFTRA Commercials Contract</a> or <a href="http://www.sagaftra.org/production-center/corporate/signatory-information" target="_blank">Corporate/Educational & Non-Broadcast Agreement</a> for more detailed information at SAGAFTRA.org.</p>
+                        <p>Oh, and remember: Nothing on this site constitutes a waiver by SAG-AFTRA or any SAG-AFTRA member of any provision under any SAG-AFTRA agreement.</p>
+                        <p>Press START now to begin calculating!</p>
+                    </div>
+                    <div class="hud">
+                        <h2 class="start">
+                            <a href="#app"><b><img src="images/cbc861cc.rarr.png" alt=""></b> Start</a>
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <!--END: Custom section for Legal-->
             <footer>
                 <section class="twitter-feed">
                     <a href="http://twitter.com" class="twitter"><img src="images/twitter.jpg" alt="Twitter" width="32" height="32"></a>
@@ -551,17 +647,38 @@
                 <!--
                 <a href="http://sagaftra.org/" class="aftra-logo"><img src="images/aftra-logo.jpg" alt="AFTRA" width="90" height="100"></a>
                 <a href="http://sagaftra.org/" class="aftra-logo"><img src="images/sag-logo.jpg" alt="SAG" width="90" height="100"></a>
-                -->
                 <a href="http://sagaftra.org/" class="aftra-logo"><img src="images/SAG-AFTRA-ONE-UNION-logo.jpg" alt="SAG-AFTRA ONE UNION" width="207" height="65"></a>
+                -->
+                <a href="http://sagaftra.org/" class="aftra-logo"><img src="images/logo_black_300x116.png" alt="SAG-AFTRA ONE UNION" width="150" height="58" /></a>
                 <div class="colophon">
                     <h3>Not seeing what you're looking for?</h3><br>
                     <h4>
                         Contact Sean at SAG-AFTRA:
                         <a href="mailto:sean.hennessy@sagaftra.org">Email Sean</a> |
-                        <b>Call Sean</b> 312.867.2549
+                        <strong>Call Sean</strong> 312.867.2549
                     </h4><br>
+                    <address>
+                        <em>SAG-AFTRA Twin Cities</em>
+                    </address><br>
                 </div>
-                <span style="display: inline-block;">&copy; <a href="http://www.sagaftra.org/locals/twin-cities">SAG-AFTRA</a> Twin Cities</span>
+                <div>
+                    <div class="footerLinksDiv">
+                        <ul id="footerLinksUl">
+                            <li>
+                                <ul class="footerLinks">
+                                    <li><a target="_blank" href="http://www.sagaftra.org/content/copyright">Copyright</a></li>
+                                    <li><a target="_blank" href="http://www.sagaftra.org/privacy-policy-terms-use">Privacy Policy/Terms of Use</a></li>
+                                    <li class="coppa"><a target="_blank" href="http://www.sagaftra.org/content/childrens-online-privacy-protection-act-coppa">COPPA Policy</a></li>
+                                </ul>
+                            <li>
+                                <em><a href="http://www.sagaftra.org/tc" target="_blank">SAG-AFTRA Twin Cities</a></em>
+                            </li>
+                            <li>
+                                &copy; 2015 SAG-AFTRA | All Rights Reserved
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </footer>
         </div><!-- end .page -->
 
@@ -581,5 +698,10 @@
         <!-- build:replace <script src="scripts/app.min.js"></script> -->
         <script data-main="scripts/config" src="bower_components/requirejs/require.js"></script>
         <!-- endbuild -->
+        <script type="text/javascript">
+            $('#start-button .hud .start a').on('click', function(){
+                $('#start-button-fix').css('display','none');
+            });
+        </script>
     </body>
 </html>
