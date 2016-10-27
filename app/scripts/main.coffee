@@ -66,7 +66,7 @@ require [
             event.preventDefault()
             return unless $('.page.home').size() is 1
 
-            $('.hud .start, .calculator .both').fadeOut 400
+            $('.hud .start, .calculator .both, #start-button-fix').fadeOut 400
             $('.hud .estimate, .hud h5, nav li').fadeIn 400
 
             if $document.width() < 480 then $('nav').animate { height: '53px', marginTop: '-53px'}, 400
